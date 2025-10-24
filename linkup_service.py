@@ -65,4 +65,7 @@ def find_competitor_apps(app_description: str):
     except Exception as e:
         print(f"Error: {e}")
         return None
+    
+
+
 

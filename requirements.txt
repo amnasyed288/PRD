@@ -3,5 +3,5 @@ PyPDF2
 reportlab
 linkup-sdk
 python-dotenv
-flask
 requests
+google-genai
