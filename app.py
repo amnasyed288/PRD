@@ -1,6 +1,7 @@
 import streamlit as st
 from PyPDF2 import PdfReader
 import io
+from competitive_analysis import generate
 
 # ======================================================================================
 # 1. PAGE CONFIGURATION
@@ -147,7 +148,7 @@ if uploaded_file:
     progress += 34
 
 # --- Display dynamic progress bar ---
-st.markdown(f"""uv pip show linkup
+st.markdown(f"""
 
 <div class="progress-container">
     <div class="progress-bar" style="width:{progress}%"></div>
@@ -171,6 +172,13 @@ st.markdown("---")
 all_inputs_provided = bool(app_name and app_desc and uploaded_file)
 
 # Display the button (disabled dynamically), but no processing logic yet
-st.button("Generate Design Specification", disabled=not all_inputs_provided)
+if st.button("Generate Design Specification", disabled=not all_inputs_provided):
+    with st.spinner("Finding Competitors..."):
+        results = generate(app_desc)
+        if results:
+            st.success("Competitors Found!")
+            st.json(results)
+        else:
+            st.error("Failed to find competitors.")
 
 
