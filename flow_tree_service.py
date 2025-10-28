@@ -1,39 +1,28 @@
 import os
 from google import genai
 from google.genai import types
+from competitive_analysis import generate as generate_similar_apps, extract_app_names
+import io
+from contextlib import redirect_stdout
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
-def generate(app_name:list[str]):
+def generate(app_names:list[str]):
     client = genai.Client(
         api_key=os.environ.get("GEMINI_API_KEY"),
     )
 
     model = "gemini-2.5-pro"
+    app_list_formatted = "\n\n".join(app_names)
     contents = [
         types.Content(
             role="user",
             parts=[
-                types.Part.from_text(text="""Generate the complete, accurate, and fully hierarchical screen flow tree for the following Android app:
+                types.Part.from_text(text=f"""Generate the complete, accurate, and fully hierarchical screen flow tree for the following Android app:
 
-Airbnb
-
-Spotify
-
-Uber
-
-Duolingo
-
-Notion
-
-TikTok
-
-Canva
-
-Calm
-
-Pinterest
-
-Coursera
+    {app_list_formatted}
 
 ────────────────────────────
 INSTRUCTIONS
@@ -53,7 +42,6 @@ Do not perform general web searches or infer flows from unrelated sources.
 
 Only supplement with verified UX sources specific to the app(e.g., official app case studies, app teardowns, app product demos, app walkthroughs). No approximations.
 
-For each node, include "source": "mobbin" or "source": "external" with the exact verified source.
 
 Do not skip, summarize, hallucinate, or omit any screens, actions, or transitions.
 
@@ -115,13 +103,9 @@ Combine all extracted flows into a single unified hierarchical flow tree.
 Maintain strict hierarchy:
 main_flow → sub_flow → screens → actions → next_screen.
 
-Include \"source\": \"mobbin\" for every node.
-
 PHASE 3 — Verified External Completion (Strict Rules)
 
 Only supplement if Mobbin lacks a flow, using official or verified UX sources specific to the app (e.g., official product demos, app teardowns, walkthroughs).
-
-Every externally sourced node must include \"source\": \"external\" with the exact verified source.
 
 Never infer or hallucinate missing screens, actions, or transitions.
 
@@ -145,7 +129,7 @@ Cover the app depthwise and breadthwise completely.
 OUTPUT REQUIREMENTS
 ────────────────────────────
 
-Return a single valid JSON object only.
+Return a single valid JSON object only conforming exactly to the schema below. No extra text, no markdown, no commentary.
 
 Root key: \"apps_screen_flows\".
 
@@ -164,8 +148,6 @@ OUTPUT STRUCTURE (Enforced Schema)
       \"app_screen_flows\": [
         {
           \"flow_name\": \"string\",
-          \"status\": \"complete | not_applicable\",
-          \"source\": \"mobbin | external\",
           \"screens\": [
             {
               \"screen_name\": \"string\",
@@ -173,7 +155,6 @@ OUTPUT STRUCTURE (Enforced Schema)
                 {
                   \"user_action\": \"string\",
                   \"next_screen\": \"string\",
-                  \"source\": \"mobbin | external\"
                 }
               ]
             }
@@ -194,16 +175,35 @@ QUALITY CONSTRAINTS (MANDATORY)
 ────────────────────────────
 FEW-SHOT EXAMPLES (Partial, illustrative)
 ────────────────────────────
-{ \"app_name\": \"Instagram\", \"app_screen_flows\": [ { \"flow_name\": \"Authentication Flow\", \"status\": \"complete\", \"source\": \"mobbin\", \"screens\": [ { \"screen_name\": \"Splash Screen\", \"actions\": [ { \"user_action\": \"Wait 3s\", \"next_screen\": \"Login / Signup Screen\", \"source\": \"mobbin\" } ] }, { \"screen_name\": \"Login / Signup Screen\", \"actions\": [ { \"user_action\": \"Login with Facebook\", \"next_screen\": \"Home Feed Screen\", \"source\": \"mobbin\" }, { \"user_action\": \"Sign Up\", \"next_screen\": \"Username Creation Screen\", \"source\": \"external\" } ] } ] }, { \"flow_name\": \"Main Interaction Flow\", \"status\": \"complete\", \"source\": \"mobbin\", \"screens\": [ { \"screen_name\": \"Home Feed Screen\", \"actions\": [ { \"user_action\": \"Scroll Feed\", \"next_screen\": \"Post Detail Screen\", \"source\": \"mobbin\" }, { \"user_action\": \"Tap Reel Icon\", \"next_screen\": \"Reels Viewer Screen\", \"source\": \"mobbin\" } ] }, { \"screen_name\": \"Post Detail Screen\", \"actions\": [ { \"user_action\": \"Tap Profile Picture\", \"next_screen\": \"Profile Screen\", \"source\": \"external\" } ] } ] }, { \"flow_name\": \"Profile & Settings Flow\", \"status\": \"complete\", \"source\": \"external\", \"screens\": [ { \"screen_name\": \"Profile Screen\", \"actions\": [ { \"user_action\": \"Tap Menu\", \"next_screen\": \"Settings Screen\", \"source\": \"external\" }, { \"user_action\": \"Edit Profile\", \"next_screen\": \"Edit Profile Screen\", \"source\": \"external\" } ] } ] } ] }"""),
+{ \"app_name\": \"Instagram\", \"app_screen_flows\": [ { \"flow_name\": \"Authentication Flow\",\"screens\": [ { \"screen_name\": \"Splash Screen\", \"actions\": [ { \"user_action\": \"Wait 3s\", \"next_screen\": \"Login / Signup Screen\"} ] }, { \"screen_name\": \"Login / Signup Screen\", \"actions\": [ { \"user_action\": \"Login with Facebook\", \"next_screen\": \"Home Feed Screen\"}, { \"user_action\": \"Sign Up\", \"next_screen\": \"Username Creation Screen\"} ] } ] }, { \"flow_name\": \"Main Interaction Flow\", \"screens\": [ { \"screen_name\": \"Home Feed Screen\", \"actions\": [ { \"user_action\": \"Scroll Feed\", \"next_screen\": \"Post Detail Screen\"}, { \"user_action\": \"Tap Reel Icon\", \"next_screen\": \"Reels Viewer Screen\"} ] }, { \"screen_name\": \"Post Detail Screen\", \"actions\": [ { \"user_action\": \"Tap Profile Picture\", \"next_screen\": \"Profile Screen\"} ] } ] }, { \"flow_name\": \"Profile & Settings Flow\",\"screens\": [ { \"screen_name\": \"Profile Screen\", \"actions\": [ { \"user_action\": \"Tap Menu\", \"next_screen\": \"Settings Screen\"}, { \"user_action\": \"Edit Profile\", \"next_screen\": \"Edit Profile Screen\"} ] } ] } ] }"""),
         ],
     )
 
-    for chunk in client.models.generate_content_stream(
-        model=model,
-        contents=contents,
-        config=generate_content_config,
-    ):
-        print(chunk.text, end="")
+    # Capture the output
+    output = io.StringIO()
+    with redirect_stdout(output):
+        for chunk in client.models.generate_content_stream(
+            model=model,
+            contents=contents,
+            config=generate_content_config,
+        ):
+            print(chunk.text, end="")
+    
+    return output.getvalue()
 
-if __name__ == "__main__":
-    generate()
+
+
+# if __name__ == "__main__":
+#     # Example usage
+#     target_app_description = ""
+#     result = generate_complete_pipeline(target_app_description)
+    
+#     print("=" * 60)
+#     print("COMPETITOR APPS:")
+#     print("=" * 60)
+#     print(json.dumps(result["competitor_apps"], indent=2))
+    
+#     print("\n" + "=" * 60)
+#     print("SCREEN FLOWS:")
+#     print("=" * 60)
+#     print(result["screen_flows"])

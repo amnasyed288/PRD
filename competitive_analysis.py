@@ -1,6 +1,13 @@
 import os
 from google import genai
 from google.genai import types
+import io
+import json
+from contextlib import redirect_stdout
+import sys 
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def generate(app_description: str):
     client = genai.Client(
@@ -103,12 +110,52 @@ Responsibilities:
         ],
     )
 
-    for chunk in client.models.generate_content_stream(
-        model=model,
-        contents=contents,
-        config=generate_content_config,
-    ):
-        print(chunk.text, end="")
+    # for chunk in client.models.generate_content_stream(
+    #     model=model,
+    #     contents=contents,
+    #     config=generate_content_config,
+    # ):
+    #     print(chunk.text, end="")
+    output = io.StringIO()
+    with redirect_stdout(output):
+        for chunk in client.models.generate_content_stream(
+            model=model,
+            contents=contents,
+            config=generate_content_config,
+        ):
+            print(chunk.text, end="")
+    
+    json_output = output.getvalue()
+    
+    # Parse JSON and return
+    try:
+        return json.loads(json_output)
+    except json.JSONDecodeError as e:
+        print(f"Error parsing JSON: {e}", file=sys.stderr)
+        print(f"Raw output: {json_output}", file=sys.stderr)
+        raise
 
-if __name__ == "__main__":
-    generate("""A mobile wellness app that helps users track menstrual cycles, ovulation, and hormonal patterns through adaptive predictions and mood insights. LunaFlow provides personalized health analytics, symptom logging, and AI-driven forecasts to support cycle awareness and reproductive wellbeing.""")
+def extract_app_names(similar_apps_data: dict) -> list[str]:
+    """
+    Pre-processing function: Extract app names from File 1 output.
+    
+    Args:
+        similar_apps_data: JSON object from generate_similar_apps()
+        
+    Returns:
+        List of app names as strings
+    """
+    if "apps" not in similar_apps_data:
+        raise ValueError("Invalid input: 'apps' key not found in data")
+    
+    app_names = [app["app_name"] for app in similar_apps_data["apps"]]
+    
+    print(f"\n{'='*60}")
+    print(f"Extracted {len(app_names)} app names:")
+    for i, name in enumerate(app_names, 1):
+        print(f"  {i}. {name}")
+    print(f"{'='*60}\n")
+    
+    return app_names
+
+
