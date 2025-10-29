@@ -54,6 +54,7 @@ Do not include explanations or prose — only output the valid JSON object with 
         thinking_config = types.ThinkingConfig(
             thinking_budget=8192,
         ),
+        max_output_tokens=65536,
         tools=tools,
         system_instruction=[
             types.Part.from_text(text="""You are a **Senior Mobile UX Flow Architect and Product Designer** specializing in Android UX systems for android apps.

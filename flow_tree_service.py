@@ -66,9 +66,12 @@ Return only one JSON object with root key "apps_screen_flows". No commentary, ex
         )),
     ]
     generate_content_config = types.GenerateContentConfig(
+        temperature=0,
+        top_p=1,
         thinking_config = types.ThinkingConfig(
-            thinking_budget=8192,
+            thinking_budget=-1,
         ),
+        max_output_tokens=65536,
         tools=tools,
         system_instruction=[
             types.Part.from_text(text="""You are a senior Mobile UX Research Analyst and Product Flow Architect.
@@ -190,20 +193,3 @@ FEW-SHOT EXAMPLES (Partial, illustrative)
             print(chunk.text, end="")
     
     return output.getvalue()
-
-
-
-# if __name__ == "__main__":
-#     # Example usage
-#     target_app_description = ""
-#     result = generate_complete_pipeline(target_app_description)
-    
-#     print("=" * 60)
-#     print("COMPETITOR APPS:")
-#     print("=" * 60)
-#     print(json.dumps(result["competitor_apps"], indent=2))
-    
-#     print("\n" + "=" * 60)
-#     print("SCREEN FLOWS:")
-#     print("=" * 60)
-#     print(result["screen_flows"])

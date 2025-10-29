@@ -94,6 +94,7 @@ Perform the task for the target app description and return ONLY the JSON object 
         thinking_config = types.ThinkingConfig(
             thinking_budget=8192,
         ),
+        max_output_tokens=65536,
         system_instruction=[
             types.Part.from_text(text="""You are a world-class Android app market research specialist and competitive intelligence expert with mastery in advanced AI reasoning techniques.
 
@@ -150,11 +151,6 @@ def extract_app_names(similar_apps_data: dict) -> list[str]:
     
     app_names = [app["app_name"] for app in similar_apps_data["apps"]]
     
-    print(f"\n{'='*60}")
-    print(f"Extracted {len(app_names)} app names:")
-    for i, name in enumerate(app_names, 1):
-        print(f"  {i}. {name}")
-    print(f"{'='*60}\n")
     
     return app_names
 

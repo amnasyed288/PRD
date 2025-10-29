@@ -38,10 +38,10 @@ def generate_complete_pipeline(app_description: str, app_name: str) -> dict:
         "app_flow_tree": app_flow_tree  
     }
 
+#testing
+if __name__ == "__main__":
+    app_description = "WealthNest is a next-gen finance android app that helps users build financial stability by automatically analyzing income, expenses, and habits to create personalized savings and investment plans — all within a simple, intuitive interface."
+    app_name = "WealthNest"
+    result = generate_complete_pipeline(app_description, app_name)
+    print(result)
 
-    
-    return {
-        "competitor_apps": similar_apps_data,
-        "app_names": app_names,
-        "screen_flows": screen_flows_json
-    }
