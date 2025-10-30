@@ -1,0 +1,545 @@
+{
+  "app_flow_tree": {
+    "app_name": "WealthNest",
+    "total_flows": 7,
+    "total_screens": 36,
+    "app_screen_flows": [
+      {
+        "flow_name": "Onboarding & Account Linking",
+        "screens": [
+          {
+            "screen_name": "Welcome Screen",
+            "actions": [
+              {
+                "user_action": "Taps 'Get Started'",
+                "next_screen": "Sign Up Options"
+              },
+              {
+                "user_action": "Taps 'Log In'",
+                "next_screen": "Login Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Sign Up Options",
+            "actions": [
+              {
+                "user_action": "Taps 'Continue with Google'",
+                "next_screen": "Link Account Introduction"
+              },
+              {
+                "user_action": "Taps 'Sign up with Email'",
+                "next_screen": "Sign Up with Email"
+              }
+            ]
+          },
+          {
+            "screen_name": "Sign Up with Email",
+            "actions": [
+              {
+                "user_action": "Enters name, email, password and taps 'Create Account'",
+                "next_screen": "Link Account Introduction"
+              }
+            ]
+          },
+          {
+            "screen_name": "Link Account Introduction",
+            "actions": [
+              {
+                "user_action": "Taps 'Continue'",
+                "next_screen": "Select Institution"
+              }
+            ]
+          },
+          {
+            "screen_name": "Select Institution",
+            "actions": [
+              {
+                "user_action": "Selects a popular financial institution",
+                "next_screen": "Connect to Institution"
+              },
+              {
+                "user_action": "Searches for and selects an institution",
+                "next_screen": "Connect to Institution"
+              }
+            ]
+          },
+          {
+            "screen_name": "Connect to Institution",
+            "actions": [
+              {
+                "user_action": "Enters institution credentials and completes multi-factor authentication",
+                "next_screen": "Connecting Account Progress"
+              }
+            ]
+          },
+          {
+            "screen_name": "Connecting Account Progress",
+            "actions": [
+              {
+                "user_action": "System successfully connects and retrieves data",
+                "next_screen": "Link Account Success"
+              },
+              {
+                "user_action": "System fails to connect",
+                "next_screen": "Link Account Error"
+              }
+            ]
+          },
+          {
+            "screen_name": "Link Account Success",
+            "actions": [
+              {
+                "user_action": "Taps 'Continue'",
+                "next_screen": "Analyzing Finances"
+              }
+            ]
+          },
+          {
+            "screen_name": "Link Account Error",
+            "actions": [
+              {
+                "user_action": "Taps 'Try Again'",
+                "next_screen": "Select Institution"
+              },
+              {
+                "user_action": "Taps 'Contact Support'",
+                "next_screen": "Help Center"
+              }
+            ]
+          },
+          {
+            "screen_name": "Analyzing Finances",
+            "actions": [
+              {
+                "user_action": "Waits for analysis to complete (automatic transition)",
+                "next_screen": "Financial Plan Overview"
+              }
+            ]
+          },
+          {
+            "screen_name": "Financial Plan Overview",
+            "actions": [
+              {
+                "user_action": "Taps 'View My Dashboard'",
+                "next_screen": "Dashboard"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Authentication",
+        "screens": [
+          {
+            "screen_name": "App Launch",
+            "actions": [
+              {
+                "user_action": "User has biometrics enabled",
+                "next_screen": "Biometric/PIN Prompt"
+              },
+              {
+                "user_action": "User is logged out or biometrics disabled",
+                "next_screen": "Welcome Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Biometric/PIN Prompt",
+            "actions": [
+              {
+                "user_action": "Successfully authenticates with fingerprint/face/PIN",
+                "next_screen": "Dashboard"
+              },
+              {
+                "user_action": "Fails authentication or cancels",
+                "next_screen": "Login Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Login Screen",
+            "actions": [
+              {
+                "user_action": "Enters email and password, taps 'Log In'",
+                "next_screen": "Dashboard"
+              },
+              {
+                "user_action": "Taps 'Forgot Password?'",
+                "next_screen": "Forgot Password"
+              }
+            ]
+          },
+          {
+            "screen_name": "Forgot Password",
+            "actions": [
+              {
+                "user_action": "Enters email and taps 'Send Reset Link'",
+                "next_screen": "Forgot Password Confirmation"
+              }
+            ]
+          },
+          {
+            "screen_name": "Forgot Password Confirmation",
+            "actions": [
+              {
+                "user_action": "Taps 'Back to Login'",
+                "next_screen": "Login Screen"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Core Dashboard & Navigation",
+        "screens": [
+          {
+            "screen_name": "Dashboard",
+            "actions": [
+              {
+                "user_action": "Taps 'Net Worth' summary card",
+                "next_screen": "Net Worth Details"
+              },
+              {
+                "user_action": "Taps 'Spending' summary card",
+                "next_screen": "Spending Breakdown"
+              },
+              {
+                "user_action": "Taps 'Plan Progress' summary card",
+                "next_screen": "Plan Hub"
+              },
+              {
+                "user_action": "Taps 'Plan' tab in bottom navigation",
+                "next_screen": "Plan Hub"
+              },
+              {
+                "user_action": "Taps 'Analysis' tab in bottom navigation",
+                "next_screen": "Analysis Hub"
+              },
+              {
+                "user_action": "Taps 'Accounts' tab in bottom navigation",
+                "next_screen": "Accounts List"
+              },
+              {
+                "user_action": "Taps 'Settings' tab in bottom navigation",
+                "next_screen": "Settings"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Financial Plan Management",
+        "screens": [
+          {
+            "screen_name": "Plan Hub",
+            "actions": [
+              {
+                "user_action": "Taps on a savings goal",
+                "next_screen": "Savings Plan Details"
+              },
+              {
+                "user_action": "Taps on an investment goal",
+                "next_screen": "Investment Plan Details"
+              },
+              {
+                "user_action": "Taps 'Create New Goal'",
+                "next_screen": "Create Goal - Select Type"
+              },
+              {
+                "user_action": "Taps 'Dashboard' tab in bottom navigation",
+                "next_screen": "Dashboard"
+              }
+            ]
+          },
+          {
+            "screen_name": "Savings Plan Details",
+            "actions": [
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Plan Hub"
+              }
+            ]
+          },
+          {
+            "screen_name": "Investment Plan Details",
+            "actions": [
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Plan Hub"
+              }
+            ]
+          },
+          {
+            "screen_name": "Create Goal - Select Type",
+            "actions": [
+              {
+                "user_action": "Selects a goal template (e.g., 'Retirement', 'New Car')",
+                "next_screen": "Create Goal - Set Target"
+              },
+              {
+                "user_action": "Taps 'Cancel'",
+                "next_screen": "Plan Hub"
+              }
+            ]
+          },
+          {
+            "screen_name": "Create Goal - Set Target",
+            "actions": [
+              {
+                "user_action": "Enters goal amount and target date, taps 'Save Goal'",
+                "next_screen": "Plan Hub"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Create Goal - Select Type"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Financial Analysis",
+        "screens": [
+          {
+            "screen_name": "Analysis Hub",
+            "actions": [
+              {
+                "user_action": "Taps 'Net Worth'",
+                "next_screen": "Net Worth Details"
+              },
+              {
+                "user_action": "Taps 'Spending'",
+                "next_screen": "Spending Breakdown"
+              },
+              {
+                "user_action": "Taps 'Income'",
+                "next_screen": "Income Sources"
+              },
+              {
+                "user_action": "Taps 'Dashboard' tab in bottom navigation",
+                "next_screen": "Dashboard"
+              }
+            ]
+          },
+          {
+            "screen_name": "Net Worth Details",
+            "actions": [
+              {
+                "user_action": "Taps on an asset or liability account",
+                "next_screen": "Account Transaction History"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Analysis Hub"
+              }
+            ]
+          },
+          {
+            "screen_name": "Spending Breakdown",
+            "actions": [
+              {
+                "user_action": "Taps on a spending category",
+                "next_screen": "Category Transactions"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Analysis Hub"
+              }
+            ]
+          },
+          {
+            "screen_name": "Income Sources",
+            "actions": [
+              {
+                "user_action": "Taps on an income source",
+                "next_screen": "Category Transactions"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Analysis Hub"
+              }
+            ]
+          },
+          {
+            "screen_name": "Category Transactions",
+            "actions": [
+              {
+                "user_action": "Taps on a transaction",
+                "next_screen": "Transaction Details"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Spending Breakdown"
+              }
+            ]
+          },
+          {
+            "screen_name": "Transaction Details",
+            "actions": [
+              {
+                "user_action": "Taps 'Category' field to edit",
+                "next_screen": "Edit Transaction Category"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Category Transactions"
+              }
+            ]
+          },
+          {
+            "screen_name": "Edit Transaction Category",
+            "actions": [
+              {
+                "user_action": "Selects new category and taps 'Save'",
+                "next_screen": "Transaction Details"
+              },
+              {
+                "user_action": "Taps 'Cancel'",
+                "next_screen": "Transaction Details"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Account Management",
+        "screens": [
+          {
+            "screen_name": "Accounts List",
+            "actions": [
+              {
+                "user_action": "Taps '+' icon to add account",
+                "next_screen": "Link Account Introduction"
+              },
+              {
+                "user_action": "Taps on a linked account",
+                "next_screen": "Account Transaction History"
+              },
+              {
+                "user_action": "Taps 'Manage' on an account",
+                "next_screen": "Manage Account"
+              },
+              {
+                "user_action": "Taps 'Dashboard' tab in bottom navigation",
+                "next_screen": "Dashboard"
+              }
+            ]
+          },
+          {
+            "screen_name": "Account Transaction History",
+            "actions": [
+              {
+                "user_action": "Taps on a transaction",
+                "next_screen": "Transaction Details"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Accounts List"
+              }
+            ]
+          },
+          {
+            "screen_name": "Manage Account",
+            "actions": [
+              {
+                "user_action": "Taps 'Refresh Connection'",
+                "next_screen": "Connecting Account Progress"
+              },
+              {
+                "user_action": "Taps 'Unlink Account' and confirms",
+                "next_screen": "Accounts List"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Accounts List"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Settings",
+        "screens": [
+          {
+            "screen_name": "Settings",
+            "actions": [
+              {
+                "user_action": "Taps 'Profile'",
+                "next_screen": "Profile Settings"
+              },
+              {
+                "user_action": "Taps 'Security'",
+                "next_screen": "Security Settings"
+              },
+              {
+                "user_action": "Taps 'Notifications'",
+                "next_screen": "Notification Settings"
+              },
+              {
+                "user_action": "Taps 'Help & Support'",
+                "next_screen": "Help Center"
+              },
+              {
+                "user_action": "Taps 'Log Out' and confirms",
+                "next_screen": "Welcome Screen"
+              },
+              {
+                "user_action": "Taps 'Dashboard' tab in bottom navigation",
+                "next_screen": "Dashboard"
+              }
+            ]
+          },
+          {
+            "screen_name": "Profile Settings",
+            "actions": [
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Settings"
+              }
+            ]
+          },
+          {
+            "screen_name": "Security Settings",
+            "actions": [
+              {
+                "user_action": "Toggles 'Use Fingerprint/Face ID'",
+                "next_screen": "Security Settings"
+              },
+              {
+                "user_action": "Taps 'Change Password'",
+                "next_screen": "Login Screen"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Settings"
+              }
+            ]
+          },
+          {
+            "screen_name": "Notification Settings",
+            "actions": [
+              {
+                "user_action": "Toggles a notification preference",
+                "next_screen": "Notification Settings"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Settings"
+              }
+            ]
+          },
+          {
+            "screen_name": "Help Center",
+            "actions": [
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Settings"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

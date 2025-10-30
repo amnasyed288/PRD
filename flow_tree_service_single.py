@@ -58,11 +58,12 @@ def generate_single_app_flow(app_name: str):
     }}
 
     Rules:
-    1. Only JSON (no markdown or prose)
-    2. All next_screen refs must exist
-    3. Each screen has ≥1 action or marked end_state
-    4. No truncation, ellipses, or summaries
-    5. Output must be complete in a single JSON object
+    1. Partial, summarized, or incomplete outputs are not acceptable and will be considered a failure to follow instructions.
+    2. Only JSON (no markdown or prose)
+    3. All next_screen refs must exist
+    4. Each screen has ≥1 action or marked end_state
+    5. No truncation, ellipses, or summaries
+    6. Output must be complete in a single JSON object
     """
 
     system_instruction = """
@@ -104,7 +105,11 @@ def generate_single_app_flow(app_name: str):
         if complete_output.startswith("```"):
             complete_output = complete_output.strip("`").strip()
 
+        if complete_output.lower().startswith("json"):
+            complete_output = complete_output[4:].strip()  
+
         return complete_output
+
 
     except Exception as e:
         print(f"\n⚠️ Error during streaming: {e}")

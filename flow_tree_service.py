@@ -11,8 +11,6 @@ def generate(app_names: list[str], output_file: str = "all_app_flows.txt"):
     """
 
     all_flows = []
-
-    # Ensure file header
     if not os.path.exists(output_file):
         with open(output_file, "w", encoding="utf-8") as f:
             f.write(f"# Combined App Flow Trees\n\n")

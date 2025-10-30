@@ -1,6 +1,8 @@
 from competitive_analysis import generate as generate_similar_apps, extract_app_names
 from flow_tree_service import generate as generate
 from app_flow import generate_flow_tree as generate_flow_tree
+from flow_tree_design import generate as generate_design_specs
+import json
 
 def generate_complete_pipeline(app_description: str, app_name: str) -> dict:
     """
@@ -21,25 +23,32 @@ def generate_complete_pipeline(app_description: str, app_name: str) -> dict:
     
     # Step 2: Extract app names
     app_names = extract_app_names(similar_apps_data)
+    print(f"App names:\n\n {app_names}")
 
     
     # Step 3: Generate screen flows
     screen_flows_json = generate(app_names)
 
-
-    # # Step 4: Generate app flow tree
-    # app_flow_tree = generate_flow_tree(
-    #     app_name=app_name,
-    #     app_description=app_description,
-    #     app_flow_trees=screen_flows_json
-    # )
     
-    # return {
-    #     "competitor_apps": similar_apps_data,
-    #     "app_names": app_names,
-    #     "screen_flows": screen_flows_json,
-    #     "app_flow_tree": app_flow_tree  
-    # }
+    # Step 4: Generate app flow tree
+    app_flow_tree = generate_flow_tree(
+        app_name=app_name,
+        app_description=app_description,
+        app_flow_trees=screen_flows_json
+    )
+
+    # Step 5: generate design specs of all apps
+    designs = generate_design_specs(app_flow_trees=screen_flows_json)
+
+
+    
+    return {
+        "competitor_apps": similar_apps_data,
+        "app_names": app_names,
+        "screen_flows": screen_flows_json,
+        "app_flow_tree": app_flow_tree ,
+        "design_specs": designs
+    }
 
 #testing
 if __name__ == "__main__":

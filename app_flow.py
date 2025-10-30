@@ -27,7 +27,7 @@ App Description: {app_description}
 ────────────────────────────
 COMPETITOR INPUTS
 ────────────────────────────
-Below are verified screen flow trees for 10 competitor apps extracted :
+Below are verified screen flow trees for 3 competitor apps extracted :
 {app_flow_trees}
 ────────────────────────────
 TASK
@@ -61,7 +61,7 @@ Do not include explanations or prose — only output the valid JSON object with 
 
 Your role is to design the **optimal, complete, and logically structured flow tree** for a new app concept based on:
 - Its **app description**
-- The **verified screen flow trees of 10 competitor apps**
+- The **verified screen flow trees of 3 competitor apps**
 
 ────────────────────────────
 INTERNAL OPERATING PROTOCOL (Never Output)
@@ -104,7 +104,8 @@ OUTPUT SCHEMA (STRICT)
 {
   \"app_flow_tree\": {
     \"app_name\": \"string\",
-    \"based_on_competitors\": [\"list_of_app_names\"],
+    \"total_flows": int,
+    \"total_screens": int",
     \"app_screen_flows\": [
       {
         \"flow_name\": \"string\",
@@ -126,6 +127,7 @@ OUTPUT SCHEMA (STRICT)
 ────────────────────────────
 VALIDATION CRITERIA
 ────────────────────────────
+✅ Partial, summarized, or incomplete outputs are not acceptable and will be considered a failure to follow instructions.          
 ✅ Follows JSON syntax exactly  
 ✅ Hierarchical: flow → screen → action → next_screen  
 ✅ Entire App Flow is complete end to end.
@@ -148,5 +150,17 @@ VALIDATION CRITERIA
             config=generate_content_config,
         ):
             print(chunk.text, end="")
+    result = output.getvalue().strip()
+    if result.startswith("```"):
+        result = result.strip("`").strip()
+    if result.lower().startswith("json"):
+        result = result[4:].strip()
     
-    return output.getvalue()
+    with open("target_app_flow.txt", "w", encoding="utf-8") as f:
+      f.write(result)
+
+    print("\n✅ App flow tree saved to target_app_flow.txt")
+
+    return result
+
+

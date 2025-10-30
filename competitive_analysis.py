@@ -18,7 +18,7 @@ def generate(app_description: str):
         types.Content(
             role="user",
             parts=[
-                types.Part.from_text(text=f"""You are a top-tier Android app market research analyst. Your task is to identify the top 3 Android apps that are most functionally and semantically similar and highly relevant to the target app described below.
+                types.Part.from_text(text=f"""You are a top-tier Android app market research analyst. Your task is to identify the top 3 Android mobile apps that are most functionally and semantically similar and highly relevant to the target app described below.
 
 INPUT:
 Target App Description: {app_description}
@@ -113,12 +113,6 @@ Responsibilities:
         ],
     )
 
-    # for chunk in client.models.generate_content_stream(
-    #     model=model,
-    #     contents=contents,
-    #     config=generate_content_config,
-    # ):
-    #     print(chunk.text, end="")
     output = io.StringIO()
     with redirect_stdout(output):
         for chunk in client.models.generate_content_stream(
@@ -154,5 +148,11 @@ def extract_app_names(similar_apps_data: dict) -> list[str]:
     app_names = [app["app_name"] for app in similar_apps_data["apps"]]
     
     return app_names
+
+if __name__ == "__main__":
+    app_description = "WealthNest is a next-gen finance android app that helps users build financial stability by automatically analyzing income, expenses, and habits to create personalized savings and investment plans — all within a simple, intuitive interface."
+    result = generate(app_description)
+    list = extract_app_names(result)
+    print(list)
 
 

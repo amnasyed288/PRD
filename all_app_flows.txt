@@ -3,1383 +3,94 @@
 
 
 ============================================================
-### APP 1: Spotify
+### APP 1: Empower Personal Dashboard
 ============================================================
-json
 {
   "app_screen_flow": {
-    "app_name": "Spotify",
-    "total_flows": 8,
-    "total_screens": 47,
+    "app_name": "Empower Personal Dashboard",
+    "total_flows": 7,
+    "total_screens": 28,
     "flows": [
       {
-        "flow_name": "Authentication",
+        "flow_name": "New User Registration",
         "screens": [
           {
-            "screen_name": "Launch Screen",
+            "screen_name": "Welcome Screen",
             "actions": [
               {
-                "user_action": "Taps 'Sign up free' button",
+                "user_action": "Taps 'Sign Up Free'",
                 "next_screen": "Sign Up - Email"
               },
               {
-                "user_action": "Taps 'Continue with Google' button",
-                "next_screen": "External Google Authentication"
-              },
-              {
-                "user_action": "Taps 'Continue with Facebook' button",
-                "next_screen": "External Facebook Authentication"
-              },
-              {
-                "user_action": "Taps 'Log in' button",
-                "next_screen": "Log In"
+                "user_action": "Taps 'Log In'",
+                "next_screen": "Log In Screen"
               }
             ]
           },
-          {
-            "screen_name": "Log In",
-            "actions": [
-              {
-                "user_action": "Enters email and password, taps 'Log in' button",
-                "next_screen": "Home"
-              },
-              {
-                "user_action": "Taps 'Log in without password' button",
-                "next_screen": "Passwordless Login"
-              },
-              {
-                "user_action": "Taps back arrow",
-                "next_screen": "Launch Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Passwordless Login",
-            "actions": [
-              {
-                "user_action": "Enters email or username, taps 'GET LINK' button",
-                "next_screen": "Check Your Email"
-              },
-              {
-                "user_action": "Taps back arrow",
-                "next_screen": "Log In"
-              }
-            ]
-          },
-          {
-            "screen_name": "Check Your Email",
-            "actions": [
-              {
-                "user_action": "User must switch to email client to complete login",
-                "end_state": true
-              }
-            ]
-          },
-          {
-            "screen_name": "External Google Authentication",
-            "actions": [
-              {
-                "user_action": "Completes Google sign-in flow",
-                "next_screen": "Home"
-              }
-            ]
-          },
-          {
-            "screen_name": "External Facebook Authentication",
-            "actions": [
-              {
-                "user_action": "Completes Facebook sign-in flow",
-                "next_screen": "Home"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "Sign Up and Onboarding",
-        "screens": [
           {
             "screen_name": "Sign Up - Email",
             "actions": [
               {
-                "user_action": "Enters email address, taps 'Next' button",
-                "next_screen": "Sign Up - Create Password"
+                "user_action": "Enters email address and taps 'Continue'",
+                "next_screen": "Sign Up - Password"
               }
             ]
           },
           {
-            "screen_name": "Sign Up - Create Password",
+            "screen_name": "Sign Up - Password",
             "actions": [
               {
-                "user_action": "Enters password, taps 'Next' button",
-                "next_screen": "Sign Up - Date of Birth"
+                "user_action": "Enters a password and taps 'Continue'",
+                "next_screen": "Sign Up - Phone Number"
               }
             ]
           },
           {
-            "screen_name": "Sign Up - Date of Birth",
+            "screen_name": "Sign Up - Phone Number",
             "actions": [
               {
-                "user_action": "Enters date of birth, taps 'Next' button",
-                "next_screen": "Sign Up - Gender"
+                "user_action": "Enters phone number and taps 'Create Account'",
+                "next_screen": "Identity Verification"
               }
             ]
           },
           {
-            "screen_name": "Sign Up - Gender",
+            "screen_name": "Identity Verification",
             "actions": [
               {
-                "user_action": "Selects a gender, taps 'Next' button",
-                "next_screen": "Sign Up - Profile Name"
+                "user_action": "Receives and enters verification code sent via SMS/email/call",
+                "next_screen": "Onboarding - Link First Account"
               }
             ]
           },
           {
-            "screen_name": "Sign Up - Profile Name",
+            "screen_name": "Onboarding - Link First Account",
             "actions": [
               {
-                "user_action": "Enters profile name, accepts terms, taps 'Create account' button",
-                "next_screen": "Onboarding - Choose Artists"
-              }
-            ]
-          },
-          {
-            "screen_name": "Onboarding - Choose Artists",
-            "actions": [
-              {
-                "user_action": "Selects 3 or more artists, taps 'Done' button",
-                "next_screen": "Home"
-              },
-              {
-                "user_action": "Taps 'Search' to find an artist",
-                "next_screen": "Onboarding - Artist Search"
-              }
-            ]
-          },
-          {
-            "screen_name": "Onboarding - Artist Search",
-            "actions": [
-              {
-                "user_action": "Enters artist name in search bar and selects artist",
-                "next_screen": "Onboarding - Choose Artists"
-              },
-              {
-                "user_action": "Taps 'Cancel'",
-                "next_screen": "Onboarding - Choose Artists"
+                "user_action": "Taps 'Link an Account'",
+                "next_screen": "Link Account - Search"
               }
             ]
           }
         ]
       },
       {
-        "flow_name": "Core Navigation",
+        "flow_name": "User Login",
         "screens": [
           {
-            "screen_name": "Home",
+            "screen_name": "Log In Screen",
             "actions": [
               {
-                "user_action": "Taps 'Search' tab in bottom navigation",
-                "next_screen": "Search"
+                "user_action": "Enters email and password, taps 'Log In'",
+                "next_screen": "Dashboard"
               },
               {
-                "user_action": "Taps 'Your Library' tab in bottom navigation",
-                "next_screen": "Your Library"
-              },
-              {
-                "user_action": "Taps 'Premium' tab in bottom navigation",
-                "next_screen": "Premium Plan Overview"
-              },
-              {
-                "user_action": "Taps Settings gear icon in top right",
-                "next_screen": "Settings"
-              },
-              {
-                "user_action": "Taps a song, album, or playlist",
-                "next_screen": "Now Playing"
-              }
-            ]
-          },
-          {
-            "screen_name": "Search",
-            "actions": [
-              {
-                "user_action": "Taps the search bar 'What do you want to listen to?'",
-                "next_screen": "Search Input"
-              },
-              {
-                "user_action": "Taps a 'Browse all' category card (e.g., Podcasts)",
-                "next_screen": "Browse Category"
-              },
-              {
-                "user_action": "Taps 'Home' tab in bottom navigation",
-                "next_screen": "Home"
-              },
-              {
-                "user_action": "Taps 'Your Library' tab in bottom navigation",
-                "next_screen": "Your Library"
-              }
-            ]
-          },
-          {
-            "screen_name": "Your Library",
-            "actions": [
-              {
-                "user_action": "Taps '+' icon to add new content",
-                "next_screen": "Create New Menu"
-              },
-              {
-                "user_action": "Taps a playlist",
-                "next_screen": "Playlist View"
-              },
-              {
-                "user_action": "Taps an album",
-                "next_screen": "Album View"
-              },
-              {
-                "user_action": "Taps 'Home' tab in bottom navigation",
-                "next_screen": "Home"
-              },
-              {
-                "user_action": "Taps 'Search' tab in bottom navigation",
-                "next_screen": "Search"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "Search and Discovery",
-        "screens": [
-          {
-            "screen_name": "Search Input",
-            "actions": [
-              {
-                "user_action": "Enters text into search bar",
-                "next_screen": "Search Results"
-              },
-              {
-                "user_action": "Taps 'Cancel'",
-                "next_screen": "Search"
-              }
-            ]
-          },
-          {
-            "screen_name": "Search Results",
-            "actions": [
-              {
-                "user_action": "Taps a song from the results list",
-                "next_screen": "Now Playing"
-              },
-              {
-                "user_action": "Taps an artist from the results list",
-                "next_screen": "Artist Profile"
-              },
-              {
-                "user_action": "Taps a playlist from the results list",
-                "next_screen": "Playlist View"
-              },
-              {
-                "user_action": "Taps an album from the results list",
-                "next_screen": "Album View"
-              }
-            ]
-          },
-          {
-            "screen_name": "Browse Category",
-            "actions": [
-              {
-                "user_action": "Taps a sub-category or specific podcast/playlist",
-                "next_screen": "Playlist View"
-              }
-            ]
-          },
-          {
-            "screen_name": "Artist Profile",
-            "actions": [
-              {
-                "user_action": "Taps 'Follow' button",
-                "next_screen": "Artist Profile"
-              },
-              {
-                "user_action": "Taps a song from 'Popular' list",
-                "next_screen": "Now Playing"
-              },
-              {
-                "user_action": "Taps 'See Discography'",
-                "next_screen": "Artist Discography"
-              }
-            ]
-          },
-          {
-            "screen_name": "Artist Discography",
-            "actions": [
-              {
-                "user_action": "Taps an album",
-                "next_screen": "Album View"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "Music and Playlist Management",
-        "screens": [
-          {
-            "screen_name": "Playlist View",
-            "actions": [
-              {
-                "user_action": "Taps a song to play it",
-                "next_screen": "Now Playing"
-              },
-              {
-                "user_action": "Taps 'Add songs' button",
-                "next_screen": "Add to Playlist - Suggestions"
-              },
-              {
-                "user_action": "Taps three-dots menu for playlist options",
-                "next_screen": "Playlist Options Menu"
-              }
-            ]
-          },
-          {
-            "screen_name": "Album View",
-            "actions": [
-              {
-                "user_action": "Taps a song to play it",
-                "next_screen": "Now Playing"
-              },
-              {
-                "user_action": "Taps the play button to play the album",
-                "next_screen": "Now Playing"
-              },
-              {
-                "user_action": "Taps the heart icon to like the album",
-                "next_screen": "Album View"
-              }
-            ]
-          },
-          {
-            "screen_name": "Create New Menu",
-            "actions": [
-              {
-                "user_action": "Taps 'Playlist'",
-                "next_screen": "Create Playlist"
-              },
-              {
-                "user_action": "Taps 'Blend'",
-                "next_screen": "Create Blend"
-              }
-            ]
-          },
-          {
-            "screen_name": "Create Playlist",
-            "actions": [
-              {
-                "user_action": "Enters a playlist name, taps 'Create'",
-                "next_screen": "Playlist View"
-              }
-            ]
-          },
-          {
-            "screen_name": "Create Blend",
-            "actions": [
-              {
-                "user_action": "Taps 'Invite' to select friends",
-                "next_screen": "Invite Friends to Blend"
-              }
-            ]
-          },
-          {
-            "screen_name": "Invite Friends to Blend",
-            "actions": [
-              {
-                "user_action": "Selects a friend and sends invite",
-                "next_screen": "Your Library"
-              }
-            ]
-          },
-          {
-            "screen_name": "Add to Playlist - Suggestions",
-            "actions": [
-              {
-                "user_action": "Taps '+' icon next to a suggested song",
-                "next_screen": "Playlist View"
-              },
-              {
-                "user_action": "Uses the search bar to find a specific song",
-                "next_screen": "Add to Playlist - Search"
-              }
-            ]
-          },
-          {
-            "screen_name": "Add to Playlist - Search",
-            "actions": [
-              {
-                "user_action": "Enters song name, taps '+' icon next to the desired song",
-                "next_screen": "Playlist View"
-              }
-            ]
-          },
-          {
-            "screen_name": "Playlist Options Menu",
-            "actions": [
-              {
-                "user_action": "Taps 'Edit playlist'",
-                "next_screen": "Edit Playlist"
-              },
-              {
-                "user_action": "Taps 'Add to profile'",
-                "next_screen": "Playlist View"
-              },
-              {
-                "user_action": "Taps 'Delete playlist'",
-                "next_screen": "Delete Playlist Confirmation"
-              }
-            ]
-          },
-          {
-            "screen_name": "Edit Playlist",
-            "actions": [
-              {
-                "user_action": "Changes playlist name or description, taps 'Done'",
-                "next_screen": "Playlist View"
-              }
-            ]
-          },
-          {
-            "screen_name": "Delete Playlist Confirmation",
-            "actions": [
-              {
-                "user_action": "Taps 'DELETE'",
-                "next_screen": "Your Library"
-              },
-              {
-                "user_action": "Taps 'CANCEL'",
-                "next_screen": "Playlist View"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "Player Controls",
-        "screens": [
-          {
-            "screen_name": "Now Playing",
-            "actions": [
-              {
-                "user_action": "Taps pause/play button",
-                "next_screen": "Now Playing"
-              },
-              {
-                "user_action": "Taps queue icon",
-                "next_screen": "Queue"
-              },
-              {
-                "user_action": "Taps 'Connect to a device' icon",
-                "next_screen": "Connect to a Device"
-              },
-              {
-                "user_action": "Taps three-dots menu for song options",
-                "next_screen": "Song Options Menu"
-              },
-              {
-                "user_action": "Swipes down to minimize player",
-                "next_screen": "Home"
-              }
-            ]
-          },
-          {
-            "screen_name": "Queue",
-            "actions": [
-              {
-                "user_action": "Drags a song to reorder the queue",
-                "next_screen": "Queue"
-              },
-              {
-                "user_action": "Taps 'Clear queue'",
-                "next_screen": "Queue"
-              },
-              {
-                "user_action": "Taps back arrow",
-                "next_screen": "Now Playing"
-              }
-            ]
-          },
-          {
-            "screen_name": "Connect to a Device",
-            "actions": [
-              {
-                "user_action": "Selects a device from the list (e.g., Chromecast, Bluetooth speaker)",
-                "next_screen": "Now Playing"
-              },
-              {
-                "user_action": "Closes the device list",
-                "next_screen": "Now Playing"
-              }
-            ]
-          },
-          {
-            "screen_name": "Song Options Menu",
-            "actions": [
-              {
-                "user_action": "Taps 'Add to Playlist'",
-                "next_screen": "Add to Playlist"
-              },
-              {
-                "user_action": "Taps 'View Artist'",
-                "next_screen": "Artist Profile"
-              },
-              {
-                "user_action": "Taps 'View Album'",
-                "next_screen": "Album View"
-              }
-            ]
-          },
-          {
-            "screen_name": "Add to Playlist",
-            "actions": [
-              {
-                "user_action": "Taps an existing playlist",
-                "next_screen": "Now Playing"
-              },
-              {
-                "user_action": "Taps 'New playlist'",
-                "next_screen": "Create Playlist"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "Settings and Profile",
-        "screens": [
-          {
-            "screen_name": "Settings",
-            "actions": [
-              {
-                "user_action": "Taps 'View Profile'",
-                "next_screen": "Profile"
-              },
-              {
-                "user_action": "Taps 'Account'",
-                "next_screen": "Account Settings"
-              },
-              {
-                "user_action": "Taps 'Data Saver'",
-                "next_screen": "Data Saver Settings"
-              },
-              {
-                "user_action": "Taps 'Playback'",
-                "next_screen": "Playback Settings"
-              },
-              {
-                "user_action": "Scrolls down and taps 'Log out'",
-                "next_screen": "Log Out Confirmation"
-              }
-            ]
-          },
-          {
-            "screen_name": "Profile",
-            "actions": [
-              {
-                "user_action": "Taps 'Edit profile'",
-                "next_screen": "Edit Profile"
-              },
-              {
-                "user_action": "Taps a public playlist",
-                "next_screen": "Playlist View"
-              }
-            ]
-          },
-          {
-            "screen_name": "Edit Profile",
-            "actions": [
-              {
-                "user_action": "Changes profile picture or name, taps 'Save'",
-                "next_screen": "Profile"
-              }
-            ]
-          },
-          {
-            "screen_name": "Account Settings",
-            "actions": [
-              {
-                "user_action": "Taps 'Email address'",
-                "next_screen": "Update Email"
-              },
-              {
-                "user_action": "Taps 'Password'",
-                "next_screen": "Change Password"
-              }
-            ]
-          },
-          {
-            "screen_name": "Data Saver Settings",
-            "actions": [
-              {
-                "user_action": "Toggles 'Data Saver' on/off",
-                "next_screen": "Settings"
-              }
-            ]
-          },
-          {
-            "screen_name": "Playback Settings",
-            "actions": [
-              {
-                "user_action": "Toggles 'Gapless' playback",
-                "next_screen": "Settings"
-              },
-              {
-                "user_action": "Adjusts 'Streaming Quality'",
-                "next_screen": "Settings"
-              }
-            ]
-          },
-          {
-            "screen_name": "Log Out Confirmation",
-            "actions": [
-              {
-                "user_action": "Taps 'LOG OUT'",
-                "next_screen": "Launch Screen"
-              },
-              {
-                "user_action": "Taps 'CANCEL'",
-                "next_screen": "Settings"
-              }
-            ]
-          },
-          {
-            "screen_name": "Update Email",
-            "actions": [
-              {
-                "user_action": "Enters new email and current password, taps 'SAVE'",
-                "next_screen": "Account Settings"
-              }
-            ]
-          },
-          {
-            "screen_name": "Change Password",
-            "actions": [
-              {
-                "user_action": "Enters current and new password, taps 'SET NEW PASSWORD'",
-                "next_screen": "Account Settings"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "Premium Upsell",
-        "screens": [
-          {
-            "screen_name": "Premium Plan Overview",
-            "actions": [
-              {
-                "user_action": "Taps 'GET PREMIUM'",
-                "next_screen": "Subscription Purchase"
-              },
-              {
-                "user_action": "Taps 'VIEW ALL PLANS'",
-                "next_screen": "All Premium Plans"
-              }
-            ]
-          },
-          {
-            "screen_name": "All Premium Plans",
-            "actions": [
-              {
-                "user_action": "Selects a plan (e.g., Duo, Family) and taps 'GET PREMIUM'",
-                "next_screen": "Subscription Purchase"
-              }
-            ]
-          },
-          {
-            "screen_name": "Subscription Purchase",
-            "actions": [
-              {
-                "user_action": "Completes purchase via Google Play payment sheet",
-                "next_screen": "Home"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
-}
-
-
-============================================================
-### APP 2: Airbnb
-============================================================
-json
-{
-  "app_screen_flow": {
-    "app_name": "Airbnb",
-    "total_flows": 6,
-    "total_screens": 28,
-    "flows": [
-      {
-        "flow_name": "Authentication",
-        "screens": [
-          {
-            "screen_name": "Welcome",
-            "actions": [
-              {
-                "user_action": "Tap 'Continue with phone number'",
-                "next_screen": "Log in or sign up"
-              },
-              {
-                "user_action": "Tap 'Continue with Google'",
-                "next_screen": "Explore"
-              },
-              {
-                "user_action": "Tap 'Continue with Facebook'",
-                "next_screen": "Explore"
-              },
-              {
-                "user_action": "Tap 'Continue with email'",
-                "next_screen": "Log in or sign up"
-              },
-              {
-                "user_action": "Tap 'Log in'",
-                "next_screen": "Log in or sign up"
-              }
-            ]
-          },
-          {
-            "screen_name": "Log in or sign up",
-            "actions": [
-              {
-                "user_action": "Enter phone number and tap 'Continue'",
-                "next_screen": "Confirm your number"
-              },
-              {
-                "user_action": "Enter email address and tap 'Continue'",
-                "next_screen": "Enter Password"
-              }
-            ]
-          },
-          {
-            "screen_name": "Confirm your number",
-            "actions": [
-              {
-                "user_action": "Enter 6-digit code sent via SMS",
-                "next_screen": "Finish signing up"
-              }
-            ]
-          },
-          {
-            "screen_name": "Enter Password",
-            "actions": [
-              {
-                "user_action": "Enter password and tap 'Log in'",
-                "next_screen": "Explore"
-              }
-            ]
-          },
-          {
-            "screen_name": "Finish signing up",
-            "actions": [
-              {
-                "user_action": "Enter First Name, Last Name, Date of birth, Email address and tap 'Agree and continue'",
-                "next_screen": "Explore"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "Search and Filter",
-        "screens": [
-          {
-            "screen_name": "Explore",
-            "actions": [
-              {
-                "user_action": "Tap 'Where to?' search bar",
-                "next_screen": "Search"
-              },
-              {
-                "user_action": "Tap category icon (e.g., 'Amazing pools', 'Cabins')",
-                "next_screen": "Search Results"
-              },
-              {
-                "user_action": "Tap 'Wishlists' in bottom navigation",
-                "next_screen": "Wishlists"
-              },
-              {
-                "user_action": "Tap 'Trips' in bottom navigation",
-                "next_screen": "Trips"
-              },
-              {
-                "user_action": "Tap 'Inbox' in bottom navigation",
-                "next_screen": "Inbox"
-              },
-              {
-                "user_action": "Tap 'Profile' in bottom navigation",
-                "next_screen": "Profile"
-              }
-            ]
-          },
-          {
-            "screen_name": "Search",
-            "actions": [
-              {
-                "user_action": "Tap 'Search destinations'",
-                "next_screen": "Search - Destination"
-              },
-              {
-                "user_action": "Tap 'Choose dates'",
-                "next_screen": "Search - Dates"
-              },
-              {
-                "user_action": "Tap 'Add guests'",
-                "next_screen": "Search - Guests"
-              }
-            ]
-          },
-          {
-            "screen_name": "Search - Destination",
-            "actions": [
-              {
-                "user_action": "Enter destination text and select a location from results",
-                "next_screen": "Search"
-              }
-            ]
-          },
-          {
-            "screen_name": "Search - Dates",
-            "actions": [
-              {
-                "user_action": "Select check-in and check-out dates from calendar",
-                "next_screen": "Search - Dates"
-              },
-              {
-                "user_action": "Tap 'Next'",
-                "next_screen": "Search - Guests"
-              },
-              {
-                "user_action": "Tap 'Skip'",
-                "next_screen": "Search Results"
-              }
-            ]
-          },
-          {
-            "screen_name": "Search - Guests",
-            "actions": [
-              {
-                "user_action": "Adjust number of Adults, Children, Infants, Pets",
-                "next_screen": "Search - Guests"
-              },
-              {
-                "user_action": "Tap 'Search'",
-                "next_screen": "Search Results"
-              }
-            ]
-          },
-          {
-            "screen_name": "Search Results",
-            "actions": [
-              {
-                "user_action": "Tap a listing from the map or list",
-                "next_screen": "Listing Details"
-              },
-              {
-                "user_action": "Tap filter icon",
-                "next_screen": "Filters"
-              },
-              {
-                "user_action": "Tap map view toggle",
-                "next_screen": "Search Results"
-              }
-            ]
-          },
-          {
-            "screen_name": "Filters",
-            "actions": [
-              {
-                "user_action": "Adjust filter options (e.g., price range, type of place, rooms, beds, amenities)",
-                "next_screen": "Filters"
-              },
-              {
-                "user_action": "Tap 'Show homes'",
-                "next_screen": "Search Results"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "Booking",
-        "screens": [
-          {
-            "screen_name": "Listing Details",
-            "actions": [
-              {
-                "user_action": "Tap 'Reserve'",
-                "next_screen": "Request to Book"
-              },
-              {
-                "user_action": "Tap heart icon to wishlist",
-                "next_screen": "Add to wishlist"
-              },
-              {
-                "user_action": "Tap 'Message host'",
-                "next_screen": "Messaging"
-              }
-            ]
-          },
-          {
-            "screen_name": "Request to Book",
-            "actions": [
-              {
-                "user_action": "Review trip details (dates, guests)",
-                "next_screen": "Request to Book"
-              },
-              {
-                "user_action": "Choose payment method",
-                "next_screen": "Request to Book"
-              },
-              {
-                "user_action": "Tap 'Confirm and pay'",
-                "next_screen": "Booking Confirmed"
-              }
-            ]
-          },
-          {
-            "screen_name": "Booking Confirmed",
-            "actions": [
-              {
-                "user_action": "View confirmation details",
-                "end_state": true
-              },
-              {
-                "user_action": "Tap 'View trip details'",
-                "next_screen": "Reservation Details"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "Wishlist Management",
-        "screens": [
-          {
-            "screen_name": "Wishlists",
-            "actions": [
-              {
-                "user_action": "Tap on an existing wishlist",
-                "next_screen": "Wishlist Details"
-              },
-              {
-                "user_action": "Tap 'Create new wishlist'",
-                "next_screen": "Name this wishlist"
-              },
-              {
-                "user_action": "Tap 'Explore' in bottom navigation",
-                "next_screen": "Explore"
-              }
-            ]
-          },
-          {
-            "screen_name": "Add to wishlist",
-            "actions": [
-              {
-                "user_action": "Select an existing wishlist to add the item",
-                "next_screen": "Listing Details"
-              },
-              {
-                "user_action": "Tap 'Create new wishlist'",
-                "next_screen": "Name this wishlist"
-              }
-            ]
-          },
-          {
-            "screen_name": "Name this wishlist",
-            "actions": [
-              {
-                "user_action": "Enter wishlist name and tap 'Create'",
-                "next_screen": "Listing Details"
-              }
-            ]
-          },
-          {
-            "screen_name": "Wishlist Details",
-            "actions": [
-              {
-                "user_action": "Tap on a wishlisted item",
-                "next_screen": "Listing Details"
-              },
-              {
-                "user_action": "Tap back",
-                "next_screen": "Wishlists"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "Trip and Message Management",
-        "screens": [
-          {
-            "screen_name": "Trips",
-            "actions": [
-              {
-                "user_action": "Tap on an upcoming trip",
-                "next_screen": "Reservation Details"
-              },
-              {
-                "user_action": "Tap 'Past' tab to view previous trips",
-                "next_screen": "Trips"
-              },
-              {
-                "user_action": "Tap 'Explore' in bottom navigation",
-                "next_screen": "Explore"
-              }
-            ]
-          },
-          {
-            "screen_name": "Reservation Details",
-            "actions": [
-              {
-                "user_action": "Tap 'Get directions'",
-                "next_screen": "External Maps App"
-              },
-              {
-                "user_action": "Tap 'Message host'",
-                "next_screen": "Messaging"
-              },
-              {
-                "user_action": "Tap 'Show more trip details'",
-                "next_screen": "Reservation Details"
-              },
-              {
-                "user_action": "Tap back",
-                "next_screen": "Trips"
-              }
-            ]
-          },
-          {
-            "screen_name": "External Maps App",
-            "actions": [
-              {
-                "user_action": "View directions in default maps application",
-                "end_state": true
-              }
-            ]
-          },
-          {
-            "screen_name": "Inbox",
-            "actions": [
-              {
-                "user_action": "Tap on a message thread",
-                "next_screen": "Messaging"
-              },
-              {
-                "user_action": "Tap 'Explore' in bottom navigation",
-                "next_screen": "Explore"
-              }
-            ]
-          },
-          {
-            "screen_name": "Messaging",
-            "actions": [
-              {
-                "user_action": "Type and send a message",
-                "next_screen": "Messaging"
-              },
-              {
-                "user_action": "Tap back",
-                "next_screen": "Inbox"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "Profile and Account",
-        "screens": [
-          {
-            "screen_name": "Profile",
-            "actions": [
-              {
-                "user_action": "Tap 'Account'",
-                "next_screen": "Account Settings"
-              },
-              {
-                "user_action": "Tap 'Switch to hosting'",
-                "next_screen": "Host Mode"
-              },
-              {
-                "user_action": "Tap 'Help & feedback'",
-                "next_screen": "Help Center"
-              },
-              {
-                "user_action": "Tap 'Explore' in bottom navigation",
-                "next_screen": "Explore"
-              }
-            ]
-          },
-          {
-            "screen_name": "Account Settings",
-            "actions": [
-              {
-                "user_action": "Tap 'Personal info'",
-                "next_screen": "Personal Info"
-              },
-              {
-                "user_action": "Tap 'Login & security'",
-                "next_screen": "Login & Security"
-              },
-              {
-                "user_action": "Tap 'Payments & payouts'",
-                "next_screen": "Payments & Payouts"
-              },
-              {
-                "user_action": "Tap back",
-                "next_screen": "Profile"
-              }
-            ]
-          },
-          {
-            "screen_name": "Personal Info",
-            "actions": [
-              {
-                "user_action": "Tap on a field to edit (e.g., Legal name, Email address)",
-                "next_screen": "Edit Personal Info"
-              },
-              {
-                "user_action": "Tap back",
-                "next_screen": "Account Settings"
-              }
-            ]
-          },
-          {
-            "screen_name": "Edit Personal Info",
-            "actions": [
-              {
-                "user_action": "Update information and tap 'Save'",
-                "next_screen": "Personal Info"
-              }
-            ]
-          },
-          {
-            "screen_name": "Login & Security",
-            "actions": [
-              {
-                "user_action": "Tap 'Password'",
-                "next_screen": "Update Password"
-              },
-              {
-                "user_action": "Tap back",
-                "next_screen": "Account Settings"
-              }
-            ]
-          },
-          {
-            "screen_name": "Update Password",
-            "actions": [
-              {
-                "user_action": "Enter current and new password, tap 'Update password'",
-                "next_screen": "Login & Security"
-              }
-            ]
-          },
-          {
-            "screen_name": "Payments & Payouts",
-            "actions": [
-              {
-                "user_action": "Tap 'Add payment method'",
-                "next_screen": "Add Payment Method"
-              },
-              {
-                "user_action": "Tap back",
-                "next_screen": "Account Settings"
-              }
-            ]
-          },
-          {
-            "screen_name": "Add Payment Method",
-            "actions": [
-              {
-                "user_action": "Enter credit card details and tap 'Save'",
-                "next_screen": "Payments & Payouts"
-              }
-            ]
-          },
-          {
-            "screen_name": "Host Mode",
-            "actions": [
-              {
-                "user_action": "View hosting dashboard",
-                "end_state": true
-              }
-            ]
-          },
-          {
-            "screen_name": "Help Center",
-            "actions": [
-              {
-                "user_action": "Search for help articles",
-                "end_state": true
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
-}
-
-
-============================================================
-### APP 3: Duolingo
-============================================================
-json
-{
-  "app_screen_flow": {
-    "app_name": "Duolingo",
-    "total_flows": 5,
-    "total_screens": 33,
-    "flows": [
-      {
-        "flow_name": "Onboarding",
-        "screens": [
-          {
-            "screen_name": "Get Started",
-            "actions": [
-              {
-                "user_action": "Taps 'Get Started' button",
-                "next_screen": "Language Selection"
-              },
-              {
-                "user_action": "Taps 'I ALREADY HAVE AN ACCOUNT' button",
-                "next_screen": "Log In"
-              }
-            ]
-          },
-          {
-            "screen_name": "Language Selection",
-            "actions": [
-              {
-                "user_action": "Selects a language from the list and taps 'Continue'",
-                "next_screen": "Loading Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Loading Screen",
-            "actions": [
-              {
-                "user_action": "Automatic transition after course data loads",
-                "next_screen": "How did you hear about us?"
-              }
-            ]
-          },
-          {
-            "screen_name": "How did you hear about us?",
-            "actions": [
-              {
-                "user_action": "Selects an option (e.g., 'App Store') and taps 'Continue'",
-                "next_screen": "What's your motivation?"
-              }
-            ]
-          },
-          {
-            "screen_name": "What's your motivation?",
-            "actions": [
-              {
-                "user_action": "Selects a reason (e.g., 'Travel') and taps 'Continue'",
-                "next_screen": "Daily Goal"
-              }
-            ]
-          },
-          {
-            "screen_name": "Daily Goal",
-            "actions": [
-              {
-                "user_action": "Selects a daily XP goal (e.g., 'Regular - 15 minutes a day') and taps 'Continue'",
-                "next_screen": "Notifications Prompt"
-              }
-            ]
-          },
-          {
-            "screen_name": "Notifications Prompt",
-            "actions": [
-              {
-                "user_action": "Taps 'Allow' on system notification permission dialog",
-                "next_screen": "Choose Your Path"
-              },
-              {
-                "user_action": "Taps 'Not now' or denies system permission",
-                "next_screen": "Choose Your Path"
-              }
-            ]
-          },
-          {
-            "screen_name": "Choose Your Path",
-            "actions": [
-              {
-                "user_action": "Taps 'Learning [language] for the first time?'",
-                "next_screen": "Lesson Start"
-              },
-              {
-                "user_action": "Taps 'Already know some [language]?'",
-                "next_screen": "Placement Test"
-              }
-            ]
-          },
-          {
-            "screen_name": "Placement Test",
-            "actions": [
-              {
-                "user_action": "Completes a series of exercises to determine skill level",
-                "next_screen": "Test Results"
-              }
-            ]
-          },
-          {
-            "screen_name": "Test Results",
-            "actions": [
-              {
-                "user_action": "Taps 'Continue' after viewing placement results",
-                "next_screen": "Create a Profile"
-              }
-            ]
-          },
-          {
-            "screen_name": "Create a Profile",
-            "actions": [
-              {
-                "user_action": "Enters age, name, email, and password, then taps 'Create account'",
-                "next_screen": "Home (Learn Tab)"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "Authentication",
-        "screens": [
-          {
-            "screen_name": "Log In",
-            "actions": [
-              {
-                "user_action": "Enters email/username and password, then taps 'Sign In'",
-                "next_screen": "Home (Learn Tab)"
-              },
-              {
-                "user_action": "Taps 'Sign in with Facebook'",
-                "next_screen": "Home (Learn Tab)"
-              },
-              {
-                "user_action": "Taps 'Sign in with Google'",
-                "next_screen": "Home (Learn Tab)"
-              },
-              {
-                "user_action": "Taps 'Forgot password?'",
+                "user_action": "Taps 'Forgot Password?'",
                 "next_screen": "Forgot Password"
+              },
+              {
+                "user_action": "Taps 'Sign Up Free'",
+                "next_screen": "Sign Up - Email"
               }
             ]
           },
@@ -1387,178 +98,285 @@ json
             "screen_name": "Forgot Password",
             "actions": [
               {
-                "user_action": "Enters registered email and taps 'Send Email'",
-                "next_screen": "Password Reset Email Sent"
+                "user_action": "Enters registered email and taps 'Submit'",
+                "next_screen": "Forgot Password Confirmation"
               }
             ]
           },
           {
-            "screen_name": "Password Reset Email Sent",
+            "screen_name": "Forgot Password Confirmation",
             "actions": [
               {
-                "user_action": "Taps 'OK' on confirmation dialog",
-                "next_screen": "Log In"
+                "user_action": "Taps 'Back to Log In'",
+                "next_screen": "Log In Screen",
+                "is_end_state": true
               }
             ]
           }
         ]
       },
       {
-        "flow_name": "Core Lesson",
+        "flow_name": "Account Linking",
         "screens": [
           {
-            "screen_name": "Home (Learn Tab)",
+            "screen_name": "Dashboard",
             "actions": [
               {
-                "user_action": "Taps an available lesson on the learning path",
-                "next_screen": "Lesson Start"
+                "user_action": "Taps '+' (Link Account) icon",
+                "next_screen": "Link Account - Search"
+              }
+            ]
+          },
+          {
+            "screen_name": "Link Account - Search",
+            "actions": [
+              {
+                "user_action": "Taps on a popular institution logo (e.g., 'Chase')",
+                "next_screen": "Institution Login Prompt"
               },
               {
-                "user_action": "Taps 'Profile' tab icon",
-                "next_screen": "Profile"
+                "user_action": "Enters institution name in search bar (e.g., 'Bank of America')",
+                "next_screen": "Link Account - Search Results"
+              }
+            ]
+          },
+          {
+            "screen_name": "Link Account - Search Results",
+            "actions": [
+              {
+                "user_action": "Taps on an institution from the results list",
+                "next_screen": "Institution Login Prompt"
+              }
+            ]
+          },
+          {
+            "screen_name": "Institution Login Prompt",
+            "actions": [
+              {
+                "user_action": "Enters username and password for the selected institution and taps 'Continue'",
+                "next_screen": "Connecting to Institution"
               },
               {
-                "user_action": "Taps 'Super' tab icon",
-                "next_screen": "Super Duolingo Offer"
+                "user_action": "System determines institution uses OAuth, taps 'Continue'",
+                "next_screen": "Institution OAuth Login"
               }
             ]
           },
           {
-            "screen_name": "Lesson Start",
+            "screen_name": "Institution OAuth Login",
             "actions": [
               {
-                "user_action": "Taps 'Start' button to begin the lesson",
-                "next_screen": "Exercise (Match Pairs)"
+                "user_action": "User is redirected to a secure in-app browser or pop-up window for the institution's website. Enters credentials and completes MFA on the institution's page.",
+                "next_screen": "Connecting to Institution"
               }
             ]
           },
           {
-            "screen_name": "Exercise (Match Pairs)",
+            "screen_name": "Connecting to Institution",
             "actions": [
               {
-                "user_action": "Correctly matches all word pairs and taps 'Continue'",
-                "next_screen": "Exercise (Select Image)"
+                "user_action": "System successfully connects and retrieves accounts",
+                "next_screen": "Account Linking Success"
+              },
+              {
+                "user_action": "System fails to connect",
+                "next_screen": "Account Linking Error"
               }
             ]
           },
           {
-            "screen_name": "Exercise (Select Image)",
+            "screen_name": "Account Linking Success",
             "actions": [
               {
-                "user_action": "Selects the correct image corresponding to the prompt and taps 'Check'",
-                "next_screen": "Correct Answer Feedback"
+                "user_action": "Taps 'Done' or 'Continue'",
+                "next_screen": "Dashboard",
+                "is_end_state": true
               }
             ]
           },
           {
-            "screen_name": "Correct Answer Feedback",
+            "screen_name": "Account Linking Error",
             "actions": [
               {
-                "user_action": "Taps 'Continue' after seeing correct/incorrect feedback",
-                "next_screen": "Exercise (Translate Sentence)"
-              }
-            ]
-          },
-          {
-            "screen_name": "Exercise (Translate Sentence)",
-            "actions": [
+                "user_action": "Taps 'Try Again'",
+                "next_screen": "Institution Login Prompt"
+              },
               {
-                "user_action": "Constructs the correct sentence using word tiles and taps 'Check'",
-                "next_screen": "Lesson Complete"
-              }
-            ]
-          },
-          {
-            "screen_name": "Lesson Complete",
-            "actions": [
-              {
-                "user_action": "Taps 'Continue' after viewing XP and rewards",
-                "next_screen": "Daily Streak"
-              }
-            ]
-          },
-          {
-            "screen_name": "Daily Streak",
-            "actions": [
-              {
-                "user_action": "Taps 'Continue' after viewing streak progress",
-                "next_screen": "Home (Learn Tab)"
+                "user_action": "Taps 'Cancel'",
+                "next_screen": "Dashboard"
               }
             ]
           }
         ]
       },
       {
-        "flow_name": "Subscription",
+        "flow_name": "View Net Worth",
         "screens": [
           {
-            "screen_name": "Super Duolingo Offer",
+            "screen_name": "Dashboard",
             "actions": [
               {
-                "user_action": "Taps 'Start 2-week free trial' button",
-                "next_screen": "Unlock Super Duolingo"
+                "user_action": "Taps on 'Net Worth' summary card",
+                "next_screen": "Net Worth Details"
               }
             ]
           },
           {
-            "screen_name": "Unlock Super Duolingo",
+            "screen_name": "Net Worth Details",
             "actions": [
               {
-                "user_action": "Taps 'Start my free trial' button",
-                "next_screen": "Google Play Payment Sheet"
-              }
-            ]
-          },
-          {
-            "screen_name": "Google Play Payment Sheet",
-            "actions": [
-              {
-                "user_action": "Confirms subscription with biometrics or password",
-                "next_screen": "Subscription Confirmed"
+                "user_action": "Taps on an individual asset account (e.g., 'Checking')",
+                "next_screen": "Account Transactions"
               },
               {
-                "user_action": "Closes or cancels the payment sheet",
-                "next_screen": "Super Duolingo Offer"
-              }
-            ]
-          },
-          {
-            "screen_name": "Subscription Confirmed",
-            "actions": [
+                "user_action": "Taps on an individual liability account (e.g., 'Credit Card')",
+                "next_screen": "Account Transactions"
+              },
               {
-                "user_action": "Automatic transition back to the app",
-                "next_screen": "Home (Learn Tab)"
+                "user_action": "Taps back navigation",
+                "next_screen": "Dashboard"
               }
             ]
           }
         ]
       },
       {
-        "flow_name": "Profile & Settings",
+        "flow_name": "View Transactions and Budgeting",
         "screens": [
           {
-            "screen_name": "Profile",
+            "screen_name": "Dashboard",
             "actions": [
               {
-                "user_action": "Taps 'Settings' (gear) icon",
+                "user_action": "Taps on 'Spending' or 'Budget' summary card",
+                "next_screen": "Spending Overview"
+              },
+              {
+                "user_action": "Taps on 'Transactions' tab/link in main navigation",
+                "next_screen": "All Transactions"
+              }
+            ]
+          },
+          {
+            "screen_name": "Spending Overview",
+            "actions": [
+              {
+                "user_action": "Taps on a spending category (e.g., 'Groceries')",
+                "next_screen": "Category Transactions"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Dashboard"
+              }
+            ]
+          },
+          {
+            "screen_name": "All Transactions",
+            "actions": [
+              {
+                "user_action": "Taps on a specific transaction",
+                "next_screen": "Transaction Details"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Dashboard"
+              }
+            ]
+          },
+          {
+            "screen_name": "Category Transactions",
+            "actions": [
+              {
+                "user_action": "Taps on a specific transaction",
+                "next_screen": "Transaction Details"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Spending Overview"
+              }
+            ]
+          },
+          {
+            "screen_name": "Transaction Details",
+            "actions": [
+              {
+                "user_action": "Taps to change category",
+                "next_screen": "Transaction Details"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "All Transactions"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "View Investments",
+        "screens": [
+          {
+            "screen_name": "Dashboard",
+            "actions": [
+              {
+                "user_action": "Taps on 'Investing' or 'Portfolio' summary card",
+                "next_screen": "Investment Portfolio"
+              }
+            ]
+          },
+          {
+            "screen_name": "Investment Portfolio",
+            "actions": [
+              {
+                "user_action": "Taps on 'Holdings' tab",
+                "next_screen": "Investment Holdings"
+              },
+              {
+                "user_action": "Taps on 'Allocation' tab",
+                "next_screen": "Investment Allocation"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Dashboard"
+              }
+            ]
+          },
+          {
+            "screen_name": "Investment Holdings",
+            "actions": [
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Investment Portfolio"
+              }
+            ]
+          },
+          {
+            "screen_name": "Investment Allocation",
+            "actions": [
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Investment Portfolio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Enable Mobile App Verification",
+        "screens": [
+          {
+            "screen_name": "Dashboard",
+            "actions": [
+              {
+                "user_action": "Taps on user profile/menu icon",
+                "next_screen": "Main Menu"
+              }
+            ]
+          },
+          {
+            "screen_name": "Main Menu",
+            "actions": [
+              {
+                "user_action": "Taps 'Settings'",
                 "next_screen": "Settings"
-              },
-              {
-                "user_action": "Taps 'Add Friends' button",
-                "next_screen": "Add Friends"
-              },
-              {
-                "user_action": "Taps 'Learn' tab icon",
-                "next_screen": "Home (Learn Tab)"
-              }
-            ]
-          },
-          {
-            "screen_name": "Add Friends",
-            "actions": [
-              {
-                "user_action": "Taps back arrow",
-                "next_screen": "Profile"
               }
             ]
           },
@@ -1566,34 +384,433 @@ json
             "screen_name": "Settings",
             "actions": [
               {
-                "user_action": "Taps 'Edit Profile'",
-                "next_screen": "Edit Profile"
+                "user_action": "Taps 'Account' or 'Security'",
+                "next_screen": "Security Settings"
+              }
+            ]
+          },
+          {
+            "screen_name": "Security Settings",
+            "actions": [
+              {
+                "user_action": "Taps 'Mobile App Verification'",
+                "next_screen": "Enter Password for Verification"
+              }
+            ]
+          },
+          {
+            "screen_name": "Enter Password for Verification",
+            "actions": [
+              {
+                "user_action": "Enters Empower account password and taps 'Continue'",
+                "next_screen": "Register Device"
+              }
+            ]
+          },
+          {
+            "screen_name": "Register Device",
+            "actions": [
+              {
+                "user_action": "Taps 'Register this device'",
+                "next_screen": "Mobile Verification Enabled"
+              }
+            ]
+          },
+          {
+            "screen_name": "Mobile Verification Enabled",
+            "actions": [
+              {
+                "user_action": "System displays recovery codes. User acknowledges and taps 'Done'.",
+                "next_screen": "Security Settings",
+                "is_end_state": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+
+
+============================================================
+### APP 2: Rocket Money - Bills & Budgets
+============================================================
+{
+  "app_screen_flow": {
+    "app_name": "Rocket Money - Bills & Budgets",
+    "total_flows": 5,
+    "total_screens": 34,
+    "flows": [
+      {
+        "flow_name": "Onboarding",
+        "screens": [
+          {
+            "screen_name": "Onboarding - Welcome",
+            "actions": [
+              {
+                "user_action": "Taps 'Sign Up Free'",
+                "next_screen": "Sign Up Options"
+              }
+            ]
+          },
+          {
+            "screen_name": "Sign Up Options",
+            "actions": [
+              {
+                "user_action": "Taps 'Continue with Google'",
+                "next_screen": "Link Bank Account Introduction"
               },
               {
-                "user_action": "Taps 'Manage Courses'",
-                "next_screen": "Manage Courses"
+                "user_action": "Taps 'Continue with email'",
+                "next_screen": "Sign Up with Email"
+              }
+            ]
+          },
+          {
+            "screen_name": "Sign Up with Email",
+            "actions": [
+              {
+                "user_action": "Enters email and taps 'Continue'",
+                "next_screen": "Create Password"
+              }
+            ]
+          },
+          {
+            "screen_name": "Create Password",
+            "actions": [
+              {
+                "user_action": "Enters first name, last name, password and taps 'Create Account'",
+                "next_screen": "Link Bank Account Introduction"
+              }
+            ]
+          },
+          {
+            "screen_name": "Link Bank Account Introduction",
+            "actions": [
+              {
+                "user_action": "Taps 'Continue'",
+                "next_screen": "Select Institution"
+              }
+            ]
+          },
+          {
+            "screen_name": "Select Institution",
+            "actions": [
+              {
+                "user_action": "Taps a financial institution",
+                "next_screen": "Plaid - Connect to Institution"
+              },
+              {
+                "user_action": "Uses search bar to find institution",
+                "next_screen": "Plaid - Connect to Institution"
+              }
+            ]
+          },
+          {
+            "screen_name": "Plaid - Connect to Institution",
+            "actions": [
+              {
+                "user_action": "Taps 'Continue'",
+                "next_screen": "Plaid - Enter Credentials"
+              }
+            ]
+          },
+          {
+            "screen_name": "Plaid - Enter Credentials",
+            "actions": [
+              {
+                "user_action": "Enters username and password, taps 'Submit'",
+                "next_screen": "Plaid - Select Accounts"
+              }
+            ]
+          },
+          {
+            "screen_name": "Plaid - Select Accounts",
+            "actions": [
+              {
+                "user_action": "Selects accounts and taps 'Continue'",
+                "next_screen": "Plaid - Success"
+              }
+            ]
+          },
+          {
+            "screen_name": "Plaid - Success",
+            "actions": [
+              {
+                "user_action": "Taps 'Continue'",
+                "next_screen": "Analyzing Transactions"
+              }
+            ]
+          },
+          {
+            "screen_name": "Analyzing Transactions",
+            "actions": [
+              {
+                "user_action": "Waits for analysis to complete (automatic transition)",
+                "next_screen": "Found Recurring Bills"
+              }
+            ]
+          },
+          {
+            "screen_name": "Found Recurring Bills",
+            "actions": [
+              {
+                "user_action": "Taps 'Continue'",
+                "next_screen": "Enable Notifications"
+              }
+            ]
+          },
+          {
+            "screen_name": "Enable Notifications",
+            "actions": [
+              {
+                "user_action": "Taps 'Turn On Notifications'",
+                "next_screen": "Premium Upsell - Main"
+              },
+              {
+                "user_action": "Taps 'Maybe Later'",
+                "next_screen": "Premium Upsell - Main"
+              }
+            ]
+          },
+          {
+            "screen_name": "Premium Upsell - Main",
+            "actions": [
+              {
+                "user_action": "Taps 'Start Free Trial'",
+                "next_screen": "Premium Plan Selection"
+              },
+              {
+                "user_action": "Taps 'X' to close",
+                "next_screen": "Dashboard"
+              }
+            ]
+          },
+          {
+            "screen_name": "Premium Plan Selection",
+            "actions": [
+              {
+                "user_action": "Selects a monthly or annual plan",
+                "next_screen": "Confirm Premium Subscription"
+              }
+            ]
+          },
+          {
+            "screen_name": "Confirm Premium Subscription",
+            "actions": [
+              {
+                "user_action": "Taps 'Start Trial & Subscribe'",
+                "next_screen": "Dashboard"
+              }
+            ]
+          },
+          {
+            "screen_name": "Dashboard",
+            "actions": [
+              {
+                "user_action": "Onboarding flow complete",
+                "next_screen": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Cancel Subscription",
+        "screens": [
+          {
+            "screen_name": "Dashboard",
+            "actions": [
+              {
+                "user_action": "Taps 'Recurring' tab in bottom navigation",
+                "next_screen": "Recurring List"
+              }
+            ]
+          },
+          {
+            "screen_name": "Recurring List",
+            "actions": [
+              {
+                "user_action": "Taps a subscription",
+                "next_screen": "Subscription Details"
+              }
+            ]
+          },
+          {
+            "screen_name": "Subscription Details",
+            "actions": [
+              {
+                "user_action": "Taps 'Cancel this service for me'",
+                "next_screen": "Cancellation Method"
+              }
+            ]
+          },
+          {
+            "screen_name": "Cancellation Method",
+            "actions": [
+              {
+                "user_action": "Selects 'I want you to cancel it for me'",
+                "next_screen": "Cancellation Reason"
+              }
+            ]
+          },
+          {
+            "screen_name": "Cancellation Reason",
+            "actions": [
+              {
+                "user_action": "Selects a reason and taps 'Continue'",
+                "next_screen": "Cancellation Chat"
+              }
+            ]
+          },
+          {
+            "screen_name": "Cancellation Chat",
+            "actions": [
+              {
+                "user_action": "Taps 'Yes, please cancel'",
+                "next_screen": "Cancellation In Progress"
+              }
+            ]
+          },
+          {
+            "screen_name": "Cancellation In Progress",
+            "actions": [
+              {
+                "user_action": "Taps 'Done'",
+                "next_screen": "Recurring List"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "View Spending",
+        "screens": [
+          {
+            "screen_name": "Dashboard",
+            "actions": [
+              {
+                "user_action": "Taps 'Spending' tab in bottom navigation",
+                "next_screen": "Spending Overview"
+              }
+            ]
+          },
+          {
+            "screen_name": "Spending Overview",
+            "actions": [
+              {
+                "user_action": "Taps a spending category",
+                "next_screen": "Category Transaction List"
+              }
+            ]
+          },
+          {
+            "screen_name": "Category Transaction List",
+            "actions": [
+              {
+                "user_action": "Taps a specific transaction",
+                "next_screen": "Transaction Details"
+              }
+            ]
+          },
+          {
+            "screen_name": "Transaction Details",
+            "actions": [
+              {
+                "user_action": "Taps back arrow",
+                "next_screen": "Category Transaction List"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Create Budget",
+        "screens": [
+          {
+            "screen_name": "Dashboard",
+            "actions": [
+              {
+                "user_action": "Taps 'Budgets' tab in bottom navigation",
+                "next_screen": "Budgets Overview"
+              }
+            ]
+          },
+          {
+            "screen_name": "Budgets Overview",
+            "actions": [
+              {
+                "user_action": "Taps 'Create a budget'",
+                "next_screen": "Select Budget Category"
+              }
+            ]
+          },
+          {
+            "screen_name": "Select Budget Category",
+            "actions": [
+              {
+                "user_action": "Selects a category",
+                "next_screen": "Set Budget Amount"
+              }
+            ]
+          },
+          {
+            "screen_name": "Set Budget Amount",
+            "actions": [
+              {
+                "user_action": "Enters an amount and taps 'Create Budget'",
+                "next_screen": "Budgets Overview"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Access Settings",
+        "screens": [
+          {
+            "screen_name": "Dashboard",
+            "actions": [
+              {
+                "user_action": "Taps 'More' tab in bottom navigation",
+                "next_screen": "More Options"
+              }
+            ]
+          },
+          {
+            "screen_name": "More Options",
+            "actions": [
+              {
+                "user_action": "Taps 'Settings'",
+                "next_screen": "Settings"
+              }
+            ]
+          },
+          {
+            "screen_name": "Settings",
+            "actions": [
+              {
+                "user_action": "Taps 'Profile'",
+                "next_screen": "Profile Settings"
+              },
+              {
+                "user_action": "Taps 'Linked Accounts'",
+                "next_screen": "Linked Accounts List"
               },
               {
                 "user_action": "Taps 'Notifications'",
                 "next_screen": "Notification Settings"
               },
               {
-                "user_action": "Taps 'Sign Out'",
-                "next_screen": "Get Started"
-              },
-              {
-                "user_action": "Taps back arrow",
-                "next_screen": "Profile"
+                "user_action": "Taps 'Log Out'",
+                "next_screen": "Onboarding - Welcome"
               }
             ]
           },
           {
-            "screen_name": "Edit Profile",
+            "screen_name": "Profile Settings",
             "actions": [
-              {
-                "user_action": "Changes profile information and taps 'Save'",
-                "next_screen": "Settings"
-              },
               {
                 "user_action": "Taps back arrow",
                 "next_screen": "Settings"
@@ -1601,32 +818,11 @@ json
             ]
           },
           {
-            "screen_name": "Manage Courses",
+            "screen_name": "Linked Accounts List",
             "actions": [
-              {
-                "user_action": "Taps a different, existing course",
-                "next_screen": "Switch Course Confirmation"
-              },
-              {
-                "user_action": "Taps 'Add another course'",
-                "next_screen": "Language Selection"
-              },
               {
                 "user_action": "Taps back arrow",
                 "next_screen": "Settings"
-              }
-            ]
-          },
-          {
-            "screen_name": "Switch Course Confirmation",
-            "actions": [
-              {
-                "user_action": "Taps 'Switch' in the confirmation dialog",
-                "next_screen": "Home (Learn Tab)"
-              },
-              {
-                "user_action": "Taps 'Cancel' in the confirmation dialog",
-                "next_screen": "Manage Courses"
               }
             ]
           },
@@ -1634,12 +830,324 @@ json
             "screen_name": "Notification Settings",
             "actions": [
               {
-                "user_action": "Toggles various notification preferences",
-                "next_screen": "Notification Settings"
+                "user_action": "Taps back arrow",
+                "next_screen": "Settings"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+
+
+============================================================
+### APP 3: Mint: Budget & Track Bills
+============================================================
+{
+  "app_screen_flow": {
+    "app_name": "Mint: Budget & Track Bills",
+    "total_flows": 5,
+    "total_screens": 22,
+    "flows": [
+      {
+        "flow_name": "Onboarding and Authentication",
+        "screens": [
+          {
+            "screen_name": "Welcome",
+            "actions": [
+              {
+                "user_action": "Taps 'Sign up for free' button",
+                "next_screen": "Create Account"
               },
+              {
+                "user_action": "Taps 'Sign in' button",
+                "next_screen": "Sign In"
+              }
+            ]
+          },
+          {
+            "screen_name": "Create Account",
+            "actions": [
+              {
+                "user_action": "Enters email, password, phone number and taps 'Create account'",
+                "next_screen": "Verify Phone"
+              },
+              {
+                "user_action": "Taps 'Sign in' link",
+                "next_screen": "Sign In"
+              }
+            ]
+          },
+          {
+            "screen_name": "Sign In",
+            "actions": [
+              {
+                "user_action": "Enters email and password, taps 'Sign in'",
+                "next_screen": "Security Challenge"
+              },
+              {
+                "user_action": "Taps 'Create account' link",
+                "next_screen": "Create Account"
+              }
+            ]
+          },
+          {
+            "screen_name": "Verify Phone",
+            "actions": [
+              {
+                "user_action": "Enters verification code sent via SMS and taps 'Continue'",
+                "next_screen": "Add Accounts"
+              }
+            ]
+          },
+          {
+            "screen_name": "Security Challenge",
+            "actions": [
+              {
+                "user_action": "Enters verification code and taps 'Continue'",
+                "next_screen": "Overview"
+              }
+            ]
+          },
+          {
+            "screen_name": "Add Accounts",
+            "actions": [
+              {
+                "user_action": "Selects a financial institution (e.g., Chase)",
+                "next_screen": "Connect Account"
+              },
+              {
+                "user_action": "Taps 'Skip for now'",
+                "next_screen": "Overview"
+              }
+            ]
+          },
+          {
+            "screen_name": "Connect Account",
+            "actions": [
+              {
+                "user_action": "Enters bank credentials and completes authentication",
+                "next_screen": "Connecting Account"
+              }
+            ]
+          },
+          {
+            "screen_name": "Connecting Account",
+            "actions": [
+              {
+                "user_action": "Waits for account connection to complete",
+                "next_screen": "Connection Success"
+              }
+            ]
+          },
+          {
+            "screen_name": "Connection Success",
+            "actions": [
+              {
+                "user_action": "Taps 'Continue'",
+                "next_screen": "Overview"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Main Navigation and Overview",
+        "screens": [
+          {
+            "screen_name": "Overview",
+            "actions": [
+              {
+                "user_action": "Taps 'Monthly' tab at the bottom",
+                "next_screen": "Monthly Budget"
+              },
+              {
+                "user_action": "Taps 'Updates' tab at the bottom",
+                "next_screen": "Updates"
+              },
+              {
+                "user_action": "Taps 'Settings' tab at the bottom",
+                "next_screen": "Settings"
+              },
+              {
+                "user_action": "Taps a specific transaction in 'Recent Transactions' list",
+                "next_screen": "Transaction Details"
+              },
+              {
+                "user_action": "Taps '+' icon to add account",
+                "next_screen": "Add Accounts"
+              }
+            ]
+          },
+          {
+            "screen_name": "Updates",
+            "actions": [
+              {
+                "user_action": "Taps 'Overview' tab at the bottom",
+                "next_screen": "Overview"
+              },
+              {
+                "user_action": "Taps 'Monthly' tab at the bottom",
+                "next_screen": "Monthly Budget"
+              },
+              {
+                "user_action": "Taps 'Settings' tab at the bottom",
+                "next_screen": "Settings"
+              }
+            ]
+          },
+          {
+            "screen_name": "Settings",
+            "actions": [
+              {
+                "user_action": "Taps 'Accounts'",
+                "next_screen": "Accounts List"
+              },
+              {
+                "user_action": "Taps 'Sign Out'",
+                "next_screen": "Welcome"
+              },
+              {
+                "user_action": "Taps 'Overview' tab at the bottom",
+                "next_screen": "Overview"
+              }
+            ]
+          },
+          {
+            "screen_name": "Accounts List",
+            "actions": [
               {
                 "user_action": "Taps back arrow",
                 "next_screen": "Settings"
+              },
+              {
+                "user_action": "Taps '+' icon",
+                "next_screen": "Add Accounts"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Budget Management",
+        "screens": [
+          {
+            "screen_name": "Monthly Budget",
+            "actions": [
+              {
+                "user_action": "Taps on a budget category (e.g., 'Food & Dining')",
+                "next_screen": "Budget Category Details"
+              },
+              {
+                "user_action": "Taps 'Create a budget'",
+                "next_screen": "Create Budget - Select Category"
+              },
+              {
+                "user_action": "Taps 'Overview' tab at the bottom",
+                "next_screen": "Overview"
+              }
+            ]
+          },
+          {
+            "screen_name": "Budget Category Details",
+            "actions": [
+              {
+                "user_action": "Taps back arrow",
+                "next_screen": "Monthly Budget"
+              },
+              {
+                "user_action": "Taps a transaction in the list",
+                "next_screen": "Transaction Details"
+              }
+            ]
+          },
+          {
+            "screen_name": "Create Budget - Select Category",
+            "actions": [
+              {
+                "user_action": "Selects a category (e.g., 'Shopping')",
+                "next_screen": "Create Budget - Set Amount"
+              },
+              {
+                "user_action": "Taps 'Cancel'",
+                "next_screen": "Monthly Budget"
+              }
+            ]
+          },
+          {
+            "screen_name": "Create Budget - Set Amount",
+            "actions": [
+              {
+                "user_action": "Enters a budget amount and taps 'Save'",
+                "next_screen": "Monthly Budget"
+              },
+              {
+                "user_action": "Taps back arrow",
+                "next_screen": "Create Budget - Select Category"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Transaction Management",
+        "screens": [
+          {
+            "screen_name": "Transaction Details",
+            "actions": [
+              {
+                "user_action": "Taps 'Category' field",
+                "next_screen": "Edit Category"
+              },
+              {
+                "user_action": "Taps back arrow",
+                "next_screen": "Overview"
+              }
+            ]
+          },
+          {
+            "screen_name": "Edit Category",
+            "actions": [
+              {
+                "user_action": "Selects a new category and taps 'Save'",
+                "next_screen": "Transaction Details"
+              },
+              {
+                "user_action": "Taps 'Cancel'",
+                "next_screen": "Transaction Details"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Search",
+        "screens": [
+          {
+            "screen_name": "Search Transactions",
+            "actions": [
+              {
+                "user_action": "Enters search query in search bar",
+                "next_screen": "Search Results"
+              },
+              {
+                "user_action": "Taps 'Cancel'",
+                "next_screen": "Overview"
+              }
+            ]
+          },
+          {
+            "screen_name": "Search Results",
+            "actions": [
+              {
+                "user_action": "Taps on a transaction from the results list",
+                "next_screen": "Transaction Details"
+              },
+              {
+                "user_action": "Taps back arrow",
+                "next_screen": "Search Transactions"
               }
             ]
           }
