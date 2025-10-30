@@ -33,7 +33,7 @@ Below are verified screen flow trees for 10 competitor apps extracted :
 TASK
 ────────────────────────────
 Using the provided data:
-1. Design a **complete, hierarchical, and production-ready screen flow tree** for the new app.
+1. Design a **complete,end-to-end, hierarchical, and production-ready screen flow tree** for the new app.
 2. Base your design on:
    - Patterns observed in competitor flows
    - Unique features from app
@@ -60,7 +60,7 @@ Do not include explanations or prose — only output the valid JSON object with 
             types.Part.from_text(text="""You are a **Senior Mobile UX Flow Architect and Product Designer** specializing in Android UX systems for android apps.
 
 Your role is to design the **optimal, complete, and logically structured flow tree** for a new app concept based on:
-- Its **product description (app description)**
+- Its **app description**
 - The **verified screen flow trees of 10 competitor apps**
 
 ────────────────────────────

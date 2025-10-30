@@ -18,7 +18,7 @@ def generate(app_description: str):
         types.Content(
             role="user",
             parts=[
-                types.Part.from_text(text=f"""You are a top-tier Android app market research analyst. Your task is to identify the top 10 Android apps that are most functionally and semantically similar and highly relevant to the target app described below.
+                types.Part.from_text(text=f"""You are a top-tier Android app market research analyst. Your task is to identify the top 3 Android apps that are most functionally and semantically similar and highly relevant to the target app described below.
 
 INPUT:
 Target App Description: {app_description}
@@ -29,7 +29,7 @@ Exclude any app with fewer than 100,000 downloads.
 
 Ensure each app is unique by package ID and official name.
 
-Output exactly 10 apps. Deduplicate any repeated apps.
+Output exactly 3 apps. Deduplicate any repeated apps.
 
 METHOD (Advanced & Structured):
 
@@ -54,6 +54,8 @@ Estimated download count (must be ≥100,000; use lower bound of Play Store inst
 Functional similarity and market relevance.
 
 Output ONLY the JSON object conforming exactly to the schema below. No extra text, no markdown, no commentary.
+⚠️ **Do NOT include:**
+- Markdown formatting (e.g., ```json, ```)
 
 OUTPUT SCHEMA:
 {{
@@ -61,7 +63,7 @@ OUTPUT SCHEMA:
 "properties": {{
 "apps": {{
 "type": "array",
-"description": "List of the top 10 Android apps that are functionally similar, popular, and market-relevant to the target app. Each entry must represent a real, existing app with verified data.",
+"description": "List of the top 3 Android apps that are functionally similar, popular, and market-relevant to the target app. Each entry must represent a real, existing app with verified data.",
 "items": {{
 "type": "object",
 "properties": {{
@@ -77,8 +79,8 @@ OUTPUT SCHEMA:
 "required": ["app_name", "estimated_download_count"],
 "additionalProperties": false
 }},
-"minItems": 10,
-"maxItems": 10
+"minItems": 3,
+"maxItems": 3
 }}
 }},
 "required": ["apps"],
@@ -150,7 +152,6 @@ def extract_app_names(similar_apps_data: dict) -> list[str]:
         raise ValueError("Invalid input: 'apps' key not found in data")
     
     app_names = [app["app_name"] for app in similar_apps_data["apps"]]
-    
     
     return app_names
 
