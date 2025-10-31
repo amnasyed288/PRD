@@ -3,202 +3,159 @@
 
 
 ============================================================
-### APP 1: Empower Personal Dashboard
+### APP 1: Mint: Budget & Expense Tracker
 ============================================================
 {
   "app_screen_flow": {
-    "app_name": "Empower Personal Dashboard",
-    "total_flows": 5,
-    "total_screens": 22,
+    "app_name": "Mint: Budget & Expense Tracker",
+    "total_flows": 7,
+    "total_screens": 42,
     "flows": [
       {
         "flow_name": "Authentication",
         "screens": [
           {
-            "screen_name": "Welcome Screen",
+            "screen_name": "App Launch Screen",
             "actions": [
               {
-                "user_action": "Taps 'Log In' button",
-                "next_screen": "Log In Screen"
-              },
-              {
-                "user_action": "Taps 'Sign Up For Free' button",
-                "next_screen": "Sign Up Screen"
+                "user_action": "App opens for the first time or after being signed out",
+                "next_screen": "Sign Up or Sign In Screen"
               }
             ]
           },
           {
-            "screen_name": "Log In Screen",
+            "screen_name": "Sign Up or Sign In Screen",
             "actions": [
               {
-                "user_action": "Enters email address",
-                "next_screen": "Log In Screen"
+                "user_action": "Taps 'Sign In' button",
+                "next_screen": "Sign In Screen"
               },
               {
-                "user_action": "Enters password",
-                "next_screen": "Log In Screen"
-              },
-              {
-                "user_action": "Taps 'Log In' button",
-                "next_screen": "Dashboard"
-              },
-              {
-                "user_action": "Taps 'Forgot Password?' link",
-                "next_screen": "Forgot Password Screen"
+                "user_action": "Taps 'Create an account' button",
+                "next_screen": "Create Account - Email Screen"
               }
             ]
           },
           {
-            "screen_name": "Sign Up Screen",
+            "screen_name": "Sign In Screen",
             "actions": [
               {
-                "user_action": "Completes sign-up form (likely in a web view)",
-                "next_screen": "Dashboard"
+                "user_action": "Enters User ID and Password, taps 'Sign In'",
+                "next_screen": "Two-Factor Authentication Screen"
+              },
+              {
+                "user_action": "Taps 'Forgot your user ID or password?'",
+                "next_screen": "Password Recovery Screen"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Sign Up or Sign In Screen"
               }
             ]
           },
           {
-            "screen_name": "Forgot Password Screen",
+            "screen_name": "Two-Factor Authentication Screen",
             "actions": [
               {
-                "user_action": "Enters email and submits request",
-                "next_screen": "Log In Screen"
+                "user_action": "Enters verification code, taps 'Continue'",
+                "next_screen": "Overview Screen"
+              },
+              {
+                "user_action": "Requests a new code",
+                "next_screen": "Two-Factor Authentication Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Password Recovery Screen",
+            "actions": [
+              {
+                "user_action": "Enters email or phone number, taps 'Continue'",
+                "next_screen": "Password Recovery Instructions Sent Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Password Recovery Instructions Sent Screen",
+            "actions": [
+              {
+                "user_action": "Follows instructions sent via email/SMS (external flow)",
+                "next_screen": "Sign In Screen"
               }
             ]
           }
         ]
       },
       {
-        "flow_name": "Main Navigation",
+        "flow_name": "Account Creation and Onboarding",
         "screens": [
           {
-            "screen_name": "Dashboard",
+            "screen_name": "Create Account - Email Screen",
             "actions": [
               {
-                "user_action": "Taps 'Planning' tab in bottom navigation",
-                "next_screen": "Planning Screen"
-              },
-              {
-                "user_action": "Taps 'Investing' tab in bottom navigation",
-                "next_screen": "Investing Screen"
-              },
-              {
-                "user_action": "Taps 'Spending' tab in bottom navigation",
-                "next_screen": "Spending Screen"
-              },
-              {
-                "user_action": "Taps 'Wealth' tab in bottom navigation",
-                "next_screen": "Wealth Screen"
+                "user_action": "Enters email, taps 'Continue'",
+                "next_screen": "Create Account - User ID Screen"
               }
             ]
           },
           {
-            "screen_name": "Planning Screen",
+            "screen_name": "Create Account - User ID Screen",
             "actions": [
               {
-                "user_action": "Taps 'Dashboard' tab in bottom navigation",
-                "next_screen": "Dashboard"
-              },
-              {
-                "user_action": "Taps 'Investing' tab in bottom navigation",
-                "next_screen": "Investing Screen"
-              },
-              {
-                "user_action": "Taps 'Spending' tab in bottom navigation",
-                "next_screen": "Spending Screen"
-              },
-              {
-                "user_action": "Taps 'Wealth' tab in bottom navigation",
-                "next_screen": "Wealth Screen"
+                "user_action": "Enters User ID, taps 'Continue'",
+                "next_screen": "Create Account - Phone Number Screen"
               }
             ]
           },
           {
-            "screen_name": "Investing Screen",
+            "screen_name": "Create Account - Phone Number Screen",
             "actions": [
               {
-                "user_action": "Taps 'Dashboard' tab in bottom navigation",
-                "next_screen": "Dashboard"
-              },
-              {
-                "user_action": "Taps 'Planning' tab in bottom navigation",
-                "next_screen": "Planning Screen"
-              },
-              {
-                "user_action": "Taps 'Spending' tab in bottom navigation",
-                "next_screen": "Spending Screen"
-              },
-              {
-                "user_action": "Taps 'Wealth' tab in bottom navigation",
-                "next_screen": "Wealth Screen"
+                "user_action": "Enters phone number, taps 'Continue'",
+                "next_screen": "Create Account - Password Screen"
               }
             ]
           },
           {
-            "screen_name": "Spending Screen",
+            "screen_name": "Create Account - Password Screen",
             "actions": [
               {
-                "user_action": "Taps 'Dashboard' tab in bottom navigation",
-                "next_screen": "Dashboard"
-              },
-              {
-                "user_action": "Taps 'Planning' tab in bottom navigation",
-                "next_screen": "Planning Screen"
-              },
-              {
-                "user_action": "Taps 'Investing' tab in bottom navigation",
-                "next_screen": "Investing Screen"
-              },
-              {
-                "user_action": "Taps 'Wealth' tab in bottom navigation",
-                "next_screen": "Wealth Screen"
+                "user_action": "Enters and confirms password, taps 'Create account'",
+                "next_screen": "Phone Verification Screen"
               }
             ]
           },
           {
-            "screen_name": "Wealth Screen",
+            "screen_name": "Phone Verification Screen",
             "actions": [
               {
-                "user_action": "Taps 'Dashboard' tab in bottom navigation",
-                "next_screen": "Dashboard"
-              },
-              {
-                "user_action": "Taps 'Planning' tab in bottom navigation",
-                "next_screen": "Planning Screen"
-              },
-              {
-                "user_action": "Taps 'Investing' tab in bottom navigation",
-                "next_screen": "Investing Screen"
-              },
-              {
-                "user_action": "Taps 'Spending' tab in bottom navigation",
-                "next_screen": "Spending Screen"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "Link Bank Account",
-        "screens": [
-          {
-            "screen_name": "Dashboard",
-            "actions": [
-              {
-                "user_action": "Taps '+' icon in top right",
-                "next_screen": "Link an Account Screen"
+                "user_action": "Enters verification code sent via SMS, taps 'Continue'",
+                "next_screen": "Onboarding - Connect Account Intro Screen"
               }
             ]
           },
           {
-            "screen_name": "Link an Account Screen",
+            "screen_name": "Onboarding - Connect Account Intro Screen",
             "actions": [
               {
-                "user_action": "Taps a suggested institution (e.g., 'Chase')",
+                "user_action": "Taps 'Connect an account'",
+                "next_screen": "Search For Institution Screen"
+              },
+              {
+                "user_action": "Taps 'Skip for now'",
+                "next_screen": "Overview Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Search For Institution Screen",
+            "actions": [
+              {
+                "user_action": "Selects a popular institution from the list",
                 "next_screen": "Institution Login Screen"
               },
               {
-                "user_action": "Uses search bar to find an institution",
+                "user_action": "Uses search bar to find and select an institution",
                 "next_screen": "Institution Login Screen"
               }
             ]
@@ -207,272 +164,7 @@
             "screen_name": "Institution Login Screen",
             "actions": [
               {
-                "user_action": "Enters User ID for the selected institution",
-                "next_screen": "Institution Login Screen"
-              },
-              {
-                "user_action": "Enters Password for the selected institution",
-                "next_screen": "Institution Login Screen"
-              },
-              {
-                "user_action": "Taps 'Sign In' or 'Link Account' button",
-                "next_screen": "Linking Account Progress Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Linking Account Progress Screen",
-            "actions": [
-              {
-                "user_action": "Waits for linking process to complete (automatic transition)",
-                "next_screen": "Accounts Found Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Accounts Found Screen",
-            "actions": [
-              {
-                "user_action": "Taps 'Continue' button",
-                "next_screen": "Dashboard"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "View Transactions",
-        "screens": [
-          {
-            "screen_name": "Spending Screen",
-            "actions": [
-              {
-                "user_action": "Taps 'Transactions' sub-tab",
-                "next_screen": "Transactions List Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Transactions List Screen",
-            "actions": [
-              {
-                "user_action": "Taps on a specific transaction",
-                "next_screen": "Transaction Details Screen"
-              },
-              {
-                "user_action": "Taps 'Filter' icon",
-                "next_screen": "Filter Transactions Screen"
-              },
-              {
-                "user_action": "Taps 'Back' arrow",
-                "next_screen": "Spending Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Transaction Details Screen",
-            "actions": [
-              {
-                "user_action": "Taps 'Back' arrow",
-                "next_screen": "Transactions List Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Filter Transactions Screen",
-            "actions": [
-              {
-                "user_action": "Selects filter criteria (e.g., date range, category)",
-                "next_screen": "Filter Transactions Screen"
-              },
-              {
-                "user_action": "Taps 'Apply' button",
-                "next_screen": "Transactions List Screen"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "View Investment Portfolio",
-        "screens": [
-          {
-            "screen_name": "Investing Screen",
-            "actions": [
-              {
-                "user_action": "Taps on 'Holdings' sub-tab",
-                "next_screen": "Investment Holdings Screen"
-              },
-              {
-                "user_action": "Taps on 'Allocation' sub-tab",
-                "next_screen": "Investment Allocation Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Investment Holdings Screen",
-            "actions": [
-              {
-                "user_action": "Taps on a specific holding",
-                "next_screen": "Holding Details Screen"
-              },
-              {
-                "user_action": "Taps 'Back' arrow",
-                "next_screen": "Investing Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Investment Allocation Screen",
-            "actions": [
-              {
-                "user_action": "Taps on an asset class",
-                "next_screen": "Asset Class Details Screen"
-              },
-              {
-                "user_action": "Taps 'Back' arrow",
-                "next_screen": "Investing Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Holding Details Screen",
-            "actions": [
-              {
-                "user_action": "Taps 'Back' arrow",
-                "next_screen": "Investment Holdings Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Asset Class Details Screen",
-            "actions": [
-              {
-                "user_action": "Taps 'Back' arrow",
-                "next_screen": "Investment Allocation Screen"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
-}
-
-
-============================================================
-### APP 2: Rocket Money - Bills & Budgets
-============================================================
-{
-  "app_screen_flow": {
-    "app_name": "Rocket Money - Bills & Budgets",
-    "total_flows": 7,
-    "total_screens": 32,
-    "flows": [
-      {
-        "flow_name": "Authentication",
-        "screens": [
-          {
-            "screen_name": "Splash Screen",
-            "actions": [
-              {
-                "user_action": "Tap 'Sign Up for Free'",
-                "next_screen": "Sign Up Screen"
-              },
-              {
-                "user_action": "Tap 'Log In'",
-                "next_screen": "Log In Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Sign Up Screen",
-            "actions": [
-              {
-                "user_action": "Enter email and password, tap 'Create account'",
-                "next_screen": "Connect Your Bank Screen"
-              },
-              {
-                "user_action": "Tap 'Continue with Google'",
-                "next_screen": "Connect Your Bank Screen"
-              },
-              {
-                "user_action": "Tap 'Continue with Apple'",
-                "next_screen": "Connect Your Bank Screen"
-              },
-              {
-                "user_action": "Tap 'Log In'",
-                "next_screen": "Log In Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Log In Screen",
-            "actions": [
-              {
-                "user_action": "Enter email and password, tap 'Log In'",
-                "next_screen": "Dashboard Screen"
-              },
-              {
-                "user_action": "Tap 'Forgot password?'",
-                "next_screen": "Forgot Password Screen"
-              },
-              {
-                "user_action": "Tap 'Sign Up'",
-                "next_screen": "Sign Up Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Forgot Password Screen",
-            "actions": [
-              {
-                "user_action": "Enter email and tap 'Send Reset Link'",
-                "next_screen": "Log In Screen"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "Onboarding & Account Linking",
-        "screens": [
-          {
-            "screen_name": "Connect Your Bank Screen",
-            "actions": [
-              {
-                "user_action": "Tap 'Connect my main account'",
-                "next_screen": "Select Institution Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Select Institution Screen",
-            "actions": [
-              {
-                "user_action": "Select a financial institution from the list",
-                "next_screen": "Enter Bank Credentials Screen"
-              },
-              {
-                "user_action": "Use the search bar to find an institution",
-                "next_screen": "Search Institution Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Search Institution Screen",
-            "actions": [
-              {
-                "user_action": "Type institution name and select from results",
-                "next_screen": "Enter Bank Credentials Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Enter Bank Credentials Screen",
-            "actions": [
-              {
-                "user_action": "Enter username and password, tap 'Submit'",
+                "user_action": "Enters banking credentials and submits (via Plaid/WebView)",
                 "next_screen": "Connecting Account Screen"
               }
             ]
@@ -481,44 +173,17 @@
             "screen_name": "Connecting Account Screen",
             "actions": [
               {
-                "user_action": "Wait for account to connect",
-                "next_screen": "Connection Successful Screen"
+                "user_action": "Waits for connection to complete successfully",
+                "next_screen": "Account Connected Success Screen"
               }
             ]
           },
           {
-            "screen_name": "Connection Successful Screen",
+            "screen_name": "Account Connected Success Screen",
             "actions": [
               {
-                "user_action": "Tap 'Continue'",
-                "next_screen": "Analyzing Transactions Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Analyzing Transactions Screen",
-            "actions": [
-              {
-                "user_action": "Wait for analysis to complete",
-                "next_screen": "Found Recurring Bills Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Found Recurring Bills Screen",
-            "actions": [
-              {
-                "user_action": "Tap 'Continue'",
-                "next_screen": "Found Subscriptions Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Found Subscriptions Screen",
-            "actions": [
-              {
-                "user_action": "Tap 'Continue'",
-                "next_screen": "Dashboard Screen"
+                "user_action": "Taps 'Done' or 'Continue'",
+                "next_screen": "Overview Screen"
               }
             ]
           }
@@ -528,228 +193,316 @@
         "flow_name": "Main Navigation",
         "screens": [
           {
-            "screen_name": "Dashboard Screen",
+            "screen_name": "Overview Screen",
             "actions": [
               {
-                "user_action": "Tap 'Spending' tab",
-                "next_screen": "Spending Screen"
+                "user_action": "Taps 'Monthly' tab in bottom navigation",
+                "next_screen": "Monthly Budgets Screen"
               },
               {
-                "user_action": "Tap 'Recurring' tab",
-                "next_screen": "Recurring Screen"
+                "user_action": "Taps 'Marketplace' tab in bottom navigation",
+                "next_screen": "Marketplace Screen"
               },
               {
-                "user_action": "Tap 'Budget' tab",
-                "next_screen": "Budget Screen"
+                "user_action": "Taps 'Updates' tab in bottom navigation",
+                "next_screen": "Updates Screen"
               },
               {
-                "user_action": "Tap 'Settings' icon",
+                "user_action": "Taps 'Settings' icon in top navigation",
                 "next_screen": "Settings Screen"
               },
               {
-                "user_action": "Tap 'View all spending'",
-                "next_screen": "Spending Screen"
+                "user_action": "Taps on a recent transaction",
+                "next_screen": "Transaction Detail Screen"
               },
               {
-                "user_action": "Tap a recurring bill",
-                "next_screen": "Subscription Details Screen"
+                "user_action": "Taps 'See all transactions'",
+                "next_screen": "All Transactions Screen"
               }
             ]
           },
           {
-            "screen_name": "Spending Screen",
+            "screen_name": "Monthly Budgets Screen",
             "actions": [
               {
-                "user_action": "Tap 'Dashboard' tab",
-                "next_screen": "Dashboard Screen"
+                "user_action": "Taps 'Overview' tab in bottom navigation",
+                "next_screen": "Overview Screen"
               },
               {
-                "user_action": "Tap 'Recurring' tab",
-                "next_screen": "Recurring Screen"
+                "user_action": "Taps 'Create a budget'",
+                "next_screen": "Create Budget - Select Category Screen"
               },
               {
-                "user_action": "Tap 'Budget' tab",
-                "next_screen": "Budget Screen"
-              },
-              {
-                "user_action": "Tap on a spending category",
-                "next_screen": "Category Spending Details Screen"
+                "user_action": "Taps on an existing budget category",
+                "next_screen": "Budget Detail Screen"
               }
             ]
           },
           {
-            "screen_name": "Recurring Screen",
+            "screen_name": "Marketplace Screen",
             "actions": [
               {
-                "user_action": "Tap 'Dashboard' tab",
-                "next_screen": "Dashboard Screen"
+                "user_action": "Taps 'Overview' tab in bottom navigation",
+                "next_screen": "Overview Screen"
               },
               {
-                "user_action": "Tap 'Spending' tab",
-                "next_screen": "Spending Screen"
-              },
-              {
-                "user_action": "Tap 'Budget' tab",
-                "next_screen": "Budget Screen"
-              },
-              {
-                "user_action": "Tap on a subscription",
-                "next_screen": "Subscription Details Screen"
+                "user_action": "Taps on a financial product offer (e.g., credit card)",
+                "next_screen": "Offer Detail Screen"
               }
             ]
           },
           {
-            "screen_name": "Budget Screen",
+            "screen_name": "Updates Screen",
             "actions": [
               {
-                "user_action": "Tap 'Dashboard' tab",
-                "next_screen": "Dashboard Screen"
+                "user_action": "Taps 'Overview' tab in bottom navigation",
+                "next_screen": "Overview Screen"
               },
               {
-                "user_action": "Tap 'Spending' tab",
-                "next_screen": "Spending Screen"
-              },
-              {
-                "user_action": "Tap 'Recurring' tab",
-                "next_screen": "Recurring Screen"
-              },
-              {
-                "user_action": "Tap '+ Create Budget'",
-                "next_screen": "Choose Category Screen"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "Creating a Budget",
-        "screens": [
-          {
-            "screen_name": "Choose Category Screen",
-            "actions": [
-              {
-                "user_action": "Select a category (e.g., 'Shopping')",
-                "next_screen": "Set Budget Amount Screen"
+                "user_action": "Taps on a notification or update item",
+                "next_screen": "Update Detail Screen"
               }
             ]
           },
-          {
-            "screen_name": "Set Budget Amount Screen",
-            "actions": [
-              {
-                "user_action": "Enter a budget amount and tap 'Create Budget'",
-                "next_screen": "Budget Details Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Budget Details Screen",
-            "actions": [
-              {
-                "user_action": "Tap back arrow",
-                "next_screen": "Budget Screen"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "Canceling a Subscription",
-        "screens": [
-          {
-            "screen_name": "Subscription Details Screen",
-            "actions": [
-              {
-                "user_action": "Tap 'Cancel this service for me'",
-                "next_screen": "Cancellation Method Screen"
-              },
-              {
-                "user_action": "Tap back arrow",
-                "next_screen": "Recurring Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Cancellation Method Screen",
-            "actions": [
-              {
-                "user_action": "Select a cancellation method",
-                "next_screen": "Cancellation Confirmation Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Cancellation Confirmation Screen",
-            "actions": [
-              {
-                "user_action": "Tap 'Confirm Cancellation Request'",
-                "next_screen": "Cancellation In Progress Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Cancellation In Progress Screen",
-            "actions": [
-              {
-                "user_action": "Tap 'Done'",
-                "next_screen": "Recurring Screen"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "Viewing Spending",
-        "screens": [
-          {
-            "screen_name": "Category Spending Details Screen",
-            "actions": [
-              {
-                "user_action": "Tap on a specific transaction",
-                "next_screen": "Transaction Details Screen"
-              },
-              {
-                "user_action": "Tap back arrow",
-                "next_screen": "Spending Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Transaction Details Screen",
-            "actions": [
-              {
-                "user_action": "Tap back arrow",
-                "next_screen": "Category Spending Details Screen"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "Settings",
-        "screens": [
           {
             "screen_name": "Settings Screen",
             "actions": [
               {
-                "user_action": "Tap 'Profile'",
+                "user_action": "Taps 'Overview' tab in bottom navigation",
+                "next_screen": "Overview Screen"
+              },
+              {
+                "user_action": "Taps 'Accounts'",
+                "next_screen": "Accounts List Screen"
+              },
+              {
+                "user_action": "Taps 'Notifications'",
+                "next_screen": "Notification Settings Screen"
+              },
+              {
+                "user_action": "Taps 'Profile'",
                 "next_screen": "Profile Screen"
               },
               {
-                "user_action": "Tap 'Linked Accounts'",
-                "next_screen": "Linked Accounts Screen"
+                "user_action": "Taps 'Sign Out'",
+                "next_screen": "Sign Out Confirmation Dialog"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Manage Transactions",
+        "screens": [
+          {
+            "screen_name": "All Transactions Screen",
+            "actions": [
+              {
+                "user_action": "Taps on a transaction in the list",
+                "next_screen": "Transaction Detail Screen"
               },
               {
-                "user_action": "Tap 'Notifications'",
-                "next_screen": "Notifications Screen"
+                "user_action": "Taps the filter icon",
+                "next_screen": "Filter Transactions Screen"
               },
               {
-                "user_action": "Tap 'Log Out'",
-                "next_screen": "Splash Screen"
+                "user_action": "Taps back navigation",
+                "next_screen": "Overview Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Transaction Detail Screen",
+            "actions": [
+              {
+                "user_action": "Taps the category field",
+                "next_screen": "Edit Transaction - Category Screen"
               },
               {
-                "user_action": "Tap back arrow",
-                "next_screen": "Dashboard Screen"
+                "user_action": "Taps the description field",
+                "next_screen": "Edit Transaction - Description Screen"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "All Transactions Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Edit Transaction - Category Screen",
+            "actions": [
+              {
+                "user_action": "Selects a new category and sub-category",
+                "next_screen": "Transaction Detail Screen"
+              },
+              {
+                "user_action": "Taps 'Done' or 'Save'",
+                "next_screen": "Transaction Detail Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Edit Transaction - Description Screen",
+            "actions": [
+              {
+                "user_action": "Edits the transaction description text",
+                "next_screen": "Transaction Detail Screen"
+              },
+              {
+                "user_action": "Taps 'Done' or 'Save'",
+                "next_screen": "Transaction Detail Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Filter Transactions Screen",
+            "actions": [
+              {
+                "user_action": "Selects filter criteria (e.g., by account, category, date)",
+                "next_screen": "All Transactions Screen"
+              },
+              {
+                "user_action": "Taps 'Apply Filters'",
+                "next_screen": "All Transactions Screen"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Manage Budgets",
+        "screens": [
+          {
+            "screen_name": "Create Budget - Select Category Screen",
+            "actions": [
+              {
+                "user_action": "Selects a spending category (e.g., 'Shopping')",
+                "next_screen": "Create Budget - Set Amount Screen"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Monthly Budgets Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Create Budget - Set Amount Screen",
+            "actions": [
+              {
+                "user_action": "Enters a budget amount",
+                "next_screen": "Monthly Budgets Screen"
+              },
+              {
+                "user_action": "Taps 'Save' or 'Done'",
+                "next_screen": "Monthly Budgets Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Budget Detail Screen",
+            "actions": [
+              {
+                "user_action": "Taps 'Edit Budget'",
+                "next_screen": "Edit Budget Screen"
+              },
+              {
+                "user_action": "Views list of transactions for this budget category",
+                "next_screen": "Budget Detail Screen"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Monthly Budgets Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Edit Budget Screen",
+            "actions": [
+              {
+                "user_action": "Changes the budget amount",
+                "next_screen": "Budget Detail Screen"
+              },
+              {
+                "user_action": "Taps 'Save'",
+                "next_screen": "Budget Detail Screen"
+              },
+              {
+                "user_action": "Taps 'Delete Budget'",
+                "next_screen": "Delete Budget Confirmation Dialog"
+              }
+            ]
+          },
+          {
+            "screen_name": "Delete Budget Confirmation Dialog",
+            "actions": [
+              {
+                "user_action": "Taps 'Delete'",
+                "next_screen": "Monthly Budgets Screen"
+              },
+              {
+                "user_action": "Taps 'Cancel'",
+                "next_screen": "Edit Budget Screen"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Settings and Profile Management",
+        "screens": [
+          {
+            "screen_name": "Accounts List Screen",
+            "actions": [
+              {
+                "user_action": "Taps on a specific account",
+                "next_screen": "Account Detail Screen"
+              },
+              {
+                "user_action": "Taps '+' to add a new account",
+                "next_screen": "Search For Institution Screen"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Settings Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Account Detail Screen",
+            "actions": [
+              {
+                "user_action": "Taps 'Mark as inactive' or 'Delete'",
+                "next_screen": "Delete Account Confirmation Dialog"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Accounts List Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Delete Account Confirmation Dialog",
+            "actions": [
+              {
+                "user_action": "Taps 'Delete'",
+                "next_screen": "Accounts List Screen"
+              },
+              {
+                "user_action": "Taps 'Cancel'",
+                "next_screen": "Account Detail Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Notification Settings Screen",
+            "actions": [
+              {
+                "user_action": "Toggles on/off specific push or email notifications",
+                "next_screen": "Notification Settings Screen"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Settings Screen"
               }
             ]
           },
@@ -757,64 +510,61 @@
             "screen_name": "Profile Screen",
             "actions": [
               {
-                "user_action": "Tap back arrow",
+                "user_action": "Taps to edit personal information (e.g., name, email)",
+                "next_screen": "Edit Profile Screen"
+              },
+              {
+                "user_action": "Taps back navigation",
                 "next_screen": "Settings Screen"
               }
             ]
           },
           {
-            "screen_name": "Linked Accounts Screen",
+            "screen_name": "Edit Profile Screen",
             "actions": [
               {
-                "user_action": "Tap '+ Link another account'",
-                "next_screen": "Select Institution Screen"
+                "user_action": "Edits information and taps 'Save'",
+                "next_screen": "Profile Screen"
               },
               {
-                "user_action": "Tap on a linked account",
-                "next_screen": "Account Details Screen"
+                "user_action": "Taps 'Cancel'",
+                "next_screen": "Profile Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Sign Out Confirmation Dialog",
+            "actions": [
+              {
+                "user_action": "Taps 'Sign Out'",
+                "next_screen": "Sign Up or Sign In Screen"
               },
               {
-                "user_action": "Tap back arrow",
+                "user_action": "Taps 'Cancel'",
                 "next_screen": "Settings Screen"
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "flow_name": "Placeholder Screens for Navigation",
+        "screens": [
           {
-            "screen_name": "Account Details Screen",
+            "screen_name": "Offer Detail Screen",
             "actions": [
               {
-                "user_action": "Tap 'Unlink Account'",
-                "next_screen": "Unlink Confirmation Modal"
-              },
-              {
-                "user_action": "Tap back arrow",
-                "next_screen": "Linked Accounts Screen"
+                "user_action": "Taps back navigation",
+                "next_screen": "Marketplace Screen"
               }
             ]
           },
           {
-            "screen_name": "Unlink Confirmation Modal",
+            "screen_name": "Update Detail Screen",
             "actions": [
               {
-                "user_action": "Tap 'Unlink'",
-                "next_screen": "Linked Accounts Screen"
-              },
-              {
-                "user_action": "Tap 'Cancel'",
-                "next_screen": "Account Details Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Notifications Screen",
-            "actions": [
-              {
-                "user_action": "Toggle notification preferences",
-                "next_screen": "Notifications Screen"
-              },
-              {
-                "user_action": "Tap back arrow",
-                "next_screen": "Settings Screen"
+                "user_action": "Taps back navigation",
+                "next_screen": "Updates Screen"
               }
             ]
           }
@@ -826,22 +576,243 @@
 
 
 ============================================================
-### APP 3: Monarch Money
+### APP 2: Wallet: Budget & Expense Tracker
 ============================================================
 {
   "app_screen_flow": {
-    "app_name": "Monarch Money",
+    "app_name": "Wallet: Budget & Expense Tracker",
     "total_flows": 5,
-    "total_screens": 25,
+    "total_screens": 31,
     "flows": [
       {
-        "flow_name": "Connecting an Account",
+        "flow_name": "Authentication and Onboarding",
+        "screens": [
+          {
+            "screen_name": "Welcome Screen",
+            "actions": [
+              {
+                "user_action": "Taps 'Continue with Google' button",
+                "next_screen": "Dashboard"
+              },
+              {
+                "user_action": "Taps 'Continue with Facebook' button",
+                "next_screen": "Dashboard"
+              },
+              {
+                "user_action": "Taps 'Continue with email' button",
+                "next_screen": "Sign Up with Email"
+              }
+            ]
+          },
+          {
+            "screen_name": "Sign Up with Email",
+            "actions": [
+              {
+                "user_action": "Enters email and password, taps 'Sign up'",
+                "next_screen": "Onboarding - Set Currency"
+              },
+              {
+                "user_action": "Taps 'Log in' link",
+                "next_screen": "Login Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Login Screen",
+            "actions": [
+              {
+                "user_action": "Enters email and password, taps 'Log in'",
+                "next_screen": "Dashboard"
+              }
+            ]
+          },
+          {
+            "screen_name": "Onboarding - Set Currency",
+            "actions": [
+              {
+                "user_action": "Selects a currency and taps 'Next'",
+                "next_screen": "Onboarding - Create First Account"
+              }
+            ]
+          },
+          {
+            "screen_name": "Onboarding - Create First Account",
+            "actions": [
+              {
+                "user_action": "Enters account name and balance, taps 'Next'",
+                "next_screen": "Onboarding - Connect Bank Prompt"
+              }
+            ]
+          },
+          {
+            "screen_name": "Onboarding - Connect Bank Prompt",
+            "actions": [
+              {
+                "user_action": "Taps 'Connect bank'",
+                "next_screen": "Connect a Bank"
+              },
+              {
+                "user_action": "Taps 'Maybe later'",
+                "next_screen": "Onboarding - Complete"
+              }
+            ]
+          },
+          {
+            "screen_name": "Onboarding - Complete",
+            "actions": [
+              {
+                "user_action": "Taps 'Let's go!'",
+                "next_screen": "Dashboard"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Add Record",
+        "screens": [
+          {
+            "screen_name": "Dashboard",
+            "actions": [
+              {
+                "user_action": "Taps '+' Floating Action Button",
+                "next_screen": "Add Record"
+              }
+            ]
+          },
+          {
+            "screen_name": "Add Record",
+            "actions": [
+              {
+                "user_action": "Taps 'Expense' tab",
+                "next_screen": "Add Record"
+              },
+              {
+                "user_action": "Taps 'Income' tab",
+                "next_screen": "Add Record (Income)"
+              },
+              {
+                "user_action": "Taps 'Transfer' tab",
+                "next_screen": "Add Record (Transfer)"
+              },
+              {
+                "user_action": "Taps category field",
+                "next_screen": "Select Category"
+              },
+              {
+                "user_action": "Taps account field",
+                "next_screen": "Select Account"
+              },
+              {
+                "user_action": "Taps date field",
+                "next_screen": "Date Picker"
+              },
+              {
+                "user_action": "Enters amount and details, taps 'Save'",
+                "next_screen": "Dashboard"
+              }
+            ]
+          },
+          {
+            "screen_name": "Add Record (Income)",
+            "actions": [
+              {
+                "user_action": "Taps 'Expense' tab",
+                "next_screen": "Add Record"
+              },
+              {
+                "user_action": "Taps 'Transfer' tab",
+                "next_screen": "Add Record (Transfer)"
+              },
+              {
+                "user_action": "Taps category field",
+                "next_screen": "Select Category"
+              },
+              {
+                "user_action": "Enters amount and details, taps 'Save'",
+                "next_screen": "Dashboard"
+              }
+            ]
+          },
+          {
+            "screen_name": "Add Record (Transfer)",
+            "actions": [
+              {
+                "user_action": "Taps 'Expense' tab",
+                "next_screen": "Add Record"
+              },
+              {
+                "user_action": "Taps 'Income' tab",
+                "next_screen": "Add Record (Income)"
+              },
+              {
+                "user_action": "Selects 'From' and 'To' accounts",
+                "next_screen": "Select Account"
+              },
+              {
+                "user_action": "Enters amount and details, taps 'Save'",
+                "next_screen": "Dashboard"
+              }
+            ]
+          },
+          {
+            "screen_name": "Select Category",
+            "actions": [
+              {
+                "user_action": "Taps a category",
+                "next_screen": "Add Record"
+              },
+              {
+                "user_action": "Taps '+' icon to add a new category",
+                "next_screen": "Create New Category"
+              },
+              {
+                "user_action": "Taps back arrow",
+                "next_screen": "Add Record"
+              }
+            ]
+          },
+          {
+            "screen_name": "Create New Category",
+            "actions": [
+              {
+                "user_action": "Enters category name, selects icon, taps 'Save'",
+                "next_screen": "Select Category"
+              }
+            ]
+          },
+          {
+            "screen_name": "Select Account",
+            "actions": [
+              {
+                "user_action": "Taps an account",
+                "next_screen": "Add Record"
+              },
+              {
+                "user_action": "Taps back arrow",
+                "next_screen": "Add Record"
+              }
+            ]
+          },
+          {
+            "screen_name": "Date Picker",
+            "actions": [
+              {
+                "user_action": "Selects a date and taps 'OK'",
+                "next_screen": "Add Record"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Connect Bank",
         "screens": [
           {
             "screen_name": "Accounts",
             "actions": [
               {
-                "user_action": "Taps 'Add account' button",
+                "user_action": "Taps '+' button",
                 "next_screen": "Add Account"
               }
             ]
@@ -850,38 +821,47 @@
             "screen_name": "Add Account",
             "actions": [
               {
-                "user_action": "Taps 'Connect with Plaid' button",
-                "next_screen": "Plaid Consent"
-              }
-            ]
-          },
-          {
-            "screen_name": "Plaid Consent",
-            "actions": [
-              {
-                "user_action": "Taps 'Continue' button",
-                "next_screen": "Select Your Institution"
-              }
-            ]
-          },
-          {
-            "screen_name": "Select Your Institution",
-            "actions": [
-              {
-                "user_action": "Taps on a financial institution",
-                "next_screen": "Enter Credentials"
+                "user_action": "Taps 'Bank connection'",
+                "next_screen": "Connect a Bank"
               },
               {
-                "user_action": "Uses search bar to find an institution",
-                "next_screen": "Select Your Institution"
+                "user_action": "Taps 'Cash' or other manual account type",
+                "next_screen": "Onboarding - Create First Account"
               }
             ]
           },
           {
-            "screen_name": "Enter Credentials",
+            "screen_name": "Connect a Bank",
             "actions": [
               {
-                "user_action": "Enters username and password and taps 'Submit' button",
+                "user_action": "Taps 'Continue'",
+                "next_screen": "Select Your Country"
+              }
+            ]
+          },
+          {
+            "screen_name": "Select Your Country",
+            "actions": [
+              {
+                "user_action": "Selects a country from the list",
+                "next_screen": "Select Your Bank"
+              }
+            ]
+          },
+          {
+            "screen_name": "Select Your Bank",
+            "actions": [
+              {
+                "user_action": "Selects a bank from the list",
+                "next_screen": "Bank Login"
+              }
+            ]
+          },
+          {
+            "screen_name": "Bank Login",
+            "actions": [
+              {
+                "user_action": "Enters bank credentials and authenticates",
                 "next_screen": "Connecting"
               }
             ]
@@ -890,26 +870,67 @@
             "screen_name": "Connecting",
             "actions": [
               {
-                "user_action": "Waits for connection to complete (automatic transition)",
-                "next_screen": "Success"
+                "user_action": "System process completes successfully",
+                "next_screen": "Connection Successful"
               }
             ]
           },
           {
-            "screen_name": "Success",
+            "screen_name": "Connection Successful",
             "actions": [
               {
-                "user_action": "Taps 'Continue' button",
-                "next_screen": "Accounts (Updated)"
+                "user_action": "Taps 'Continue'",
+                "next_screen": "Accounts"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Create Budget",
+        "screens": [
+          {
+            "screen_name": "Budgets",
+            "actions": [
+              {
+                "user_action": "Taps 'Create a budget' button",
+                "next_screen": "Create Budget - Step 1: Category"
               }
             ]
           },
           {
-            "screen_name": "Accounts (Updated)",
+            "screen_name": "Create Budget - Step 1: Category",
             "actions": [
               {
-                "user_action": "Views newly added account",
-                "end_state": true
+                "user_action": "Selects one or more categories and taps 'Next'",
+                "next_screen": "Create Budget - Step 2: Amount"
+              }
+            ]
+          },
+          {
+            "screen_name": "Create Budget - Step 2: Amount",
+            "actions": [
+              {
+                "user_action": "Enters budget amount and taps 'Next'",
+                "next_screen": "Create Budget - Step 3: Period"
+              }
+            ]
+          },
+          {
+            "screen_name": "Create Budget - Step 3: Period",
+            "actions": [
+              {
+                "user_action": "Selects a period (e.g., Monthly) and taps 'Next'",
+                "next_screen": "Create Budget - Step 4: Accounts"
+              }
+            ]
+          },
+          {
+            "screen_name": "Create Budget - Step 4: Accounts",
+            "actions": [
+              {
+                "user_action": "Selects accounts to apply budget to and taps 'Create budget'",
+                "next_screen": "Budgets"
               }
             ]
           }
@@ -919,32 +940,7 @@
         "flow_name": "Main Navigation",
         "screens": [
           {
-            "screen_name": "Dashboard",
-            "actions": [
-              {
-                "user_action": "Taps 'Accounts' tab in bottom navigation",
-                "next_screen": "Accounts"
-              },
-              {
-                "user_action": "Taps 'Transactions' tab in bottom navigation",
-                "next_screen": "Transactions"
-              },
-              {
-                "user_action": "Taps 'Plan' tab in bottom navigation",
-                "next_screen": "Plan"
-              },
-              {
-                "user_action": "Taps 'Profile' icon in top navigation",
-                "next_screen": "Settings"
-              },
-              {
-                "user_action": "Taps 'Add' floating action button",
-                "next_screen": "Add Menu"
-              }
-            ]
-          },
-          {
-            "screen_name": "Transactions",
+            "screen_name": "Main Navigation Base",
             "actions": [
               {
                 "user_action": "Taps 'Dashboard' tab in bottom navigation",
@@ -955,59 +951,16 @@
                 "next_screen": "Accounts"
               },
               {
-                "user_action": "Taps 'Plan' tab in bottom navigation",
-                "next_screen": "Plan"
+                "user_action": "Taps 'Budgets' tab in bottom navigation",
+                "next_screen": "Budgets"
               },
               {
-                "user_action": "Taps on a transaction",
-                "next_screen": "Transaction Detail"
-              }
-            ]
-          },
-          {
-            "screen_name": "Plan",
-            "actions": [
-              {
-                "user_action": "Taps 'Dashboard' tab in bottom navigation",
-                "next_screen": "Dashboard"
-              },
-              {
-                "user_action": "Taps 'Accounts' tab in bottom navigation",
-                "next_screen": "Accounts"
-              },
-              {
-                "user_action": "Taps 'Transactions' tab in bottom navigation",
-                "next_screen": "Transactions"
-              },
-              {
-                "user_action": "Taps 'Budget' sub-tab",
-                "next_screen": "Budget"
-              },
-              {
-                "user_action": "Taps 'Recurring' sub-tab",
-                "next_screen": "Recurring"
-              },
-              {
-                "user_action": "Taps 'Goals' sub-tab",
+                "user_action": "Taps 'Goals' tab in bottom navigation",
                 "next_screen": "Goals"
-              }
-            ]
-          },
-          {
-            "screen_name": "Budget",
-            "actions": [
+              },
               {
-                "user_action": "Taps back arrow or 'Plan' tab",
-                "next_screen": "Plan"
-              }
-            ]
-          },
-          {
-            "screen_name": "Recurring",
-            "actions": [
-              {
-                "user_action": "Taps back arrow or 'Plan' tab",
-                "next_screen": "Plan"
+                "user_action": "Taps 'More' tab in bottom navigation",
+                "next_screen": "More Menu"
               }
             ]
           },
@@ -1015,60 +968,235 @@
             "screen_name": "Goals",
             "actions": [
               {
-                "user_action": "Taps back arrow or 'Plan' tab",
-                "next_screen": "Plan"
+                "user_action": "Taps 'Create a goal' button",
+                "next_screen": "Create Goal"
               }
             ]
           },
           {
-            "screen_name": "Add Menu",
+            "screen_name": "Create Goal",
             "actions": [
               {
-                "user_action": "Taps 'Add Transaction'",
-                "next_screen": "Add Transaction"
-              },
-              {
-                "user_action": "Taps 'Add Account'",
-                "next_screen": "Add Account"
-              },
-              {
-                "user_action": "Taps 'Add Goal'",
+                "user_action": "Enters goal details and taps 'Save'",
                 "next_screen": "Goals"
+              }
+            ]
+          },
+          {
+            "screen_name": "More Menu",
+            "actions": [
+              {
+                "user_action": "Taps 'Settings'",
+                "next_screen": "Settings"
               },
               {
-                "user_action": "Dismisses menu",
-                "next_screen": "Dashboard"
+                "user_action": "Taps 'My Profile'",
+                "next_screen": "Profile"
+              }
+            ]
+          },
+          {
+            "screen_name": "Settings",
+            "actions": [
+              {
+                "user_action": "Taps 'Security'",
+                "next_screen": "Security Settings"
+              },
+              {
+                "user_action": "Taps 'Notifications'",
+                "next_screen": "Notification Settings"
+              }
+            ]
+          },
+          {
+            "screen_name": "Profile",
+            "actions": [
+              {
+                "user_action": "Taps 'Edit Profile'",
+                "next_screen": "Edit Profile"
               }
             ]
           }
         ]
-      },
+      }
+    ]
+  }
+}
+
+
+============================================================
+### APP 3: Spendee - Budget and Expense Tracker
+============================================================
+{
+  "app_screen_flow": {
+    "app_name": "Spendee - Budget and Expense Tracker",
+    "total_flows": 6,
+    "total_screens": 35,
+    "flows": [
       {
-        "flow_name": "View and Edit Transaction",
+        "flow_name": "Onboarding and Account Creation",
         "screens": [
           {
-            "screen_name": "Transaction Detail",
+            "screen_name": "Welcome",
             "actions": [
               {
-                "user_action": "Taps 'Edit' button",
-                "next_screen": "Edit Transaction"
-              },
-              {
-                "user_action": "Taps back arrow",
-                "next_screen": "Transactions"
+                "user_action": "Tap 'Continue' button",
+                "next_screen": "Onboarding Step 1"
               }
             ]
           },
           {
-            "screen_name": "Edit Transaction",
+            "screen_name": "Onboarding Step 1",
             "actions": [
               {
-                "user_action": "Modifies transaction details and taps 'Save'",
-                "next_screen": "Transaction Detail"
+                "user_action": "Tap 'Continue' button",
+                "next_screen": "Onboarding Step 2"
+              }
+            ]
+          },
+          {
+            "screen_name": "Onboarding Step 2",
+            "actions": [
+              {
+                "user_action": "Tap 'Continue' button",
+                "next_screen": "Onboarding Step 3"
+              }
+            ]
+          },
+          {
+            "screen_name": "Onboarding Step 3",
+            "actions": [
+              {
+                "user_action": "Tap 'Get Started' button",
+                "next_screen": "Sign Up Options"
+              }
+            ]
+          },
+          {
+            "screen_name": "Sign Up Options",
+            "actions": [
+              {
+                "user_action": "Tap 'Continue with Email'",
+                "next_screen": "Sign Up with Email"
               },
               {
-                "user_action": "Taps 'Cancel' or back arrow",
-                "next_screen": "Transaction Detail"
+                "user_action": "Tap 'Continue with Google'",
+                "next_screen": "Google Authentication"
+              },
+              {
+                "user_action": "Tap 'Continue with Apple'",
+                "next_screen": "Apple Authentication"
+              },
+              {
+                "user_action": "Tap 'Log in' link",
+                "next_screen": "Log In with Email"
+              }
+            ]
+          },
+          {
+            "screen_name": "Sign Up with Email",
+            "actions": [
+              {
+                "user_action": "Enter email, password, and tap 'Sign Up'",
+                "next_screen": "Set Main Currency"
+              }
+            ]
+          },
+          {
+            "screen_name": "Log In with Email",
+            "actions": [
+              {
+                "user_action": "Enter email, password, and tap 'Log In'",
+                "next_screen": "Dashboard"
+              }
+            ]
+          },
+          {
+            "screen_name": "Google Authentication",
+            "actions": [
+              {
+                "user_action": "Select Google account and authenticate",
+                "next_screen": "Set Main Currency"
+              }
+            ]
+          },
+          {
+            "screen_name": "Apple Authentication",
+            "actions": [
+              {
+                "user_action": "Authenticate with Apple ID",
+                "next_screen": "Set Main Currency"
+              }
+            ]
+          },
+          {
+            "screen_name": "Set Main Currency",
+            "actions": [
+              {
+                "user_action": "Select a currency and tap 'Continue'",
+                "next_screen": "Connect Bank Introduction"
+              }
+            ]
+          },
+          {
+            "screen_name": "Connect Bank Introduction",
+            "actions": [
+              {
+                "user_action": "Tap 'Connect Bank'",
+                "next_screen": "Select Country"
+              },
+              {
+                "user_action": "Tap 'I'll do it later'",
+                "next_screen": "Dashboard"
+              }
+            ]
+          },
+          {
+            "screen_name": "Select Country",
+            "actions": [
+              {
+                "user_action": "Select a country from the list",
+                "next_screen": "Select Bank"
+              }
+            ]
+          },
+          {
+            "screen_name": "Select Bank",
+            "actions": [
+              {
+                "user_action": "Select a bank from the list",
+                "next_screen": "Bank Login"
+              }
+            ]
+          },
+          {
+            "screen_name": "Bank Login",
+            "actions": [
+              {
+                "user_action": "Enter bank credentials and submit via WebView",
+                "next_screen": "Select Accounts"
+              }
+            ]
+          },
+          {
+            "screen_name": "Select Accounts",
+            "actions": [
+              {
+                "user_action": "Select bank accounts to connect and tap 'Continue'",
+                "next_screen": "Enable Notifications"
+              }
+            ]
+          },
+          {
+            "screen_name": "Enable Notifications",
+            "actions": [
+              {
+                "user_action": "Tap 'Enable Notifications'",
+                "next_screen": "Dashboard"
+              },
+              {
+                "user_action": "Tap 'Not now'",
+                "next_screen": "Dashboard"
               }
             ]
           }
@@ -1078,107 +1206,272 @@
         "flow_name": "Add Transaction",
         "screens": [
           {
+            "screen_name": "Dashboard",
+            "actions": [
+              {
+                "user_action": "Tap '+' floating action button",
+                "next_screen": "Add Transaction"
+              }
+            ]
+          },
+          {
             "screen_name": "Add Transaction",
             "actions": [
               {
-                "user_action": "Fills out transaction details and taps 'Add'",
-                "next_screen": "Transactions"
+                "user_action": "Enter amount in number pad",
+                "next_screen": "Add Transaction"
               },
               {
-                "user_action": "Taps 'Cancel' or back arrow",
-                "next_screen": "Transactions"
+                "user_action": "Tap 'Category' field",
+                "next_screen": "Select Category"
+              },
+              {
+                "user_action": "Tap 'Add note' field",
+                "next_screen": "Add Note"
+              },
+              {
+                "user_action": "Tap wallet selector",
+                "next_screen": "Select Wallet"
+              },
+              {
+                "user_action": "Tap 'Save' button",
+                "next_screen": "Dashboard"
+              }
+            ]
+          },
+          {
+            "screen_name": "Select Category",
+            "actions": [
+              {
+                "user_action": "Select a category from the list",
+                "next_screen": "Add Transaction"
+              }
+            ]
+          },
+          {
+            "screen_name": "Add Note",
+            "actions": [
+              {
+                "user_action": "Enter text and tap 'Save'",
+                "next_screen": "Add Transaction"
+              }
+            ]
+          },
+          {
+            "screen_name": "Select Wallet",
+            "actions": [
+              {
+                "user_action": "Select a wallet from the list",
+                "next_screen": "Add Transaction"
               }
             ]
           }
         ]
       },
       {
-        "flow_name": "Settings and Profile",
+        "flow_name": "Create Budget",
         "screens": [
           {
-            "screen_name": "Settings",
+            "screen_name": "Dashboard",
             "actions": [
               {
-                "user_action": "Taps 'Profile'",
-                "next_screen": "Profile"
-              },
-              {
-                "user_action": "Taps 'Notifications'",
-                "next_screen": "Notifications"
-              },
-              {
-                "user_action": "Taps 'Data & Privacy'",
-                "next_screen": "Data & Privacy"
-              },
-              {
-                "user_action": "Taps 'Appearance'",
-                "next_screen": "Appearance"
-              },
-              {
-                "user_action": "Taps 'Subscription'",
-                "next_screen": "Subscription"
-              },
-              {
-                "user_action": "Taps 'Log Out' button",
-                "next_screen": "Welcome"
-              },
-              {
-                "user_action": "Taps back arrow",
-                "next_screen": "Dashboard"
+                "user_action": "Tap 'Budgets' tab in bottom navigation",
+                "next_screen": "Budgets"
               }
             ]
           },
           {
-            "screen_name": "Profile",
+            "screen_name": "Budgets",
             "actions": [
               {
-                "user_action": "Taps back arrow",
-                "next_screen": "Settings"
+                "user_action": "Tap 'Create your first budget' or '+' button",
+                "next_screen": "Create Budget"
               }
             ]
           },
           {
-            "screen_name": "Notifications",
+            "screen_name": "Create Budget",
             "actions": [
               {
-                "user_action": "Taps back arrow",
-                "next_screen": "Settings"
+                "user_action": "Enter budget amount",
+                "next_screen": "Create Budget"
+              },
+              {
+                "user_action": "Tap 'Categories' selector",
+                "next_screen": "Select Budget Category"
+              },
+              {
+                "user_action": "Tap 'Period' selector",
+                "next_screen": "Select Budget Period"
+              },
+              {
+                "user_action": "Tap 'Create Budget' button",
+                "next_screen": "Budgets"
               }
             ]
           },
           {
-            "screen_name": "Data & Privacy",
+            "screen_name": "Select Budget Category",
             "actions": [
               {
-                "user_action": "Taps back arrow",
-                "next_screen": "Settings"
+                "user_action": "Select one or more categories and tap 'Done'",
+                "next_screen": "Create Budget"
               }
             ]
           },
           {
-            "screen_name": "Appearance",
+            "screen_name": "Select Budget Period",
             "actions": [
               {
-                "user_action": "Taps back arrow",
-                "next_screen": "Settings"
+                "user_action": "Select a period (e.g., Weekly, Monthly) and tap 'Done'",
+                "next_screen": "Create Budget"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "View Analysis",
+        "screens": [
+          {
+            "screen_name": "Dashboard",
+            "actions": [
+              {
+                "user_action": "Tap 'Analysis' tab in bottom navigation",
+                "next_screen": "Analysis"
               }
             ]
           },
           {
-            "screen_name": "Subscription",
+            "screen_name": "Analysis",
             "actions": [
               {
-                "user_action": "Taps back arrow",
-                "next_screen": "Settings"
-              }
-            ]
-          },
-          {
-            "screen_name": "Welcome",
-            "actions": [
+                "user_action": "Tap time period filter at the top",
+                "next_screen": "Select Time Period"
+              },
               {
-                "user_action": "User is logged out",
+                "user_action": "Tap category filter",
+                "next_screen": "Select Category Filter"
+              },
+              {
+                "user_action": "View charts and data",
                 "end_state": true
+              }
+            ]
+          },
+          {
+            "screen_name": "Select Time Period",
+            "actions": [
+              {
+                "user_action": "Select a time period (e.g., This Month, Last 3 Months)",
+                "next_screen": "Analysis"
+              }
+            ]
+          },
+          {
+            "screen_name": "Select Category Filter",
+            "actions": [
+              {
+                "user_action": "Select categories to filter by and apply",
+                "next_screen": "Analysis"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Settings and Management",
+        "screens": [
+          {
+            "screen_name": "Dashboard",
+            "actions": [
+              {
+                "user_action": "Tap 'More' tab in bottom navigation",
+                "next_screen": "More"
+              }
+            ]
+          },
+          {
+            "screen_name": "More",
+            "actions": [
+              {
+                "user_action": "Tap 'My Profile'",
+                "next_screen": "My Profile"
+              },
+              {
+                "user_action": "Tap 'Wallets'",
+                "next_screen": "Wallets"
+              },
+              {
+                "user_action": "Tap 'Bank Accounts'",
+                "next_screen": "Bank Accounts"
+              },
+              {
+                "user_action": "Tap 'Categories'",
+                "next_screen": "Categories"
+              },
+              {
+                "user_action": "Tap 'Settings'",
+                "next_screen": "App Settings"
+              }
+            ]
+          },
+          {
+            "screen_name": "My Profile",
+            "actions": [
+              {
+                "user_action": "View and edit profile details",
+                "end_state": true
+              }
+            ]
+          },
+          {
+            "screen_name": "Wallets",
+            "actions": [
+              {
+                "user_action": "View, add, or edit wallets",
+                "end_state": true
+              }
+            ]
+          },
+          {
+            "screen_name": "Categories",
+            "actions": [
+              {
+                "user_action": "View, add, or edit transaction categories",
+                "end_state": true
+              }
+            ]
+          },
+          {
+            "screen_name": "App Settings",
+            "actions": [
+              {
+                "user_action": "Adjust application settings like notifications, currency, etc.",
+                "end_state": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Connect Bank Account from Settings",
+        "screens": [
+          {
+            "screen_name": "More",
+            "actions": [
+              {
+                "user_action": "Tap 'Bank Accounts'",
+                "next_screen": "Bank Accounts"
+              }
+            ]
+          },
+          {
+            "screen_name": "Bank Accounts",
+            "actions": [
+              {
+                "user_action": "Tap 'Connect a bank'",
+                "next_screen": "Select Country"
               }
             ]
           }

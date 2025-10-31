@@ -1,31 +1,39 @@
 {
   "app_flow_tree": {
-    "app_name": "WealthNest",
-    "total_flows": 6,
-    "total_screens": 32,
+    "app_name": "Budgetly",
+    "total_flows": 8,
+    "total_screens": 68,
     "app_screen_flows": [
       {
-        "flow_name": "Onboarding & Authentication",
+        "flow_name": "Authentication & Onboarding",
         "screens": [
           {
-            "screen_name": "Splash Screen",
+            "screen_name": "App Launch Screen",
             "actions": [
               {
-                "user_action": "Automatic transition after app loads",
-                "next_screen": "Welcome Screen"
+                "user_action": "User opens app for the first time",
+                "next_screen": "Welcome & Value Prop Screen"
+              },
+              {
+                "user_action": "User is logged out and opens app",
+                "next_screen": "Sign In Screen"
+              },
+              {
+                "user_action": "User is logged in and opens app",
+                "next_screen": "Dashboard Screen"
               }
             ]
           },
           {
-            "screen_name": "Welcome Screen",
+            "screen_name": "Welcome & Value Prop Screen",
             "actions": [
               {
-                "user_action": "Taps 'Get Started' button",
+                "user_action": "Taps 'Get Started'",
                 "next_screen": "Sign Up Screen"
               },
               {
-                "user_action": "Taps 'Log In' link",
-                "next_screen": "Log In Screen"
+                "user_action": "Taps 'I already have an account'",
+                "next_screen": "Sign In Screen"
               }
             ]
           },
@@ -33,99 +41,72 @@
             "screen_name": "Sign Up Screen",
             "actions": [
               {
-                "user_action": "Enters details and taps 'Create Account'",
-                "next_screen": "Link Account Introduction Screen"
+                "user_action": "Enters details and taps 'Sign Up'",
+                "next_screen": "Onboarding - Connect Bank Intro"
               },
               {
-                "user_action": "Taps 'Sign Up with Google'",
-                "next_screen": "Link Account Introduction Screen"
-              },
-              {
-                "user_action": "Taps 'Already have an account? Log In'",
-                "next_screen": "Log In Screen"
+                "user_action": "Taps 'Sign In'",
+                "next_screen": "Sign In Screen"
               }
             ]
           },
           {
-            "screen_name": "Log In Screen",
+            "screen_name": "Sign In Screen",
             "actions": [
               {
-                "user_action": "Enters credentials and taps 'Log In'",
+                "user_action": "Enters credentials and taps 'Sign In'",
                 "next_screen": "Dashboard Screen"
               },
               {
-                "user_action": "Taps 'Forgot Password?'",
-                "next_screen": "Forgot Password Screen"
-              },
-              {
-                "user_action": "Taps 'Don't have an account? Sign Up'",
+                "user_action": "Taps 'Sign Up'",
                 "next_screen": "Sign Up Screen"
               }
             ]
           },
           {
-            "screen_name": "Forgot Password Screen",
-            "actions": [
-              {
-                "user_action": "Enters email and taps 'Send Reset Link'",
-                "next_screen": "Log In Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Link Account Introduction Screen",
+            "screen_name": "Onboarding - Connect Bank Intro",
             "actions": [
               {
                 "user_action": "Taps 'Connect Bank Account'",
-                "next_screen": "Select Institution Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Select Institution Screen",
-            "actions": [
-              {
-                "user_action": "Selects a financial institution from a list",
-                "next_screen": "Enter Bank Credentials Screen"
+                "next_screen": "Bank Connection - Institution Selection Screen"
               },
               {
-                "user_action": "Uses search bar to find and select an institution",
-                "next_screen": "Enter Bank Credentials Screen"
+                "user_action": "Taps 'Skip for Now'",
+                "next_screen": "Onboarding - SMS Parser Intro"
               }
             ]
           },
           {
-            "screen_name": "Enter Bank Credentials Screen",
+            "screen_name": "Onboarding - SMS Parser Intro",
             "actions": [
               {
-                "user_action": "Enters credentials via Plaid modal and taps 'Submit'",
-                "next_screen": "Connecting Account Screen"
+                "user_action": "Taps 'Enable SMS Parsing'",
+                "next_screen": "System SMS Permission Dialog"
+              },
+              {
+                "user_action": "Taps 'Maybe Later'",
+                "next_screen": "Onboarding - Complete"
               }
             ]
           },
           {
-            "screen_name": "Connecting Account Screen",
+            "screen_name": "System SMS Permission Dialog",
             "actions": [
               {
-                "user_action": "Waits for secure connection to complete (automatic transition)",
-                "next_screen": "Analyzing Data Screen"
+                "user_action": "User taps 'Allow'",
+                "next_screen": "Onboarding - Complete"
+              },
+              {
+                "user_action": "User taps 'Deny'",
+                "next_screen": "Onboarding - Complete"
               }
             ]
           },
           {
-            "screen_name": "Analyzing Data Screen",
+            "screen_name": "Onboarding - Complete",
             "actions": [
               {
-                "user_action": "Waits for analysis of income and expenses to complete (automatic transition)",
-                "next_screen": "Initial Plan Ready Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Initial Plan Ready Screen",
-            "actions": [
-              {
-                "user_action": "Taps 'View My Plan'",
+                "user_action": "Taps 'Let's Go!'",
                 "next_screen": "Dashboard Screen"
               }
             ]
@@ -133,328 +114,485 @@
         ]
       },
       {
-        "flow_name": "Main Navigation",
+        "flow_name": "Main App & Navigation",
         "screens": [
           {
             "screen_name": "Dashboard Screen",
             "actions": [
               {
-                "user_action": "Taps 'Plans' tab in bottom navigation",
-                "next_screen": "Plans Screen"
+                "user_action": "Taps '+ Add' Floating Action Button (FAB)",
+                "next_screen": "Add Transaction Speed Dial Menu"
               },
               {
-                "user_action": "Taps 'Analysis' tab in bottom navigation",
-                "next_screen": "Analysis Screen"
+                "user_action": "Taps 'Review Inbox' icon in header (with badge)",
+                "next_screen": "Review Inbox Screen"
               },
               {
-                "user_action": "Taps 'Settings' tab in bottom navigation",
+                "user_action": "Taps 'Settings' icon in header",
                 "next_screen": "Settings Screen"
               },
               {
-                "user_action": "Taps '+' icon to add account",
-                "next_screen": "Select Institution Screen"
+                "user_action": "Taps on a transaction in the list",
+                "next_screen": "Transaction Detail Screen"
+              },
+              {
+                "user_action": "Taps a 'Smart Template' suggestion chip (e.g., 'Coffee')",
+                "next_screen": "Dashboard Screen with Undo Snackbar"
+              },
+              {
+                "user_action": "Views 'Pending sync' status on an offline-created transaction",
+                "next_screen": "Dashboard Screen"
               }
             ]
           },
           {
-            "screen_name": "Plans Screen",
+            "screen_name": "Add Transaction Speed Dial Menu",
             "actions": [
               {
-                "user_action": "Taps 'Dashboard' tab in bottom navigation",
+                "user_action": "Taps 'Add Manually' (form icon)",
+                "next_screen": "Add Transaction Form Screen"
+              },
+              {
+                "user_action": "Taps 'Use Voice' (microphone icon)",
+                "next_screen": "Voice Input Bottom Sheet"
+              },
+              {
+                "user_action": "Taps 'Attach & Parse' (attachment icon)",
+                "next_screen": "System File Picker"
+              },
+              {
+                "user_action": "Taps 'Scan QR' (QR code icon)",
+                "next_screen": "QR Scan Screen"
+              },
+              {
+                "user_action": "Taps outside menu to close",
                 "next_screen": "Dashboard Screen"
-              },
-              {
-                "user_action": "Taps 'Analysis' tab in bottom navigation",
-                "next_screen": "Analysis Screen"
-              },
-              {
-                "user_action": "Taps 'Settings' tab in bottom navigation",
-                "next_screen": "Settings Screen"
-              },
-              {
-                "user_action": "Taps a savings plan card",
-                "next_screen": "Savings Plan Details Screen"
-              },
-              {
-                "user_action": "Taps an investment plan card",
-                "next_screen": "Investment Plan Details Screen"
               }
             ]
           },
           {
-            "screen_name": "Analysis Screen",
+            "screen_name": "Dashboard Screen with Undo Snackbar",
             "actions": [
               {
-                "user_action": "Taps 'Dashboard' tab in bottom navigation",
+                "user_action": "Taps 'Undo' button on snackbar (within 5 seconds)",
                 "next_screen": "Dashboard Screen"
               },
               {
-                "user_action": "Taps 'Plans' tab in bottom navigation",
-                "next_screen": "Plans Screen"
-              },
-              {
-                "user_action": "Taps 'Settings' tab in bottom navigation",
-                "next_screen": "Settings Screen"
-              },
-              {
-                "user_action": "Taps 'View All Transactions'",
-                "next_screen": "Transactions List Screen"
-              },
-              {
-                "user_action": "Taps a specific transaction in recent list",
-                "next_screen": "Transaction Details Screen"
+                "user_action": "Snackbar times out after 5 seconds",
+                "next_screen": "Dashboard Screen"
               }
             ]
           },
+          {
+            "screen_name": "Transaction Detail Screen",
+            "actions": [
+              {
+                "user_action": "Taps 'Edit' button",
+                "next_screen": "Edit Transaction Form Screen"
+              },
+              {
+                "user_action": "Taps 'Delete' button",
+                "next_screen": "Delete Transaction Confirmation Dialog"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Dashboard Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Delete Transaction Confirmation Dialog",
+            "actions": [
+              {
+                "user_action": "Taps 'Delete'",
+                "next_screen": "Dashboard Screen"
+              },
+              {
+                "user_action": "Taps 'Cancel'",
+                "next_screen": "Transaction Detail Screen"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Manual Capture Flows",
+        "screens": [
+          {
+            "screen_name": "Add Transaction Form Screen",
+            "actions": [
+              {
+                "user_action": "Fills required fields (e.g., Amount) and taps 'Save'",
+                "next_screen": "Dashboard Screen with Undo Snackbar"
+              },
+              {
+                "user_action": "Taps 'Save' while required fields are empty",
+                "next_screen": "Add Transaction Form Screen"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Dashboard Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Edit Transaction Form Screen",
+            "actions": [
+              {
+                "user_action": "Modifies details and taps 'Save Changes'",
+                "next_screen": "Transaction Detail Screen"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Transaction Detail Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Voice Input Bottom Sheet",
+            "actions": [
+              {
+                "user_action": "Speaks a phrase (e.g., 'Spent 500 on petrol')",
+                "next_screen": "NL Parse Confirmation Screen"
+              },
+              {
+                "user_action": "Types a phrase into the text input",
+                "next_screen": "NL Parse Confirmation Screen"
+              },
+              {
+                "user_action": "Taps outside to dismiss",
+                "next_screen": "Dashboard Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "NL Parse Confirmation Screen",
+            "actions": [
+              {
+                "user_action": "Taps 'Confirm'",
+                "next_screen": "Dashboard Screen with Undo Snackbar"
+              },
+              {
+                "user_action": "Taps 'Edit Details'",
+                "next_screen": "Edit Parsed Transaction Screen"
+              },
+              {
+                "user_action": "Views low confidence 'yellow state' warning",
+                "next_screen": "NL Parse Confirmation Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Edit Parsed Transaction Screen",
+            "actions": [
+              {
+                "user_action": "Fixes details in mini-form and taps 'Save'",
+                "next_screen": "Dashboard Screen with Undo Snackbar"
+              },
+              {
+                "user_action": "Taps 'Cancel'",
+                "next_screen": "NL Parse Confirmation Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "System File Picker",
+            "actions": [
+              {
+                "user_action": "Selects an image or PDF receipt",
+                "next_screen": "Parse Preview Screen (Image/PDF)"
+              },
+              {
+                "user_action": "Selects a CSV or PDF bank statement",
+                "next_screen": "Parse Preview Screen (CSV/Statement)"
+              },
+              {
+                "user_action": "Cancels file selection",
+                "next_screen": "Dashboard Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Parse Preview Screen (Image/PDF)",
+            "actions": [
+              {
+                "user_action": "Confirms parsed data is correct and taps 'Save'",
+                "next_screen": "Dashboard Screen with Undo Snackbar"
+              },
+              {
+                "user_action": "Taps a field to manually correct parsed data",
+                "next_screen": "Parse Preview Screen (Image/PDF)"
+              },
+              {
+                "user_action": "Sees parse failure and taps 'Fix Manually'",
+                "next_screen": "Add Transaction Form Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Parse Preview Screen (CSV/Statement)",
+            "actions": [
+              {
+                "user_action": "Confirms selected rows and taps 'Import X Transactions'",
+                "next_screen": "Dashboard Screen with Undo Snackbar"
+              },
+              {
+                "user_action": "Checks/unchecks rows to include/exclude",
+                "next_screen": "Parse Preview Screen (CSV/Statement)"
+              },
+              {
+                "user_action": "Views 'Possible duplicate' flag on a row",
+                "next_screen": "Parse Preview Screen (CSV/Statement)"
+              }
+            ]
+          },
+          {
+            "screen_name": "QR Scan Screen",
+            "actions": [
+              {
+                "user_action": "Successfully scans a supported QR/barcode",
+                "next_screen": "QR Scan Confirmation Screen"
+              },
+              {
+                "user_action": "Fails to scan, taps 'Enter Manually'",
+                "next_screen": "Add Transaction Form Screen"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Dashboard Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "QR Scan Confirmation Screen",
+            "actions": [
+              {
+                "user_action": "Confirms pre-filled details and taps 'Save'",
+                "next_screen": "Dashboard Screen with Undo Snackbar"
+              },
+              {
+                "user_action": "Taps to edit details",
+                "next_screen": "Edit Parsed Transaction Screen"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Home Screen Widget & Share Sheet Capture",
+        "screens": [
+          {
+            "screen_name": "Home Screen Widget",
+            "actions": [
+              {
+                "user_action": "Enters Amount and Category, taps 'Log'",
+                "next_screen": "App Quick Add Confirmation"
+              },
+              {
+                "user_action": "Taps widget to open full app",
+                "next_screen": "Dashboard Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "App Quick Add Confirmation",
+            "actions": [
+              {
+                "user_action": "App shows toast 'Transaction logged' and returns to home screen",
+                "next_screen": "Home Screen Widget"
+              }
+            ]
+          },
+          {
+            "screen_name": "OS Share Sheet",
+            "actions": [
+              {
+                "user_action": "Shares text/image from a chat app (e.g., WhatsApp) to Budgetly",
+                "next_screen": "Chat Share Confirmation Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Chat Share Confirmation Screen",
+            "actions": [
+              {
+                "user_action": "Taps 'Confirm' to save the candidate expense",
+                "next_screen": "Dashboard Screen with Undo Snackbar"
+              },
+              {
+                "user_action": "Taps 'Edit' to modify parsed details",
+                "next_screen": "Edit Parsed Transaction Screen"
+              },
+              {
+                "user_action": "Views 'Potential IOU' flag",
+                "next_screen": "Chat Share Confirmation Screen"
+              },
+              {
+                "user_action": "Taps 'Cancel'",
+                "next_screen": "OS Share Sheet"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Review Inbox Management",
+        "screens": [
+          {
+            "screen_name": "Review Inbox Screen",
+            "actions": [
+              {
+                "user_action": "Swipes a card Right to 'Confirm'",
+                "next_screen": "Review Inbox Screen"
+              },
+              {
+                "user_action": "Swipes a card Left to 'Fix'",
+                "next_screen": "Review Item Edit Screen"
+              },
+              {
+                "user_action": "Taps on a card for details",
+                "next_screen": "Review Item Detail Screen"
+              },
+              {
+                "user_action": "Long-presses a card and taps 'Delete'",
+                "next_screen": "Review Inbox Screen"
+              },
+              {
+                "user_action": "Resolves the last item",
+                "next_screen": "Review Inbox Zero Screen"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Dashboard Screen"
+              },
+              {
+                "user_action": "Taps 'Add Manually'",
+                "next_screen": "Add Transaction Form Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Review Item Edit Screen",
+            "actions": [
+              {
+                "user_action": "Corrects details in the form and taps 'Save'",
+                "next_screen": "Review Inbox Screen"
+              },
+              {
+                "user_action": "Taps 'Cancel'",
+                "next_screen": "Review Inbox Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Review Item Detail Screen",
+            "actions": [
+              {
+                "user_action": "Taps 'Confirm'",
+                "next_screen": "Review Inbox Screen"
+              },
+              {
+                "user_action": "Taps 'Fix'",
+                "next_screen": "Review Item Edit Screen"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Review Inbox Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Review Inbox Zero Screen",
+            "actions": [
+              {
+                "user_action": "Taps 'Back to Dashboard'",
+                "next_screen": "Dashboard Screen"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Settings & Data Source Management",
+        "screens": [
           {
             "screen_name": "Settings Screen",
             "actions": [
               {
-                "user_action": "Taps 'Dashboard' tab in bottom navigation",
-                "next_screen": "Dashboard Screen"
-              },
-              {
-                "user_action": "Taps 'Plans' tab in bottom navigation",
-                "next_screen": "Plans Screen"
-              },
-              {
-                "user_action": "Taps 'Analysis' tab in bottom navigation",
-                "next_screen": "Analysis Screen"
+                "user_action": "Taps 'Data Sources & Connections'",
+                "next_screen": "Data Sources & Connections Screen"
               },
               {
                 "user_action": "Taps 'Profile'",
-                "next_screen": "Profile Details Screen"
-              },
-              {
-                "user_action": "Taps 'Linked Accounts'",
-                "next_screen": "Linked Accounts Screen"
+                "next_screen": "Profile Screen"
               },
               {
                 "user_action": "Taps 'Notifications'",
-                "next_screen": "Notifications Screen"
+                "next_screen": "Notification Settings Screen"
               },
               {
-                "user_action": "Taps 'Security'",
-                "next_screen": "Security Screen"
+                "user_action": "Taps 'Sign Out'",
+                "next_screen": "Sign Out Confirmation Dialog"
               },
               {
-                "user_action": "Taps 'Log Out'",
-                "next_screen": "Log Out Confirmation Modal"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "View Financial Plans",
-        "screens": [
-          {
-            "screen_name": "Savings Plan Details Screen",
-            "actions": [
-              {
-                "user_action": "Taps 'Back' arrow",
-                "next_screen": "Plans Screen"
+                "user_action": "Taps back navigation",
+                "next_screen": "Dashboard Screen"
               }
             ]
           },
           {
-            "screen_name": "Investment Plan Details Screen",
+            "screen_name": "Data Sources & Connections Screen",
             "actions": [
               {
-                "user_action": "Taps 'View Holdings'",
-                "next_screen": "Investment Holdings Screen"
+                "user_action": "Taps 'Bank Accounts'",
+                "next_screen": "Connected Banks Screen"
               },
               {
-                "user_action": "Taps 'View Allocation'",
-                "next_screen": "Investment Allocation Screen"
+                "user_action": "Taps 'Email Accounts'",
+                "next_screen": "Connected Emails Screen"
               },
               {
-                "user_action": "Taps 'Back' arrow",
-                "next_screen": "Plans Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Investment Holdings Screen",
-            "actions": [
-              {
-                "user_action": "Taps on a specific holding",
-                "next_screen": "Holding Details Screen"
+                "user_action": "Toggles 'SMS Parser' on/off",
+                "next_screen": "System SMS Permission Dialog"
               },
               {
-                "user_action": "Taps 'Back' arrow",
-                "next_screen": "Investment Plan Details Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Investment Allocation Screen",
-            "actions": [
-              {
-                "user_action": "Taps 'Back' arrow",
-                "next_screen": "Investment Plan Details Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Holding Details Screen",
-            "actions": [
-              {
-                "user_action": "Taps 'Back' arrow",
-                "next_screen": "Investment Holdings Screen"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "Analyze Spending & Transactions",
-        "screens": [
-          {
-            "screen_name": "Transactions List Screen",
-            "actions": [
-              {
-                "user_action": "Taps on a specific transaction",
-                "next_screen": "Transaction Details Screen"
+                "user_action": "Toggles 'Auto Gallery Scan' on/off",
+                "next_screen": "System Gallery Permission Dialog"
               },
               {
-                "user_action": "Taps 'Filter' icon",
-                "next_screen": "Filter Transactions Screen"
+                "user_action": "Toggles 'Location for Merchants' on/off",
+                "next_screen": "System Location Permission Dialog"
               },
               {
-                "user_action": "Taps 'Back' arrow",
-                "next_screen": "Analysis Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Transaction Details Screen",
-            "actions": [
-              {
-                "user_action": "Taps 'Edit'",
-                "next_screen": "Edit Transaction Screen"
-              },
-              {
-                "user_action": "Taps 'Back' arrow",
-                "next_screen": "Transactions List Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Filter Transactions Screen",
-            "actions": [
-              {
-                "user_action": "Selects filter criteria and taps 'Apply'",
-                "next_screen": "Transactions List Screen"
-              },
-              {
-                "user_action": "Taps 'Cancel' or 'Back' arrow",
-                "next_screen": "Transactions List Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Edit Transaction Screen",
-            "actions": [
-              {
-                "user_action": "Changes transaction category/details and taps 'Save'",
-                "next_screen": "Transaction Details Screen"
-              },
-              {
-                "user_action": "Taps 'Cancel'",
-                "next_screen": "Transaction Details Screen"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "Manage Accounts & Settings",
-        "screens": [
-          {
-            "screen_name": "Profile Details Screen",
-            "actions": [
-              {
-                "user_action": "Taps 'Back' arrow",
+                "user_action": "Taps back navigation",
                 "next_screen": "Settings Screen"
               }
             ]
           },
           {
-            "screen_name": "Linked Accounts Screen",
+            "screen_name": "Profile Screen",
             "actions": [
               {
-                "user_action": "Taps '+ Link another account'",
-                "next_screen": "Select Institution Screen"
-              },
-              {
-                "user_action": "Taps on a linked account",
-                "next_screen": "Account Details Screen"
-              },
-              {
-                "user_action": "Taps 'Back' arrow",
+                "user_action": "Taps back navigation",
                 "next_screen": "Settings Screen"
               }
             ]
           },
           {
-            "screen_name": "Account Details Screen",
+            "screen_name": "Notification Settings Screen",
             "actions": [
               {
-                "user_action": "Taps 'Unlink Account'",
-                "next_screen": "Unlink Confirmation Modal"
-              },
-              {
-                "user_action": "Taps 'Back' arrow",
-                "next_screen": "Linked Accounts Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Unlink Confirmation Modal",
-            "actions": [
-              {
-                "user_action": "Taps 'Unlink'",
-                "next_screen": "Linked Accounts Screen"
-              },
-              {
-                "user_action": "Taps 'Cancel'",
-                "next_screen": "Account Details Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Notifications Screen",
-            "actions": [
-              {
-                "user_action": "Toggles notification preferences",
-                "next_screen": "Notifications Screen"
-              },
-              {
-                "user_action": "Taps 'Back' arrow",
+                "user_action": "Taps back navigation",
                 "next_screen": "Settings Screen"
               }
             ]
           },
           {
-            "screen_name": "Security Screen",
+            "screen_name": "Sign Out Confirmation Dialog",
             "actions": [
               {
-                "user_action": "Toggles 'Biometric Unlock'",
-                "next_screen": "Security Screen"
-              },
-              {
-                "user_action": "Taps 'Back' arrow",
-                "next_screen": "Settings Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Log Out Confirmation Modal",
-            "actions": [
-              {
-                "user_action": "Taps 'Log Out'",
-                "next_screen": "Welcome Screen"
+                "user_action": "Taps 'Sign Out'",
+                "next_screen": "App Launch Screen"
               },
               {
                 "user_action": "Taps 'Cancel'",
@@ -465,14 +603,189 @@
         ]
       },
       {
-        "flow_name": "Add New Account (Post-Onboarding)",
+        "flow_name": "Automatic Capture Setup Flows",
         "screens": [
           {
-            "screen_name": "Connection Successful Screen",
+            "screen_name": "Connected Banks Screen",
+            "actions": [
+              {
+                "user_action": "Taps 'Connect a New Bank'",
+                "next_screen": "Bank Connection - Institution Selection Screen"
+              },
+              {
+                "user_action": "Taps on a connected bank to manage it",
+                "next_screen": "Bank Detail Screen"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Data Sources & Connections Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Bank Connection - Institution Selection Screen",
+            "actions": [
+              {
+                "user_action": "Selects a bank from the list or via search",
+                "next_screen": "Bank Connection - WebView Login"
+              }
+            ]
+          },
+          {
+            "screen_name": "Bank Connection - WebView Login",
+            "actions": [
+              {
+                "user_action": "Enters credentials and completes OAuth flow successfully",
+                "next_screen": "Bank Connection - Success Screen"
+              },
+              {
+                "user_action": "OAuth flow fails or is cancelled",
+                "next_screen": "Bank Connection - Failure Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Bank Connection - Success Screen",
             "actions": [
               {
                 "user_action": "Taps 'Done'",
+                "next_screen": "Connected Banks Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Bank Connection - Failure Screen",
+            "actions": [
+              {
+                "user_action": "Taps 'Try Again'",
+                "next_screen": "Bank Connection - Institution Selection Screen"
+              },
+              {
+                "user_action": "Taps 'Cancel'",
+                "next_screen": "Connected Banks Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Bank Detail Screen",
+            "actions": [
+              {
+                "user_action": "Taps 'Disconnect Bank'",
+                "next_screen": "Disconnect Confirmation Dialog"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Connected Banks Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Disconnect Confirmation Dialog",
+            "actions": [
+              {
+                "user_action": "Taps 'Disconnect'",
+                "next_screen": "Connected Banks Screen"
+              },
+              {
+                "user_action": "Taps 'Cancel'",
+                "next_screen": "Bank Detail Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Connected Emails Screen",
+            "actions": [
+              {
+                "user_action": "Taps 'Connect a New Email Account'",
+                "next_screen": "Email Connection - Provider Selection"
+              },
+              {
+                "user_action": "Taps back navigation",
+                "next_screen": "Data Sources & Connections Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Email Connection - Provider Selection",
+            "actions": [
+              {
+                "user_action": "Taps 'Gmail'",
+                "next_screen": "Email Connection - OAuth Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Email Connection - OAuth Screen",
+            "actions": [
+              {
+                "user_action": "Successfully completes email authentication",
+                "next_screen": "Email Connection - Success Screen"
+              },
+              {
+                "user_action": "Cancels or fails authentication",
+                "next_screen": "Connected Emails Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "Email Connection - Success Screen",
+            "actions": [
+              {
+                "user_action": "Taps 'Done'",
+                "next_screen": "Connected Emails Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "First Email Sender Import Screen",
+            "actions": [
+              {
+                "user_action": "Previews imported transactions and taps 'Confirm & Create Rule'",
                 "next_screen": "Dashboard Screen"
+              },
+              {
+                "user_action": "Taps 'Cancel'",
+                "next_screen": "Dashboard Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "System Gallery Permission Dialog",
+            "actions": [
+              {
+                "user_action": "User taps 'Allow'",
+                "next_screen": "Data Sources & Connections Screen"
+              },
+              {
+                "user_action": "User taps 'Deny'",
+                "next_screen": "Data Sources & Connections Screen"
+              }
+            ]
+          },
+          {
+            "screen_name": "System Location Permission Dialog",
+            "actions": [
+              {
+                "user_action": "User taps 'Allow'",
+                "next_screen": "Data Sources & Connections Screen"
+              },
+              {
+                "user_action": "User taps 'Deny'",
+                "next_screen": "Data Sources & Connections Screen"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Placeholder Screens",
+        "screens": [
+          {
+            "screen_name": "Home Screen",
+            "actions": [
+              {
+                "user_action": "User interacts with device home screen",
+                "next_screen": "Home Screen Widget"
               }
             ]
           }

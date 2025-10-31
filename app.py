@@ -1,8 +1,17 @@
 import streamlit as st
 from PyPDF2 import PdfReader
 import io
-import json
-from main import generate_complete_pipeline
+import os
+from io import StringIO
+import sys
+
+# Import individual functions instead of the complete pipeline
+from competitive_analysis import generate as generate_similar_apps, extract_app_names
+from flow_tree_service import generate as generate_screen_flows
+from app_flow import generate_flow_tree as generate_flow_tree
+from flow_tree_design import generate as generate_design_specs
+from target_app_design import generate as generate_target_design
+from prd_summarizer import summarize_prd  # NEW IMPORT
 
 # ======================================================================================
 # 1. PAGE CONFIGURATION
@@ -85,6 +94,13 @@ footer {visibility: hidden;}
     transform: translateY(-1px);
     box-shadow: 0 6px 18px rgba(0, 150, 255, 0.35);
 }
+.prd-summary-box {
+    background: rgba(0, 102, 204, 0.05);
+    border-left: 4px solid #0066CC;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -97,7 +113,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-app_name = st.text_input("**App Name**", placeholder="e.g. WealthNest")
+app_name = st.text_input("**App Name**", placeholder="e.g. Facebook")
 app_desc = st.text_area("**App Description**", placeholder="Describe your app purpose, users, and features.", height=120)
 uploaded_file = st.file_uploader("📄 Upload PRD (PDF only)", type="pdf")
 
@@ -133,30 +149,77 @@ if uploaded_file:
 st.markdown("---")
 
 # ======================================================================================
-# 6. RUN PIPELINE
+# 6. RUN PIPELINE (STEP BY STEP) - NOW WITH 7 STEPS
 # ======================================================================================
 if st.button("🚀 Generate Design Specification", disabled=not (app_name and app_desc and uploaded_file)):
     try:
-        # Real-time progress UI (6 total steps)
+        # Real-time progress UI (7 total steps now)
         progress_bar = st.progress(0)
         status = st.empty()
 
-        steps = [
-            ("🔍 Step 1/6 — Finding Competitor Apps...", 15),
-            ("📊 Step 2/6 — Extracting App Names...", 30),
-            ("📱 Step 3/6 — Generating Competitor Screen Flows...", 45),
-            ("🌳 Step 4/6 — Building Your App Flow Tree...", 60),
-            ("🎨 Step 5/6 — Generating Competitor Design Specs...", 80),
-            ("✨ Step 6/6 — Crafting Final Target App Design Spec...", 100),
-        ]
+        # Step 0: Summarize PRD (NEW STEP)
+        status.info("📝 Step 1/7 — Analyzing and Summarizing PRD...")
+        progress_bar.progress(10)
+        prd_summary = summarize_prd(prd_text)
+        
+        
+        # Step 1: Generate similar apps
+        status.info("🔍 Step 2/7 — Finding Competitor Apps...")
+        progress_bar.progress(20)
+        similar_apps_data = generate_similar_apps(app_desc)
 
-        for label, pct in steps:
-            status.info(label)
-            progress_bar.progress(pct)
-            if pct == 15:
-                results = generate_complete_pipeline(app_desc, app_name)
+        # Step 2: Extract app names
+        status.info("📊 Step 3/7 — Extracting App Names...")
+        progress_bar.progress(35)
+        app_names = extract_app_names(similar_apps_data)
 
-        target_design_spec = results.get("target_design_spec", "")
+        # Step 3: Generate screen flows
+        status.info("📱 Step 4/7 — Generating Competitor Screen Flows...")
+        progress_bar.progress(50)
+        screen_flows_json = generate_screen_flows(app_names)
+
+        # Step 4: Generate app flow tree (NOW WITH PRD SUMMARY)
+        status.info("🌳 Step 5/7 — Building Your App Flow Tree...")
+        progress_bar.progress(65)
+        app_flow_tree = generate_flow_tree(
+            app_name=app_name,
+            app_description=app_desc,
+            prd_summary=prd_summary,  
+            app_flow_trees=screen_flows_json
+        )
+
+        # Step 5: Generate design specs of all apps
+        status.info("🎨 Step 6/7 — Generating Competitor Design Specs...")
+        progress_bar.progress(80)
+        output_md = "all_design_specs.md"
+        designs = generate_design_specs(app_flow_trees=screen_flows_json, output_file=output_md)
+
+        if not os.path.exists(output_md):
+            raise FileNotFoundError(f"Expected file '{output_md}' not found after design spec generation.")
+
+        with open(output_md, "r", encoding="utf-8") as f:
+            designs_text = f.read().strip()
+
+        # Step 6: Generate design specs for the target app
+        status.info("✨ Step 7/7 — Crafting Final Target App Design Spec...")
+        progress_bar.progress(90)
+        
+        buffer = StringIO()
+        stdout_backup = sys.stdout
+        sys.stdout = buffer
+
+        try:
+            generate_target_design(app_flow_tree=app_flow_tree, designs=designs_text)
+        finally:
+            sys.stdout = stdout_backup
+
+        target_design_spec = buffer.getvalue().strip()
+        buffer.close()
+
+        # Save final design spec to Markdown
+        target_output_md = f"{app_name}_final_design_spec.md"
+        with open(target_output_md, "w", encoding="utf-8") as f:
+            f.write(target_design_spec)
 
         status.success("✅ All steps completed successfully!")
         progress_bar.progress(100)
@@ -168,12 +231,22 @@ if st.button("🚀 Generate Design Specification", disabled=not (app_name and ap
             unsafe_allow_html=True
         )
 
-        st.download_button(
-            label="⬇️ Download Target Design Specification (.md)",
-            data=target_design_spec,
-            file_name=f"{app_name}_final_design_spec.md",
-            mime="text/markdown"
-        )
+        # Download buttons for both PRD summary and final spec
+        col1, col2 = st.columns(2)
+        with col1:
+            st.download_button(
+                label="⬇️ Download PRD Summary (.md)",
+                data=prd_summary,
+                file_name=f"{app_name}_PRD_summary.md",
+                mime="text/markdown"
+            )
+        with col2:
+            st.download_button(
+                label="⬇️ Download Design Specification (.md)",
+                data=target_design_spec,
+                file_name=f"{app_name}_final_design_spec.md",
+                mime="text/markdown"
+            )
 
     except Exception as e:
         st.error(f"❌ An error occurred during generation: {str(e)}")
