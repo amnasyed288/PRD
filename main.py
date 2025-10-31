@@ -2,7 +2,10 @@ from competitive_analysis import generate as generate_similar_apps, extract_app_
 from flow_tree_service import generate as generate
 from app_flow import generate_flow_tree as generate_flow_tree
 from flow_tree_design import generate as generate_design_specs
-import json
+from target_app_design import generate as generate_target_design
+import os
+from io import StringIO
+import sys
 
 def generate_complete_pipeline(app_description: str, app_name: str) -> dict:
     """
@@ -38,16 +41,45 @@ def generate_complete_pipeline(app_description: str, app_name: str) -> dict:
     )
 
     # Step 5: generate design specs of all apps
-    designs = generate_design_specs(app_flow_trees=screen_flows_json)
+    output_md = "all_design_specs.md"
+    designs = generate_design_specs(app_flow_trees=screen_flows_json,output_file = output_md)
 
+    if not os.path.exists(output_md):
+        raise FileNotFoundError(f"Expected file '{output_md}' not found after design spec generation.")
 
-    
+    with open(output_md, "r", encoding="utf-8") as f:
+        designs_text = f.read().strip()
+
+    print(f"\n🎨 Generating final target design spec for: {app_name}\n")
+
+    # Step 6: Generate design specs for the target app
+    buffer = StringIO()
+    stdout_backup = sys.stdout
+    sys.stdout = buffer
+
+    try:
+        generate_target_design(app_flow_tree=app_flow_tree, designs=designs_text)
+    finally:
+        sys.stdout = stdout_backup
+
+    target_design_spec = buffer.getvalue().strip()
+    buffer.close()
+
+    # Save final design spec to Markdown
+    target_output_md = f"{app_name}_final_design_spec.md"
+    with open(target_output_md, "w", encoding="utf-8") as f:
+        f.write(target_design_spec)
+
+    print(f"✅ Target design spec saved to: {os.path.abspath(target_output_md)}")
+
+    # Final combined result
     return {
         "competitor_apps": similar_apps_data,
         "app_names": app_names,
         "screen_flows": screen_flows_json,
-        "app_flow_tree": app_flow_tree ,
-        "design_specs": designs
+        "app_flow_tree": app_flow_tree,
+        "design_specs": designs,
+        "target_design_spec": target_design_spec,
     }
 
 #testing

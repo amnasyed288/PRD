@@ -14,9 +14,9 @@ def generate(app_flow_trees: list[str], output_file: str = "all_design_specs.md"
     """
 
     # Initialize output file
-    if not os.path.exists(output_file):
-        with open(output_file, "w", encoding="utf-8") as f:
-            f.write("# Combined Android Design Specifications\n\n")
+   
+    with open(output_file, "w", encoding="utf-8") as f:
+        f.write("# Combined Android Design Specifications\n\n")
 
     all_designs = []
 

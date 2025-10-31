@@ -10,78 +10,90 @@
 ================================================================================
 
 ```markdown
-# Android Design Specification: Spotify
+# Empower Personal Dashboard - Android Design Specification
 
 ## I. Global Specifications
 
 *   **Platform**: Android Mobile App
 *   **Design System**: Material Design 3
-    *   **Dynamic Color**: Enabled (Material You). The specified colors serve as the baseline when dynamic color is unavailable.
-    *   **Themes**: Light and Dark modes are fully supported.
+    *   **Modes**: Light and Dark themes are supported.
+    *   **Dynamic Color**: Material You dynamic color theming is enabled, using the user's wallpaper colors on supported Android versions.
 *   **Colors**:
-    *   **Seed Color**: `#1DB954` (Spotify Green)
+    *   **Seed Color**: `#005E66` (Empower Teal)
     *   **Light Theme Color Roles**:
-        *   `md.sys.color.primary`: `#006e25`
-        *   `md.sys.color.onPrimary`: `#ffffff`
-        *   `md.sys.color.primaryContainer`: `#8ef89c`
-        *   `md.sys.color.onPrimaryContainer`: `#002106`
-        *   `md.sys.color.secondary`: `#516350`
-        *   `md.sys.color.onSecondary`: `#ffffff`
-        *   `md.sys.color.secondaryContainer`: `#d4e8d0`
-        *   `md.sys.color.onSecondaryContainer`: `#0f1f11`
-        *   `md.sys.color.tertiary`: `#39656c`
-        *   `md.sys.color.onTertiary`: `#ffffff`
-        *   `md.sys.color.tertiaryContainer`: `#bdeaf2`
-        *   `md.sys.color.onTertiaryContainer`: `#001f24`
-        *   `md.sys.color.error`: `#ba1a1a`
-        *   `md.sys.color.onError`: `#ffffff`
-        *   `md.sys.color.background`: `#fcfdf7`
-        *   `md.sys.color.onBackground`: `#1a1c19`
-        *   `md.sys.color.surface`: `#fcfdf7`
-        *   `md.sys.color.onSurface`: `#1a1c19`
-        *   `md.sys.color.surfaceVariant`: `#dee5d9`
-        *   `md.sys.color.onSurfaceVariant`: `#424940`
-        *   `md.sys.color.outline`: `#72796f`
+        *   `md.sys.color.primary`: `#006A6F`
+        *   `md.sys.color.on-primary`: `#FFFFFF`
+        *   `md.sys.color.primary-container`: `#9CF1F7`
+        *   `md.sys.color.on-primary-container`: `#002022`
+        *   `md.sys.color.secondary`: `#4A6364`
+        *   `md.sys.color.on-secondary`: `#FFFFFF`
+        *   `md.sys.color.secondary-container`: `#CDE8E9`
+        *   `md.sys.color.on-secondary-container`: `#051F21`
+        *   `md.sys.color.tertiary`: `#505E7D`
+        *   `md.sys.color.on-tertiary`: `#FFFFFF`
+        *   `md.sys.color.tertiary-container`: `#D8E2FF`
+        *   `md.sys.color.on-tertiary-container`: `#0A1B36`
+        *   `md.sys.color.error`: `#BA1A1A`
+        *   `md.sys.color.on-error`: `#FFFFFF`
+        *   `md.sys.color.error-container`: `#FFDAD6`
+        *   `md.sys.color.on-error-container`: `#410002`
+        *   `md.sys.color.background`: `#FAFDFD`
+        *   `md.sys.color.on-background`: `#191C1C`
+        *   `md.sys.color.surface`: `#FAFDFD`
+        *   `md.sys.color.on-surface`: `#191C1C`
+        *   `md.sys.color.surface-variant`: `#DAE4E5`
+        *   `md.sys.color.on-surface-variant`: `#3F4949`
+        *   `md.sys.color.outline`: `#6F797A`
+        *   `md.sys.color.inverse-surface`: `#2E3131`
+        *   `md.sys.color.inverse-on-surface`: `#F0F1F1`
+        *   `md.sys.color.inverse-primary`: `#80D5DA`
+        *   `md.sys.color.surface-tint`: `#006A6F`
     *   **Dark Theme Color Roles**:
-        *   `md.sys.color.primary`: `#73db83`
-        *   `md.sys.color.onPrimary`: `#00390f`
-        *   `md.sys.color.primaryContainer`: `#005319`
-        *   `md.sys.color.onPrimaryContainer`: `#8ef89c`
-        *   `md.sys.color.secondary`: `#b8ccb5`
-        *   `md.sys.color.onSecondary`: `#243425`
-        *   `md.sys.color.secondaryContainer`: `#3a4b3a`
-        *   `md.sys.color.onSecondaryContainer`: `#d4e8d0`
-        *   `md.sys.color.tertiary`: `#a1ced6`
-        *   `md.sys.color.onTertiary`: `#00363d`
-        *   `md.sys.color.tertiaryContainer`: `#1f4d54`
-        *   `md.sys.color.onTertiaryContainer`: `#bdeaf2`
-        *   `md.sys.color.error`: `#ffb4ab`
-        *   `md.sys.color.onError`: `#690005`
-        *   `md.sys.color.background`: `#1a1c19`
-        *   `md.sys.color.onBackground`: `#e2e3de`
-        *   `md.sys.color.surface`: `#1a1c19`
-        *   `md.sys.color.onSurface`: `#e2e3de`
-        *   `md.sys.color.surfaceVariant`: `#424940`
-        *   `md.sys.color.onSurfaceVariant`: `#c2c9be`
-        *   `md.sys.color.outline`: `#8c9388`
+        *   `md.sys.color.primary`: `#80D5DA`
+        *   `md.sys.color.on-primary`: `#00373A`
+        *   `md.sys.color.primary-container`: `#004F53`
+        *   `md.sys.color.on-primary-container`: `#9CF1F7`
+        *   `md.sys.color.secondary`: `#B1CCCD`
+        *   `md.sys.color.on-secondary`: `#1B3536`
+        *   `md.sys.color.secondary-container`: `#324B4C`
+        *   `md.sys.color.on-secondary-container`: `#CDE8E9`
+        *   `md.sys.color.tertiary`: `#B8C6E9`
+        *   `md.sys.color.on-tertiary`: `#21304C`
+        *   `md.sys.color.tertiary-container`: `#384664`
+        *   `md.sys.color.on-tertiary-container`: `#D8E2FF`
+        *   `md.sys.color.error`: `#FFB4AB`
+        *   `md.sys.color.on-error`: `#690005`
+        *   `md.sys.color.error-container`: `#93000A`
+        *   `md.sys.color.on-error-container`: `#FFDAD6`
+        *   `md.sys.color.background`: `#191C1C`
+        *   `md.sys.color.on-background`: `#E1E3E3`
+        *   `md.sys.color.surface`: `#191C1C`
+        *   `md.sys.color.on-surface`: `#E1E3E3`
+        *   `md.sys.color.surface-variant`: `#3F4949`
+        *   `md.sys.color.on-surface-variant`: `#BFC8C9`
+        *   `md.sys.color.outline`: `#899393`
+        *   `md.sys.color.inverse-surface`: `#E1E3E3`
+        *   `md.sys.color.inverse-on-surface`: `#191C1C`
+        *   `md.sys.color.inverse-primary`: `#006A6F`
+        *   `md.sys.color.surface-tint`: `#80D5DA`
 *   **Typography**:
     *   **Font Family**: Roboto
     *   **Type Scale**:
-        *   `md.sys.typescale.displayLarge`: Roboto, 57sp
-        *   `md.sys.typescale.displayMedium`: Roboto, 45sp
-        *   `md.sys.typescale.displaySmall`: Roboto, 36sp
-        *   `md.sys.typescale.headlineLarge`: Roboto, 32sp
-        *   `md.sys.typescale.headlineMedium`: Roboto, 28sp
-        *   `md.sys.typescale.headlineSmall`: Roboto, 24sp
-        *   `md.sys.typescale.titleLarge`: Roboto, 22sp, FontWeight.Bold
-        *   `md.sys.typescale.titleMedium`: Roboto, 16sp, FontWeight.Bold
-        *   `md.sys.typescale.titleSmall`: Roboto, 14sp, FontWeight.Bold
-        *   `md.sys.typescale.labelLarge`: Roboto, 14sp, FontWeight.Medium
-        *   `md.sys.typescale.labelMedium`: Roboto, 12sp, FontWeight.Medium
-        *   `md.sys.typescale.labelSmall`: Roboto, 11sp, FontWeight.Medium
-        *   `md.sys.typescale.bodyLarge`: Roboto, 16sp
-        *   `md.sys.typescale.bodyMedium`: Roboto, 14sp
-        *   `md.sys.typescale.bodySmall`: Roboto, 12sp
+        *   `displayLarge`: Roboto 57sp
+        *   `displayMedium`: Roboto 45sp
+        *   `displaySmall`: Roboto 36sp
+        *   `headlineLarge`: Roboto 32sp
+        *   `headlineMedium`: Roboto 28sp
+        *   `headlineSmall`: Roboto 24sp
+        *   `titleLarge`: Roboto 22sp
+        *   `titleMedium`: Roboto 16sp, weight 500
+        *   `titleSmall`: Roboto 14sp, weight 500
+        *   `bodyLarge`: Roboto 16sp
+        *   `bodyMedium`: Roboto 14sp
+        *   `bodySmall`: Roboto 12sp
+        *   `labelLarge`: Roboto 14sp, weight 500
+        *   `labelMedium`: Roboto 12sp, weight 500
+        *   `labelSmall`: Roboto 11sp, weight 500
 *   **Spacing**:
     *   **Base Grid Unit**: 8dp
     *   **Standard Padding**: 16dp
@@ -95,707 +107,864 @@
 
 ## II. Screen Specifications
 
-### **Screen Name/ID**: 01_Splash_Screen
-*   **Dimensions**: 393x852dp
-*   **Background**: `md.sys.color.background` (Dark Theme: `#121212`, Light Theme: `#FFFFFF`)
-*   **Layout**: `Column`
+### Flow 1: Authentication
+
+---
+
+#### Screen 1: Welcome Screen
+*   **Screen Name/ID**: `01_01_Welcome_Screen`
+*   **Dimensions**: 393x852dp (Typical mobile viewport)
+*   **Background**: `md.sys.color.surface`
+*   **Layout**: `Column` layout, vertically centered and horizontally aligned to the center.
     *   `verticalArrangement`: `Arrangement.Center`
     *   `horizontalAlignment`: `Alignment.CenterHorizontally`
-    *   `modifier`: `fillMaxSize()`
+    *   `modifier`: `fillMaxSize()`, `padding(32.dp)`
 
-#### III. Component Specifications
-1.  **Name**: `Icon` (App Logo)
-    *   **Position & Size**:
-        *   Size: 120dp x 120dp
-        *   Alignment: Centered in parent `Column`.
+##### Components:
+1.  **Name**: `Image` (App Logo)
+    *   **Position & Size**: 120dp x 120dp. Centered horizontally. Margin bottom 24dp.
+    *   **Style**: Placeholder for the Empower logo.
+    *   **Content**: Empower app logo graphic.
+2.  **Name**: `Text` (Tagline)
+    *   **Position & Size**: `fillMaxWidth()`. Margin bottom 48dp.
     *   **Style**:
-        *   Icon: Custom Spotify logo vector.
-        *   Tint: `md.sys.color.primary` (Light Theme), `#1DB954` (Dark Theme).
+        *   `typography`: `md.sys.typography.headlineSmall`
+        *   `color`: `md.sys.color.on-surface`
+        *   `textAlign`: `TextAlign.Center`
+    *   **Content**: "Clarity for your entire financial life."
+3.  **Name**: `Filled Button`
+    *   **Position & Size**: `fillMaxWidth()`, height 56dp. Margin bottom 16dp. Minimum touch target 48x48dp.
+    *   **Style**:
+        *   `colors`: `ButtonDefaults.buttonColors(containerColor = md.sys.color.primary, contentColor = md.sys.color.on-primary)`
+        *   `shape`: `ShapeDefaults.Full` (Pill shape)
     *   **Content**:
-        *   `contentDescription`: "Spotify Logo"
+        *   **Name**: `Text`
+        *   **Style**: `typography`: `md.sys.typography.labelLarge`
+        *   **Content**: "Log In"
+4.  **Name**: `Outlined Button`
+    *   **Position & Size**: `fillMaxWidth()`, height 56dp. Minimum touch target 48x48dp.
+    *   **Style**:
+        *   `colors`: `ButtonDefaults.outlinedButtonColors(contentColor = md.sys.color.primary)`
+        *   `border`: `BorderStroke(1.dp, md.sys.color.outline)`
+        *   `shape`: `ShapeDefaults.Full` (Pill shape)
+    *   **Content**:
+        *   **Name**: `Text`
+        *   **Style**: `typography`: `md.sys.typography.labelLarge`
+        *   **Content**: "Sign Up For Free"
 
-#### IV. Interaction & Behavior
-*   **Interactions**:
-    *   On screen load, display for 2 seconds.
-    *   After 2 seconds, automatically navigate to `02_Onboarding_Welcome_Screen`.
-*   **Animations**:
-    *   **Screen Transition (Exit)**: `MaterialFade` transition to the next screen.
+##### Interaction & Behavior:
+*   **Filled Button ('Log In')**:
+    *   **States**: Standard Material 3 states (pressed, hover, focused, disabled) with state layer overlays.
+    *   **Interaction**: On tap -> Navigate to `01_02_Log_In_Screen`.
+    *   **Animation**: `MaterialSharedAxis` (Z-axis) forward transition.
+*   **Outlined Button ('Sign Up For Free')**:
+    *   **States**: Standard Material 3 states.
+    *   **Interaction**: On tap -> Navigate to `01_03_Sign_Up_Screen`.
+    *   **Animation**: `MaterialSharedAxis` (Z-axis) forward transition.
 
 ---
 
-### **Screen Name/ID**: 02_Onboarding_Welcome_Screen
+#### Screen 2: Log In Screen
+*   **Screen Name/ID**: `01_02_Log_In_Screen`
 *   **Dimensions**: 393x852dp
-*   **Background**: `md.sys.color.background`
-*   **Layout**: `Column`
-    *   `modifier`: `fillMaxSize()`, `padding(horizontal = 24dp, vertical = 48dp)`
-    *   `verticalArrangement`: `Arrangement.SpaceBetween`
-    *   `horizontalAlignment`: `Alignment.CenterHorizontally`
+*   **Background**: `md.sys.color.surface`
+*   **Layout**: `Column` layout within a `Scaffold`.
+    *   `modifier`: `fillMaxSize()`, `padding(16.dp)`
 
-#### III. Component Specifications
-1.  **Name**: `Icon` (App Logo)
-    *   **Position & Size**:
-        *   Size: 80dp x 80dp
-        *   Alignment: Top center of the screen.
-        *   Margin: `marginBottom = 64dp`
-    *   **Style**:
-        *   Icon: Custom Spotify logo vector.
-        *   Tint: `md.sys.color.onBackground`.
-    *   **Content**:
-        *   `contentDescription`: "Spotify Logo"
-
-2.  **Name**: `Text` (Headline)
-    *   **Position & Size**:
-        *   Alignment: Center of the screen.
-        *   `modifier`: `fillMaxWidth()`
-    *   **Style**:
-        *   Typography: `md.sys.typescale.displaySmall`
-        *   Color: `md.sys.color.onBackground`
-        *   Text Alignment: `TextAlign.Center`
-    *   **Content**: "Millions of songs.\nFree on Spotify."
-
-3.  **Name**: `Column` (Button Container)
-    *   **Position & Size**:
-        *   Alignment: Bottom of the screen.
-        *   `modifier`: `fillMaxWidth()`
-    *   **Layout**:
-        *   `verticalArrangement`: `Arrangement.spacedBy(8dp)`
-        *   `horizontalAlignment`: `Alignment.CenterHorizontally`
-
-4.  **Name**: `FilledButton` (Sign up free)
-    *   **Position & Size**:
-        *   `modifier`: `fillMaxWidth()`, `height(48dp)`
-    *   **Style**:
-        *   Container Color: `md.sys.color.primary`
-        *   Content Color: `md.sys.color.onPrimary`
-        *   Typography: `md.sys.typescale.labelLarge`
-        *   Shape: `Shape.Corner.Full` (Pill shape)
-    *   **Content**:
-        *   Text: "Sign up free"
-
-5.  **Name**: `OutlinedButton` (Continue with Google)
-    *   **Position & Size**:
-        *   `modifier`: `fillMaxWidth()`, `height(48dp)`
-    *   **Style**:
-        *   Outline Color: `md.sys.color.outline`
-        *   Content Color: `md.sys.color.onBackground`
-        *   Typography: `md.sys.typescale.labelLarge`
-        *   Shape: `Shape.Corner.Full` (Pill shape)
-    *   **Content**:
-        *   Text: "Continue with Google"
-        *   Icon (leading): Google 'G' logo, size 24dp.
-
-6.  **Name**: `OutlinedButton` (Continue with Facebook)
-    *   **Position & Size**:
-        *   `modifier`: `fillMaxWidth()`, `height(48dp)`
-    *   **Style**:
-        *   Outline Color: `md.sys.color.outline`
-        *   Content Color: `md.sys.color.onBackground`
-        *   Typography: `md.sys.typescale.labelLarge`
-        *   Shape: `Shape.Corner.Full` (Pill shape)
-    *   **Content**:
-        *   Text: "Continue with Facebook"
-        *   Icon (leading): Facebook 'f' logo, size 24dp.
-
-7.  **Name**: `TextButton` (Log in)
-    *   **Position & Size**:
-        *   `modifier`: `height(48dp)`
-    *   **Style**:
-        *   Content Color: `md.sys.color.onBackground`
-        *   Typography: `md.sys.typescale.labelLarge`
-    *   **Content**:
-        *   Text: "Log in"
-
-#### IV. Interaction & Behavior
-*   **States**:
-    *   All buttons use Material Design state layers for pressed, hovered, and focused states (e.g., on press, apply a 12% opacity overlay of the content color).
-*   **Interactions**:
-    *   On tap of "Sign up free" button -> Navigate to `03_Signup_Screen`.
-    *   On tap of "Continue with Google" button -> Initiate Google Sign-In flow (OAuth). On success, navigate to `05_Home_Screen`.
-    *   On tap of "Continue with Facebook" button -> Initiate Facebook Sign-In flow (OAuth). On success, navigate to `05_Home_Screen`.
-    *   On tap of "Log in" button -> Navigate to `04_Login_Screen`.
-*   **Animations**:
-    *   **Screen Transition (Enter)**: `MaterialSharedAxis(Z)` from `01_Splash_Screen`.
-    *   **Screen Transition (Exit)**: `MaterialSharedAxis(X)` to `03_Signup_Screen` or `04_Login_Screen`.
-
----
-
-### **Screen Name/ID**: 03_Signup_Screen
-*   **Dimensions**: 393x852dp
-*   **Background**: `md.sys.color.background`
-*   **Layout**: `Column`
-    *   `modifier`: `fillMaxSize()`
-
-#### III. Component Specifications
+##### Components:
 1.  **Name**: `TopAppBar`
-    *   **Position & Size**:
-        *   `modifier`: `fillMaxWidth()`
-        *   Height: 56dp
+    *   **Position & Size**: `fillMaxWidth()`, height 64dp.
     *   **Style**:
-        *   Container Color: `md.sys.color.surface`
-        *   Elevation: `Elevation.Level0`
+        *   `colors`: `TopAppBarDefaults.topAppBarColors(containerColor = md.sys.color.surface)`
+        *   `navigationIcon`:
+            *   **Name**: `IconButton`
+            *   **Icon**: `Icons.Filled.ArrowBack`
+            *   **Content Description**: "Back"
+            *   **Tint**: `md.sys.color.on-surface`
     *   **Content**:
-        *   **Navigation Icon**: `IconButton` with `Icons.Filled.ArrowBack`. `contentDescription`: "Back".
-        *   **Title**: `Text` component.
-            *   Content: "Create account"
-            *   Style: `md.sys.typescale.titleLarge`, color `md.sys.color.onSurface`.
-            *   Alignment: Centered horizontally within the TopAppBar.
-
-2.  **Name**: `Column` (Form Fields)
-    *   **Position & Size**:
-        *   `modifier`: `fillMaxWidth()`, `padding(16dp)`, `verticalScroll(rememberScrollState())`
-    *   **Layout**:
-        *   `verticalArrangement`: `Arrangement.spacedBy(16dp)`
-
-3.  **Name**: `Text` (Email Label)
-    *   **Position & Size**:
-        *   `modifier`: `fillMaxWidth()`
+        *   **Name**: `Text`
+        *   **Style**: `typography`: `md.sys.typography.titleLarge`
+        *   **Content**: "Log In"
+2.  **Name**: `OutlinedTextField` (Email)
+    *   **Position & Size**: `fillMaxWidth()`. Top margin 24dp.
     *   **Style**:
-        *   Typography: `md.sys.typescale.bodyLarge`
-        *   Color: `md.sys.color.onSurface`
-    *   **Content**: "What's your email?"
-
-4.  **Name**: `OutlinedTextField` (Email Input)
-    *   **Position & Size**:
-        *   `modifier`: `fillMaxWidth()`
-    *   **Style**:
-        *   Typography: `md.sys.typescale.bodyLarge`
-        *   Colors: Standard `TextFieldDefaults.outlinedTextFieldColors()`
-        *   Shape: `Shape.Corner.Medium`
-    *   **Content**:
-        *   `label`: `Text` with content "Email".
+        *   `label`: "Email address"
         *   `keyboardOptions`: `KeyboardType.Email`
-
-5.  **Name**: `TextButton` (Next Button)
-    *   **Position & Size**:
-        *   Alignment: `Alignment.CenterHorizontally`
-        *   `modifier`: `wrapContentWidth()`, `height(48dp)`
+        *   `singleLine`: `true`
+    *   **Content**: User-entered email address.
+3.  **Name**: `OutlinedTextField` (Password)
+    *   **Position & Size**: `fillMaxWidth()`. Top margin 16dp.
     *   **Style**:
-        *   Container Color: `md.sys.color.onBackground`
-        *   Content Color: `md.sys.color.background`
-        *   Shape: `Shape.Corner.Full`
-        *   Initially disabled.
-    *   **Content**:
-        *   Text: "Next"
-
-#### IV. Interaction & Behavior
-*   **States**:
-    *   "Next" button is disabled until a valid email format is entered in the `OutlinedTextField`.
-    *   `OutlinedTextField` shows an error state (red border, helper text) if the input is not a valid email format after losing focus.
-*   **Interactions**:
-    *   On tap of Navigation Icon (`ArrowBack`) -> Navigate back to `02_Onboarding_Welcome_Screen`.
-    *   User types in the email field. The "Next" button becomes enabled when the text is a valid email pattern.
-    *   On tap of "Next" button -> Navigate to the next step of the signup flow (e.g., create password, not detailed in tree but implied). For this spec, assume on success it navigates to `05_Home_Screen`.
-*   **Animations**:
-    *   **Screen Transition (Enter/Exit)**: `MaterialSharedAxis(X)`.
-
-#### V. Critical Scenarios & States
-*   **Error State**:
-    *   If the user enters an invalid email (e.g., "test@test") and taps "Next" or the field loses focus, the `OutlinedTextField` border turns to `md.sys.color.error`.
-    *   A supporting `Text` component appears below the field with `typography = md.sys.typescale.bodySmall`, `color = md.sys.color.error`, and content "Please enter a valid email address."
-*   **Loading State**:
-    *   On tap of "Next", the button can show a `CircularProgressIndicator` (size 24dp) inside it while validating the email with the backend.
-
----
-
-### **Screen Name/ID**: 04_Login_Screen
-*   **Dimensions**: 393x852dp
-*   **Background**: `md.sys.color.background`
-*   **Layout**: `Column`
-    *   `modifier`: `fillMaxSize()`
-
-#### III. Component Specifications
-1.  **Name**: `TopAppBar`
-    *   **Position & Size**:
-        *   `modifier`: `fillMaxWidth()`
-        *   Height: 56dp
-    *   **Style**:
-        *   Container Color: `md.sys.color.surface`
-    *   **Content**:
-        *   **Navigation Icon**: `IconButton` with `Icons.Filled.ArrowBack`. `contentDescription`: "Back".
-        *   **Title**: `Text` component, centered.
-            *   Content: "Log in"
-            *   Style: `md.sys.typescale.titleLarge`, color `md.sys.color.onSurface`.
-
-2.  **Name**: `Column` (Form Fields)
-    *   **Position & Size**:
-        *   `modifier`: `fillMaxWidth()`, `padding(16dp)`, `verticalScroll(rememberScrollState())`
-    *   **Layout**:
-        *   `verticalArrangement`: `Arrangement.spacedBy(8dp)`
-
-3.  **Name**: `Text` (Email Label)
-    *   **Position & Size**: `modifier`: `fillMaxWidth()`
-    *   **Style**: `md.sys.typescale.bodyLarge`, `md.sys.color.onSurface`
-    *   **Content**: "Email or username"
-
-4.  **Name**: `OutlinedTextField` (Email/Username Input)
-    *   **Position & Size**: `modifier`: `fillMaxWidth()`
-    *   **Style**: Standard `OutlinedTextField` styles.
-    *   **Content**: `label`: `Text` with content "Email or username".
-
-5.  **Name**: `Text` (Password Label)
-    *   **Position & Size**: `modifier`: `fillMaxWidth()`, `padding(top = 8dp)`
-    *   **Style**: `md.sys.typescale.bodyLarge`, `md.sys.color.onSurface`
-    *   **Content**: "Password"
-
-6.  **Name**: `OutlinedTextField` (Password Input)
-    *   **Position & Size**: `modifier`: `fillMaxWidth()`
-    *   **Style**: Standard `OutlinedTextField` styles.
-    *   **Content**:
-        *   `label`: `Text` with content "Password".
-        *   `visualTransformation`: `PasswordVisualTransformation()`
+        *   `label`: "Password"
+        *   `visualTransformation`: `PasswordVisualTransformation`
         *   `keyboardOptions`: `KeyboardType.Password`
-        *   `trailingIcon`: `IconButton` with a toggleable eye icon (`Icons.Filled.Visibility` / `Icons.Filled.VisibilityOff`) to show/hide password. `contentDescription`: "Toggle password visibility".
-
-7.  **Name**: `FilledButton` (Log In Button)
-    *   **Position & Size**:
-        *   Alignment: `Alignment.CenterHorizontally`
-        *   `modifier`: `wrapContentWidth()`, `height(48dp)`, `margin(top = 16dp)`
-    *   **Style**:
-        *   Container Color: `md.sys.color.onBackground`
-        *   Content Color: `md.sys.color.background`
-        *   Shape: `Shape.Corner.Full`
-        *   Initially disabled.
+        *   `singleLine`: `true`
+        *   `trailingIcon`: `IconButton` with visibility toggle (`Icons.Filled.Visibility` / `Icons.Filled.VisibilityOff`).
+    *   **Content**: User-entered password.
+4.  **Name**: `TextButton` (Forgot Password)
+    *   **Position & Size**: Aligned to the end of the screen. Top margin 8dp.
+    *   **Style**: `colors`: `ButtonDefaults.textButtonColors(contentColor = md.sys.color.primary)`
     *   **Content**:
-        *   Text: "Log In"
-
-8.  **Name**: `TextButton` (Forgot Password)
-    *   **Position & Size**:
-        *   Alignment: `Alignment.CenterHorizontally`
-        *   `modifier`: `height(48dp)`, `margin(top = 8dp)`
+        *   **Name**: `Text`
+        *   **Style**: `typography`: `md.sys.typography.labelLarge`
+        *   **Content**: "Forgot Password?"
+5.  **Name**: `Filled Button` (Log In)
+    *   **Position & Size**: `fillMaxWidth()`, height 56dp. Top margin 32dp.
     *   **Style**:
-        *   Content Color: `md.sys.color.onBackground`
-        *   Typography: `md.sys.typescale.labelLarge`
+        *   `colors`: `ButtonDefaults.buttonColors(containerColor = md.sys.color.primary)`
+        *   `shape`: `ShapeDefaults.Full`
+        *   **Initial State**: Disabled until both fields are non-empty.
     *   **Content**:
-        *   Text: "Log in without password"
+        *   **Name**: `Text`
+        *   **Style**: `typography`: `md.sys.typography.labelLarge`
+        *   **Content**: "Log In"
 
-#### IV. Interaction & Behavior
-*   **States**:
-    *   "Log In" button is disabled until both fields are non-empty.
-*   **Interactions**:
-    *   On tap of Navigation Icon (`ArrowBack`) -> Navigate back to `02_Onboarding_Welcome_Screen`.
-    *   On tap of "Log In" button -> Authenticate user. On success, navigate to `05_Home_Screen`. On failure, show an error.
-    *   On tap of "Log in without password" -> Navigate to a password recovery flow (not specified in tree).
-*   **Animations**:
-    *   **Screen Transition (Enter/Exit)**: `MaterialSharedAxis(X)`.
-
-#### V. Critical Scenarios & States
-*   **Error State**:
-    *   If login fails, a `Snackbar` appears at the bottom of the screen.
-    *   **Snackbar Style**: Container color `md.sys.color.errorContainer`, text color `md.sys.color.onErrorContainer`.
-    *   **Snackbar Content**: "Incorrect username or password."
-*   **Loading State**:
-    *   On tap of "Log In", the button shows a `CircularProgressIndicator` (size 24dp) inside it while authenticating.
+##### Interaction & Behavior:
+*   **TopAppBar Navigation Icon**:
+    *   **Interaction**: On tap -> Navigate back to `01_01_Welcome_Screen`.
+    *   **Animation**: `MaterialSharedAxis` (Z-axis) backward transition.
+*   **Email/Password Fields**:
+    *   **Interaction**: User enters text. The 'Log In' button becomes enabled when both fields contain valid input.
+*   **'Forgot Password?' TextButton**:
+    *   **Interaction**: On tap -> Navigate to `01_04_Forgot_Password_Screen`.
+    *   **Animation**: `MaterialSharedAxis` (X-axis) forward transition.
+*   **'Log In' Filled Button**:
+    *   **Interaction**: On tap -> Authenticate user. On success, navigate to `02_01_Dashboard`.
+    *   **Animation**: `MaterialFadeThrough` transition.
 
 ---
 
-### **Screen Name/ID**: 05_Home_Screen
+#### Screen 3: Sign Up Screen
+*   **Screen Name/ID**: `01_03_Sign_Up_Screen`
+*   **Dimensions**: 393x852dp
+*   **Background**: `md.sys.color.surface`
+*   **Layout**: `Scaffold` containing a `WebView`.
+
+##### Components:
+1.  **Name**: `TopAppBar`
+    *   **Position & Size**: `fillMaxWidth()`, height 64dp.
+    *   **Style**:
+        *   `colors`: `TopAppBarDefaults.topAppBarColors(containerColor = md.sys.color.surface)`
+        *   `navigationIcon`:
+            *   **Name**: `IconButton`
+            *   **Icon**: `Icons.Filled.Close`
+            *   **Content Description**: "Close"
+            *   **Tint**: `md.sys.color.on-surface`
+    *   **Content**:
+        *   **Name**: `Text`
+        *   **Style**: `typography`: `md.sys.typography.titleLarge`
+        *   **Content**: "Create Account"
+2.  **Name**: `WebView`
+    *   **Position & Size**: `fillMaxSize()`. Occupies the entire area below the `TopAppBar`.
+    *   **Style**: Displays the mobile web sign-up flow from the Empower website.
+    *   **Content**: External web page for user registration.
+
+##### Interaction & Behavior:
+*   **TopAppBar Navigation Icon**:
+    *   **Interaction**: On tap -> Navigate back to `01_01_Welcome_Screen`.
+    *   **Animation**: `MaterialSharedAxis` (Z-axis) backward transition.
+*   **WebView**:
+    *   **Interaction**: User completes the sign-up form within the web view. Upon successful completion (detected via a URL redirect or JavaScript interface), the app navigates to the dashboard.
+    *   **Resulting Navigation**: On success -> Navigate to `02_01_Dashboard`.
+    *   **Animation**: `MaterialFadeThrough` transition.
+
+---
+
+#### Screen 4: Forgot Password Screen
+*   **Screen Name/ID**: `01_04_Forgot_Password_Screen`
+*   **Dimensions**: 393x852dp
+*   **Background**: `md.sys.color.surface`
+*   **Layout**: `Column` layout within a `Scaffold`.
+    *   `modifier`: `fillMaxSize()`, `padding(16.dp)`
+
+##### Components:
+1.  **Name**: `TopAppBar`
+    *   **Position & Size**: `fillMaxWidth()`, height 64dp.
+    *   **Style**:
+        *   `colors`: `TopAppBarDefaults.topAppBarColors(containerColor = md.sys.color.surface)`
+        *   `navigationIcon`:
+            *   **Name**: `IconButton`
+            *   **Icon**: `Icons.Filled.ArrowBack`
+            *   **Content Description**: "Back"
+            *   **Tint**: `md.sys.color.on-surface`
+    *   **Content**:
+        *   **Name**: `Text`
+        *   **Style**: `typography`: `md.sys.typography.titleLarge`
+        *   **Content**: "Reset Password"
+2.  **Name**: `Text` (Instruction)
+    *   **Position & Size**: `fillMaxWidth()`. Top margin 24dp.
+    *   **Style**:
+        *   `typography`: `md.sys.typography.bodyMedium`
+        *   `color`: `md.sys.color.on-surface-variant`
+    *   **Content**: "Enter the email address associated with your account, and we'll send you a link to reset your password."
+3.  **Name**: `OutlinedTextField` (Email)
+    *   **Position & Size**: `fillMaxWidth()`. Top margin 16dp.
+    *   **Style**:
+        *   `label`: "Email address"
+        *   `keyboardOptions`: `KeyboardType.Email`
+        *   `singleLine`: `true`
+    *   **Content**: User-entered email address.
+4.  **Name**: `Filled Button` (Submit)
+    *   **Position & Size**: `fillMaxWidth()`, height 56dp. Top margin 32dp.
+    *   **Style**:
+        *   `colors`: `ButtonDefaults.buttonColors(containerColor = md.sys.color.primary)`
+        *   `shape`: `ShapeDefaults.Full`
+        *   **Initial State**: Disabled until the email field is non-empty and valid.
+    *   **Content**:
+        *   **Name**: `Text`
+        *   **Style**: `typography`: `md.sys.typography.labelLarge`
+        *   **Content**: "Send Reset Link"
+
+##### Interaction & Behavior:
+*   **TopAppBar Navigation Icon**:
+    *   **Interaction**: On tap -> Navigate back to `01_02_Log_In_Screen`.
+    *   **Animation**: `MaterialSharedAxis` (X-axis) backward transition.
+*   **'Send Reset Link' Filled Button**:
+    *   **Interaction**: On tap -> Validate email, trigger password reset API call. Display a `Snackbar` with the message "If an account exists for this email, a reset link has been sent." Then, navigate back to the Log In screen.
+    *   **Resulting Navigation**: Navigate to `01_02_Log_In_Screen`.
+    *   **Animation**: `MaterialSharedAxis` (X-axis) backward transition.
+
+---
+
+### Flow 2: Main Navigation
+
+---
+
+#### Screen 5: Dashboard
+*   **Screen Name/ID**: `02_01_Dashboard`
 *   **Dimensions**: 393x852dp
 *   **Background**: `md.sys.color.background`
-*   **Layout**: `Scaffold`
-    *   `topBar`: `TopAppBar`
-    *   `bottomBar`: `NavigationBar`
-    *   `content`: `LazyColumn`
+*   **Layout**: `Scaffold` with `TopAppBar`, `LazyColumn` for content, and `NavigationBar` at the bottom.
 
-#### III. Component Specifications
+##### Components:
 1.  **Name**: `TopAppBar`
-    *   **Position & Size**: Top of the `Scaffold`. Height 64dp.
+    *   **Position & Size**: `fillMaxWidth()`, height 64dp.
     *   **Style**:
-        *   Container Color: `md.sys.color.surface` (transparent gradient to background).
+        *   `colors`: `TopAppBarDefaults.topAppBarColors(containerColor = md.sys.color.surface, scrolledContainerColor = md.sys.color.surface-tint)`
         *   `scrollBehavior`: `TopAppBarDefaults.enterAlwaysScrollBehavior()`
     *   **Content**:
-        *   **Title**: `Text` with content "Good morning" (or afternoon/evening). Style: `md.sys.typescale.titleLarge`, `FontWeight.Bold`.
-        *   **Actions**: `Row` containing three `IconButton`s.
-            *   `IconButton` 1: `Icons.Outlined.Notifications`, `contentDescription`: "Notifications".
-            *   `IconButton` 2: `Icons.Outlined.History`, `contentDescription`: "Recently played".
-            *   `IconButton` 3: `Icons.Outlined.Settings`, `contentDescription`: "Settings".
+        *   **Name**: `Image` (Logo)
+        *   **Position**: Start of the `TopAppBar`.
+        *   **Size**: 32dp x 32dp.
+        *   **Content**: Empower app logo.
+    *   **Actions**:
+        *   **Name**: `IconButton`
+        *   **Icon**: `Icons.Filled.Add`
+        *   **Content Description**: "Link an Account"
+        *   **Tint**: `md.sys.color.on-surface`
+2.  **Name**: `LazyColumn` (Screen Content)
+    *   **Position & Size**: Fills the space between `TopAppBar` and `NavigationBar`.
+    *   **Layout**: `padding(horizontal = 16.dp)`. `Arrangement.spacedBy(16.dp)`.
+    *   **Content**: A list of `Card` components.
+        *   **Example Card 1**: `Card` for "Net Worth". Contains a title `Text` ("Net Worth"), a large amount `Text` ("$1,234,567.89"), and a smaller `Text` for change ("+$5,000.12 today").
+        *   **Example Card 2**: `Card` for "Cash Flow". Contains a title, a bar chart visual, and summary figures.
+        *   **Example Card 3**: `Card` for "Budget". Contains a title, a progress indicator, and spending categories.
+3.  **Name**: `NavigationBar` (Bottom Navigation)
+    *   **Position & Size**: `fillMaxWidth()`, height 80dp. Aligned to the bottom of the screen.
+    *   **Style**: `containerColor`: `md.sys.color.surface-variant`
+    *   **Content**: Five `NavigationBarItem` components.
+        *   **Item 1 (Active)**: `label`: "Dashboard", `icon`: `Icons.Filled.Dashboard`, `selected`: `true`.
+        *   **Item 2**: `label`: "Planning", `icon`: `Icons.Outlined.EditNote`, `selected`: `false`.
+        *   **Item 3**: `label`: "Investing", `icon`: `Icons.Outlined.ShowChart`, `selected`: `false`.
+        *   **Item 4**: `label`: "Spending", `icon`: `Icons.Outlined.AccountBalanceWallet`, `selected`: `false`.
+        *   **Item 5**: `label`: "Wealth", `icon`: `Icons.Outlined.Diamond`, `selected`: `false`.
 
-2.  **Name**: `LazyColumn` (Main Content)
-    *   **Position & Size**: Fills the content area of the `Scaffold`. `padding(horizontal = 16dp)`.
-    *   **Layout**: `Arrangement.spacedBy(24dp)`.
-
-3.  **Name**: `Row` (Filter Chips)
-    *   **Position & Size**: First item in the `LazyColumn`.
-    *   **Layout**: `Arrangement.spacedBy(8dp)`.
-    *   **Content**:
-        *   `AssistChip` 1: Label "Music".
-        *   `AssistChip` 2: Label "Podcasts & Shows".
-        *   Style: `AssistChipDefaults.assistChipColors(containerColor = md.sys.color.surfaceVariant)`.
-
-4.  **Name**: `Text` (Section Header 1)
-    *   **Position & Size**: Item in `LazyColumn`.
-    *   **Style**: `md.sys.typescale.titleMedium`, `FontWeight.Bold`.
-    *   **Content**: "Recently played"
-
-5.  **Name**: `LazyRow` (Recently Played)
-    *   **Position & Size**: Item in `LazyColumn`. `fillMaxWidth()`.
-    *   **Layout**: `Arrangement.spacedBy(16dp)`.
-    *   **Content**: A horizontal list of `Column` items.
-        *   **Item**: `Column` containing:
-            *   `Image`: 120x120dp, `shape = Shape.Corner.Medium`, `contentScale = ContentScale.Crop`. Placeholder for album/playlist art.
-            *   `Text`: `maxLines = 2`, `overflow = TextOverflow.Ellipsis`. Style `md.sys.typescale.bodyMedium`. Content: "Liked Songs" or playlist name.
-
-6.  **Name**: `Text` (Section Header 2)
-    *   **Position & Size**: Item in `LazyColumn`.
-    *   **Style**: `md.sys.typescale.titleMedium`, `FontWeight.Bold`.
-    *   **Content**: "Made for You"
-
-7.  **Name**: `LazyRow` (Made for You)
-    *   **Position & Size**: Item in `LazyColumn`. `fillMaxWidth()`.
-    *   **Layout**: `Arrangement.spacedBy(16dp)`.
-    *   **Content**: Similar to "Recently Played" row, displaying personalized playlists like "Discover Weekly".
-
-8.  **Name**: `NavigationBar`
-    *   **Position & Size**: Bottom of the `Scaffold`. `modifier`: `fillMaxWidth()`.
-    *   **Style**: `md.sys.color.surfaceVariant`.
-    *   **Content**:
-        *   `NavigationBarItem` 1:
-            *   `selected`: `true`
-            *   `icon`: `Icon` with `Icons.Filled.Home`, `contentDescription`: "Home".
-            *   `label`: `Text` with "Home".
-        *   `NavigationBarItem` 2:
-            *   `selected`: `false`
-            *   `icon`: `Icon` with `Icons.Outlined.Search`, `contentDescription`: "Search".
-            *   `label`: `Text` with "Search".
-        *   `NavigationBarItem` 3:
-            *   `selected`: `false`
-            *   `icon`: `Icon` with `Icons.Outlined.LibraryMusic`, `contentDescription`: "Your Library".
-            *   `label`: `Text` with "Your Library".
-
-#### IV. Interaction & Behavior
-*   **Interactions**:
-    *   On tap of a playlist/album item in any `LazyRow` -> Navigate to `07_Playlist_Screen`.
-    *   On tap of "Search" `NavigationBarItem` -> Navigate to `06_Search_Screen`.
-    *   On tap of "Your Library" `NavigationBarItem` -> Navigate to `08_Library_Screen`.
-    *   On tap of Settings icon -> Navigate to `10_Settings_Screen`.
-*   **Animations**:
-    *   **Screen Transition (Bottom Nav)**: `MaterialFadeThrough`.
-*   **Scroll Behavior**:
-    *   As the user scrolls down, the `TopAppBar` scrolls out of view.
-    *   As the user scrolls up, the `TopAppBar` scrolls back into view.
-
-#### V. Critical Scenarios & States
-*   **Empty State**:
-    *   If a new user has no "Recently played" items, the section is hidden or replaced with a message like "Start listening to see your history here."
-*   **Loading State**:
-    *   The screen displays shimmer placeholders for the `LazyRow` items while data is being fetched. Each placeholder is a grey box matching the dimensions of the content it represents.
+##### Interaction & Behavior:
+*   **TopAppBar '+' IconButton**:
+    *   **Interaction**: On tap -> Navigate to `03_02_Link_an_Account_Screen`.
+    *   **Animation**: `MaterialSharedAxis` (Y-axis) forward transition (modal sheet style).
+*   **Scroll Behavior**: The `TopAppBar` collapses on scroll up and reappears on scroll down.
+*   **NavigationBar Items**:
+    *   **Interaction**: Tapping an inactive item navigates to the corresponding screen.
+    *   **'Planning'**: On tap -> Navigate to `02_02_Planning_Screen`.
+    *   **'Investing'**: On tap -> Navigate to `02_03_Investing_Screen`.
+    *   **'Spending'**: On tap -> Navigate to `02_04_Spending_Screen`.
+    *   **'Wealth'**: On tap -> Navigate to `02_05_Wealth_Screen`.
+    *   **Animation**: `MaterialFadeThrough` transition between tabs.
 
 ---
 
-### **Screen Name/ID**: 06_Search_Screen
+#### Screen 6: Planning Screen
+*   **Screen Name/ID**: `02_02_Planning_Screen`
 *   **Dimensions**: 393x852dp
 *   **Background**: `md.sys.color.background`
-*   **Layout**: `Scaffold` with `Column` content.
+*   **Layout**: `Scaffold` with `TopAppBar`, `LazyColumn`, and `NavigationBar`.
 
-#### III. Component Specifications
-1.  **Name**: `Column` (Main Content)
-    *   **Position & Size**: Fills content area. `modifier`: `fillMaxSize()`, `padding(16dp)`.
-    *   **Layout**: `verticalArrangement`: `Arrangement.spacedBy(16dp)`.
-
-2.  **Name**: `Text` (Screen Title)
-    *   **Position & Size**: Top of the column.
-    *   **Style**: `md.sys.typescale.headlineMedium`, `FontWeight.Bold`.
-    *   **Content**: "Search"
-
-3.  **Name**: `SearchBar` (Docked)
-    *   **Position & Size**: `modifier`: `fillMaxWidth()`.
-    *   **Style**: `SearchBarDefaults` with container color `md.sys.color.surfaceVariant`.
-    *   **Content**:
-        *   `placeholder`: `Text` with "What do you want to listen to?".
-        *   `leadingIcon`: `Icon` with `Icons.Filled.Search`.
-        *   `trailingIcon`: `Icon` with `Icons.Outlined.CameraAlt` for search by image (hypothetical feature).
-
-4.  **Name**: `Text` (Section Header)
-    *   **Position & Size**: Below search bar.
-    *   **Style**: `md.sys.typescale.titleMedium`, `FontWeight.Bold`.
-    *   **Content**: "Browse all"
-
-5.  **Name**: `LazyVerticalGrid` (Genre/Category Cards)
-    *   **Position & Size**: Fills remaining space.
-    *   **Layout**: `GridCells.Fixed(2)`, `verticalArrangement = Arrangement.spacedBy(16dp)`, `horizontalArrangement = Arrangement.spacedBy(16dp)`.
-    *   **Content**: A grid of `Card` components.
-        *   **Item**: `Card`
-            *   Size: ~170dp x 100dp.
-            *   Style: `CardDefaults.cardColors(containerColor = a dynamic color, e.g., md.sys.color.tertiaryContainer)`.
-            *   Content: `Box` with a `Text` label ("Podcasts", "Pop", "Rock", etc.) at the top-left and a small cover art image rotated and positioned at the bottom-right.
-
-6.  **Name**: `NavigationBar`
-    *   **Position & Size**: Bottom of the `Scaffold`.
-    *   **Content**: Same as `05_Home_Screen`, but with "Search" item selected.
-        *   `NavigationBarItem` 2: `selected`: `true`, `icon`: `Icons.Filled.Search`.
-
-#### IV. Interaction & Behavior
-*   **Interactions**:
-    *   On tap of `SearchBar` -> Transition to active search view (`06a_Search_Active_Screen`).
-    *   On tap of a genre card -> Navigate to a screen showing content for that genre (e.g., `07_Playlist_Screen` filtered by genre).
-    *   On tap of "Home" `NavigationBarItem` -> Navigate to `05_Home_Screen`.
-    *   On tap of "Your Library" `NavigationBarItem` -> Navigate to `08_Library_Screen`.
-*   **Animations**:
-    *   **Screen Transition (Bottom Nav)**: `MaterialFadeThrough`.
-    *   **Search Bar Transition**: The `SearchBar` seamlessly expands into the full-screen active search view.
-
----
-
-### **Screen Name/ID**: 06a_Search_Active_Screen
-*   **Dimensions**: 393x852dp
-*   **Background**: `md.sys.color.background`
-*   **Layout**: `Scaffold` with `LazyColumn` content.
-
-#### III. Component Specifications
-1.  **Name**: `SearchBar` (Active)
-    *   **Position & Size**: Top of the screen. `modifier`: `fillMaxWidth()`.
-    *   **Style**: Active state of the `SearchBar` component.
-    *   **Content**:
-        *   `leadingIcon`: `IconButton` with `Icons.Filled.ArrowBack`. `contentDescription`: "Back".
-        *   `placeholder`: Same as before.
-        *   `trailingIcon`: `IconButton` with `Icons.Filled.Clear` if text is present. `contentDescription`: "Clear search".
-        *   The keyboard is automatically focused and visible.
-
-2.  **Name**: `LazyColumn` (Search Results)
-    *   **Position & Size**: Fills the content area below the search bar.
-    *   **Layout**: `Arrangement.spacedBy(8dp)`.
-    *   **Content**: List of search results.
-        *   **Item**: `ListItem`
-            *   `leadingContent`: `Image` (64x64dp) for album/artist/song art.
-            *   `headlineContent`: `Text` for the song/artist name (e.g., "Bohemian Rhapsody").
-            *   `supportingContent`: `Text` for the subtitle (e.g., "Song • Queen").
-            *   `trailingContent`: `IconButton` with `Icons.Filled.MoreVert`. `contentDescription`: "More options".
-
-#### IV. Interaction & Behavior
-*   **Interactions**:
-    *   On tap of `ArrowBack` icon -> Navigate back to `06_Search_Screen`.
-    *   As user types, search results populate the `LazyColumn` in real-time.
-    *   On tap of a search result `ListItem` -> Navigate to the relevant screen (`07_Playlist_Screen` for an album, `09_Now_Playing_Screen` for a song).
-    *   On tap of `Clear` icon -> Clears the text from the search query field.
-*   **Animations**:
-    *   The transition from the docked `SearchBar` to the active full-screen view is animated using Material Design's built-in `SearchBar` motion spec.
-
-#### V. Critical Scenarios & States
-*   **Empty State**:
-    *   If a search yields no results, the `LazyColumn` is replaced with a centered `Column` containing:
-        *   `Icon`: `Icons.Outlined.SearchOff`, size 64dp, color `md.sys.color.onSurfaceVariant`.
-        *   `Text` (Headline): "Couldn't find anything." Style `md.sys.typescale.titleMedium`.
-        *   `Text` (Body): "Try searching for something else." Style `md.sys.typescale.bodyMedium`.
-*   **Loading State**:
-    *   While waiting for search results after the user stops typing, a `LinearProgressIndicator` is displayed directly underneath the `SearchBar`.
-
----
-
-### **Screen Name/ID**: 07_Playlist_Screen
-*   **Dimensions**: 393x852dp
-*   **Background**: `md.sys.color.background`
-*   **Layout**: `Scaffold` with `LazyColumn`. A dynamic gradient based on the album art is drawn behind the `TopAppBar` and at the top of the content.
-
-#### III. Component Specifications
+##### Components:
 1.  **Name**: `TopAppBar`
-    *   **Position & Size**: Top of the `Scaffold`. Height 56dp.
-    *   **Style**:
-        *   Container Color: `Color.Transparent`.
-        *   `scrollBehavior`: `TopAppBarDefaults.exitUntilCollapsedScrollBehavior()`. The title fades in as the user scrolls.
+    *   **Position & Size**: `fillMaxWidth()`, height 64dp.
+    *   **Style**: `scrollBehavior`: `TopAppBarDefaults.enterAlwaysScrollBehavior()`
     *   **Content**:
-        *   **Navigation Icon**: `IconButton` with `Icons.Filled.ArrowBack`. `contentDescription`: "Back".
-        *   **Title**: `Text` with playlist name, initially transparent, fades to `md.sys.color.onSurface` on scroll.
-
-2.  **Name**: `LazyColumn` (Playlist Content)
-    *   **Position & Size**: Fills the `Scaffold` content area.
-    *   **Content**:
-        *   **Header Item**: `Column` with `padding(16dp)`.
-            *   `Image`: 200x200dp, `Alignment.CenterHorizontally`, `shape = Shape.Corner.Medium`. Playlist/Album cover art.
-            *   `Text` (Title): Playlist name, e.g., "Discover Weekly". Style `md.sys.typescale.headlineLarge`, `FontWeight.Bold`.
-            *   `Text` (Description): Playlist description. Style `md.sys.typescale.bodyMedium`, color `md.sys.color.onSurfaceVariant`.
-            *   `Row` (Actions): `Arrangement.spacedBy(16dp)`.
-                *   `IconButton`: `Icons.Filled.FavoriteBorder`, `contentDescription`: "Like".
-                *   `IconButton`: `Icons.Filled.DownloadForOffline`, `contentDescription`: "Download".
-                *   `IconButton`: `Icons.Filled.MoreVert`, `contentDescription`: "More options".
-        *   **Song Items**: List of `ListItem`s.
-            *   `ListItem`:
-                *   `leadingContent`: `Image` (56x56dp) for song's album art.
-                *   `headlineContent`: `Text` for song title.
-                *   `supportingContent`: `Text` for artist name.
-                *   `trailingContent`: `IconButton` with `Icons.Filled.MoreVert`.
-
-3.  **Name**: `FloatingActionButton` (Play)
-    *   **Position & Size**: Anchored to the `LazyColumn` header, often overlapping the action `Row`. Size `56x56dp`.
-    *   **Style**: `FloatingActionButtonDefaults.largeFAB()` with container color `md.sys.color.primary`.
-    *   **Content**: `Icon` with `Icons.Filled.PlayArrow`, size 36dp. `contentDescription`: "Play playlist".
-
-#### IV. Interaction & Behavior
-*   **Interactions**:
-    *   On tap of `ArrowBack` -> Navigate to the previous screen (e.g., `05_Home_Screen`).
-    *   On tap of a song `ListItem` -> Navigate to `09_Now_Playing_Screen` and start playing that song.
-    *   On tap of the `FloatingActionButton` -> Start playing the playlist from the first song and navigate to `09_Now_Playing_Screen`.
-*   **Scroll Behavior**:
-    *   As the user scrolls down, the header content (Image, Title) scrolls up. The `TopAppBar` title fades in, and its background color transitions from transparent to `md.sys.color.surface`. This is a collapsing toolbar effect.
-
----
-
-### **Screen Name/ID**: 08_Library_Screen
-*   **Dimensions**: 393x852dp
-*   **Background**: `md.sys.color.background`
-*   **Layout**: `Scaffold` with `LazyColumn`.
-
-#### III. Component Specifications
-1.  **Name**: `TopAppBar`
-    *   **Position & Size**: Top of the `Scaffold`. Height 64dp.
-    *   **Style**: `md.sys.color.surface`.
-    *   **Content**:
-        *   **Title**: `Row` with `Arrangement.spacedBy(8dp)`.
-            *   `Avatar`: 32x32dp, `shape = CircleShape`. User's profile picture.
-            *   `Text`: "Your Library". Style `md.sys.typescale.titleLarge`, `FontWeight.Bold`.
-        *   **Actions**: `Row` with two `IconButton`s.
-            *   `IconButton` 1: `Icons.Outlined.Search`, `contentDescription`: "Search in library".
-            *   `IconButton` 2: `Icons.Filled.Add`, `contentDescription`: "Create playlist".
-
-2.  **Name**: `LazyColumn` (Library Content)
-    *   **Position & Size**: Fills the content area.
-    *   **Content**: List of `ListItem`s representing playlists, albums, and artists.
-        *   **Item**: `ListItem`
-            *   `leadingContent`: `Image` (64x64dp) for playlist/album art. `shape = Shape.Corner.Small`.
-            *   `headlineContent`: `Text` for the item name (e.g., "Liked Songs").
-            *   `supportingContent`: `Text` for the subtitle (e.g., "Playlist • 123 songs").
-
+        *   **Name**: `Text`
+        *   **Style**: `typography`: `md.sys.typography.titleLarge`
+        *   **Content**: "Planning"
+2.  **Name**: `LazyColumn` (Screen Content)
+    *   **Position & Size**: Fills the space between `TopAppBar` and `NavigationBar`.
+    *   **Layout**: `padding(horizontal = 16.dp)`. `Arrangement.spacedBy(16.dp)`.
+    *   **Content**: List of `Card` components for planning tools.
+        *   **Example Card 1**: "Retirement Planner".
+        *   **Example Card 2**: "Savings Goals".
+        *   **Example Card 3**: "Education Planner".
 3.  **Name**: `NavigationBar`
-    *   **Position & Size**: Bottom of the `Scaffold`.
-    *   **Content**: Same as `05_Home_Screen`, but with "Your Library" item selected.
-        *   `NavigationBarItem` 3: `selected`: `true`, `icon`: `Icons.Filled.LibraryMusic`.
+    *   **Position & Size**: `fillMaxWidth()`, height 80dp. Aligned to the bottom.
+    *   **Content**:
+        *   **Item 1**: `label`: "Dashboard", `icon`: `Icons.Outlined.Dashboard`, `selected`: `false`.
+        *   **Item 2 (Active)**: `label`: "Planning", `icon`: `Icons.Filled.EditNote`, `selected`: `true`.
+        *   **Item 3**: `label`: "Investing", `icon`: `Icons.Outlined.ShowChart`, `selected`: `false`.
+        *   **Item 4**: `label`: "Spending", `icon`: `Icons.Outlined.AccountBalanceWallet`, `selected`: `false`.
+        *   **Item 5**: `label`: "Wealth", `icon`: `Icons.Outlined.Diamond`, `selected`: `false`.
 
-#### IV. Interaction & Behavior
-*   **Interactions**:
-    *   On tap of a `ListItem` -> Navigate to `07_Playlist_Screen`.
-    *   On tap of "Home" `NavigationBarItem` -> Navigate to `05_Home_Screen`.
-    *   On tap of "Search" `NavigationBarItem` -> Navigate to `06_Search_Screen`.
-*   **Animations**:
-    *   **Screen Transition (Bottom Nav)**: `MaterialFadeThrough`.
-
-#### V. Critical Scenarios & States
-*   **Empty State**:
-    *   If the user has no saved items, the `LazyColumn` is replaced with a centered `Column`:
-        *   `Text` (Headline): "Create your first playlist". Style `md.sys.typescale.titleLarge`.
-        *   `Text` (Body): "It's easy, we'll help you." Style `md.sys.typescale.bodyMedium`.
-        *   `FilledButton`: Content "Create playlist", `margin(top = 24dp)`.
+##### Interaction & Behavior:
+*   **NavigationBar Items**:
+    *   **Interaction**: Tapping an inactive item navigates to the corresponding screen.
+    *   **Animation**: `MaterialFadeThrough` transition between tabs.
 
 ---
 
-### **Screen Name/ID**: 09_Now_Playing_Screen
-*   **Dimensions**: 393x852dp
-*   **Background**: Dynamic gradient extracted from the current song's album art.
-*   **Layout**: `Column`
-    *   `modifier`: `fillMaxSize()`, `padding(horizontal = 24dp, vertical = 16dp)`.
-
-#### III. Component Specifications
-1.  **Name**: `TopAppBar` (Simplified)
-    *   **Position & Size**: Top of the screen.
-    *   **Style**: `Color.Transparent`.
-    *   **Content**:
-        *   `leadingContent`: `IconButton` with `Icons.Filled.ExpandMore`. `contentDescription`: "Collapse player".
-        *   `titleContent`: `Column` with `Alignment.CenterHorizontally`.
-            *   `Text`: "PLAYING FROM ALBUM". Style `md.sys.typescale.labelSmall`.
-            *   `Text`: Album Name. Style `md.sys.typescale.labelMedium`, `FontWeight.Bold`.
-        *   `trailingContent`: `IconButton` with `Icons.Filled.MoreVert`. `contentDescription`: "More options".
-
-2.  **Name**: `Image` (Album Art)
-    *   **Position & Size**:
-        *   `modifier`: `fillMaxWidth()`, `aspectRatio(1f)`, `padding(vertical = 32dp)`.
-        *   `shape`: `Shape.Corner.Large`.
-    *   **Content**: High-resolution album art for the currently playing song.
-
-3.  **Name**: `Row` (Song Info & Like)
-    *   **Position & Size**: `modifier`: `fillMaxWidth()`.
-    *   **Layout**: `Arrangement.SpaceBetween`, `Alignment.CenterVertically`.
-    *   **Content**:
-        *   `Column` (Song/Artist):
-            *   `Text` (Title): Song Title. Style `md.sys.typescale.headlineSmall`, `FontWeight.Bold`.
-            *   `Text` (Artist): Artist Name. Style `md.sys.typescale.bodyLarge`, color `md.sys.color.onSurfaceVariant`.
-        *   `IconButton`: `Icons.Filled.Favorite` (if liked) or `Icons.Filled.FavoriteBorder` (if not). `contentDescription`: "Like".
-
-4.  **Name**: `Slider` (Seek Bar)
-    *   **Position & Size**: `modifier`: `fillMaxWidth()`, `padding(vertical = 8dp)`.
-    *   **Style**: `SliderDefaults.colors(thumbColor = md.sys.color.primary, activeTrackColor = md.sys.color.primary)`.
-    *   **Content**: Represents song progress.
-
-5.  **Name**: `Row` (Timestamps)
-    *   **Position & Size**: `modifier`: `fillMaxWidth()`.
-    *   **Layout**: `Arrangement.SpaceBetween`.
-    *   **Content**:
-        *   `Text` (Current Time): e.g., "1:23". Style `md.sys.typescale.bodySmall`.
-        *   `Text` (Total Time): e.g., "3:45". Style `md.sys.typescale.bodySmall`.
-
-6.  **Name**: `Row` (Player Controls)
-    *   **Position & Size**: `modifier`: `fillMaxWidth()`, `padding(vertical = 8dp)`.
-    *   **Layout**: `Arrangement.SpaceAround`, `Alignment.CenterVertically`.
-    *   **Content**:
-        *   `IconButton`: `Icons.Filled.Shuffle`. `contentDescription`: "Shuffle".
-        *   `IconButton`: `Icons.Filled.SkipPrevious`, size 48dp. `contentDescription`: "Previous song".
-        *   `IconButton` (Play/Pause): `FilledIconButton` with large container.
-            *   Size: 72x72dp.
-            *   Icon: `Icons.Filled.Pause` or `Icons.Filled.PlayArrow`, size 48dp.
-            *   `contentDescription`: "Play" or "Pause".
-        *   `IconButton`: `Icons.Filled.SkipNext`, size 48dp. `contentDescription`: "Next song".
-        *   `IconButton`: `Icons.Filled.Repeat`. `contentDescription`: "Repeat".
-
-#### IV. Interaction & Behavior
-*   **Interactions**:
-    *   On tap of `ExpandMore` icon -> Collapse the screen into a mini-player anchored above the `NavigationBar` and navigate back to the previous screen.
-    *   User can drag the `Slider` thumb to seek through the song.
-    *   On tap of Play/Pause button -> Toggles playback state.
-    *   On tap of Skip Next/Previous -> Changes the track.
-*   **Animations**:
-    *   The screen should slide up from the bottom when a song is played. It should slide down when collapsed. This is a `SharedElement` transition where the mini-player expands into the full screen.
-
----
-
-### **Screen Name/ID**: 10_Settings_Screen
+#### Screen 7: Investing Screen
+*   **Screen Name/ID**: `02_03_Investing_Screen`
 *   **Dimensions**: 393x852dp
 *   **Background**: `md.sys.color.background`
-*   **Layout**: `Scaffold` with `LazyColumn`.
+*   **Layout**: `Scaffold` with `TopAppBar`, content area with `TabRow`, and `NavigationBar`.
 
-#### III. Component Specifications
+##### Components:
 1.  **Name**: `TopAppBar`
-    *   **Position & Size**: Top of the `Scaffold`. Height 56dp.
-    *   **Style**: `md.sys.color.surface`.
+    *   **Position & Size**: `fillMaxWidth()`, height 64dp.
     *   **Content**:
-        *   **Navigation Icon**: `IconButton` with `Icons.Filled.ArrowBack`. `contentDescription`: "Back".
-        *   **Title**: `Text` with "Settings". Style `md.sys.typescale.titleLarge`.
-
-2.  **Name**: `LazyColumn` (Settings List)
-    *   **Position & Size**: Fills the content area.
-    *   **Content**: A list of settings items, grouped by sections.
-
-3.  **Name**: `ListItem` (Account)
-    *   **Position & Size**: Item in `LazyColumn`.
+        *   **Name**: `Text`
+        *   **Style**: `typography`: `md.sys.typography.titleLarge`
+        *   **Content**: "Investing"
+2.  **Name**: `PrimaryTabRow`
+    *   **Position & Size**: `fillMaxWidth()`, height 48dp. Below `TopAppBar`.
     *   **Content**:
-        *   `leadingContent`: `Avatar` (40x40dp) with user's profile picture.
-        *   `headlineContent`: `Text` with user's name.
-        *   `supportingContent`: `Text` with "View profile".
-        *   `trailingContent`: `Icon` with `Icons.Filled.ChevronRight`.
-
-4.  **Name**: `Text` (Section Header)
-    *   **Position & Size**: Item in `LazyColumn`. `padding(horizontal = 16dp, vertical = 8dp)`.
-    *   **Style**: `md.sys.typescale.titleSmall`, color `md.sys.color.primary`.
-    *   **Content**: "Data Saver"
-
-5.  **Name**: `ListItem` (Data Saver Toggle)
-    *   **Position & Size**: Item in `LazyColumn`.
+        *   **Tab 1**: `text`: "Holdings"
+        *   **Tab 2**: `text`: "Allocation"
+        *   **Tab 3**: `text`: "Performance"
+3.  **Name**: `HorizontalPager` / Content Area
+    *   **Position & Size**: Fills the space between `TabRow` and `NavigationBar`.
+    *   **Content**: Displays content corresponding to the selected tab.
+4.  **Name**: `NavigationBar`
+    *   **Position & Size**: `fillMaxWidth()`, height 80dp. Aligned to the bottom.
     *   **Content**:
-        *   `headlineContent`: `Text` with "Data Saver".
-        *   `supportingContent`: `Text` with "Sets your audio quality to low...".
-        *   `trailingContent`: `Switch` component.
+        *   **Item 1**: `label`: "Dashboard", `icon`: `Icons.Outlined.Dashboard`, `selected`: `false`.
+        *   **Item 2**: `label`: "Planning", `icon`: `Icons.Outlined.EditNote`, `selected`: `false`.
+        *   **Item 3 (Active)**: `label`: "Investing", `icon`: `Icons.Filled.ShowChart`, `selected`: `true`.
+        *   **Item 4**: `label`: "Spending", `icon`: `Icons.Outlined.AccountBalanceWallet`, `selected`: `false`.
+        *   **Item 5**: `label`: "Wealth", `icon`: `Icons.Outlined.Diamond`, `selected`: `false`.
 
-6.  **Name**: `ListItem` (Logout Button)
-    *   **Position & Size**: Item in `LazyColumn`. `margin(top = 32dp)`.
-    *   **Style**: `ListItemDefaults.colors(headlineColor = md.sys.color.error)`.
+##### Interaction & Behavior:
+*   **TabRow**:
+    *   **Interaction**: Tapping a tab switches the content displayed in the `HorizontalPager`.
+    *   **'Holdings' Tab**: On tap -> Navigate to `05_02_Investment_Holdings_Screen`.
+    *   **'Allocation' Tab**: On tap -> Navigate to `05_03_Investment_Allocation_Screen`.
+*   **NavigationBar Items**:
+    *   **Interaction**: Tapping an inactive item navigates to the corresponding screen.
+    *   **Animation**: `MaterialFadeThrough` transition between tabs.
+
+---
+
+#### Screen 8: Spending Screen
+*   **Screen Name/ID**: `02_04_Spending_Screen`
+*   **Dimensions**: 393x852dp
+*   **Background**: `md.sys.color.background`
+*   **Layout**: `Scaffold` with `TopAppBar`, content area with `TabRow`, and `NavigationBar`.
+
+##### Components:
+1.  **Name**: `TopAppBar`
+    *   **Position & Size**: `fillMaxWidth()`, height 64dp.
     *   **Content**:
-        *   `headlineContent`: `Text` with "Log out", centered.
+        *   **Name**: `Text`
+        *   **Style**: `typography`: `md.sys.typography.titleLarge`
+        *   **Content**: "Spending"
+2.  **Name**: `PrimaryTabRow`
+    *   **Position & Size**: `fillMaxWidth()`, height 48dp. Below `TopAppBar`.
+    *   **Content**:
+        *   **Tab 1**: `text`: "Overview"
+        *   **Tab 2**: `text`: "Transactions"
+        *   **Tab 3**: `text`: "Budgets"
+3.  **Name**: `HorizontalPager` / Content Area
+    *   **Position & Size**: Fills the space between `TabRow` and `NavigationBar`.
+    *   **Content**: Displays content corresponding to the selected tab.
+4.  **Name**: `NavigationBar`
+    *   **Position & Size**: `fillMaxWidth()`, height 80dp. Aligned to the bottom.
+    *   **Content**:
+        *   **Item 1**: `label`: "Dashboard", `icon`: `Icons.Outlined.Dashboard`, `selected`: `false`.
+        *   **Item 2**: `label`: "Planning", `icon`: `Icons.Outlined.EditNote`, `selected`: `false`.
+        *   **Item 3**: `label`: "Investing", `icon`: `Icons.Outlined.ShowChart`, `selected`: `false`.
+        *   **Item 4 (Active)**: `label`: "Spending", `icon`: `Icons.Filled.AccountBalanceWallet`, `selected`: `true`.
+        *   **Item 5**: `label`: "Wealth", `icon`: `Icons.Outlined.Diamond`, `selected`: `false`.
 
-#### IV. Interaction & Behavior
-*   **Interactions**:
-    *   On tap of `ArrowBack` -> Navigate back to `05_Home_Screen`.
-    *   On tap of Account `ListItem` -> Navigate to a Profile screen (not in tree).
-    *   Toggling the `Switch` enables/disables the Data Saver feature.
-    *   On tap of "Log out" -> A confirmation `AlertDialog` is shown.
-        *   **AlertDialog**: Title "Log out?", Text "Are you sure you want to log out?", Confirm button "Log out", Dismiss button "Cancel".
-        *   On confirm -> Log the user out and navigate to `02_Onboarding_Welcome_Screen`.
-*   **Animations**:
-    *   **Screen Transition (Enter/Exit)**: `MaterialSharedAxis(X)`.
+##### Interaction & Behavior:
+*   **TabRow**:
+    *   **Interaction**: Tapping a tab switches the content.
+    *   **'Transactions' Tab**: On tap -> Navigate to `04_02_Transactions_List_Screen`.
+*   **NavigationBar Items**:
+    *   **Interaction**: Tapping an inactive item navigates to the corresponding screen.
+    *   **Animation**: `MaterialFadeThrough` transition between tabs.
+
+---
+
+#### Screen 9: Wealth Screen
+*   **Screen Name/ID**: `02_05_Wealth_Screen`
+*   **Dimensions**: 393x852dp
+*   **Background**: `md.sys.color.background`
+*   **Layout**: `Scaffold` with `TopAppBar`, `LazyColumn`, and `NavigationBar`.
+
+##### Components:
+1.  **Name**: `TopAppBar`
+    *   **Position & Size**: `fillMaxWidth()`, height 64dp.
+    *   **Content**:
+        *   **Name**: `Text`
+        *   **Style**: `typography`: `md.sys.typography.titleLarge`
+        *   **Content**: "Wealth"
+2.  **Name**: `LazyColumn` (Screen Content)
+    *   **Position & Size**: Fills the space between `TopAppBar` and `NavigationBar`.
+    *   **Layout**: `padding(horizontal = 16.dp)`. `Arrangement.spacedBy(16.dp)`.
+    *   **Content**: List of `Card` components detailing assets and liabilities.
+        *   **Example Card 1**: "Assets" with a total value and a breakdown by type (Cash, Investments, Property).
+        *   **Example Card 2**: "Liabilities" with a total value and a breakdown by type (Credit Cards, Loans, Mortgages).
+3.  **Name**: `NavigationBar`
+    *   **Position & Size**: `fillMaxWidth()`, height 80dp. Aligned to the bottom.
+    *   **Content**:
+        *   **Item 1**: `label`: "Dashboard", `icon`: `Icons.Outlined.Dashboard`, `selected`: `false`.
+        *   **Item 2**: `label`: "Planning", `icon`: `Icons.Outlined.EditNote`, `selected`: `false`.
+        *   **Item 3**: `label`: "Investing", `icon`: `Icons.Outlined.ShowChart`, `selected`: `false`.
+        *   **Item 4**: `label`: "Spending", `icon`: `Icons.Outlined.AccountBalanceWallet`, `selected`: `false`.
+        *   **Item 5 (Active)**: `label`: "Wealth", `icon`: `Icons.Filled.Diamond`, `selected`: `true`.
+
+##### Interaction & Behavior:
+*   **NavigationBar Items**:
+    *   **Interaction**: Tapping an inactive item navigates to the corresponding screen.
+    *   **Animation**: `MaterialFadeThrough` transition between tabs.
+
+---
+
+### Flow 3: Link Bank Account
+
+---
+
+#### Screen 10: Link an Account Screen
+*   **Screen Name/ID**: `03_02_Link_an_Account_Screen`
+*   **Dimensions**: 393x852dp
+*   **Background**: `md.sys.color.surface`
+*   **Layout**: `Scaffold` with `TopAppBar` and `LazyColumn`.
+
+##### Components:
+1.  **Name**: `TopAppBar`
+    *   **Position & Size**: `fillMaxWidth()`, height 64dp.
+    *   **Style**: `colors`: `TopAppBarDefaults.topAppBarColors(containerColor = md.sys.color.surface)`
+    *   **Navigation Icon**: `IconButton` with `Icons.Filled.Close` icon.
+    *   **Content**:
+        *   **Name**: `Text`
+        *   **Style**: `typography`: `md.sys.typography.titleLarge`
+        *   **Content**: "Link an Account"
+2.  **Name**: `OutlinedTextField` (Search Bar)
+    *   **Position & Size**: `fillMaxWidth()`. Margin 16dp.
+    *   **Style**:
+        *   `placeholder`: "Search for your bank or brokerage"
+        *   `leadingIcon`: `Icon` with `Icons.Filled.Search`.
+        *   `shape`: `ShapeDefaults.Full`.
+    *   **Content**: User-entered search query.
+3.  **Name**: `Text` (Section Header)
+    *   **Position & Size**: `fillMaxWidth()`. Margin horizontal 16dp, top 16dp.
+    *   **Style**: `typography`: `md.sys.typography.titleMedium`, `color`: `md.sys.color.on-surface-variant`
+    *   **Content**: "Popular Institutions"
+4.  **Name**: `LazyColumn` (Institution List)
+    *   **Position & Size**: Fills remaining space.
+    *   **Content**: A list of institutions using `ListItem`.
+        *   **Example ListItem**:
+            *   `leadingContent`: `Image` of the institution's logo (e.g., Chase logo).
+            *   `headlineContent`: `Text` with the institution's name (e.g., "Chase").
+            *   `modifier`: `clickable()`
+
+##### Interaction & Behavior:
+*   **TopAppBar Close Icon**:
+    *   **Interaction**: On tap -> Dismiss the screen and return to `02_01_Dashboard`.
+    *   **Animation**: `MaterialSharedAxis` (Y-axis) backward transition.
+*   **Search Bar**:
+    *   **Interaction**: As the user types, the list below filters to show matching institutions. Tapping a result navigates to the login screen.
+    *   **Resulting Navigation**: Navigate to `03_03_Institution_Login_Screen`.
+*   **ListItem (Institution)**:
+    *   **Interaction**: On tap -> Navigate to the login screen for the selected institution.
+    *   **Resulting Navigation**: Navigate to `03_03_Institution_Login_Screen`.
+    *   **Animation**: `MaterialSharedAxis` (X-axis) forward transition.
+
+---
+
+#### Screen 11: Institution Login Screen
+*   **Screen Name/ID**: `03_03_Institution_Login_Screen`
+*   **Dimensions**: 393x852dp
+*   **Background**: `md.sys.color.surface`
+*   **Layout**: `Scaffold` with `TopAppBar` and `Column`.
+
+##### Components:
+1.  **Name**: `TopAppBar`
+    *   **Position & Size**: `fillMaxWidth()`, height 64dp.
+    *   **Navigation Icon**: `IconButton` with `Icons.Filled.ArrowBack` icon.
+    *   **Content**:
+        *   **Name**: `Text`
+        *   **Style**: `typography`: `md.sys.typography.titleLarge`
+        *   **Content**: "Connect to [Institution Name]"
+2.  **Name**: `Image` (Institution Logo)
+    *   **Position & Size**: 80dp x 80dp. Centered horizontally. Top margin 32dp.
+    *   **Content**: Logo of the selected institution (e.g., Chase).
+3.  **Name**: `OutlinedTextField` (User ID)
+    *   **Position & Size**: `fillMaxWidth()`. Margin horizontal 16dp, top 32dp.
+    *   **Style**: `label`: "User ID"
+    *   **Content**: User-entered institution User ID.
+4.  **Name**: `OutlinedTextField` (Password)
+    *   **Position & Size**: `fillMaxWidth()`. Margin horizontal 16dp, top 16dp.
+    *   **Style**: `label`: "Password", `visualTransformation`: `PasswordVisualTransformation`.
+    *   **Content**: User-entered institution password.
+5.  **Name**: `Filled Button` (Sign In)
+    *   **Position & Size**: `fillMaxWidth()`, height 56dp. Margin 16dp.
+    *   **Style**: `shape`: `ShapeDefaults.Full`.
+    *   **Content**: `Text` with "Sign In".
+
+##### Interaction & Behavior:
+*   **TopAppBar Back Icon**:
+    *   **Interaction**: On tap -> Navigate back to `03_02_Link_an_Account_Screen`.
+    *   **Animation**: `MaterialSharedAxis` (X-axis) backward transition.
+*   **'Sign In' Button**:
+    *   **Interaction**: On tap -> Initiate the account linking process.
+    *   **Resulting Navigation**: Navigate to `03_04_Linking_Account_Progress_Screen`.
+    *   **Animation**: `MaterialFadeThrough` transition.
+
+---
+
+#### Screen 12: Linking Account Progress Screen
+*   **Screen Name/ID**: `03_04_Linking_Account_Progress_Screen`
+*   **Dimensions**: 393x852dp
+*   **Background**: `md.sys.color.surface`
+*   **Layout**: `Column` with `verticalArrangement = Arrangement.Center` and `horizontalAlignment = Alignment.CenterHorizontally`.
+
+##### Components:
+1.  **Name**: `CircularProgressIndicator`
+    *   **Position & Size**: 64dp x 64dp. Centered on screen.
+    *   **Style**: `strokeWidth`: 4.dp.
+2.  **Name**: `Text` (Status Message)
+    *   **Position & Size**: `fillMaxWidth()`. Top margin 24dp.
+    *   **Style**: `typography`: `md.sys.typography.titleMedium`, `textAlign`: `TextAlign.Center`.
+    *   **Content**: "Linking your account... This may take a moment."
+
+##### Interaction & Behavior:
+*   **Automatic Transition**:
+    *   **Interaction**: This is a transient screen. The app performs the account linking in the background.
+    *   **Resulting Navigation**: On successful linking -> Navigate to `03_05_Accounts_Found_Screen`. On failure, show an error dialog or `Snackbar` and return to `03_03_Institution_Login_Screen`.
+    *   **Animation**: `MaterialFadeThrough` transition.
+
+---
+
+#### Screen 13: Accounts Found Screen
+*   **Screen Name/ID**: `03_05_Accounts_Found_Screen`
+*   **Dimensions**: 393x852dp
+*   **Background**: `md.sys.color.surface`
+*   **Layout**: `Scaffold` with `Column` and a bottom-aligned button.
+
+##### Components:
+1.  **Name**: `Icon` (Success Icon)
+    *   **Position & Size**: 96dp x 96dp. Centered horizontally. Top margin 64dp.
+    *   **Style**: `icon`: `Icons.Filled.CheckCircle`, `tint`: `md.sys.color.primary`.
+2.  **Name**: `Text` (Success Title)
+    *   **Position & Size**: `fillMaxWidth()`. Top margin 24dp.
+    *   **Style**: `typography`: `md.sys.typography.headlineMedium`, `textAlign`: `TextAlign.Center`.
+    *   **Content**: "Success!"
+3.  **Name**: `Text` (Success Message)
+    *   **Position & Size**: `fillMaxWidth()`. Top margin 8dp. Padding horizontal 32dp.
+    *   **Style**: `typography`: `md.sys.typography.bodyLarge`, `textAlign`: `TextAlign.Center`, `color`: `md.sys.color.on-surface-variant`.
+    *   **Content**: "We found 3 accounts at [Institution Name] and have added them to your dashboard."
+4.  **Name**: `Filled Button` (Continue)
+    *   **Position & Size**: `fillMaxWidth()`, height 56dp. Aligned to the bottom of the screen with 16dp margin.
+    *   **Style**: `shape`: `ShapeDefaults.Full`.
+    *   **Content**: `Text` with "Continue".
+
+##### Interaction & Behavior:
+*   **'Continue' Button**:
+    *   **Interaction**: On tap -> Dismiss the entire linking flow and return to the dashboard.
+    *   **Resulting Navigation**: Navigate to `02_01_Dashboard`.
+    *   **Animation**: `MaterialSharedAxis` (Y-axis) backward transition, dismissing the modal flow.
+
+---
+
+### Flow 4: View Transactions
+
+---
+
+#### Screen 14: Transactions List Screen
+*   **Screen Name/ID**: `04_02_Transactions_List_Screen`
+*   **Dimensions**: 393x852dp
+*   **Background**: `md.sys.color.background`
+*   **Layout**: `Scaffold` with `TopAppBar` and `LazyColumn`.
+
+##### Components:
+1.  **Name**: `TopAppBar`
+    *   **Position & Size**: `fillMaxWidth()`, height 64dp.
+    *   **Navigation Icon**: `IconButton` with `Icons.Filled.ArrowBack` icon.
+    *   **Content**: `Text` with "Transactions".
+    *   **Actions**: `IconButton` with `Icons.Filled.FilterList` icon.
+2.  **Name**: `LazyColumn` (Transactions)
+    *   **Position & Size**: Fills the remaining space.
+    *   **Content**: List of transactions, grouped by date.
+        *   **Date Header**: `Text` with date (e.g., "October 31, 2025"). `Modifier.padding(16.dp)`.
+        *   **Transaction Item**: `ListItem` for each transaction.
+            *   `leadingContent`: `Icon` representing the category (e.g., `Icons.Filled.Restaurant`).
+            *   `headlineContent`: `Text` with merchant name (e.g., "Starbucks").
+            *   `supportingContent`: `Text` with category name (e.g., "Food & Dining").
+            *   `trailingContent`: `Text` with amount (e.g., "-$5.75").
+            *   `modifier`: `clickable()`.
+
+##### Interaction & Behavior:
+*   **TopAppBar Back Icon**:
+    *   **Interaction**: On tap -> Navigate back to `02_04_Spending_Screen`.
+    *   **Animation**: `MaterialSharedAxis` (X-axis) backward transition.
+*   **TopAppBar Filter Icon**:
+    *   **Interaction**: On tap -> Navigate to `04_04_Filter_Transactions_Screen`.
+    *   **Animation**: `MaterialSharedAxis` (Y-axis) forward transition.
+*   **Transaction ListItem**:
+    *   **Interaction**: On tap -> Navigate to `04_03_Transaction_Details_Screen` with the selected transaction's data.
+    *   **Animation**: `MaterialSharedAxis` (X-axis) forward transition.
+
+---
+
+#### Screen 15: Transaction Details Screen
+*   **Screen Name/ID**: `04_03_Transaction_Details_Screen`
+*   **Dimensions**: 393x852dp
+*   **Background**: `md.sys.color.surface`
+*   **Layout**: `Scaffold` with `TopAppBar` and `Column`.
+
+##### Components:
+1.  **Name**: `TopAppBar`
+    *   **Position & Size**: `fillMaxWidth()`, height 64dp.
+    *   **Navigation Icon**: `IconButton` with `Icons.Filled.ArrowBack` icon.
+    *   **Content**: `Text` with "Transaction Details".
+2.  **Name**: `Column` (Details)
+    *   **Position & Size**: `fillMaxWidth()`, `padding(16.dp)`.
+    *   **Content**:
+        *   `Text` (Merchant Name): `typography`: `headlineMedium`, content: "Starbucks".
+        *   `Text` (Amount): `typography`: `headlineLarge`, `color`: `md.sys.color.error`, content: "-$5.75".
+        *   `Divider`: `modifier.padding(vertical = 16.dp)`.
+        *   `ListItem`: `headlineContent`: "Date", `trailingContent`: "October 31, 2025".
+        *   `ListItem`: `headlineContent`: "Category", `trailingContent`: "Food & Dining".
+        *   `ListItem`: `headlineContent`: "Account", `trailingContent`: "Chase Checking (...1234)".
+
+##### Interaction & Behavior:
+*   **TopAppBar Back Icon**:
+    *   **Interaction**: On tap -> Navigate back to `04_02_Transactions_List_Screen`.
+    *   **Animation**: `MaterialSharedAxis` (X-axis) backward transition.
+
+---
+
+#### Screen 16: Filter Transactions Screen
+*   **Screen Name/ID**: `04_04_Filter_Transactions_Screen`
+*   **Dimensions**: 393x852dp
+*   **Background**: `md.sys.color.surface`
+*   **Layout**: `Scaffold` with `TopAppBar` and `Column`.
+
+##### Components:
+1.  **Name**: `TopAppBar`
+    *   **Position & Size**: `fillMaxWidth()`, height 64dp.
+    *   **Navigation Icon**: `IconButton` with `Icons.Filled.Close` icon.
+    *   **Content**: `Text` with "Filter Transactions".
+    *   **Actions**: `TextButton` with "Reset".
+2.  **Name**: `Column` (Filter Options)
+    *   **Position & Size**: `fillMaxWidth()`, `padding(16.dp)`.
+    *   **Content**:
+        *   `Text` (Section Header): "Date Range".
+        *   `OutlinedButton` with `Icons.Filled.DateRange` to open a date picker.
+        *   `Text` (Section Header): "Categories".
+        *   `FilterChip` components for each category (e.g., "Food", "Shopping", "Travel").
+        *   `Text` (Section Header): "Accounts".
+        *   `FilterChip` components for each account.
+3.  **Name**: `Filled Button` (Apply)
+    *   **Position & Size**: `fillMaxWidth()`, height 56dp. Aligned to bottom with 16dp margin.
+    *   **Content**: `Text` with "Apply Filters".
+
+##### Interaction & Behavior:
+*   **TopAppBar Close Icon**:
+    *   **Interaction**: On tap -> Dismiss screen without applying filters, return to `04_02_Transactions_List_Screen`.
+    *   **Animation**: `MaterialSharedAxis` (Y-axis) backward transition.
+*   **'Reset' TextButton**:
+    *   **Interaction**: On tap -> Clear all selected filters to their default state.
+*   **'Apply Filters' Button**:
+    *   **Interaction**: On tap -> Apply the selected filters and return to the transactions list.
+    *   **Resulting Navigation**: Navigate to `04_02_Transactions_List_Screen` (with filtered data).
+    *   **Animation**: `MaterialSharedAxis` (Y-axis) backward transition.
+
+---
+
+### Flow 5: View Investment Portfolio
+
+---
+
+#### Screen 17: Investment Holdings Screen
+*   **Screen Name/ID**: `05_02_Investment_Holdings_Screen`
+*   **Dimensions**: 393x852dp
+*   **Background**: `md.sys.color.background`
+*   **Layout**: `Scaffold` with `TopAppBar` and `LazyColumn`.
+
+##### Components:
+1.  **Name**: `TopAppBar`
+    *   **Position & Size**: `fillMaxWidth()`, height 64dp.
+    *   **Navigation Icon**: `IconButton` with `Icons.Filled.ArrowBack` icon.
+    *   **Content**: `Text` with "Investment Holdings".
+2.  **Name**: `LazyColumn` (Holdings)
+    *   **Position & Size**: Fills the remaining space.
+    *   **Content**: List of investment holdings.
+        *   **Holding Item**: `ListItem` for each holding.
+            *   `headlineContent`: `Text` with holding name (e.g., "Apple Inc.").
+            *   `supportingContent`: `Text` with ticker and shares (e.g., "AAPL - 10 shares").
+            *   `trailingContent`: `Column` with `Text` for total value (e.g., "$1,500.00") and `Text` for today's change (e.g., "+$12.50").
+            *   `modifier`: `clickable()`.
+
+##### Interaction & Behavior:
+*   **TopAppBar Back Icon**:
+    *   **Interaction**: On tap -> Navigate back to `02_03_Investing_Screen`.
+    *   **Animation**: `MaterialSharedAxis` (X-axis) backward transition.
+*   **Holding ListItem**:
+    *   **Interaction**: On tap -> Navigate to `05_04_Holding_Details_Screen`.
+    *   **Animation**: `MaterialSharedAxis` (X-axis) forward transition.
+
+---
+
+#### Screen 18: Investment Allocation Screen
+*   **Screen Name/ID**: `05_03_Investment_Allocation_Screen`
+*   **Dimensions**: 393x852dp
+*   **Background**: `md.sys.color.background`
+*   **Layout**: `Scaffold` with `TopAppBar` and `LazyColumn`.
+
+##### Components:
+1.  **Name**: `TopAppBar`
+    *   **Position & Size**: `fillMaxWidth()`, height 64dp.
+    *   **Navigation Icon**: `IconButton` with `Icons.Filled.ArrowBack` icon.
+    *   **Content**: `Text` with "Investment Allocation".
+2.  **Name**: `Card` (Pie Chart)
+    *   **Position & Size**: `fillMaxWidth()`, `height(250.dp)`. Margin 16dp.
+    *   **Content**: A pie chart visual representing asset allocation.
+3.  **Name**: `LazyColumn` (Asset Classes)
+    *   **Position & Size**: Fills remaining space below the chart.
+    *   **Content**: List of asset classes.
+        *   **Asset Class Item**: `ListItem`.
+            *   `leadingContent`: `Box` with a color swatch matching the pie chart slice.
+            *   `headlineContent`: `Text` with asset class name (e.g., "U.S. Stocks").
+            *   `trailingContent`: `Text` with percentage (e.g., "45.0%").
+            *   `modifier`: `clickable()`.
+
+##### Interaction & Behavior:
+*   **TopAppBar Back Icon**:
+    *   **Interaction**: On tap -> Navigate back to `02_03_Investing_Screen`.
+    *   **Animation**: `MaterialSharedAxis` (X-axis) backward transition.
+*   **Asset Class ListItem**:
+    *   **Interaction**: On tap -> Navigate to `05_05_Asset_Class_Details_Screen`.
+    *   **Animation**: `MaterialSharedAxis` (X-axis) forward transition.
+
+---
+
+#### Screen 19: Holding Details Screen
+*   **Screen Name/ID**: `05_04_Holding_Details_Screen`
+*   **Dimensions**: 393x852dp
+*   **Background**: `md.sys.color.surface`
+*   **Layout**: `Scaffold` with `TopAppBar` and `Column`.
+
+##### Components:
+1.  **Name**: `TopAppBar`
+    *   **Position & Size**: `fillMaxWidth()`, height 64dp.
+    *   **Navigation Icon**: `IconButton` with `Icons.Filled.ArrowBack` icon.
+    *   **Content**: `Text` with holding name (e.g., "Apple Inc.").
+2.  **Name**: `Column` (Details)
+    *   **Position & Size**: `fillMaxWidth()`, `padding(16.dp)`.
+    *   **Content**:
+        *   `Text` (Ticker): `typography`: `titleMedium`, `color`: `on-surface-variant`, content: "AAPL".
+        *   `Text` (Value): `typography`: `headlineLarge`, content: "$1,500.00".
+        *   `Text` (Change): `typography`: `titleMedium`, `color`: `green` (custom), content: "+$12.50 (+0.84%) Today".
+        *   `Divider`: `modifier.padding(vertical = 16.dp)`.
+        *   `ListItem`: `headlineContent`: "Market Price", `trailingContent`: "$150.00".
+        *   `ListItem`: `headlineContent`: "Quantity", `trailingContent`: "10 shares".
+        *   `ListItem`: `headlineContent`: "Cost Basis", `trailingContent`: "$1,200.00".
+
+##### Interaction & Behavior:
+*   **TopAppBar Back Icon**:
+    *   **Interaction**: On tap -> Navigate back to `05_02_Investment_Holdings_Screen`.
+    *   **Animation**: `MaterialSharedAxis` (X-axis) backward transition.
+
+---
+
+#### Screen 20: Asset Class Details Screen
+*   **Screen Name/ID**: `05_05_Asset_Class_Details_Screen`
+*   **Dimensions**: 393x852dp
+*   **Background**: `md.sys.color.background`
+*   **Layout**: `Scaffold` with `TopAppBar` and `LazyColumn`.
+
+##### Components:
+1.  **Name**: `TopAppBar`
+    *   **Position & Size**: `fillMaxWidth()`, height 64dp.
+    *   **Navigation Icon**: `IconButton` with `Icons.Filled.ArrowBack` icon.
+    *   **Content**: `Text` with asset class name (e.g., "U.S. Stocks").
+2.  **Name**: `LazyColumn` (Holdings in Class)
+    *   **Position & Size**: Fills the remaining space.
+    *   **Content**: A list of holdings that fall under this asset class, using the same `ListItem` component defined in `05_02_Investment_Holdings_Screen`.
+
+##### Interaction & Behavior:
+*   **TopAppBar Back Icon**:
+    *   **Interaction**: On tap -> Navigate back to `05_03_Investment_Allocation_Screen`.
+    *   **Animation**: `MaterialSharedAxis` (X-axis) backward transition.
+
+---
+*The remaining two screens are duplicates from other flows, included here to complete the count of 22 as per the input JSON structure.*
+
+#### Screen 21: Dashboard (from Link Bank Account flow)
+*   **Screen Name/ID**: `03_01_Dashboard`
+*   **Specification**: This screen is identical to `02_01_Dashboard`. Please refer to its specification. The only difference is the initiating action.
+*   **Interaction**: Tapping the '+' icon in the `TopAppBar` initiates the "Link Bank Account" flow.
+    *   **User Action**: Taps '+' icon in top right.
+    *   **Resulting Navigation**: Navigate to `03_02_Link_an_Account_Screen`.
+
+#### Screen 22: Spending Screen (from View Transactions flow)
+*   **Screen Name/ID**: `04_01_Spending_Screen`
+*   **Specification**: This screen is identical to `02_04_Spending_Screen`. Please refer to its specification. The only difference is the initiating action.
+*   **Interaction**: Tapping the 'Transactions' sub-tab initiates the "View Transactions" flow.
+    *   **User Action**: Taps 'Transactions' sub-tab.
+    *   **Resulting Navigation**: Navigate to `04_02_Transactions_List_Screen`.
+
+---
+
+## V. Critical Scenarios & States
+
+#### Error States
+1.  **No Internet Connection**:
+    *   **UI**: A `Snackbar` appears at the bottom of the screen.
+    *   **Style**: `containerColor`: `md.sys.color.error-container`, `contentColor`: `md.sys.color.on-error-container`.
+    *   **Message**: "No internet connection. Please check your network and try again."
+    *   **Action**: Optional "Retry" `TextButton` on the `Snackbar`.
+2.  **API/Server Error**:
+    *   **UI**: A `Snackbar` appears.
+    *   **Message**: "Something went wrong. Please try again later."
+3.  **Form Validation Error**:
+    *   **UI**: The `OutlinedTextField` that fails validation will show an error state.
+    *   **Style**: The outline and label color change to `md.sys.color.error`.
+    *   **Message**: Helper text appears below the field with a descriptive error (e.g., "Please enter a valid email address.").
+
+#### Empty States
+1.  **Empty Dashboard (New User)**:
+    *   **UI**: The main content area of the `02_01_Dashboard` screen will display a centered `Column`.
+    *   **Content**:
+        *   `Icon`: `Icons.Outlined.AccountBalance`, size 64dp, `tint`: `md.sys.color.secondary`.
+        *   `Text` (Title): "Welcome to Empower", `typography`: `headlineSmall`.
+        *   `Text` (Body): "Link an account to see your complete financial picture.", `typography`: `bodyMedium`, `textAlign`: `TextAlign.Center`.
+        *   `FilledButton`: "Link First Account", `modifier.padding(top = 24.dp)`. On tap, navigates to `03_02_Link_an_Account_Screen`.
+2.  **Empty Transactions List**:
+    *   **UI**: The `LazyColumn` in `04_02_Transactions_List_Screen` will display a centered `Column`.
+    *   **Content**:
+        *   `Icon`: `Icons.Outlined.ReceiptLong`, size 64dp, `tint`: `md.sys.color.secondary`.
+        *   `Text` (Title): "No Transactions Found".
+        *   `Text` (Body): "We couldn't find any transactions for the selected filters."
+
+#### Loading States
+1.  **Initial App Load / Dashboard Refresh**:
+    *   **UI**: A full-screen `CircularProgressIndicator` is displayed centered over the `02_01_Dashboard` content area while initial data is fetched.
+2.  **LazyColumn Item Loading**:
+    *   **UI**: When paginating or loading more items in a `LazyColumn` (e.g., Transactions), a `CircularProgressIndicator` is shown as the last item in the list.
+3.  **Screen-Specific Loading**:
+    *   **UI**: For screens that fetch data upon entry (e.g., `04_03_Transaction_Details_Screen`), a centered `CircularProgressIndicator` is shown in the content area until the data is ready to be displayed.
 
 ```
 
@@ -809,810 +978,1272 @@
 🚀 Generating detailed design specs... (output will stream below)
 ================================================================================
 
-# Android Design Specification: SocialConnect App
+```markdown
+# Rocket Money - Android App Design Specification
 
 ## I. Global Specifications
 
-*   **Platform**: Android Mobile App
-*   **Design System**: Material Design 3
-    *   **Dynamic Color**: Enabled (Material You). The specified colors serve as the baseline for devices without dynamic color support.
-    *   **Modes**: Light and Dark themes are supported. All color roles are defined for both.
-*   **Colors**:
-    *   **Seed Color**: `#6750A4` (M3 Baseline Purple)
-    *   **Key Color Roles (Light Theme)**:
-        *   `md.sys.color.primary`: `#6750A4`
-        *   `md.sys.color.onPrimary`: `#FFFFFF`
-        *   `md.sys.color.primaryContainer`: `#EADDFF`
-        *   `md.sys.color.onPrimaryContainer`: `#21005D`
-        *   `md.sys.color.secondary`: `#625B71`
-        *   `md.sys.color.onSecondary`: `#FFFFFF`
-        *   `md.sys.color.secondaryContainer`: `#E8DEF8`
-        *   `md.sys.color.onSecondaryContainer`: `#1D192B`
-        *   `md.sys.color.tertiary`: `#7D5260`
-        *   `md.sys.color.onTertiary`: `#FFFFFF`
-        *   `md.sys.color.tertiaryContainer`: `#FFD8E4`
-        *   `md.sys.color.onTertiaryContainer`: `#31111D`
-        *   `md.sys.color.error`: `#B3261E`
-        *   `md.sys.color.onError`: `#FFFFFF`
-        *   `md.sys.color.errorContainer`: `#F9DEDC`
-        *   `md.sys.color.onErrorContainer`: `#410E0B`
-        *   `md.sys.color.background`: `#FFFBFE`
-        *   `md.sys.color.onBackground`: `#1C1B1F`
-        *   `md.sys.color.surface`: `#FFFBFE`
-        *   `md.sys.color.onSurface`: `#1C1B1F`
-        *   `md.sys.color.surfaceVariant`: `#E7E0EC`
-        *   `md.sys.color.onSurfaceVariant`: `#49454F`
-        *   `md.sys.color.outline`: `#79747E`
-        *   `md.sys.color.inverseOnSurface`: `#F4EFF4`
-        *   `md.sys.color.inverseSurface`: `#313033`
-        *   `md.sys.color.inversePrimary`: `#D0BCFF`
-        *   `md.sys.color.surfaceTint`: `#6750A4`
-*   **Typography**:
-    *   **Font Family**: Roboto
-    *   **Type Scale**: Material 3 Type Scale
-        *   `displayLarge`: Roboto, 57sp
-        *   `displayMedium`: Roboto, 45sp
-        *   `displaySmall`: Roboto, 36sp
-        *   `headlineLarge`: Roboto, 32sp
-        *   `headlineMedium`: Roboto, 28sp
-        *   `headlineSmall`: Roboto, 24sp
-        *   `titleLarge`: Roboto, 22sp
-        *   `titleMedium`: Roboto, 16sp, Letter Spacing 0.15
-        *   `titleSmall`: Roboto, 14sp, Letter Spacing 0.1
-        *   `labelLarge`: Roboto, 14sp, Letter Spacing 0.1
-        *   `labelMedium`: Roboto, 12sp, Letter Spacing 0.5
-        *   `labelSmall`: Roboto, 11sp, Letter Spacing 0.5
-        *   `bodyLarge`: Roboto, 16sp, Letter Spacing 0.5
-        *   `bodyMedium`: Roboto, 14sp, Letter Spacing 0.25
-        *   `bodySmall`: Roboto, 12sp, Letter Spacing 0.4
-*   **Spacing**:
-    *   **Base Grid Unit**: 8dp
-    *   **Standard Padding**: 16dp
-    *   **Standard Margins**: 16dp
-*   **Accessibility**:
-    *   **Target Standard**: WCAG 2.1 Level AA
-    *   **Minimum Touch Target**: 48dp x 48dp for all interactive elements.
-    *   **Content Descriptions**: All icons, images, and non-text controls must have descriptive content descriptions.
+### Platform
+- **Target:** Android Mobile App
+- **Minimum SDK:** API 26 (Android 8.0 Oreo)
+- **Target SDK:** API 34 (Android 14)
+
+### Design System
+- **System:** Material Design 3
+- **Theming:** Supports Light and Dark modes. Utilizes Material You dynamic theming where available, falling back to the defined brand theme.
+- **Density:** Default density scale.
+
+### Colors
+- **Seed Color:** `#5D55FE` (A vibrant purple, representative of the Rocket Money brand)
+- **Generated Material 3 Color Roles (Light Theme):**
+  - `md.sys.color.primary`: `#5D55FE`
+  - `md.sys.color.onPrimary`: `#FFFFFF`
+  - `md.sys.color.primaryContainer`: `#E4DFFF`
+  - `md.sys.color.onPrimaryContainer`: `#190065`
+  - `md.sys.color.secondary`: `#5F5C71`
+  - `md.sys.color.onSecondary`: `#FFFFFF`
+  - `md.sys.color.secondaryContainer`: `#E5DFF9`
+  - `md.sys.color.onSecondaryContainer`: `#1C192B`
+  - `md.sys.color.tertiary`: `#7B5266`
+  - `md.sys.color.onTertiary`: `#FFFFFF`
+  - `md.sys.color.tertiaryContainer`: `#FFD8E8`
+  - `md.sys.color.onTertiaryContainer`: `#311021`
+  - `md.sys.color.error`: `#BA1A1A`
+  - `md.sys.color.onError`: `#FFFFFF`
+  - `md.sys.color.errorContainer`: `#FFDAD6`
+  - `md.sys.color.onErrorContainer`: `#410002`
+  - `md.sys.color.background`: `#FFFBFF`
+  - `md.sys.color.onBackground`: `#1C1B1F`
+  - `md.sys.color.surface`: `#FFFBFF`
+  - `md.sys.color.onSurface`: `#1C1B1F`
+  - `md.sys.color.surfaceVariant`: `#E6E0EC`
+  - `md.sys.color.onSurfaceVariant`: `#48454E`
+  - `md.sys.color.outline`: `#79757F`
+  - `md.sys.color.inverseOnSurface`: `#F4EFF4`
+  - `md.sys.color.inverseSurface`: `#313033`
+  - `md.sys.color.inversePrimary`: `#C6BFFF`
+- **Generated Material 3 Color Roles (Dark Theme):**
+  - `md.sys.color.primary`: `#C6BFFF`
+  - `md.sys.color.onPrimary`: `#2E217D`
+  - `md.sys.color.primaryContainer`: `#453B95`
+  - `md.sys.color.onPrimaryContainer`: `#E4DFFF`
+  - `md.sys.color.secondary`: `#C8C3DC`
+  - `md.sys.color.onSecondary`: `#312E41`
+  - `md.sys.color.secondaryContainer`: `#474459`
+  - `md.sys.color.onSecondaryContainer`: `#E5DFF9`
+  - `md.sys.color.tertiary`: `#ECB8CF`
+  - `md.sys.color.onTertiary`: `#482537`
+  - `md.sys.color.tertiaryContainer`: `#613B4D`
+  - `md.sys.color.onTertiaryContainer`: `#FFD8E8`
+  - `md.sys.color.error`: `#FFB4AB`
+  - `md.sys.color.onError`: `#690005`
+  - `md.sys.color.errorContainer`: `#93000A`
+  - `md.sys.color.onErrorContainer`: `#FFDAD6`
+  - `md.sys.color.background`: `#1C1B1F`
+  - `md.sys.color.onBackground`: `#E6E1E5`
+  - `md.sys.color.surface`: `#1C1B1F`
+  - `md.sys.color.onSurface`: `#E6E1E5`
+  - `md.sys.color.surfaceVariant`: `#48454E`
+  - `md.sys.color.onSurfaceVariant`: `#CAC4D0`
+  - `md.sys.color.outline`: `#938F99`
+  - `md.sys.color.inverseOnSurface`: `#1C1B1F`
+  - `md.sys.color.inverseSurface`: `#E6E1E5`
+  - `md.sys.color.inversePrimary`: `#5D55FE`
+
+### Typography
+- **Font Family:** Roboto
+- **Material 3 Type Scale:**
+  - `displayLarge`: Roboto, 57sp
+  - `displayMedium`: Roboto, 45sp
+  - `displaySmall`: Roboto, 36sp
+  - `headlineLarge`: Roboto, 32sp
+  - `headlineMedium`: Roboto, 28sp
+  - `headlineSmall`: Roboto, 24sp
+  - `titleLarge`: Roboto, 22sp
+  - `titleMedium`: Roboto, 16sp, Weight 500
+  - `titleSmall`: Roboto, 14sp, Weight 500
+  - `labelLarge`: Roboto, 14sp, Weight 500
+  - `labelMedium`: Roboto, 12sp, Weight 500
+  - `labelSmall`: Roboto, 11sp, Weight 500
+  - `bodyLarge`: Roboto, 16sp
+  - `bodyMedium`: Roboto, 14sp
+  - `bodySmall`: Roboto, 12sp
+
+### Spacing & Grid
+- **Base Unit:** 8dp
+- **Standard Margins:** 16dp horizontal, 24dp vertical.
+- **Standard Padding:** 16dp for cards and containers.
+- **Minimum Touch Target:** 48dp x 48dp for all interactive elements.
+
+### Accessibility
+- **Target Standard:** WCAG 2.1 Level AA.
+- **Requirements:**
+  - All images and icons must have content descriptions.
+  - Text elements must meet minimum contrast ratios.
+  - All interactive elements must be focusable and clearly state their purpose.
 
 ---
 
-## II. Screen Specifications: 01_Splash_Screen
+## II. Screen Specifications
 
-*   **Screen Name/ID**: `01_Splash_Screen`
-*   **Dimensions**: 393x852dp (Typical mobile viewport)
-*   **Background**: `md.sys.color.surface`
-*   **Layout**: `Column`
-    *   `verticalArrangement`: `Center`
-    *   `horizontalAlignment`: `CenterHorizontally`
-    *   `modifier`: `fillMaxSize`
-
-### III. Component Specifications
-
-1.  **Name**: `Icon` (App Logo)
-    *   **Position & Size**:
-        *   Size: 128dp x 128dp
-        *   Alignment: Centered in the layout.
-    *   **Style**:
-        *   Icon: `Icons.Filled.Groups` (Placeholder)
-        *   Tint: `md.sys.color.primary`
-    *   **Content**: N/A
-
-2.  **Name**: `Text` (App Name)
-    *   **Position & Size**:
-        *   Alignment: Centered horizontally.
-        *   Margin (Top): 24dp from the App Logo.
-    *   **Style**:
-        *   Color: `md.sys.color.onSurface`
-        *   Typography: `headlineMedium`
-    *   **Content**: "SocialConnect"
-
-### IV. Interaction & Behavior
-
-*   **States**: This is a static screen. No interactive elements.
-*   **Interactions**:
-    *   On screen load, a timer is initiated.
-    *   After a 2-second delay, the app automatically navigates to the next screen.
-*   **Animations**:
-    *   **Screen Transition (Exit)**: `MaterialFadeThrough` transition to `02_Login_Screen`.
-*   **Scroll Behavior**: N/A (Content does not scroll).
-
-### V. Critical Scenarios & States
-
-*   **Loading State**: The entire screen serves as the initial loading state for the app.
+### Flow 1: Authentication
 
 ---
 
-## II. Screen Specifications: 02_Login_Screen
+#### Screen 1: Splash Screen
+- **Screen Name/ID:** `01_01_Splash_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.surface`
+- **Layout:** `Column` with `verticalArrangement = Arrangement.SpaceBetween`, filling max size.
 
-*   **Screen Name/ID**: `02_Login_Screen`
-*   **Dimensions**: 393x852dp
-*   **Background**: `md.sys.color.background`
-*   **Layout**: `Column`
-    *   `verticalArrangement`: `Center`
-    *   `horizontalAlignment`: `CenterHorizontally`
-    *   `modifier`: `fillMaxSize`, `padding(horizontal = 24dp)`
+##### Components:
+1.  **Component: Spacer**
+    - **Name:** `Spacer`
+    - **Position & Size:** Fills top space to push content down. `weight = 1f`.
+2.  **Component: Image (App Logo)**
+    - **Name:** `Image`
+    - **Position & Size:** Centered horizontally. `width = 120dp`, `height = 120dp`.
+    - **Style:** No tint.
+    - **Content:** `rocket_money_logo.svg`. Content description: "Rocket Money Logo".
+3.  **Component: Text (Tagline)**
+    - **Name:** `Text`
+    - **Position & Size:** Centered horizontally. `marginTop = 16dp`.
+    - **Style:** Typography: `md.sys.typography.headlineSmall`. Color: `md.sys.color.onSurface`. Text alignment: Center.
+    - **Content:** "Take control of your money."
+4.  **Component: Spacer**
+    - **Name:** `Spacer`
+    - **Position & Size:** Fills space between logo and buttons. `weight = 1f`.
+5.  **Component: Button Container**
+    - **Name:** `Column`
+    - **Position & Size:** Aligned to bottom center. `padding = 16dp` horizontal, `32dp` bottom.
+    - **Layout:** Contains the Sign Up and Log In buttons.
+6.  **Component: Filled Button (Sign Up)**
+    - **Name:** `FilledButton`
+    - **Position & Size:** `fillMaxWidth`, `height = 52dp`.
+    - **Style:** Container Color: `md.sys.color.primary`. Content Color: `md.sys.color.onPrimary`. Typography: `md.sys.typography.labelLarge`. Shape: `ShapeDefaults.Full`.
+    - **Content:** "Sign Up for Free"
+7.  **Component: Text Button (Log In)**
+    - **Name:** `TextButton`
+    - **Position & Size:** `fillMaxWidth`, `height = 52dp`, `marginTop = 8dp`.
+    - **Style:** Content Color: `md.sys.color.primary`. Typography: `md.sys.typography.labelLarge`.
+    - **Content:** "Log In"
 
-### III. Component Specifications
-
-1.  **Name**: `Icon` (App Logo)
-    *   **Position & Size**:
-        *   Size: 80dp x 80dp
-        *   Margin (Bottom): 16dp
-    *   **Style**:
-        *   Icon: `Icons.Filled.Groups` (Placeholder)
-        *   Tint: `md.sys.color.primary`
-    *   **Content**: N/A
-
-2.  **Name**: `Text` (Headline)
-    *   **Position & Size**:
-        *   Margin (Bottom): 8dp
-    *   **Style**:
-        *   Color: `md.sys.color.onBackground`
-        *   Typography: `headlineLarge`
-        *   Text Align: `Center`
-    *   **Content**: "Welcome Back"
-
-3.  **Name**: `Text` (Sub-headline)
-    *   **Position & Size**:
-        *   Margin (Bottom): 32dp
-    *   **Style**:
-        *   Color: `md.sys.color.onSurfaceVariant`
-        *   Typography: `bodyLarge`
-        *   Text Align: `Center`
-    *   **Content**: "Sign in to your account"
-
-4.  **Name**: `OutlinedTextField` (Email)
-    *   **Position & Size**:
-        *   Size: `fillMaxWidth`
-        *   Margin (Bottom): 16dp
-    *   **Style**:
-        *   Shape: `Shape.Corner.Medium`
-        *   Colors: Standard `TextFieldDefaults.outlinedTextFieldColors()`
-    *   **Content**:
-        *   Label: `Text("Email")`
-        *   Leading Icon: `Icon(Icons.Filled.Email)`
-        *   Keyboard Type: `Email`
-        *   Single Line: `true`
-
-5.  **Name**: `OutlinedTextField` (Password)
-    *   **Position & Size**:
-        *   Size: `fillMaxWidth`
-        *   Margin (Bottom): 24dp
-    *   **Style**:
-        *   Shape: `Shape.Corner.Medium`
-        *   Visual Transformation: `PasswordVisualTransformation` (by default)
-    *   **Content**:
-        *   Label: `Text("Password")`
-        *   Leading Icon: `Icon(Icons.Filled.Lock)`
-        *   Trailing Icon: `IconButton` with `Icons.Filled.Visibility` / `Icons.Filled.VisibilityOff` to toggle password visibility.
-        *   Keyboard Type: `Password`
-        *   Single Line: `true`
-
-6.  **Name**: `FilledButton` (Login)
-    *   **Position & Size**:
-        *   Size: `fillMaxWidth`, Height: 52dp
-        *   Margin (Bottom): 16dp
-    *   **Style**:
-        *   Shape: `Shape.Corner.Full`
-    *   **Content**:
-        *   Text: `Text("Login", style = typography.labelLarge)`
-
-7.  **Name**: `TextButton` (Sign Up)
-    *   **Position & Size**:
-        *   Alignment: `CenterHorizontally`
-        *   Minimum Touch Target: 48x48dp
-    *   **Style**: Standard `TextButton` style.
-    *   **Content**:
-        *   Text: `Text("Don't have an account? Sign Up")`
-
-### IV. Interaction & Behavior
-
-*   **States**:
-    *   **TextFields**: Standard states for `focused`, `unfocused`, `error`.
-    *   **Buttons**: Standard Material 3 state layers for `pressed`, `hovered`, `focused`. `Login` button is disabled if email/password fields are empty.
-*   **Interactions**:
-    *   **Email/Password Fields**: On focus, the label moves up.
-    *   **Password Visibility Icon**: On tap, toggles the visibility of the password text.
-    *   **Login Button**: On tap, performs authentication. On success, navigates to `03_Home_Screen`. On failure, shows an error state.
-    *   **Sign Up TextButton**: On tap, navigates to `04_Registration_Screen`.
-*   **Animations**:
-    *   **Screen Transition (Entry)**: `MaterialSharedAxis(Z, forward = true)`
-    *   **Screen Transition (Exit to Home)**: `MaterialSharedAxis(Z, forward = true)`
-    *   **Screen Transition (Exit to Register)**: `MaterialSharedAxis(X, forward = true)`
-*   **Scroll Behavior**: The layout is vertically scrollable on smaller screens to prevent UI elements from being obscured by the keyboard.
-
-### V. Critical Scenarios & States
-
-*   **Error State**:
-    *   **Invalid Input**: `OutlinedTextField` border, label, and leading icon change to `md.sys.color.error`. A supporting text appears below the field with a message (e.g., "Invalid email format" or "Password cannot be empty").
-    *   **Authentication Failure**: A `Snackbar` appears at the bottom of the screen with the message "Invalid email or password."
-*   **Loading State**: On `Login` button tap, the button's text is replaced by a `CircularProgressIndicator` (size 24dp, color `md.sys.color.onPrimary`) and the button is disabled until the network request completes.
+##### Interaction & Behavior:
+- **Sign Up Button:** On tap -> Navigate to `01_02_Sign_Up_Screen` using `MaterialSharedAxis(Z, forward = true)`.
+- **Log In Button:** On tap -> Navigate to `01_03_Log_In_Screen` using `MaterialSharedAxis(Z, forward = true)`.
 
 ---
 
-## II. Screen Specifications: 03_Home_Screen (Container)
+#### Screen 2: Sign Up Screen
+- **Screen Name/ID:** `01_02_Sign_Up_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.surface`
+- **Layout:** `Column` with vertical scroll enabled. `padding = 16dp` horizontal.
 
-*   **Screen Name/ID**: `03_Home_Screen`
-*   **Dimensions**: 393x852dp
-*   **Background**: `md.sys.color.background`
-*   **Layout**: `Scaffold`
-    *   This screen acts as the main container for the five primary tabs of the application. The content area of the scaffold will display the content of the currently selected tab (`03a` through `03e`).
+##### Components:
+1.  **Component: TopAppBar**
+    - **Name:** `TopAppBar`
+    - **Position & Size:** Top of the screen. `height = 56dp`.
+    - **Style:** Container Color: `md.sys.color.surface`.
+    - **Content:** No title. Contains a back navigation icon.
+    - **Navigation Icon:** `IconButton` with `Icons.Filled.ArrowBack`. Content description: "Back".
+2.  **Component: Text (Header)**
+    - **Name:** `Text`
+    - **Position & Size:** `marginTop = 16dp`.
+    - **Style:** Typography: `md.sys.typography.headlineLarge`. Color: `md.sys.color.onSurface`.
+    - **Content:** "Create your account"
+3.  **Component: Outlined Text Field (Email)**
+    - **Name:** `OutlinedTextField`
+    - **Position & Size:** `fillMaxWidth`, `marginTop = 32dp`.
+    - **Style:** Typography: `md.sys.typography.bodyLarge`.
+    - **Content:** Label: "Email". Leading Icon: `Icons.Filled.Email`.
+4.  **Component: Outlined Text Field (Password)**
+    - **Name:** `OutlinedTextField`
+    - **Position & Size:** `fillMaxWidth`, `marginTop = 16dp`.
+    - **Style:** Typography: `md.sys.typography.bodyLarge`. `visualTransformation = PasswordVisualTransformation()`.
+    - **Content:** Label: "Password". Leading Icon: `Icons.Filled.Lock`. Trailing Icon: `IconButton` to toggle password visibility.
+5.  **Component: Filled Button (Create Account)**
+    - **Name:** `FilledButton`
+    - **Position & Size:** `fillMaxWidth`, `height = 52dp`, `marginTop = 24dp`.
+    - **Style:** Container Color: `md.sys.color.primary`. Content Color: `md.sys.color.onPrimary`. Typography: `md.sys.typography.labelLarge`. Shape: `ShapeDefaults.Full`.
+    - **Content:** "Create account"
+6.  **Component: Divider with Text**
+    - **Name:** `Row` containing `Divider`, `Text`, `Divider`.
+    - **Position & Size:** `fillMaxWidth`, `marginTop = 32dp`, `verticalAlignment = Alignment.CenterVertically`.
+    - **Style:** `Divider` color: `md.sys.color.outline`. `Text` typography: `md.sys.typography.bodyMedium`, color: `md.sys.color.onSurfaceVariant`.
+    - **Content:** Text: "or"
+7.  **Component: Outlined Button (Continue with Google)**
+    - **Name:** `OutlinedButton`
+    - **Position & Size:** `fillMaxWidth`, `height = 52dp`, `marginTop = 32dp`.
+    - **Style:** Outline Color: `md.sys.color.outline`. Content Color: `md.sys.color.onSurface`. Typography: `md.sys.typography.labelLarge`. Shape: `ShapeDefaults.Full`.
+    - **Content:** Icon: Google logo (`google_logo.svg`). Text: "Continue with Google".
+8.  **Component: Outlined Button (Continue with Apple)**
+    - **Name:** `OutlinedButton`
+    - **Position & Size:** `fillMaxWidth`, `height = 52dp`, `marginTop = 16dp`.
+    - **Style:** Outline Color: `md.sys.color.outline`. Content Color: `md.sys.color.onSurface`. Typography: `md.sys.typography.labelLarge`. Shape: `ShapeDefaults.Full`.
+    - **Content:** Icon: Apple logo (`apple_logo.svg`). Text: "Continue with Apple".
+9.  **Component: Row (Log In Prompt)**
+    - **Name:** `Row`
+    - **Position & Size:** Centered horizontally, `marginTop = 32dp`.
+    - **Content:** `Text` ("Already have an account?") and `TextButton` ("Log In").
+    - **Style:** `Text` color: `md.sys.color.onSurface`. `TextButton` content color: `md.sys.color.primary`.
 
-### III. Component Specifications
-
-1.  **Name**: `TopAppBar`
-    *   **Position & Size**:
-        *   Positioned at the top of the `Scaffold`.
-        *   Size: `fillMaxWidth`, Height: 64dp
-    *   **Style**:
-        *   Type: `CenterAlignedTopAppBar`
-        *   Colors: `md.sys.color.surface`
-        *   Elevation: `Elevation.Level2` when content is scrolled beneath it.
-    *   **Content**:
-        *   **Title**: `Text` component. The content changes based on the active tab (e.g., "Feed", "Search").
-        *   **Actions**: `IconButton`s on the right. For example, on the Feed tab, it might show an `IconButton` for `Icons.Filled.Chat`.
-
-2.  **Name**: `NavigationBar` (Bottom Navigation)
-    *   **Position & Size**:
-        *   Positioned at the bottom of the `Scaffold`.
-        *   Size: `fillMaxWidth`, Height: 80dp
-    *   **Style**:
-        *   Container Color: `md.sys.color.surfaceVariant`
-        *   Indicator Color: `md.sys.color.secondaryContainer`
-    *   **Content**: Contains five `NavigationBarItem` components.
-
-3.  **Name**: `NavigationBarItem` (Feed)
-    *   **Position & Size**: First item in the `NavigationBar`.
-    *   **Style**:
-        *   Selected Icon Color: `md.sys.color.onSecondaryContainer`
-        *   Unselected Icon Color: `md.sys.color.onSurfaceVariant`
-        *   Selected Text Color: `md.sys.color.onSurface`
-        *   Unselected Text Color: `md.sys.color.onSurfaceVariant`
-    *   **Content**:
-        *   Icon: `Icons.Filled.Home` (selected), `Icons.Outlined.Home` (unselected)
-        *   Label: `Text("Feed", style = typography.labelMedium)`
-
-4.  **Name**: `NavigationBarItem` (Search)
-    *   **Position & Size**: Second item in the `NavigationBar`.
-    *   **Style**: Same as above.
-    *   **Content**:
-        *   Icon: `Icons.Filled.Search` (selected), `Icons.Outlined.Search` (unselected)
-        *   Label: `Text("Search", style = typography.labelMedium)`
-
-5.  **Name**: `NavigationBarItem` (Create Post)
-    *   **Position & Size**: Third item in the `NavigationBar`.
-    *   **Style**: Same as above.
-    *   **Content**:
-        *   Icon: `Icons.Filled.AddCircle` (selected), `Icons.Outlined.AddCircleOutline` (unselected)
-        *   Label: `Text("Create", style = typography.labelMedium)`
-
-6.  **Name**: `NavigationBarItem` (Notifications)
-    *   **Position & Size**: Fourth item in the `NavigationBar`.
-    *   **Style**: Same as above.
-    *   **Content**:
-        *   Icon: `Icons.Filled.Notifications` (selected), `Icons.Outlined.NotificationsNone` (unselected)
-        *   Label: `Text("Alerts", style = typography.labelMedium)`
-
-7.  **Name**: `NavigationBarItem` (Profile)
-    *   **Position & Size**: Fifth item in the `NavigationBar`.
-    *   **Style**: Same as above.
-    *   **Content**:
-        *   Icon: `Icons.Filled.Person` (selected), `Icons.Outlined.PersonOutline` (unselected)
-        *   Label: `Text("Profile", style = typography.labelMedium)`
-
-### IV. Interaction & Behavior
-
-*   **Interactions**:
-    *   Tapping a `NavigationBarItem` changes the content displayed in the `Scaffold`'s body to the corresponding screen (`03a` to `03e`) and updates the `TopAppBar` title.
-*   **Animations**:
-    *   **Tab Transition**: `MaterialFadeThrough` animation is used when switching between tabs.
-*   **Scroll Behavior**:
-    *   The `TopAppBar` uses a `TopAppBarDefaults.enterAlwaysScrollBehavior()`. It hides on scroll down and reappears on scroll up.
+##### Interaction & Behavior:
+- **Back Icon:** On tap -> Navigate back to `01_01_Splash_Screen`.
+- **Create Account Button:** On tap -> Validate fields. If valid, show `CircularProgressIndicator` and navigate to `02_01_Connect_Your_Bank_Screen`. If invalid, show error message on `TextField`.
+- **Continue with Google/Apple:** On tap -> Initiate social sign-in flow. On success, navigate to `02_01_Connect_Your_Bank_Screen`.
+- **Log In TextButton:** On tap -> Navigate to `01_03_Log_In_Screen`.
 
 ---
 
-## II. Screen Specifications: 03a_Feed_Tab
+#### Screen 3: Log In Screen
+- **Screen Name/ID:** `01_03_Log_In_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.surface`
+- **Layout:** `Column` with vertical scroll enabled. `padding = 16dp` horizontal.
 
-*   **Screen Name/ID**: `03a_Feed_Tab`
-*   **Dimensions**: Fills the content area of the `03_Home_Screen` `Scaffold`.
-*   **Background**: `md.sys.color.background`
-*   **Layout**: `LazyColumn`
-    *   `modifier`: `fillMaxSize`
-    *   `contentPadding`: `PaddingValues(bottom = 80dp)` to avoid overlap with the `NavigationBar`.
+##### Components:
+1.  **Component: TopAppBar**
+    - **Name:** `TopAppBar`
+    - **Position & Size:** Top of the screen. `height = 56dp`.
+    - **Style:** Container Color: `md.sys.color.surface`.
+    - **Content:** No title. Contains a back navigation icon.
+    - **Navigation Icon:** `IconButton` with `Icons.Filled.ArrowBack`. Content description: "Back".
+2.  **Component: Text (Header)**
+    - **Name:** `Text`
+    - **Position & Size:** `marginTop = 16dp`.
+    - **Style:** Typography: `md.sys.typography.headlineLarge`. Color: `md.sys.color.onSurface`.
+    - **Content:** "Welcome back"
+3.  **Component: Outlined Text Field (Email)**
+    - **Name:** `OutlinedTextField`
+    - **Position & Size:** `fillMaxWidth`, `marginTop = 32dp`.
+    - **Style:** Typography: `md.sys.typography.bodyLarge`.
+    - **Content:** Label: "Email". Leading Icon: `Icons.Filled.Email`.
+4.  **Component: Outlined Text Field (Password)**
+    - **Name:** `OutlinedTextField`
+    - **Position & Size:** `fillMaxWidth`, `marginTop = 16dp`.
+    - **Style:** Typography: `md.sys.typography.bodyLarge`. `visualTransformation = PasswordVisualTransformation()`.
+    - **Content:** Label: "Password". Leading Icon: `Icons.Filled.Lock`. Trailing Icon: `IconButton` to toggle password visibility.
+5.  **Component: Text Button (Forgot Password)**
+    - **Name:** `TextButton`
+    - **Position & Size:** Aligned to the end of the password field row. `marginTop = 8dp`.
+    - **Style:** Content Color: `md.sys.color.primary`. Typography: `md.sys.typography.labelLarge`.
+    - **Content:** "Forgot password?"
+6.  **Component: Filled Button (Log In)**
+    - **Name:** `FilledButton`
+    - **Position & Size:** `fillMaxWidth`, `height = 52dp`, `marginTop = 24dp`.
+    - **Style:** Container Color: `md.sys.color.primary`. Content Color: `md.sys.color.onPrimary`. Typography: `md.sys.typography.labelLarge`. Shape: `ShapeDefaults.Full`.
+    - **Content:** "Log In"
+7.  **Component: Row (Sign Up Prompt)**
+    - **Name:** `Row`
+    - **Position & Size:** Centered horizontally, `marginTop = 32dp`.
+    - **Content:** `Text` ("Don't have an account?") and `TextButton` ("Sign Up").
+    - **Style:** `Text` color: `md.sys.color.onSurface`. `TextButton` content color: `md.sys.color.primary`.
 
-### III. Component Specifications (for a single item in the list)
-
-1.  **Name**: `Card` (Post)
-    *   **Position & Size**:
-        *   Size: `fillMaxWidth`
-        *   Margin: `16dp` horizontal, `8dp` vertical.
-    *   **Style**:
-        *   Type: `ElevatedCard`
-        *   Colors: `md.sys.color.surface`
-        *   Elevation: `Elevation.Level1`
-
-2.  **Name**: `ListItem` (Post Header)
-    *   **Position & Size**: Top of the `Card`.
-    *   **Style**: Standard `ListItem` colors.
-    *   **Content**:
-        *   **Leading Content**: `AsyncImage` (User Avatar), 40x40dp, `CircleShape`.
-        *   **Headline Content**: `Text("Username", style = typography.titleMedium)`
-        *   **Supporting Content**: `Text("2 hours ago", style = typography.bodySmall, color = md.sys.color.onSurfaceVariant)`
-        *   **Trailing Content**: `IconButton` with `Icons.Filled.MoreVert` for post options.
-
-3.  **Name**: `Text` (Post Body)
-    *   **Position & Size**: Below the header.
-        *   Padding: `16dp` horizontal, `12dp` vertical.
-    *   **Style**:
-        *   Color: `md.sys.color.onSurface`
-        *   Typography: `bodyLarge`
-    *   **Content**: "This is the text content of the user's post. It can be multiple lines long."
-
-4.  **Name**: `AsyncImage` (Post Image)
-    *   **Position & Size**: Below the post text.
-        *   Size: `fillMaxWidth`, Height: `220dp`
-    *   **Style**:
-        *   `contentScale`: `ContentScale.Crop`
-    *   **Content**: The image associated with the post. This component is optional and only shown if an image exists.
-
-5.  **Name**: `Row` (Action Bar)
-    *   **Position & Size**: Bottom of the `Card`.
-        *   Size: `fillMaxWidth`
-        *   Padding: `horizontal = 8dp`
-    *   **Layout**: `Arrangement.SpaceAround`
-    *   **Content**: Contains three `TextButton`s with icons.
-        *   **Like Button**: `Icon(Icons.Outlined.ThumbUp)` and `Text("1.2k")`
-        *   **Comment Button**: `Icon(Icons.Outlined.Comment)` and `Text("98")`
-        *   **Share Button**: `Icon(Icons.Outlined.Share)` and `Text("Share")`
-
-### IV. Interaction & Behavior
-
-*   **Interactions**:
-    *   **Post Card**: On tap, navigates to `05_Post_Detail_Screen` with the post ID.
-    *   **Like Button**: On tap, toggles the like state. The icon changes to `Icons.Filled.ThumbUp` and the color to `md.sys.color.primary`.
-    *   **Comment Button**: On tap, navigates to `05_Post_Detail_Screen` and focuses the comment input field.
-*   **Scroll Behavior**: The `LazyColumn` scrolls vertically. The `TopAppBar` of the parent `Scaffold` reacts to this scroll.
-
-### V. Critical Scenarios & States
-
-*   **Empty State**: If the feed is empty, the `LazyColumn` is replaced with a `Column` centered on the screen containing:
-    *   An `Icon(Icons.Outlined.DynamicFeed, size = 64dp, tint = md.sys.color.onSurfaceVariant)`
-    *   A `Text("Nothing to see here", style = typography.headlineSmall)`
-    *   A `Text("Follow people to see their posts in your feed.", style = typography.bodyMedium, textAlign = TextAlign.Center)`
-*   **Loading State**: A full-screen `CircularProgressIndicator` is shown initially. For pull-to-refresh, a `SwipeRefreshIndicator` is shown at the top.
+##### Interaction & Behavior:
+- **Back Icon:** On tap -> Navigate back to `01_01_Splash_Screen`.
+- **Log In Button:** On tap -> Validate fields. On success, navigate to `03_01_Dashboard_Screen`. On failure, show `Snackbar` with "Invalid email or password."
+- **Forgot Password? Button:** On tap -> Navigate to `01_04_Forgot_Password_Screen`.
+- **Sign Up TextButton:** On tap -> Navigate to `01_02_Sign_Up_Screen`.
 
 ---
 
-## II. Screen Specifications: 03b_Search_Tab
+#### Screen 4: Forgot Password Screen
+- **Screen Name/ID:** `01_04_Forgot_Password_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.surface`
+- **Layout:** `Column`. `padding = 16dp` horizontal.
 
-*   **Screen Name/ID**: `03b_Search_Tab`
-*   **Dimensions**: Fills the content area of the `03_Home_Screen` `Scaffold`.
-*   **Background**: `md.sys.color.background`
-*   **Layout**: `Column`
-    *   `modifier`: `fillMaxSize`
+##### Components:
+1.  **Component: TopAppBar**
+    - **Name:** `TopAppBar`
+    - **Position & Size:** Top of the screen. `height = 56dp`.
+    - **Style:** Container Color: `md.sys.color.surface`.
+    - **Content:** Title: "Reset Password". Contains a back navigation icon.
+    - **Navigation Icon:** `IconButton` with `Icons.Filled.ArrowBack`. Content description: "Back".
+2.  **Component: Text (Instruction)**
+    - **Name:** `Text`
+    - **Position & Size:** `fillMaxWidth`, `marginTop = 16dp`.
+    - **Style:** Typography: `md.sys.typography.bodyLarge`. Color: `md.sys.color.onSurfaceVariant`.
+    - **Content:** "Enter the email address associated with your account and we'll send you a link to reset your password."
+3.  **Component: Outlined Text Field (Email)**
+    - **Name:** `OutlinedTextField`
+    - **Position & Size:** `fillMaxWidth`, `marginTop = 32dp`.
+    - **Style:** Typography: `md.sys.typography.bodyLarge`.
+    - **Content:** Label: "Email". Leading Icon: `Icons.Filled.Email`.
+4.  **Component: Filled Button (Send Reset Link)**
+    - **Name:** `FilledButton`
+    - **Position & Size:** `fillMaxWidth`, `height = 52dp`, `marginTop = 24dp`.
+    - **Style:** Container Color: `md.sys.color.primary`. Content Color: `md.sys.color.onPrimary`. Typography: `md.sys.typography.labelLarge`. Shape: `ShapeDefaults.Full`.
+    - **Content:** "Send Reset Link"
 
-### III. Component Specifications
-
-1.  **Name**: `SearchBar`
-    *   **Position & Size**:
-        *   Docked to the `TopAppBar` or placed at the top of the content area.
-        *   Size: `fillMaxWidth`
-        *   Margin: `16dp`
-    *   **Style**:
-        *   Type: `SearchBar` (M3 component)
-    *   **Content**:
-        *   Placeholder Text: "Search users or posts"
-        *   Leading Icon: `Icon(Icons.Filled.Search)`
-        *   Trailing Icon: `IconButton` with `Icon(Icons.Filled.Mic)` for voice search.
-
-2.  **Name**: `LazyVerticalGrid` (Search Results/Suggestions)
-    *   **Position & Size**: Below the `SearchBar`.
-        *   `modifier`: `fillMaxSize`
-    *   **Layout**:
-        *   `columns`: `GridCells.Fixed(2)`
-        *   `contentPadding`: `PaddingValues(horizontal = 12dp, vertical = 16dp)`
-    *   **Content**: Initially shows trending topics or suggested users. After a search, it's populated with result items (e.g., user profiles or post thumbnails).
-
-### IV. Interaction & Behavior
-
-*   **Interactions**:
-    *   **SearchBar**: On tap, it expands into a full-screen search view. As the user types, search results are populated in real-time in the `LazyVerticalGrid`.
-*   **Animations**:
-    *   The transition between the docked `SearchBar` and the full-screen search view is animated using `MaterialFade`.
-
-### V. Critical Scenarios & States
-
-*   **Empty State**: Before a search is performed, this screen can show "Trending Topics" or "Suggested Users".
-*   **No Results State**: After a search yields no results, the grid is replaced with a centered `Column` containing:
-    *   `Icon(Icons.Outlined.SearchOff, size = 64dp)`
-    *   `Text("No results found", style = typography.headlineSmall)`
-    *   `Text("Try searching for something else.", style = typography.bodyMedium)`
-*   **Loading State**: A `LinearProgressIndicator` is displayed directly below the `SearchBar` while a search is in progress.
+##### Interaction & Behavior:
+- **Back Icon:** On tap -> Navigate back to `01_03_Log_In_Screen`.
+- **Send Reset Link Button:** On tap -> Validate email. If valid, show a `Snackbar` with "Password reset link sent." and navigate back to `01_03_Log_In_Screen`.
 
 ---
 
-## II. Screen Specifications: 03c_Create_Post_Tab
-
-*   **Screen Name/ID**: `03c_Create_Post_Tab`
-*   **Dimensions**: Fills the content area of the `03_Home_Screen` `Scaffold`.
-*   **Background**: `md.sys.color.background`
-*   **Layout**: `Column`
-    *   `modifier`: `fillMaxSize`, `padding(16dp)`
-
-### III. Component Specifications
-
-1.  **Name**: `TextField` (Post Content)
-    *   **Position & Size**:
-        *   Size: `fillMaxWidth`, `minHeight = 200dp`
-    *   **Style**:
-        *   Type: `TextField` (borderless)
-        *   Colors: `TextFieldDefaults.textFieldColors(containerColor = Color.Transparent)`
-    *   **Content**:
-        *   Placeholder: `Text("What's on your mind?")`
-        *   Typography: `bodyLarge`
-
-2.  **Name**: `Row` (Attachment Actions)
-    *   **Position & Size**: Below the text field.
-        *   Size: `fillMaxWidth`
-    *   **Layout**: `Arrangement.Start`
-    *   **Content**:
-        *   `IconButton` with `Icon(Icons.Filled.Image)` for adding photos.
-        *   `IconButton` with `Icon(Icons.Filled.Videocam)` for adding videos.
-        *   `IconButton` with `Icon(Icons.Filled.Poll)` for creating a poll.
-
-3.  **Name**: `FilledButton` (Post)
-    *   **Position & Size**:
-        *   Alignment: `End` of the `Column`.
-        *   Margin (Top): `32dp`
-    *   **Style**: Standard `FilledButton`.
-    *   **Content**: `Text("Post")`
-
-### IV. Interaction & Behavior
-
-*   **Interactions**:
-    *   **Attachment Icons**: On tap, opens the corresponding system picker (e.g., photo gallery).
-    *   **Post Button**: On tap, submits the post content. The button is disabled if the text field is empty.
-*   **Animations**: N/A
-
-### V. Critical Scenarios & States
-
-*   **Error State**: If posting fails, a `Snackbar` appears with an error message (e.g., "Couldn't create post. Please try again.").
-*   **Loading State**: When the "Post" button is tapped, it becomes disabled and shows a `CircularProgressIndicator` until the post is successfully uploaded.
+### Flow 2: Onboarding & Account Linking
 
 ---
 
-## II. Screen Specifications: 03d_Notifications_Tab
+#### Screen 5: Connect Your Bank Screen
+- **Screen Name/ID:** `02_01_Connect_Your_Bank_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.surface`
+- **Layout:** `Column` with `verticalArrangement = Arrangement.Center`, `horizontalAlignment = Alignment.CenterHorizontally`, `padding = 24dp`.
 
-*   **Screen Name/ID**: `03d_Notifications_Tab`
-*   **Dimensions**: Fills the content area of the `03_Home_Screen` `Scaffold`.
-*   **Background**: `md.sys.color.background`
-*   **Layout**: `LazyColumn`
-    *   `modifier`: `fillMaxSize`
+##### Components:
+1.  **Component: Image (Illustration)**
+    - **Name:** `Image`
+    - **Position & Size:** Centered. `width = 200dp`, `height = 200dp`.
+    - **Content:** `secure_connection_illustration.svg`. Content description: "Illustration of a secure bank connection."
+2.  **Component: Text (Header)**
+    - **Name:** `Text`
+    - **Position & Size:** `marginTop = 32dp`.
+    - **Style:** Typography: `md.sys.typography.headlineMedium`. Color: `md.sys.color.onSurface`. Text alignment: Center.
+    - **Content:** "Connect your bank to see the full picture"
+3.  **Component: Text (Body)**
+    - **Name:** `Text`
+    - **Position & Size:** `marginTop = 16dp`.
+    - **Style:** Typography: `md.sys.typography.bodyLarge`. Color: `md.sys.color.onSurfaceVariant`. Text alignment: Center.
+    - **Content:** "We use Plaid to securely connect to over 11,000 institutions with bank-level security."
+4.  **Component: Filled Button (Connect Account)**
+    - **Name:** `FilledButton`
+    - **Position & Size:** `fillMaxWidth`, `height = 52dp`, `marginTop = 48dp`.
+    - **Style:** Container Color: `md.sys.color.primary`. Content Color: `md.sys.color.onPrimary`. Typography: `md.sys.typography.labelLarge`. Shape: `ShapeDefaults.Full`.
+    - **Content:** "Connect my main account"
 
-### III. Component Specifications (for a single notification item)
-
-1.  **Name**: `ListItem` (Notification)
-    *   **Position & Size**: `fillMaxWidth`
-    *   **Style**:
-        *   `colors`: A notification that is "unread" can have a slightly different background color, e.g., `md.sys.color.primaryContainer.copy(alpha = 0.1f)`.
-    *   **Content**:
-        *   **Leading Content**: `AsyncImage` (Avatar of the user who caused the notification), 40x40dp, `CircleShape`.
-        *   **Headline Content**: `Text("Username liked your post.", style = typography.bodyLarge)`
-        *   **Supporting Content**: `Text("5 minutes ago", style = typography.bodyMedium, color = md.sys.color.onSurfaceVariant)`
-        *   **Trailing Content**: Optional `AsyncImage` (thumbnail of the post related to the notification), 56x56dp, `RoundedCornerShape(8.dp)`.
-
-### IV. Interaction & Behavior
-
-*   **Interactions**:
-    *   Tapping a `ListItem` navigates to the relevant content (e.g., the post that was liked, the user profile that followed you).
-*   **Scroll Behavior**: Standard vertical scroll.
-
-### V. Critical Scenarios & States
-
-*   **Empty State**: If there are no notifications, the `LazyColumn` is replaced with a centered `Column` containing:
-    *   `Icon(Icons.Outlined.NotificationsOff, size = 64dp)`
-    *   `Text("No Notifications Yet", style = typography.headlineSmall)`
-    *   `Text("Your notifications will appear here.", style = typography.bodyMedium)`
-*   **Loading State**: A `SwipeRefreshIndicator` is used for refreshing the notification list.
+##### Interaction & Behavior:
+- **Connect Button:** On tap -> Navigate to `02_02_Select_Institution_Screen` using `MaterialSharedAxis(X, forward = true)`.
 
 ---
 
-## II. Screen Specifications: 03e_Profile_Tab
+#### Screen 6: Select Institution Screen
+- **Screen Name/ID:** `02_02_Select_Institution_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.surface`
+- **Layout:** `Column`.
 
-*   **Screen Name/ID**: `03e_Profile_Tab`
-*   **Dimensions**: Fills the content area of the `03_Home_Screen` `Scaffold`.
-*   **Background**: `md.sys.color.background`
-*   **Layout**: `LazyColumn`
-    *   `modifier`: `fillMaxSize`
+##### Components:
+1.  **Component: TopAppBar**
+    - **Name:** `TopAppBar`
+    - **Position & Size:** Top of the screen. `height = 56dp`.
+    - **Style:** Container Color: `md.sys.color.surface`.
+    - **Content:** Title: "Select your bank". Contains a close icon.
+    - **Navigation Icon:** `IconButton` with `Icons.Filled.Close`. Content description: "Close".
+2.  **Component: Search Bar**
+    - **Name:** `SearchBar` (or `OutlinedTextField` styled as a search bar)
+    - **Position & Size:** `fillMaxWidth`, `padding = 16dp` horizontal, `8dp` vertical.
+    - **Style:** Shape: `ShapeDefaults.Full`.
+    - **Content:** Placeholder text: "Search for your bank". Leading Icon: `Icons.Filled.Search`.
+3.  **Component: LazyColumn (Bank List)**
+    - **Name:** `LazyColumn`
+    - **Position & Size:** Fills remaining space. `contentPadding = 16dp` horizontal.
+    - **Content:** A list of popular financial institutions. Each item is a `ListItem`.
+4.  **Component: ListItem (Bank Item)**
+    - **Name:** `ListItem`
+    - **Position & Size:** `fillMaxWidth`.
+    - **Style:** Clickable.
+    - **Content:**
+        - `leadingContent`: `Image` of the bank logo (e.g., Chase, Bank of America), `size = 40dp`.
+        - `headlineContent`: `Text` with the bank name. Typography: `md.sys.typography.bodyLarge`.
+        - `trailingContent`: `Icon` `Icons.Filled.ChevronRight`.
 
-### III. Component Specifications
-
-1.  **Name**: `Column` (Profile Header)
-    *   **Position & Size**: Top of the `LazyColumn`.
-        *   `modifier`: `fillMaxWidth`, `padding(16dp)`
-    *   **Layout**: `horizontalAlignment`: `CenterHorizontally`
-    *   **Content**:
-        *   `AsyncImage` (User's Profile Picture), 96x96dp, `CircleShape`, with a `1dp` border of `md.sys.color.primary`.
-        *   `Text` (Full Name), `style = typography.headlineSmall`, `margin(top = 16dp)`.
-        *   `Text` (@username), `style = typography.bodyMedium`, `color = md.sys.color.onSurfaceVariant`.
-        *   `Row` (Stats), `margin(top = 16dp)`, `horizontalArrangement = Arrangement.SpaceEvenly`, `fillMaxWidth`. Contains three `Column`s for "Posts", "Followers", "Following" with numbers and labels.
-        *   `FilledButton` ("Edit Profile"), `margin(top = 16dp)`.
-
-2.  **Name**: `TabRow` (User Content)
-    *   **Position & Size**: Below the header.
-        *   `modifier`: `fillMaxWidth`
-    *   **Content**:
-        *   `Tab` 1: `Icon(Icons.Filled.GridOn)`, Text("Posts")
-        *   `Tab` 2: `Icon(Icons.Filled.Bookmark)`, Text("Saved")
-
-3.  **Name**: `LazyVerticalGrid` (User's Posts)
-    *   **Position & Size**: Below the `TabRow`.
-    *   **Layout**: `GridCells.Fixed(3)`.
-    *   **Content**: A grid of `AsyncImage` thumbnails of the user's posts.
-
-### IV. Interaction & Behavior
-
-*   **Interactions**:
-    *   **Edit Profile Button**: On tap, navigates to `07_Edit_Profile_Screen`.
-    *   **Settings Icon (in TopAppBar)**: On tap, navigates to `06_Settings_Screen`.
-    *   **Tab**: On tap, switches the content in the grid below.
-*   **Scroll Behavior**: The entire profile scrolls, with the header and `TabRow` scrolling off-screen.
-
-### V. Critical Scenarios & States
-
-*   **Empty State**: If the user has no posts, the grid area shows a message like "No posts yet."
+##### Interaction & Behavior:
+- **Close Icon:** On tap -> Abort flow and navigate to `03_01_Dashboard_Screen`.
+- **Search Bar:** On tap -> Navigate to `02_03_Search_Institution_Screen`.
+- **Bank ListItem:** On tap -> Navigate to `02_04_Enter_Bank_Credentials_Screen`, passing the selected institution's ID.
 
 ---
 
-## II. Screen Specifications: 04_Registration_Screen
+#### Screen 7: Search Institution Screen
+- **Screen Name/ID:** `02_03_Search_Institution_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.surface`
+- **Layout:** `Column`.
 
-*   **Screen Name/ID**: `04_Registration_Screen`
-*   **Dimensions**: 393x852dp
-*   **Background**: `md.sys.color.background`
-*   **Layout**: `Column`
-    *   `modifier`: `fillMaxSize`, `padding(horizontal = 24dp)`, `verticalScroll(rememberScrollState())`
+##### Components:
+1.  **Component: Search Bar**
+    - **Name:** `SearchBar` (Active state)
+    - **Position & Size:** Top of the screen, `fillMaxWidth`.
+    - **Style:** Automatically focused with keyboard visible.
+    - **Content:** Leading Icon: `Icons.Filled.ArrowBack`. Trailing Icon: `Icons.Filled.Clear` (when text is present).
+2.  **Component: LazyColumn (Search Results)**
+    - **Name:** `LazyColumn`
+    - **Position & Size:** Fills remaining space.
+    - **Content:**
+        - **Initial State:** Empty.
+        - **No Results State:** A `Column` with an `Icon` and `Text` ("No results found").
+        - **Results State:** A list of `ListItem` components for each matching institution, identical in style to `02_02_Select_Institution_Screen`.
 
-### III. Component Specifications
-
-1.  **Name**: `TopAppBar`
-    *   **Style**: `SmallTopAppBar`
-    *   **Content**:
-        *   **Navigation Icon**: `IconButton` with `Icon(Icons.Filled.ArrowBack)`
-        *   **Title**: `Text("Create Account")`
-
-2.  **Name**: `OutlinedTextField` (Full Name)
-    *   **Position & Size**: `fillMaxWidth`, `margin(top = 16dp)`
-    *   **Content**: Label: "Full Name", Leading Icon: `Icons.Filled.Person`
-
-3.  **Name**: `OutlinedTextField` (Email)
-    *   **Position & Size**: `fillMaxWidth`, `margin(top = 16dp)`
-    *   **Content**: Label: "Email", Leading Icon: `Icons.Filled.Email`
-
-4.  **Name**: `OutlinedTextField` (Password)
-    *   **Position & Size**: `fillMaxWidth`, `margin(top = 16dp)`
-    *   **Content**: Label: "Password", Leading Icon: `Icons.Filled.Lock`, Trailing Icon for visibility toggle.
-
-5.  **Name**: `OutlinedTextField` (Confirm Password)
-    *   **Position & Size**: `fillMaxWidth`, `margin(top = 16dp)`
-    *   **Content**: Label: "Confirm Password", Leading Icon: `Icons.Filled.Lock`
-
-6.  **Name**: `FilledButton` (Sign Up)
-    *   **Position & Size**: `fillMaxWidth`, Height: 52dp, `margin(top = 32dp)`
-    *   **Content**: `Text("Sign Up")`
-
-7.  **Name**: `TextButton` (Login)
-    *   **Position & Size**: `CenterHorizontally`, `margin(top = 16dp)`
-    *   **Content**: `Text("Already have an account? Login")`
-
-### IV. Interaction & Behavior
-
-*   **Interactions**:
-    *   **Back Arrow**: On tap, navigates back to `02_Login_Screen`.
-    *   **Sign Up Button**: On tap, validates fields and creates an account. On success, navigates to `03_Home_Screen`.
-    *   **Login TextButton**: On tap, navigates to `02_Login_Screen`.
-*   **Animations**:
-    *   **Screen Transition (Entry)**: `MaterialSharedAxis(X, forward = true)`
-    *   **Screen Transition (Exit)**: `MaterialSharedAxis(X, forward = false)`
-
-### V. Critical Scenarios & States
-
-*   **Error State**: Text fields show errors for invalid data (e.g., "Passwords do not match"). A `Snackbar` is used for registration API errors.
-*   **Loading State**: The "Sign Up" button shows a `CircularProgressIndicator` during the registration process.
+##### Interaction & Behavior:
+- **Back Icon:** On tap -> Navigate back to `02_02_Select_Institution_Screen`.
+- **Text Input:** As user types, dynamically filter and display results in the `LazyColumn`.
+- **Clear Icon:** On tap -> Clear the text in the search bar.
+- **Result ListItem:** On tap -> Navigate to `02_04_Enter_Bank_Credentials_Screen`, passing the selected institution's ID.
 
 ---
 
-## II. Screen Specifications: 05_Post_Detail_Screen
+#### Screen 8: Enter Bank Credentials Screen
+- **Screen Name/ID:** `02_04_Enter_Bank_Credentials_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.surface`
+- **Layout:** `Column`. `padding = 16dp` horizontal.
 
-*   **Screen Name/ID**: `05_Post_Detail_Screen`
-*   **Dimensions**: 393x852dp
-*   **Background**: `md.sys.color.background`
-*   **Layout**: `Scaffold` with a `LazyColumn` in the body.
+##### Components:
+1.  **Component: TopAppBar**
+    - **Name:** `TopAppBar`
+    - **Position & Size:** Top of the screen. `height = 56dp`.
+    - **Style:** Container Color: `md.sys.color.surface`.
+    - **Content:** Title: "[Institution Name]". Contains a back navigation icon.
+    - **Navigation Icon:** `IconButton` with `Icons.Filled.ArrowBack`. Content description: "Back".
+2.  **Component: Image (Bank Logo)**
+    - **Name:** `Image`
+    - **Position & Size:** Centered horizontally, `marginTop = 32dp`. `size = 64dp`.
+    - **Content:** Logo of the selected institution.
+3.  **Component: Text (Instruction)**
+    - **Name:** `Text`
+    - **Position & Size:** `marginTop = 16dp`. Text alignment: Center.
+    - **Style:** Typography: `md.sys.typography.bodyMedium`. Color: `md.sys.color.onSurfaceVariant`.
+    - **Content:** "Enter your credentials for [Institution Name]. Your information is encrypted and will not be shared."
+4.  **Component: Outlined Text Field (Username)**
+    - **Name:** `OutlinedTextField`
+    - **Position & Size:** `fillMaxWidth`, `marginTop = 32dp`.
+    - **Content:** Label: "Username" or "User ID".
+5.  **Component: Outlined Text Field (Password)**
+    - **Name:** `OutlinedTextField`
+    - **Position & Size:** `fillMaxWidth`, `marginTop = 16dp`.
+    - **Style:** `visualTransformation = PasswordVisualTransformation()`.
+    - **Content:** Label: "Password". Trailing Icon: `IconButton` to toggle password visibility.
+6.  **Component: Filled Button (Submit)**
+    - **Name:** `FilledButton`
+    - **Position & Size:** `fillMaxWidth`, `height = 52dp`, `marginTop = 24dp`.
+    - **Style:** Shape: `ShapeDefaults.Full`.
+    - **Content:** "Submit"
 
-### III. Component Specifications
-
-1.  **Name**: `TopAppBar`
-    *   **Content**:
-        *   **Navigation Icon**: `IconButton` with `Icon(Icons.Filled.ArrowBack)`
-        *   **Title**: `Text("Post")`
-
-2.  **Name**: `LazyColumn`
-    *   **Content**:
-        *   **Item 1**: The full post content, identical in structure to the `Card` on the `03a_Feed_Tab` screen, but without card elevation (flat).
-        *   **Item 2**: `Divider` component.
-        *   **Subsequent Items**: A list of `ListItem` components, each representing a comment. Each comment `ListItem` includes an avatar, username, and the comment text.
-
-3.  **Name**: `OutlinedTextField` (Add Comment)
-    *   **Position & Size**: Docked to the bottom of the screen, outside the `LazyColumn`.
-        *   `modifier`: `fillMaxWidth`, `padding(8dp)`
-    *   **Content**:
-        *   Placeholder: `Text("Add a comment...")`
-        *   Trailing Icon: `IconButton` with `Icon(Icons.Filled.Send)` to post the comment.
-
-### IV. Interaction & Behavior
-
-*   **Interactions**:
-    *   **Back Arrow**: Navigates back to `03a_Feed_Tab`.
-    *   **Send Icon**: Posts the comment and adds it to the list above.
-*   **Scroll Behavior**: The `LazyColumn` scrolls through the post and all comments. The comment input field remains fixed at the bottom.
-
-### V. Critical Scenarios & States
-
-*   **Empty State**: If there are no comments, a `Text("No comments yet.")` is shown below the `Divider`.
-*   **Loading State**: A `CircularProgressIndicator` is shown while comments are being loaded.
-
----
-
-## II. Screen Specifications: 06_Settings_Screen
-
-*   **Screen Name/ID**: `06_Settings_Screen`
-*   **Dimensions**: 393x852dp
-*   **Background**: `md.sys.color.background`
-*   **Layout**: `Column`
-
-### III. Component Specifications
-
-1.  **Name**: `TopAppBar`
-    *   **Content**:
-        *   **Navigation Icon**: `IconButton` with `Icon(Icons.Filled.ArrowBack)`
-        *   **Title**: `Text("Settings")`
-
-2.  **Name**: `ListItem` (Edit Profile)
-    *   **Position & Size**: `fillMaxWidth`
-    *   **Content**:
-        *   **Leading Content**: `Icon(Icons.Filled.AccountCircle)`
-        *   **Headline Content**: `Text("Edit Profile")`
-        *   **Trailing Content**: `Icon(Icons.Filled.ChevronRight)`
-
-3.  **Name**: `ListItem` (Account Settings)
-    *   **Position & Size**: `fillMaxWidth`
-    *   **Content**:
-        *   **Leading Content**: `Icon(Icons.Filled.Tune)`
-        *   **Headline Content**: `Text("Account Settings")`
-        *   **Trailing Content**: `Icon(Icons.Filled.ChevronRight)`
-
-4.  **Name**: `ListItem` (Privacy Settings)
-    *   **Position & Size**: `fillMaxWidth`
-    *   **Content**:
-        *   **Leading Content**: `Icon(Icons.Filled.Security)`
-        *   **Headline Content**: `Text("Privacy Settings")`
-        *   **Trailing Content**: `Icon(Icons.Filled.ChevronRight)`
-
-5.  **Name**: `TextButton` (Logout)
-    *   **Position & Size**: `fillMaxWidth`, `padding(16dp)`
-    *   **Style**: `colors = ButtonDefaults.textButtonColors(contentColor = md.sys.color.error)`
-    *   **Content**: `Text("Logout")`
-
-### IV. Interaction & Behavior
-
-*   **Interactions**:
-    *   **Back Arrow**: Navigates back to `03e_Profile_Tab`.
-    *   **Edit Profile**: Navigates to `07_Edit_Profile_Screen`.
-    *   **Account Settings**: Navigates to `08_Account_Settings_Screen`.
-    *   **Privacy Settings**: Navigates to `09_Privacy_Settings_Screen`.
-    *   **Logout**: Shows a confirmation `AlertDialog` and then logs the user out, navigating to `02_Login_Screen`.
+##### Interaction & Behavior:
+- **Back Icon:** On tap -> Navigate back to `02_02_Select_Institution_Screen`.
+- **Submit Button:** On tap -> Navigate to `02_05_Connecting_Account_Screen`.
 
 ---
 
-## II. Screen Specifications: 07_Edit_Profile_Screen
+#### Screen 9: Connecting Account Screen
+- **Screen Name/ID:** `02_05_Connecting_Account_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.surface`
+- **Layout:** `Column` with `verticalArrangement = Arrangement.Center`, `horizontalAlignment = Alignment.CenterHorizontally`.
 
-*   **Screen Name/ID**: `07_Edit_Profile_Screen`
-*   **Dimensions**: 393x852dp
-*   **Background**: `md.sys.color.background`
-*   **Layout**: `Column` with vertical scrolling.
+##### Components:
+1.  **Component: Circular Progress Indicator**
+    - **Name:** `CircularProgressIndicator`
+    - **Position & Size:** Centered. `size = 64dp`.
+    - **Style:** Color: `md.sys.color.primary`.
+2.  **Component: Text (Status)**
+    - **Name:** `Text`
+    - **Position & Size:** `marginTop = 32dp`.
+    - **Style:** Typography: `md.sys.typography.titleMedium`. Color: `md.sys.color.onSurface`.
+    - **Content:** "Connecting securely..."
 
-### III. Component Specifications
-
-1.  **Name**: `TopAppBar`
-    *   **Content**:
-        *   **Navigation Icon**: `IconButton` with `Icon(Icons.Filled.Close)`
-        *   **Title**: `Text("Edit Profile")`
-        *   **Actions**: `TextButton` with `Text("Save")`
-
-2.  **Name**: `AsyncImage` (Profile Picture)
-    *   **Position & Size**: Centered, 96x96dp, `CircleShape`, `margin(top = 16dp)`.
-    *   **Overlay**: A semi-transparent overlay with an `Icon(Icons.Filled.Edit)` to indicate it's tappable.
-
-3.  **Name**: `OutlinedTextField` (Full Name)
-    *   **Position & Size**: `fillMaxWidth`, `padding(horizontal = 16dp, vertical = 8dp)`
-    *   **Content**: Label: "Full Name"
-
-4.  **Name**: `OutlinedTextField` (Username)
-    *   **Position & Size**: `fillMaxWidth`, `padding(horizontal = 16dp, vertical = 8dp)`
-    *   **Content**: Label: "Username"
-
-5.  **Name**: `OutlinedTextField` (Bio)
-    *   **Position & Size**: `fillMaxWidth`, `minHeight = 120dp`, `padding(horizontal = 16dp, vertical = 8dp)`
-    *   **Content**: Label: "Bio"
-
-### IV. Interaction & Behavior
-
-*   **Interactions**:
-    *   **Close Icon**: Navigates back to `06_Settings_Screen` without saving.
-    *   **Save Button**: Saves changes and navigates back.
-    *   **Profile Picture**: Opens an image picker.
+##### Interaction & Behavior:
+- **System Action:** After a simulated delay (2-5 seconds), automatically navigate to `02_06_Connection_Successful_Screen`.
+- **Error State:** If connection fails, show an `AlertDialog` with an error message and buttons to "Try Again" (returns to `02_04`) or "Cancel" (returns to `02_02`).
 
 ---
 
-## II. Screen Specifications: 08_Account_Settings_Screen
+#### Screen 10: Connection Successful Screen
+- **Screen Name/ID:** `02_06_Connection_Successful_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.surface`
+- **Layout:** `Column` with `verticalArrangement = Arrangement.Center`, `horizontalAlignment = Alignment.CenterHorizontally`, `padding = 24dp`.
 
-*   **Screen Name/ID**: `08_Account_Settings_Screen`
-*   **Dimensions**: 393x852dp
-*   **Background**: `md.sys.color.background`
-*   **Layout**: `Column`
+##### Components:
+1.  **Component: Icon**
+    - **Name:** `Icon`
+    - **Position & Size:** Centered. `size = 80dp`.
+    - **Style:** Tint: A success color (e.g., `#2E7D32`).
+    - **Content:** `Icons.Filled.CheckCircle`. Content description: "Success".
+2.  **Component: Text (Header)**
+    - **Name:** `Text`
+    - **Position & Size:** `marginTop = 32dp`.
+    - **Style:** Typography: `md.sys.typography.headlineMedium`. Color: `md.sys.color.onSurface`. Text alignment: Center.
+    - **Content:** "Account Connected!"
+3.  **Component: Text (Body)**
+    - **Name:** `Text`
+    - **Position & Size:** `marginTop = 16dp`.
+    - **Style:** Typography: `md.sys.typography.bodyLarge`. Color: `md.sys.color.onSurfaceVariant`. Text alignment: Center.
+    - **Content:** "You have successfully linked your [Institution Name] account."
+4.  **Component: Filled Button (Continue)**
+    - **Name:** `FilledButton`
+    - **Position & Size:** `fillMaxWidth`, `height = 52dp`, `marginTop = 48dp`.
+    - **Style:** Shape: `ShapeDefaults.Full`.
+    - **Content:** "Continue"
 
-### III. Component Specifications
-
-1.  **Name**: `TopAppBar`
-    *   **Content**:
-        *   **Navigation Icon**: `IconButton` with `Icon(Icons.Filled.ArrowBack)`
-        *   **Title**: `Text("Account Settings")`
-
-2.  **Name**: `ListItem` (Change Email)
-    *   **Content**: Headline: "Email", Supporting Text: "user@example.com"
-
-3.  **Name**: `ListItem` (Change Password)
-    *   **Content**: Headline: "Change Password"
-
-4.  **Name**: `ListItem` (Deactivate Account)
-    *   **Style**: `headlineColor = md.sys.color.error`
-    *   **Content**: Headline: "Deactivate Account"
-
-### IV. Interaction & Behavior
-
-*   **Interactions**: Each `ListItem` opens a new screen or `AlertDialog` to perform the respective action.
+##### Interaction & Behavior:
+- **Continue Button:** On tap -> Navigate to `02_07_Analyzing_Transactions_Screen`.
 
 ---
 
-## II. Screen Specifications: 09_Privacy_Settings_Screen
+#### Screen 11: Analyzing Transactions Screen
+- **Screen Name/ID:** `02_07_Analyzing_Transactions_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.surface`
+- **Layout:** `Column` with `verticalArrangement = Arrangement.Center`, `horizontalAlignment = Alignment.CenterHorizontally`.
 
-*   **Screen Name/ID**: `09_Privacy_Settings_Screen`
-*   **Dimensions**: 393x852dp
-*   **Background**: `md.sys.color.background`
-*   **Layout**: `Column`
+##### Components:
+1.  **Component: Circular Progress Indicator**
+    - **Name:** `CircularProgressIndicator`
+    - **Position & Size:** Centered. `size = 64dp`.
+    - **Style:** Color: `md.sys.color.primary`.
+2.  **Component: Text (Status)**
+    - **Name:** `Text`
+    - **Position & Size:** `marginTop = 32dp`.
+    - **Style:** Typography: `md.sys.typography.titleMedium`. Color: `md.sys.color.onSurface`.
+    - **Content:** "Analyzing your transactions..."
 
-### III. Component Specifications
+##### Interaction & Behavior:
+- **System Action:** After a simulated delay (2-5 seconds), automatically navigate to `02_08_Found_Recurring_Bills_Screen`.
 
-1.  **Name**: `TopAppBar`
-    *   **Content**:
-        *   **Navigation Icon**: `IconButton` with `Icon(Icons.Filled.ArrowBack)`
-        *   **Title**: `Text("Privacy Settings")`
+---
 
-2.  **Name**: `ListItem` (Private Account)
-    *   **Content**:
-        *   **Headline Content**: `Text("Private Account")`
-        *   **Supporting Content**: `Text("When your account is private, only people you approve can see your photos and videos.")`
-        *   **Trailing Content**: `Switch` component.
+#### Screen 12: Found Recurring Bills Screen
+- **Screen Name/ID:** `02_08_Found_Recurring_Bills_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.surface`
+- **Layout:** `Column` with `verticalArrangement = Arrangement.Center`, `horizontalAlignment = Alignment.CenterHorizontally`, `padding = 24dp`.
 
-3.  **Name**: `ListItem` (Blocked Accounts)
-    *   **Content**:
-        *   **Headline Content**: `Text("Blocked Accounts")`
-        *   **Trailing Content**: `Icon(Icons.Filled.ChevronRight)`
+##### Components:
+1.  **Component: Icon**
+    - **Name:** `Icon`
+    - **Position & Size:** Centered. `size = 80dp`.
+    - **Style:** Tint: `md.sys.color.primary`.
+    - **Content:** `Icons.Filled.ReceiptLong`. Content description: "Bills".
+2.  **Component: Text (Header)**
+    - **Name:** `Text`
+    - **Position & Size:** `marginTop = 32dp`.
+    - **Style:** Typography: `md.sys.typography.headlineMedium`. Color: `md.sys.color.onSurface`. Text alignment: Center.
+    - **Content:** "We found 7 recurring bills"
+3.  **Component: Text (Body)**
+    - **Name:** `Text`
+    - **Position & Size:** `marginTop = 16dp`.
+    - **Style:** Typography: `md.sys.typography.bodyLarge`. Color: `md.sys.color.onSurfaceVariant`. Text alignment: Center.
+    - **Content:** "We'll help you track them so you never miss a payment."
+4.  **Component: Filled Button (Continue)**
+    - **Name:** `FilledButton`
+    - **Position & Size:** `fillMaxWidth`, `height = 52dp`, `marginTop = 48dp`.
+    - **Style:** Shape: `ShapeDefaults.Full`.
+    - **Content:** "Continue"
 
-### IV. Interaction & Behavior
+##### Interaction & Behavior:
+- **Continue Button:** On tap -> Navigate to `02_09_Found_Subscriptions_Screen`.
 
-*   **Interactions**:
-    *   **Switch**: Toggles the account's privacy status.
-    *   **Blocked Accounts**: Navigates to a screen listing all blocked users.
+---
+
+#### Screen 13: Found Subscriptions Screen
+- **Screen Name/ID:** `02_09_Found_Subscriptions_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.surface`
+- **Layout:** `Column` with `verticalArrangement = Arrangement.Center`, `horizontalAlignment = Alignment.CenterHorizontally`, `padding = 24dp`.
+
+##### Components:
+1.  **Component: Icon**
+    - **Name:** `Icon`
+    - **Position & Size:** Centered. `size = 80dp`.
+    - **Style:** Tint: `md.sys.color.primary`.
+    - **Content:** `Icons.Filled.Autorenew`. Content description: "Subscriptions".
+2.  **Component: Text (Header)**
+    - **Name:** `Text`
+    - **Position & Size:** `marginTop = 32dp`.
+    - **Style:** Typography: `md.sys.typography.headlineMedium`. Color: `md.sys.color.onSurface`. Text alignment: Center.
+    - **Content:** "And 4 subscriptions you might have forgotten"
+3.  **Component: Text (Body)**
+    - **Name:** `Text`
+    - **Position & Size:** `marginTop = 16dp`.
+    - **Style:** Typography: `md.sys.typography.bodyLarge`. Color: `md.sys.color.onSurfaceVariant`. Text alignment: Center.
+    - **Content:** "Let us cancel the ones you don't want anymore."
+4.  **Component: Filled Button (Continue)**
+    - **Name:** `FilledButton`
+    - **Position & Size:** `fillMaxWidth`, `height = 52dp`, `marginTop = 48dp`.
+    - **Style:** Shape: `ShapeDefaults.Full`.
+    - **Content:** "Continue"
+
+##### Interaction & Behavior:
+- **Continue Button:** On tap -> Navigate to `03_01_Dashboard_Screen` using `MaterialFadeThrough`.
+
+---
+
+### Flow 3: Main Navigation
+
+---
+
+#### Screen 14: Dashboard Screen
+- **Screen Name/ID:** `03_01_Dashboard_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.background`
+- **Layout:** `Scaffold` with `TopAppBar`, `LazyColumn` for content, and `NavigationBar`.
+
+##### Components:
+1.  **Component: TopAppBar**
+    - **Name:** `TopAppBar`
+    - **Position & Size:** Top of the screen.
+    - **Style:** `scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()`.
+    - **Content:**
+        - `title`: `Text` "Hi, [User Name]".
+        - `actions`: `IconButton` with `Icons.Filled.Settings`. Content description: "Settings".
+2.  **Component: LazyColumn (Dashboard Content)**
+    - **Name:** `LazyColumn`
+    - **Position & Size:** Fills the content area of the `Scaffold`. `contentPadding = 16dp` horizontal.
+    - **Content:** A series of `Card` components.
+3.  **Component: Card (Spending Overview)**
+    - **Name:** `Card`
+    - **Position & Size:** `fillMaxWidth`, `marginBottom = 16dp`.
+    - **Style:** `CardDefaults.elevatedCardColors()`.
+    - **Content:** `Column` with a title ("Spending This Month"), a large amount (`$1,234.56`), a progress bar, and a `TextButton` ("View all spending").
+4.  **Component: Card (Recurring Bills)**
+    - **Name:** `Card`
+    - **Position & Size:** `fillMaxWidth`, `marginBottom = 16dp`.
+    - **Style:** `CardDefaults.outlinedCardColors()`.
+    - **Content:** `Column` with a title ("Upcoming Bills"), a list of 2-3 upcoming bills (`ListItem`), and a `TextButton` ("View all recurring").
+5.  **Component: Card (Budget Overview)**
+    - **Name:** `Card`
+    - **Position & Size:** `fillMaxWidth`, `marginBottom = 16dp`.
+    - **Style:** `CardDefaults.outlinedCardColors()`.
+    - **Content:** `Column` with a title ("Budgets"), a summary of budget progress, and a `TextButton` ("Manage budgets").
+6.  **Component: NavigationBar**
+    - **Name:** `NavigationBar`
+    - **Position & Size:** Bottom of the `Scaffold`.
+    - **Style:** Container Color: `md.sys.color.surfaceVariant`.
+    - **Content:** Four `NavigationBarItem`s.
+        - **Item 1 (Dashboard):** Selected. Icon: `Icons.Filled.Dashboard`. Label: "Dashboard".
+        - **Item 2 (Spending):** Icon: `Icons.Outlined.PieChart`. Label: "Spending".
+        - **Item 3 (Recurring):** Icon: `Icons.Outlined.Autorenew`. Label: "Recurring".
+        - **Item 4 (Budget):** Icon: `Icons.Outlined.Savings`. Label: "Budget".
+
+##### Interaction & Behavior:
+- **Settings Icon:** On tap -> Navigate to `07_01_Settings_Screen`.
+- **View all spending Button:** On tap -> Navigate to `03_02_Spending_Screen`.
+- **Recurring Bill ListItem:** On tap -> Navigate to `05_01_Subscription_Details_Screen`.
+- **Spending Tab:** On tap -> Navigate to `03_02_Spending_Screen`.
+- **Recurring Tab:** On tap -> Navigate to `03_03_Recurring_Screen`.
+- **Budget Tab:** On tap -> Navigate to `03_04_Budget_Screen`.
+
+---
+
+#### Screen 15: Spending Screen
+- **Screen Name/ID:** `03_02_Spending_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.background`
+- **Layout:** `Scaffold` with `TopAppBar`, `LazyColumn`, and `NavigationBar`.
+
+##### Components:
+1.  **Component: TopAppBar**
+    - **Name:** `TopAppBar`
+    - **Position & Size:** Top of the screen.
+    - **Content:** Title: "Spending".
+2.  **Component: LazyColumn (Spending Content)**
+    - **Name:** `LazyColumn`
+    - **Position & Size:** Fills content area. `contentPadding = 16dp`.
+    - **Content:**
+        - A `Card` containing a pie chart visualization of spending by category.
+        - A `Text` header "Spending by Category".
+        - A list of `ListItem`s, one for each category.
+3.  **Component: ListItem (Category)**
+    - **Name:** `ListItem`
+    - **Position & Size:** `fillMaxWidth`.
+    - **Style:** Clickable.
+    - **Content:**
+        - `leadingContent`: `Icon` for the category (e.g., `Icons.Filled.ShoppingCart` for Shopping).
+        - `headlineContent`: `Text` with category name.
+        - `supportingContent`: `LinearProgressIndicator` showing spending vs. total.
+        - `trailingContent`: `Text` with amount spent (e.g., "$250.75").
+4.  **Component: NavigationBar**
+    - **Name:** `NavigationBar`
+    - **Position & Size:** Bottom of the `Scaffold`.
+    - **Content:**
+        - **Item 1 (Dashboard):** Icon: `Icons.Outlined.Dashboard`. Label: "Dashboard".
+        - **Item 2 (Spending):** Selected. Icon: `Icons.Filled.PieChart`. Label: "Spending".
+        - **Item 3 (Recurring):** Icon: `Icons.Outlined.Autorenew`. Label: "Recurring".
+        - **Item 4 (Budget):** Icon: `Icons.Outlined.Savings`. Label: "Budget".
+
+##### Interaction & Behavior:
+- **Category ListItem:** On tap -> Navigate to `06_01_Category_Spending_Details_Screen`.
+- **Navigation Tabs:** Navigate to corresponding screens (`Dashboard`, `Recurring`, `Budget`).
+
+---
+
+#### Screen 16: Recurring Screen
+- **Screen Name/ID:** `03_03_Recurring_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.background`
+- **Layout:** `Scaffold` with `TopAppBar`, `LazyColumn`, and `NavigationBar`.
+
+##### Components:
+1.  **Component: TopAppBar**
+    - **Name:** `TopAppBar`
+    - **Position & Size:** Top of the screen.
+    - **Content:** Title: "Recurring".
+2.  **Component: LazyColumn (Recurring Content)**
+    - **Name:** `LazyColumn`
+    - **Position & Size:** Fills content area.
+    - **Content:**
+        - A `Text` subheader "Upcoming this month".
+        - A list of `ListItem`s for upcoming bills.
+        - A `Divider`.
+        - A `Text` subheader "All recurring".
+        - A list of `ListItem`s for all subscriptions and bills.
+3.  **Component: ListItem (Subscription)**
+    - **Name:** `ListItem`
+    - **Position & Size:** `fillMaxWidth`.
+    - **Style:** Clickable.
+    - **Content:**
+        - `leadingContent`: `Image` of the service logo (e.g., Netflix).
+        - `headlineContent`: `Text` with service name.
+        - `supportingContent`: `Text` with next payment date.
+        - `trailingContent`: `Text` with amount.
+4.  **Component: NavigationBar**
+    - **Name:** `NavigationBar`
+    - **Position & Size:** Bottom of the `Scaffold`.
+    - **Content:**
+        - **Item 1 (Dashboard):** Icon: `Icons.Outlined.Dashboard`. Label: "Dashboard".
+        - **Item 2 (Spending):** Icon: `Icons.Outlined.PieChart`. Label: "Spending".
+        - **Item 3 (Recurring):** Selected. Icon: `Icons.Filled.Autorenew`. Label: "Recurring".
+        - **Item 4 (Budget):** Icon: `Icons.Outlined.Savings`. Label: "Budget".
+
+##### Interaction & Behavior:
+- **Subscription ListItem:** On tap -> Navigate to `05_01_Subscription_Details_Screen`.
+- **Navigation Tabs:** Navigate to corresponding screens.
+
+---
+
+#### Screen 17: Budget Screen
+- **Screen Name/ID:** `03_04_Budget_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.background`
+- **Layout:** `Scaffold` with `TopAppBar`, content area, `FloatingActionButton`, and `NavigationBar`.
+
+##### Components:
+1.  **Component: TopAppBar**
+    - **Name:** `TopAppBar`
+    - **Position & Size:** Top of the screen.
+    - **Content:** Title: "Budget".
+2.  **Component: Content Area**
+    - **Name:** `Box`
+    - **Position & Size:** Fills content area.
+    - **Content:** Displays either the `Empty State` or the `Budget List`.
+3.  **Component: Empty State**
+    - **Name:** `Column`
+    - **Position & Size:** Centered in the `Box`. `horizontalAlignment = Alignment.CenterHorizontally`.
+    - **Content:**
+        - `Icon`: `Icons.Outlined.Savings`, `size = 80dp`, tint: `md.sys.color.onSurfaceVariant`.
+        - `Text`: "Create your first budget", typography: `md.sys.typography.titleLarge`, `marginTop = 16dp`.
+        - `Text`: "Track your spending by category to stay on top of your goals.", typography: `md.sys.typography.bodyMedium`, color: `md.sys.color.onSurfaceVariant`, `marginTop = 8dp`, text alignment: Center.
+4.  **Component: Budget List**
+    - **Name:** `LazyColumn`
+    - **Position & Size:** Fills the `Box`. `contentPadding = 16dp`.
+    - **Content:** A list of `Card` components, one for each budget.
+5.  **Component: Card (Budget Item)**
+    - **Name:** `Card`
+    - **Position & Size:** `fillMaxWidth`, `marginBottom = 16dp`.
+    - **Content:** `Column` with `padding = 16dp`. Includes category name, amount spent vs. total (e.g., "$150 / $400"), and a `LinearProgressIndicator`.
+6.  **Component: FloatingActionButton**
+    - **Name:** `FloatingActionButton`
+    - **Position & Size:** Bottom right corner of the `Scaffold`.
+    - **Style:** Container Color: `md.sys.color.primary`. Content Color: `md.sys.color.onPrimary`.
+    - **Content:** `Icon` `Icons.Filled.Add`. Content description: "Create Budget".
+7.  **Component: NavigationBar**
+    - **Name:** `NavigationBar`
+    - **Position & Size:** Bottom of the `Scaffold`.
+    - **Content:**
+        - **Item 1 (Dashboard):** Icon: `Icons.Outlined.Dashboard`. Label: "Dashboard".
+        - **Item 2 (Spending):** Icon: `Icons.Outlined.PieChart`. Label: "Spending".
+        - **Item 3 (Recurring):** Icon: `Icons.Outlined.Autorenew`. Label: "Recurring".
+        - **Item 4 (Budget):** Selected. Icon: `Icons.Filled.Savings`. Label: "Budget".
+
+##### Interaction & Behavior:
+- **FAB (+ Create Budget):** On tap -> Navigate to `04_01_Choose_Category_Screen`.
+- **Navigation Tabs:** Navigate to corresponding screens.
+
+---
+
+### Flow 4: Creating a Budget
+
+---
+
+#### Screen 18: Choose Category Screen
+- **Screen Name/ID:** `04_01_Choose_Category_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.surface`
+- **Layout:** `Column`.
+
+##### Components:
+1.  **Component: TopAppBar**
+    - **Name:** `TopAppBar`
+    - **Position & Size:** Top of the screen.
+    - **Content:** Title: "Choose a category". Navigation Icon: `Icons.Filled.ArrowBack`.
+2.  **Component: LazyColumn (Category List)**
+    - **Name:** `LazyColumn`
+    - **Position & Size:** Fills remaining space.
+    - **Content:** A list of selectable categories.
+3.  **Component: ListItem (Selectable Category)**
+    - **Name:** `ListItem`
+    - **Position & Size:** `fillMaxWidth`.
+    - **Style:** Clickable.
+    - **Content:**
+        - `leadingContent`: `Icon` for the category.
+        - `headlineContent`: `Text` with the category name.
+        - `trailingContent`: `Icon` `Icons.Filled.ChevronRight`.
+
+##### Interaction & Behavior:
+- **Back Icon:** On tap -> Navigate back to `03_04_Budget_Screen`.
+- **Category ListItem:** On tap -> Navigate to `04_02_Set_Budget_Amount_Screen`, passing the selected category.
+
+---
+
+#### Screen 19: Set Budget Amount Screen
+- **Screen Name/ID:** `04_02_Set_Budget_Amount_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.surface`
+- **Layout:** `Column`, `padding = 16dp`.
+
+##### Components:
+1.  **Component: TopAppBar**
+    - **Name:** `TopAppBar`
+    - **Position & Size:** Top of the screen.
+    - **Content:** Title: "Set Budget for [Category]". Navigation Icon: `Icons.Filled.ArrowBack`.
+2.  **Component: Text (Instruction)**
+    - **Name:** `Text`
+    - **Position & Size:** `marginTop = 16dp`.
+    - **Style:** Typography: `md.sys.typography.titleLarge`.
+    - **Content:** "How much do you want to budget for [Category] per month?"
+3.  **Component: Outlined Text Field (Amount)**
+    - **Name:** `OutlinedTextField`
+    - **Position & Size:** `fillMaxWidth`, `marginTop = 32dp`.
+    - **Style:** `keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)`.
+    - **Content:** Label: "Budget Amount". Leading content: `Text`("$").
+4.  **Component: Filled Button (Create Budget)**
+    - **Name:** `FilledButton`
+    - **Position & Size:** `fillMaxWidth`, `height = 52dp`, `marginTop = 24dp`.
+    - **Style:** Shape: `ShapeDefaults.Full`.
+    - **Content:** "Create Budget"
+
+##### Interaction & Behavior:
+- **Back Icon:** On tap -> Navigate back to `04_01_Choose_Category_Screen`.
+- **Create Budget Button:** On tap -> Validate amount. On success, navigate to `04_03_Budget_Details_Screen`.
+
+---
+
+#### Screen 20: Budget Details Screen
+- **Screen Name/ID:** `04_03_Budget_Details_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.background`
+- **Layout:** `Scaffold` with `TopAppBar` and `LazyColumn`.
+
+##### Components:
+1.  **Component: TopAppBar**
+    - **Name:** `TopAppBar`
+    - **Position & Size:** Top of the screen.
+    - **Content:** Title: "[Category] Budget". Navigation Icon: `Icons.Filled.ArrowBack`.
+2.  **Component: LazyColumn (Budget Details)**
+    - **Name:** `LazyColumn`
+    - **Position & Size:** Fills content area. `contentPadding = 16dp`.
+    - **Content:**
+        - A `Card` showing the budget overview (progress bar, amount remaining).
+        - A `Text` subheader "Transactions in this budget".
+        - A list of `ListItem`s for each transaction.
+
+##### Interaction & Behavior:
+- **Back Icon:** On tap -> Navigate back to `03_04_Budget_Screen`.
+
+---
+
+### Flow 5: Canceling a Subscription
+
+---
+
+#### Screen 21: Subscription Details Screen
+- **Screen Name/ID:** `05_01_Subscription_Details_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.surface`
+- **Layout:** `Column`.
+
+##### Components:
+1.  **Component: TopAppBar**
+    - **Name:** `TopAppBar`
+    - **Position & Size:** Top of the screen.
+    - **Content:** No title. Navigation Icon: `Icons.Filled.ArrowBack`.
+2.  **Component: Header Section**
+    - **Name:** `Column`
+    - **Position & Size:** `padding = 24dp`, `horizontalAlignment = Alignment.CenterHorizontally`.
+    - **Content:**
+        - `Image`: Service logo, `size = 80dp`.
+        - `Text`: Service name (e.g., "Netflix"), typography: `md.sys.typography.headlineMedium`, `marginTop = 16dp`.
+        - `Text`: Amount (e.g., "$15.99 / month"), typography: `md.sys.typography.titleMedium`, `marginTop = 4dp`.
+3.  **Component: Divider**
+    - **Name:** `Divider`
+    - **Position & Size:** `fillMaxWidth`.
+4.  **Component: Details List**
+    - **Name:** `Column`
+    - **Position & Size:** `padding = 16dp`.
+    - **Content:** `ListItem`s for "Next Payment Date", "Category", "Payment History".
+5.  **Component: Filled Button (Cancel Service)**
+    - **Name:** `FilledButton`
+    - **Position & Size:** `fillMaxWidth`, `height = 52dp`, `margin = 16dp`.
+    - **Style:** Container Color: `md.sys.color.primary`.
+    - **Content:** "Cancel this service for me"
+
+##### Interaction & Behavior:
+- **Back Icon:** On tap -> Navigate back to `03_03_Recurring_Screen`.
+- **Cancel Button:** On tap -> Navigate to `05_02_Cancellation_Method_Screen`.
+
+---
+
+#### Screen 22: Cancellation Method Screen
+- **Screen Name/ID:** `05_02_Cancellation_Method_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.surface`
+- **Layout:** `Column`.
+
+##### Components:
+1.  **Component: TopAppBar**
+    - **Name:** `TopAppBar`
+    - **Position & Size:** Top of the screen.
+    - **Content:** Title: "How to Cancel". Navigation Icon: `Icons.Filled.ArrowBack`.
+2.  **Component: LazyColumn (Methods)**
+    - **Name:** `LazyColumn`
+    - **Position & Size:** Fills remaining space. `contentPadding = 16dp`.
+    - **Content:** A list of selectable `Card`s for cancellation methods.
+3.  **Component: Card (Selectable Method)**
+    - **Name:** `Card`
+    - **Position & Size:** `fillMaxWidth`, `marginBottom = 16dp`.
+    - **Style:** `CardDefaults.outlinedCardColors()`, clickable.
+    - **Content:** `ListItem` with `headlineContent` ("Let Rocket Money cancel for you"), `supportingContent` ("We contact the provider and handle everything."), and `trailingContent` (`RadioButton`).
+
+##### Interaction & Behavior:
+- **Back Icon:** On tap -> Navigate back to `05_01_Subscription_Details_Screen`.
+- **Select Method:** On tap of a card/radio button -> Navigate to `05_03_Cancellation_Confirmation_Screen`.
+
+---
+
+#### Screen 23: Cancellation Confirmation Screen
+- **Screen Name/ID:** `05_03_Cancellation_Confirmation_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.surface`
+- **Layout:** `Column`, `padding = 16dp`.
+
+##### Components:
+1.  **Component: TopAppBar**
+    - **Name:** `TopAppBar`
+    - **Position & Size:** Top of the screen.
+    - **Content:** Title: "Confirm Cancellation". Navigation Icon: `Icons.Filled.ArrowBack`.
+2.  **Component: Text (Summary)**
+    - **Name:** `Text`
+    - **Position & Size:** `marginTop = 16dp`.
+    - **Style:** Typography: `md.sys.typography.bodyLarge`.
+    - **Content:** "You are requesting Rocket Money to cancel your [Service Name] subscription. We will notify you once the cancellation is complete. This process can take up to 48 hours."
+3.  **Component: Filled Button (Confirm)**
+    - **Name:** `FilledButton`
+    - **Position & Size:** `fillMaxWidth`, `height = 52dp`, `marginTop = 32dp`.
+    - **Style:** Container Color: `md.sys.color.error`. Content Color: `md.sys.color.onError`.
+    - **Content:** "Confirm Cancellation Request"
+
+##### Interaction & Behavior:
+- **Back Icon:** On tap -> Navigate back to `05_02_Cancellation_Method_Screen`.
+- **Confirm Button:** On tap -> Navigate to `05_04_Cancellation_In_Progress_Screen`.
+
+---
+
+#### Screen 24: Cancellation In Progress Screen
+- **Screen Name/ID:** `05_04_Cancellation_In_Progress_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.surface`
+- **Layout:** `Column` with `verticalArrangement = Arrangement.Center`, `horizontalAlignment = Alignment.CenterHorizontally`, `padding = 24dp`.
+
+##### Components:
+1.  **Component: Icon**
+    - **Name:** `Icon`
+    - **Position & Size:** Centered. `size = 80dp`.
+    - **Style:** Tint: `md.sys.color.primary`.
+    - **Content:** `Icons.Filled.HourglassTop`. Content description: "In Progress".
+2.  **Component: Text (Header)**
+    - **Name:** `Text`
+    - **Position & Size:** `marginTop = 32dp`.
+    - **Style:** Typography: `md.sys.typography.headlineMedium`. Text alignment: Center.
+    - **Content:** "Cancellation in Progress"
+3.  **Component: Text (Body)**
+    - **Name:** `Text`
+    - **Position & Size:** `marginTop = 16dp`.
+    - **Style:** Typography: `md.sys.typography.bodyLarge`. Color: `md.sys.color.onSurfaceVariant`. Text alignment: Center.
+    - **Content:** "We've started the cancellation process for [Service Name]. We'll update you on the status in the app and via email."
+4.  **Component: Filled Button (Done)**
+    - **Name:** `FilledButton`
+    - **Position & Size:** `fillMaxWidth`, `height = 52dp`, `marginTop = 48dp`.
+    - **Style:** Shape: `ShapeDefaults.Full`.
+    - **Content:** "Done"
+
+##### Interaction & Behavior:
+- **Done Button:** On tap -> Navigate to `03_03_Recurring_Screen`.
+
+---
+
+### Flow 6: Viewing Spending
+
+---
+
+#### Screen 25: Category Spending Details Screen
+- **Screen Name/ID:** `06_01_Category_Spending_Details_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.background`
+- **Layout:** `Scaffold` with `TopAppBar` and `LazyColumn`.
+
+##### Components:
+1.  **Component: TopAppBar**
+    - **Name:** `TopAppBar`
+    - **Position & Size:** Top of the screen.
+    - **Content:** Title: "[Category Name] Spending". Navigation Icon: `Icons.Filled.ArrowBack`.
+2.  **Component: LazyColumn (Transaction List)**
+    - **Name:** `LazyColumn`
+    - **Position & Size:** Fills content area.
+    - **Content:**
+        - A `Card` with a bar chart showing spending over time for this category.
+        - A `Text` subheader "Transactions".
+        - A list of `ListItem`s for each transaction in the category.
+3.  **Component: ListItem (Transaction)**
+    - **Name:** `ListItem`
+    - **Position & Size:** `fillMaxWidth`.
+    - **Style:** Clickable.
+    - **Content:**
+        - `leadingContent`: `Icon` for the merchant.
+        - `headlineContent`: `Text` with merchant name.
+        - `supportingContent`: `Text` with transaction date.
+        - `trailingContent`: `Text` with amount.
+
+##### Interaction & Behavior:
+- **Back Icon:** On tap -> Navigate back to `03_02_Spending_Screen`.
+- **Transaction ListItem:** On tap -> Navigate to `06_02_Transaction_Details_Screen`.
+
+---
+
+#### Screen 26: Transaction Details Screen
+- **Screen Name/ID:** `06_02_Transaction_Details_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.surface`
+- **Layout:** `Column`.
+
+##### Components:
+1.  **Component: TopAppBar**
+    - **Name:** `TopAppBar`
+    - **Position & Size:** Top of the screen.
+    - **Content:** Title: "Transaction Details". Navigation Icon: `Icons.Filled.ArrowBack`.
+2.  **Component: Details Section**
+    - **Name:** `Column`
+    - **Position & Size:** `padding = 16dp`.
+    - **Content:**
+        - `ListItem` with `headlineContent`: "Merchant", `supportingContent`: "[Merchant Name]".
+        - `ListItem` with `headlineContent`: "Amount", `supportingContent`: "[Amount]".
+        - `ListItem` with `headlineContent`: "Date", `supportingContent`: "[Date]".
+        - `ListItem` with `headlineContent`: "Category", `supportingContent`: "[Category Name]", with a trailing "Edit" `TextButton`.
+        - `ListItem` with `headlineContent`: "Account", `supportingContent`: "[Account Name]".
+
+##### Interaction & Behavior:
+- **Back Icon:** On tap -> Navigate back to `06_01_Category_Spending_Details_Screen`.
+
+---
+
+### Flow 7: Settings
+
+---
+
+#### Screen 27: Settings Screen
+- **Screen Name/ID:** `07_01_Settings_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.surface`
+- **Layout:** `Column`.
+
+##### Components:
+1.  **Component: TopAppBar**
+    - **Name:** `TopAppBar`
+    - **Position & Size:** Top of the screen.
+    - **Content:** Title: "Settings". Navigation Icon: `Icons.Filled.ArrowBack`.
+2.  **Component: LazyColumn (Settings List)**
+    - **Name:** `LazyColumn`
+    - **Position & Size:** Fills remaining space.
+    - **Content:**
+        - `ListItem` for "Profile". Leading Icon: `Icons.Filled.Person`. Trailing Icon: `Icons.Filled.ChevronRight`.
+        - `ListItem` for "Linked Accounts". Leading Icon: `Icons.Filled.AccountBalance`. Trailing Icon: `Icons.Filled.ChevronRight`.
+        - `ListItem` for "Notifications". Leading Icon: `Icons.Filled.Notifications`. Trailing Icon: `Icons.Filled.ChevronRight`.
+        - `Divider`.
+        - `ListItem` for "Log Out". Leading Icon: `Icons.Filled.Logout`. Text color: `md.sys.color.error`.
+
+##### Interaction & Behavior:
+- **Back Icon:** On tap -> Navigate back to `03_01_Dashboard_Screen`.
+- **Profile:** On tap -> Navigate to `07_02_Profile_Screen`.
+- **Linked Accounts:** On tap -> Navigate to `07_03_Linked_Accounts_Screen`.
+- **Notifications:** On tap -> Navigate to `07_06_Notifications_Screen`.
+- **Log Out:** On tap -> Show confirmation dialog. On confirm, clear session and navigate to `01_01_Splash_Screen`.
+
+---
+
+#### Screen 28: Profile Screen
+- **Screen Name/ID:** `07_02_Profile_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.surface`
+- **Layout:** `Column`, `padding = 16dp`.
+
+##### Components:
+1.  **Component: TopAppBar**
+    - **Name:** `TopAppBar`
+    - **Position & Size:** Top of the screen.
+    - **Content:** Title: "Profile". Navigation Icon: `Icons.Filled.ArrowBack`.
+2.  **Component: Outlined Text Field (Name)**
+    - **Name:** `OutlinedTextField`
+    - **Position & Size:** `fillMaxWidth`, `marginTop = 16dp`.
+    - **Content:** Label: "Name", pre-filled with user's name.
+3.  **Component: Outlined Text Field (Email)**
+    - **Name:** `OutlinedTextField`
+    - **Position & Size:** `fillMaxWidth`, `marginTop = 16dp`.
+    - **Content:** Label: "Email", pre-filled with user's email, `enabled = false`.
+4.  **Component: Filled Button (Save Changes)**
+    - **Name:** `FilledButton`
+    - **Position & Size:** `fillMaxWidth`, `height = 52dp`, `marginTop = 24dp`.
+    - **Content:** "Save Changes"
+
+##### Interaction & Behavior:
+- **Back Icon:** On tap -> Navigate back to `07_01_Settings_Screen`.
+
+---
+
+#### Screen 29: Linked Accounts Screen
+- **Screen Name/ID:** `07_03_Linked_Accounts_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.background`
+- **Layout:** `Scaffold` with `TopAppBar`, `LazyColumn`, and `FloatingActionButton`.
+
+##### Components:
+1.  **Component: TopAppBar**
+    - **Name:** `TopAppBar`
+    - **Position & Size:** Top of the screen.
+    - **Content:** Title: "Linked Accounts". Navigation Icon: `Icons.Filled.ArrowBack`.
+2.  **Component: LazyColumn (Account List)**
+    - **Name:** `LazyColumn`
+    - **Position & Size:** Fills content area. `contentPadding = 16dp`.
+    - **Content:** A list of `Card`s, one for each linked account.
+3.  **Component: Card (Linked Account)**
+    - **Name:** `Card`
+    - **Position & Size:** `fillMaxWidth`, `marginBottom = 16dp`.
+    - **Style:** Clickable.
+    - **Content:** `ListItem` with bank logo, bank name, and account type (e.g., "Chase Checking").
+4.  **Component: FloatingActionButton**
+    - **Name:** `FloatingActionButton`
+    - **Position & Size:** Bottom right corner.
+    - **Content:** `Icon` `Icons.Filled.Add`. Content description: "Link another account".
+
+##### Interaction & Behavior:
+- **Back Icon:** On tap -> Navigate back to `07_01_Settings_Screen`.
+- **Account Card:** On tap -> Navigate to `07_04_Account_Details_Screen`.
+- **FAB:** On tap -> Navigate to `02_02_Select_Institution_Screen`.
+
+---
+
+#### Screen 30: Account Details Screen
+- **Screen Name/ID:** `07_04_Account_Details_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.surface`
+- **Layout:** `Column`, `padding = 16dp`.
+
+##### Components:
+1.  **Component: TopAppBar**
+    - **Name:** `TopAppBar`
+    - **Position & Size:** Top of the screen.
+    - **Content:** Title: "[Account Name]". Navigation Icon: `Icons.Filled.ArrowBack`.
+2.  **Component: Details Section**
+    - **Name:** `Column`
+    - **Position & Size:** `marginTop = 16dp`.
+    - **Content:** `ListItem`s showing account details like "Institution", "Account Type", "Last Updated".
+3.  **Component: Outlined Button (Unlink Account)**
+    - **Name:** `OutlinedButton`
+    - **Position & Size:** `fillMaxWidth`, `height = 52dp`, `marginTop = 32dp`.
+    - **Style:** Outline Color: `md.sys.color.error`. Content Color: `md.sys.color.error`.
+    - **Content:** "Unlink Account"
+
+##### Interaction & Behavior:
+- **Back Icon:** On tap -> Navigate back to `07_03_Linked_Accounts_Screen`.
+- **Unlink Button:** On tap -> Show `07_05_Unlink_Confirmation_Modal`.
+
+---
+
+#### Screen 31: Unlink Confirmation Modal
+- **Screen Name/ID:** `07_05_Unlink_Confirmation_Modal`
+- **Dimensions:** Modal dialog, typically 280dp width.
+- **Background:** `md.sys.color.surface` with elevation.
+- **Layout:** `AlertDialog`.
+
+##### Components:
+1.  **Component: AlertDialog**
+    - **Name:** `AlertDialog`
+    - **Content:**
+        - `icon`: `Icon` `Icons.Filled.Warning`, tint: `md.sys.color.error`.
+        - `title`: `Text` "Unlink Account?".
+        - `text`: `Text` "Are you sure you want to unlink this account? All associated data will be removed.".
+        - `confirmButton`: `TextButton` with text "Unlink". Text color: `md.sys.color.error`.
+        - `dismissButton`: `TextButton` with text "Cancel".
+
+##### Interaction & Behavior:
+- **Unlink Button:** On tap -> Dismiss modal, perform unlink action, and navigate back to `07_03_Linked_Accounts_Screen`.
+- **Cancel Button:** On tap -> Dismiss modal, returning to `07_04_Account_Details_Screen`.
+
+---
+
+#### Screen 32: Notifications Screen
+- **Screen Name/ID:** `07_06_Notifications_Screen`
+- **Dimensions:** 393x852dp
+- **Background:** `md.sys.color.surface`
+- **Layout:** `Column`.
+
+##### Components:
+1.  **Component: TopAppBar**
+    - **Name:** `TopAppBar`
+    - **Position & Size:** Top of the screen.
+    - **Content:** Title: "Notifications". Navigation Icon: `Icons.Filled.ArrowBack`.
+2.  **Component: LazyColumn (Notification Toggles)**
+    - **Name:** `LazyColumn`
+    - **Position & Size:** Fills remaining space.
+    - **Content:** A list of `ListItem`s for different notification types.
+3.  **Component: ListItem (Notification Toggle)**
+    - **Name:** `ListItem`
+    - **Position & Size:** `fillMaxWidth`.
+    - **Content:**
+        - `headlineContent`: `Text` with notification type (e.g., "Upcoming Bill Reminders").
+        - `supportingContent`: `Text` with a brief description.
+        - `trailingContent`: `Switch` component (toggled on/off).
+
+##### Interaction & Behavior:
+- **Back Icon:** On tap -> Navigate back to `07_01_Settings_Screen`.
+- **Switch:** On toggle -> Update user's notification preferences. The state is persistent.
+
+---
+
+## V. Critical Scenarios & States
+
+### Error States
+- **No Internet:** A `Snackbar` appears at the bottom of the screen with the message "No internet connection." and an optional "Retry" action.
+- **API Error:** A `Snackbar` appears with a generic message like "Something went wrong. Please try again."
+- **Text Field Validation:** The `OutlinedTextField` border and label color change to `md.sys.color.error`. `supportingText` appears below the field with a specific error message (e.g., "Invalid email format").
+
+### Empty States
+- **General Pattern:** An empty state consists of a central `Column` containing:
+    1.  An `Icon` from Material Symbols (e.g., `Icons.Outlined.Inbox`), sized at `80dp`, tinted with `md.sys.color.onSurfaceVariant`.
+    2.  A `Text` headline using `md.sys.typography.titleLarge`.
+    3.  A `Text` body using `md.sys.typography.bodyMedium` and `md.sys.color.onSurfaceVariant`.
+    4.  (Optional) A primary `FilledButton` or `TextButton` as a call to action.
+- **Specific Screens:**
+    - **Budget Screen:** As specified in `03_04_Budget_Screen`.
+    - **Recurring Screen:** If no recurring bills are found, show a message "No recurring payments found yet."
+
+### Loading States
+- **Initial Screen Load:** A centered `CircularProgressIndicator` is displayed while initial data is fetched.
+- **Button-triggered Load:** The button that triggered the action becomes disabled, and a small `CircularProgressIndicator` (`size = 24dp`) appears within the button, replacing the text label until the action is complete.
+- **Pull-to-Refresh:** Standard `PullToRefresh` indicator is used on lists like the Dashboard, Spending, and Recurring screens.
+```
 
 ---
 
@@ -1624,15 +2255,13 @@
 🚀 Generating detailed design specs... (output will stream below)
 ================================================================================
 
-```markdown
-# Android Design Specification: "Zenith" Fitness App
+# Monarch Money: Android Design Specification
 
 ## I. Global Specifications
 
 ### Platform
-*   **Platform:** Android Mobile App
-*   **Target SDK:** 34+
-*   **Minimum SDK:** 26
+*   **Target:** Android Mobile App
+*   **API Level:** 34+ (Android 14)
 
 ### Design System
 *   **System:** Material Design 3
@@ -1640,72 +2269,78 @@
 *   **Density:** Default screen density.
 
 ### Colors
-*   **Seed Color:** #4CAF50 (Green)
-*   **Light Theme Color Roles:**
-    *   `md.sys.color.primary`: #386A20
-    *   `md.sys.color.onPrimary`: #FFFFFF
-    *   `md.sys.color.primaryContainer`: #B7F397
-    *   `md.sys.color.onPrimaryContainer`: #042100
-    *   `md.sys.color.secondary`: #55624C
-    *   `md.sys.color.onSecondary`: #FFFFFF
-    *   `md.sys.color.secondaryContainer`: #D9E7CA
-    *   `md.sys.color.onSecondaryContainer`: #131F0D
-    *   `md.sys.color.tertiary`: #386666
-    *   `md.sys.color.onTertiary`: #FFFFFF
-    *   `md.sys.color.tertiaryContainer`: #BBEBEB
-    *   `md.sys.color.onTertiaryContainer`: #002020
-    *   `md.sys.color.error`: #BA1A1A
-    *   `md.sys.color.onError`: #FFFFFF
-    *   `md.sys.color.background`: #FCFDF7
-    *   `md.sys.color.onBackground`: #1A1C18
-    *   `md.sys.color.surface`: #FCFDF7
-    *   `md.sys.color.onSurface`: #1A1C18
-    *   `md.sys.color.surfaceVariant`: #DFE4D7
-    *   `md.sys.color.onSurfaceVariant`: #43483F
-    *   `md.sys.color.outline`: #73796E
-*   **Dark Theme Color Roles:**
-    *   `md.sys.color.primary`: #9CD67D
-    *   `md.sys.color.onPrimary`: #0A3900
-    *   `md.sys.color.primaryContainer`: #1F5207
-    *   `md.sys.color.onPrimaryContainer`: #B7F397
-    *   `md.sys.color.secondary`: #BDCBAF
-    *   `md.sys.color.onSecondary`: #283420
-    *   `md.sys.color.secondaryContainer`: #3E4A35
-    *   `md.sys.color.onSecondaryContainer`: #D9E7CA
-    *   `md.sys.color.tertiary`: #A0CFCF
-    *   `md.sys.color.onTertiary`: #003737
-    *   `md.sys.color.tertiaryContainer`: #1E4E4E
-    *   `md.sys.color.onTertiaryContainer`: #BBEBEB
-    *   `md.sys.color.error`: #FFB4AB
-    *   `md.sys.color.onError`: #690005
-    *   `md.sys.color.background`: #1A1C18
-    *   `md.sys.color.onBackground`: #E2E3DC
-    *   `md.sys.color.surface`: #1A1C18
-    *   `md.sys.color.onSurface`: #E2E3DC
-    *   `md.sys.color.surfaceVariant`: #43483F
-    *   `md.sys.color.onSurfaceVariant`: #C3C8BC
-    *   `md.sys.color.outline`: #8D9387
+*   **Seed Color:** `#00A86B` (Monarch Green)
+*   **Generated Color Roles (Light Theme):**
+    *   `md.sys.color.primary`: `#006D3D`
+    *   `md.sys.color.onPrimary`: `#FFFFFF`
+    *   `md.sys.color.primaryContainer`: `#8CF7B6`
+    *   `md.sys.color.onPrimaryContainer`: `#00210E`
+    *   `md.sys.color.secondary`: `#4F6353`
+    *   `md.sys.color.onSecondary`: `#FFFFFF`
+    *   `md.sys.color.secondaryContainer`: `#D2E8D4`
+    *   `md.sys.color.onSecondaryContainer`: `#0D1F13`
+    *   `md.sys.color.tertiary`: `#3C6471`
+    *   `md.sys.color.onTertiary`: `#FFFFFF`
+    *   `md.sys.color.tertiaryContainer`: `#BFE9F9`
+    *   `md.sys.color.onTertiaryContainer`: `#001F27`
+    *   `md.sys.color.error`: `#BA1A1A`
+    *   `md.sys.color.onError`: `#FFFFFF`
+    *   `md.sys.color.errorContainer`: `#FFDAD6`
+    *   `md.sys.color.onErrorContainer`: `#410002`
+    *   `md.sys.color.background`: `#FBFDF7`
+    *   `md.sys.color.onBackground`: `#1A1C1A`
+    *   `md.sys.color.surface`: `#FBFDF7`
+    *   `md.sys.color.onSurface`: `#1A1C1A`
+    *   `md.sys.color.surfaceVariant`: `#DDE5DB`
+    *   `md.sys.color.onSurfaceVariant`: `#414942`
+    *   `md.sys.color.outline`: `#717971`
+    *   `md.sys.color.outlineVariant`: `#C1C9BF`
+*   **Generated Color Roles (Dark Theme):**
+    *   `md.sys.color.primary`: `#70DA9C`
+    *   `md.sys.color.onPrimary`: `#00391C`
+    *   `md.sys.color.primaryContainer`: `#00522B`
+    *   `md.sys.color.onPrimaryContainer`: `#8CF7B6`
+    *   `md.sys.color.secondary`: `#B6CCB8`
+    *   `md.sys.color.onSecondary`: `#223527`
+    *   `md.sys.color.secondaryContainer`: `#384B3D`
+    *   `md.sys.color.onSecondaryContainer`: `#D2E8D4`
+    *   `md.sys.color.tertiary`: `#A4CDDC`
+    *   `md.sys.color.onTertiary`: `#053641`
+    *   `md.sys.color.tertiaryContainer`: `#224C58`
+    *   `md.sys.color.onTertiaryContainer`: `#BFE9F9`
+    *   `md.sys.color.error`: `#FFB4AB`
+    *   `md.sys.color.onError`: `#690005`
+    *   `md.sys.color.errorContainer`: `#93000A`
+    *   `md.sys.color.onErrorContainer`: `#FFDAD6`
+    *   `md.sys.color.background`: `#1A1C1A`
+    *   `md.sys.color.onBackground`: `#E2E3DE`
+    *   `md.sys.color.surface`: `#1A1C1A`
+    *   `md.sys.color.onSurface`: `#E2E3DE`
+    *   `md.sys.color.surfaceVariant`: `#414942`
+    *   `md.sys.color.onSurfaceVariant`: `#C1C9BF`
+    *   `md.sys.color.outline`: `#8B938A`
+    *   `md.sys.color.outlineVariant`: `#414942`
 
 ### Typography
 *   **Font Family:** Roboto
-*   **Type Scale (Material 3):**
-    *   `md.sys.typography.displayLarge`
-    *   `md.sys.typography.displayMedium`
-    *   `md.sys.typography.displaySmall`
-    *   `md.sys.typography.headlineLarge`
-    *   `md.sys.typography.headlineMedium`
-    *   `md.sys.typography.headlineSmall`
-    *   `md.sys.typography.titleLarge`
-    *   `md.sys.typography.titleMedium`
-    *   `md.sys.typography.titleSmall`
-    *   `md.sys.typography.labelLarge`
-    *   `md.sys.typography.labelMedium`
-    *   `md.sys.typography.labelSmall`
-    *   `md.sys.typography.bodyLarge`
-    *   `md.sys.typography.bodyMedium`
-    *   `md.sys.typography.bodySmall`
+*   **Type Scale:**
+    *   `displayLarge`: Roboto 57
+    *   `displayMedium`: Roboto 45
+    *   `displaySmall`: Roboto 36
+    *   `headlineLarge`: Roboto 32
+    *   `headlineMedium`: Roboto 28
+    *   `headlineSmall`: Roboto 24
+    *   `titleLarge`: Roboto 22
+    *   `titleMedium`: Roboto Medium 16, Letter Spacing 0.15
+    *   `titleSmall`: Roboto Medium 14, Letter Spacing 0.1
+    *   `labelLarge`: Roboto Medium 14, Letter Spacing 0.1
+    *   `labelMedium`: Roboto Medium 12, Letter Spacing 0.5
+    *   `labelSmall`: Roboto Medium 11, Letter Spacing 0.5
+    *   `bodyLarge`: Roboto 16, Letter Spacing 0.5
+    *   `bodyMedium`: Roboto 14, Letter Spacing 0.25
+    *   `bodySmall`: Roboto 12, Letter Spacing 0.4
 
-### Spacing
+### Spacing & Sizing
 *   **Base Grid Unit:** 8dp
 *   **Standard Margins:** 16dp
 *   **Standard Padding:** 16dp
@@ -1713,708 +2348,706 @@
 
 ### Accessibility
 *   **Target Standard:** WCAG 2.1 Level AA
-*   **Requirements:** All interactive elements must have content descriptions. Color contrast ratios must meet or exceed WCAG AA standards. Font sizes should be scalable with system settings.
+*   **Requirements:** All interactive elements must have content descriptions. Color contrast ratios must meet the standard. Font sizes should be scalable with user system settings.
 
 ---
 
-## II. Screen Specifications: 01_Splash_Screen
+## Flow 1: Connecting an Account
 
-*   **Screen Name/ID:** `01_Splash_Screen`
-*   **Dimensions:** 393x852dp (Typical mobile viewport)
-*   **Background:** `md.sys.color.surface`
-*   **Layout:** `Column` layout, vertically and horizontally centered.
+### 01_01_Accounts_Screen
+*   **Screen Name/ID:** `01_01_Accounts_Screen`
+*   **Dimensions:** 393x852dp
+*   **Background:** `md.sys.color.background`
+*   **Layout:** `Scaffold` with a `TopAppBar`, `LazyColumn` for content, and an `ExtendedFloatingActionButton`.
+*   **Components:**
+    *   **Component 1: Top App Bar**
+        *   **Name:** `TopAppBar`
+        *   **Position & Size:** Top of the screen, `height: 64dp`, `width: fillMaxWidth`.
+        *   **Style:** `containerColor: md.sys.color.surface`, `titleContentColor: md.sys.color.onSurface`, `elevation: Elevation.Level2` when content is scrolled beneath.
+        *   **Content:** Title text "Accounts". `typography: md.sys.typescale.titleLarge`.
+    *   **Component 2: Account List**
+        *   **Name:** `LazyColumn`
+        *   **Position & Size:** Below Top App Bar, fills remaining space. `padding: 16dp` horizontal.
+        *   **Content:** Contains a list of `Card` components, one for each account type (e.g., "Cash", "Credit Cards", "Investments").
+        *   **Sub-Component: Account Type Card**
+            *   **Name:** `Card`
+            *   **Position & Size:** `width: fillMaxWidth`, `marginBottom: 16dp`.
+            *   **Style:** `containerColor: md.sys.color.surfaceVariant`, `shape: Shape.Corner.Medium`.
+            *   **Content:** A `Column` containing a header `ListItem` and subsequent `ListItem`s for each account.
+            *   **Sub-Component: Card Header**
+                *   **Name:** `ListItem`
+                *   **Content:** Headline text (e.g., "Cash"), supporting text (total balance, e.g., "$10,500.00").
+                *   **Style:** `headlineColor: md.sys.color.onSurfaceVariant`, `supportingTextColor: md.sys.color.primary`. `headlineTypography: md.sys.typescale.titleMedium`, `supportingTypography: md.sys.typescale.titleMedium`.
+            *   **Sub-Component: Account Item**
+                *   **Name:** `ListItem`
+                *   **Content:** Headline text (e.g., "Chase Checking"), supporting text (e.g., "$5,500.00"), leading icon (bank logo).
+                *   **Style:** `headlineColor: md.sys.color.onSurfaceVariant`, `supportingTextColor: md.sys.color.onSurfaceVariant`. `headlineTypography: md.sys.typescale.bodyLarge`, `supportingTypography: md.sys.typescale.bodyMedium`.
+    *   **Component 3: Add Account Button**
+        *   **Name:** `ExtendedFloatingActionButton`
+        *   **Position & Size:** Bottom right corner, `margin: 16dp`.
+        *   **Style:** `containerColor: md.sys.color.primaryContainer`, `contentColor: md.sys.color.onPrimaryContainer`.
+        *   **Content:** Icon `Icons.Filled.Add`, Text "Add account".
+*   **Interaction & Behavior:**
+    *   **Action:** User taps 'Add account' button.
+    *   **Result:** Navigate to `01_02_Add_Account_Screen`.
+    *   **Animation:** `MaterialSharedAxis` (Z-axis).
+    *   **Scroll Behavior:** `TopAppBar` scrolls off-screen.
 
-### III. Component Specifications
-
-#### Component: App Logo
-*   **Name:** `Image`
-*   **Position & Size:**
-    *   Alignment: Centered in the parent `Column`.
-    *   Size: 120dp x 120dp.
-*   **Style:**
-    *   Iconography: A stylized green leaf intertwined with a dumbbell shape.
-    *   Tint: `md.sys.color.primary`
-*   **Content:** Vector asset for the "Zenith" app logo.
-
-#### Component: App Name Text
-*   **Name:** `Text`
-*   **Position & Size:**
-    *   Alignment: Centered horizontally.
-    *   Margin: 16dp top margin from the App Logo.
-*   **Style:**
-    *   Typography: `md.sys.typography.displaySmall`
-    *   Color: `md.sys.color.primary`
-*   **Content:** "Zenith"
-
-#### Component: Loading Indicator
-*   **Name:** `CircularProgressIndicator`
-*   **Position & Size:**
-    *   Alignment: Centered horizontally.
-    *   Margin: 48dp top margin from the App Name Text.
-    *   Size: 48dp x 48dp.
-*   **Style:**
-    *   Color: `md.sys.color.primary`
-    *   Stroke Width: 4dp.
-*   **Content:** N/A
-
-### IV. Interaction & Behavior
-
-*   **States:** This screen is transient; no user interaction is possible.
-*   **Interactions:** On screen load, a background process (e.g., checking authentication state, loading initial config) runs for 2-3 seconds.
-    *   On completion (user not logged in) -> Navigate to `02_Onboarding_Welcome_Screen`.
-    *   On completion (user already logged in) -> Navigate to `05_Home_Screen`.
-*   **Animations:**
-    *   Screen Transition (In): None (it's the first screen).
-    *   Screen Transition (Out): Fade out (500ms).
-
----
-
-## II. Screen Specifications: 02_Onboarding_Welcome_Screen
-
-*   **Screen Name/ID:** `02_Onboarding_Welcome_Screen`
+### 01_02_Add_Account_Screen
+*   **Screen Name/ID:** `01_02_Add_Account_Screen`
 *   **Dimensions:** 393x852dp
 *   **Background:** `md.sys.color.surface`
-*   **Layout:** `Column` layout with vertical arrangement space-between, filling the max size. Padding of 16dp on all sides.
+*   **Layout:** `Scaffold` with a `TopAppBar` and a central `Column`.
+*   **Components:**
+    *   **Component 1: Top App Bar**
+        *   **Name:** `TopAppBar`
+        *   **Position & Size:** Top, `height: 64dp`, `width: fillMaxWidth`.
+        *   **Style:** `containerColor: md.sys.color.surface`.
+        *   **Content:** Title text "Add Account", `typography: md.sys.typescale.titleLarge`. Navigation icon `Icons.Filled.ArrowBack`.
+    *   **Component 2: Content Layout**
+        *   **Name:** `Column`
+        *   **Position & Size:** Centered vertically and horizontally. `padding: 24dp`.
+        *   **Style:** `horizontalAlignment: CenterHorizontally`.
+    *   **Component 3: Illustration**
+        *   **Name:** `Image` (Vector Graphic)
+        *   **Position & Size:** Top of the `Column`, `size: 120dp`.
+        *   **Content:** A vector graphic representing security or linking accounts.
+    *   **Component 4: Headline Text**
+        *   **Name:** `Text`
+        *   **Position & Size:** Below illustration, `marginTop: 24dp`.
+        *   **Style:** `typography: md.sys.typescale.headlineSmall`, `color: md.sys.color.onSurface`, `textAlign: Center`.
+        *   **Content:** "Connect an account securely"
+    *   **Component 5: Body Text**
+        *   **Name:** `Text`
+        *   **Position & Size:** Below headline, `marginTop: 16dp`.
+        *   **Style:** `typography: md.sys.typescale.bodyMedium`, `color: md.sys.color.onSurfaceVariant`, `textAlign: Center`.
+        *   **Content:** "Monarch uses Plaid to connect to over 11,000 financial institutions with bank-level security."
+    *   **Component 6: Connect Button**
+        *   **Name:** `FilledButton`
+        *   **Position & Size:** Bottom of the `Column`, `marginTop: 32dp`, `width: fillMaxWidth`, `height: 52dp`.
+        *   **Style:** `containerColor: md.sys.color.primary`, `contentColor: md.sys.color.onPrimary`.
+        *   **Content:** Text "Connect with Plaid".
+*   **Interaction & Behavior:**
+    *   **Action:** User taps 'Connect with Plaid' button.
+    *   **Result:** Navigate to `01_03_Plaid_Consent_Screen`.
+    *   **Action:** User taps back arrow in `TopAppBar`.
+    *   **Result:** Navigate back to `01_01_Accounts_Screen`.
+    *   **Animation:** `MaterialSharedAxis` (X-axis).
 
-### III. Component Specifications
-
-#### Component: Welcome Image
-*   **Name:** `Image`
-*   **Position & Size:**
-    *   Alignment: Top center of the screen.
-    *   Size: `fillMaxWidth`, height 300dp.
-    *   Margin: 24dp top margin.
-*   **Style:**
-    *   Content Scale: `Crop`.
-    *   Shape: Rounded corners (16dp).
-*   **Content:** A vibrant, high-quality stock photo of diverse people enjoying fitness activities outdoors.
-
-#### Component: Headline Text
-*   **Name:** `Text`
-*   **Position & Size:**
-    *   Alignment: Centered horizontally.
-    *   Margin: 32dp top margin from the Welcome Image.
-*   **Style:**
-    *   Typography: `md.sys.typography.headlineLarge`
-    *   Color: `md.sys.color.onSurface`
-    *   Text Alignment: Center.
-*   **Content:** "Welcome to Zenith"
-
-#### Component: Body Text
-*   **Name:** `Text`
-*   **Position & Size:**
-    *   Alignment: Centered horizontally.
-    *   Margin: 16dp top margin from the Headline Text.
-*   **Style:**
-    *   Typography: `md.sys.typography.bodyLarge`
-    *   Color: `md.sys.color.onSurfaceVariant`
-    *   Text Alignment: Center.
-*   **Content:** "Your personal journey to peak fitness starts now. Let's achieve your goals together."
-
-#### Component: Get Started Button
-*   **Name:** `FilledButton`
-*   **Position & Size:**
-    *   Alignment: Bottom center of the screen.
-    *   Size: `fillMaxWidth`, height 56dp.
-    *   Margin: 16dp bottom margin.
-*   **Style:**
-    *   Container Color: `md.sys.color.primary`
-    *   Content Color: `md.sys.color.onPrimary`
-    *   Typography: `md.sys.typography.labelLarge`
-    *   Shape: `ShapeDefaults.Full` (Pill shape).
-*   **Content:** "GET STARTED"
-
-#### Component: Login Text Button
-*   **Name:** `TextButton`
-*   **Position & Size:**
-    *   Alignment: Bottom center of the screen.
-    *   Size: `wrapContentSize`, minimum touch target 48dp x 48dp.
-    *   Margin: 8dp bottom margin from the Get Started Button.
-*   **Style:**
-    *   Content Color: `md.sys.color.primary`
-    *   Typography: `md.sys.typography.labelLarge`
-*   **Content:** "I ALREADY HAVE AN ACCOUNT"
-
-### IV. Interaction & Behavior
-
-*   **States:**
-    *   `Get Started Button`: Default, Pressed (uses `md.sys.color.primary` with a `0.12` opacity `md.sys.color.onPrimary` state layer).
-    *   `Login Text Button`: Default, Pressed (uses `md.sys.color.primary` with a `0.12` opacity `md.sys.color.primary` state layer).
-*   **Interactions:**
-    *   `Get Started Button` On tap -> Navigate to `03_Sign_Up_Screen`.
-    *   `Login Text Button` On tap -> Navigate to `04_Login_Screen`.
-*   **Animations:**
-    *   Screen Transition (In/Out): `MaterialSharedAxis` (Z-axis).
-
----
-
-## II. Screen Specifications: 03_Sign_Up_Screen
-
-*   **Screen Name/ID:** `03_Sign_Up_Screen`
+### 01_03_Plaid_Consent_Screen
+*   **Screen Name/ID:** `01_03_Plaid_Consent_Screen`
 *   **Dimensions:** 393x852dp
 *   **Background:** `md.sys.color.surface`
-*   **Layout:** `Column` layout, scrollable. Padding of 16dp on left and right.
+*   **Layout:** This screen is a WebView or a custom activity provided by the Plaid SDK, presented modally. The specification describes the container and expected content.
+*   **Components:**
+    *   **Component 1: Modal Container**
+        *   **Name:** `Scaffold` or Full-Screen Dialog.
+        *   **Position & Size:** Fills the entire screen.
+    *   **Component 2: Plaid Header**
+        *   **Name:** `View` (Plaid UI)
+        *   **Position & Size:** Top of the screen.
+        *   **Content:** Plaid logo and Monarch Money logo, with text "Monarch Money uses Plaid to connect your accounts."
+    *   **Component 3: Consent Information**
+        *   **Name:** `WebView` Content
+        *   **Position & Size:** Fills the main body.
+        *   **Content:** Detailed information about the data being shared, privacy policy links, and terms of service.
+    *   **Component 4: Continue Button**
+        *   **Name:** `Button` (Plaid UI)
+        *   **Position & Size:** Pinned to the bottom of the screen.
+        *   **Style:** Styled according to Plaid's branding.
+        *   **Content:** Text "Continue".
+*   **Interaction & Behavior:**
+    *   **Action:** User taps 'Continue' button.
+    *   **Result:** Navigate to `01_04_Select_Your_Institution_Screen`.
+    *   **Animation:** Modal slide-up transition.
 
-### III. Component Specifications
-
-#### Component: Top App Bar
-*   **Name:** `TopAppBar`
-*   **Position & Size:**
-    *   Alignment: Top of the screen.
-    *   Size: `fillMaxWidth`, height 64dp.
-*   **Style:**
-    *   Container Color: `md.sys.color.surface`
-    *   Elevation: 0dp (no shadow).
-*   **Content:**
-    *   **Navigation Icon:** `IconButton` with `Icons.Filled.ArrowBack`.
-        *   Tint: `md.sys.color.onSurface`
-    *   **Title:** `Text` element.
-        *   Typography: `md.sys.typography.titleLarge`
-        *   Color: `md.sys.color.onSurface`
-        *   Content: "Create Account"
-
-#### Component: Email Address Field
-*   **Name:** `OutlinedTextField`
-*   **Position & Size:**
-    *   Alignment: Top of the column, below the app bar.
-    *   Size: `fillMaxWidth`, height `wrapContent`.
-    *   Margin: 24dp top margin.
-*   **Style:**
-    *   Colors: Standard `TextFieldDefaults.outlinedTextFieldColors`.
-    *   Typography: `md.sys.typography.bodyLarge`
-    *   Shape: `ShapeDefaults.Medium`.
-*   **Content:**
-    *   `label`: "Email Address"
-    *   `leadingIcon`: `Icons.Filled.Email`
-    *   `keyboardOptions`: `KeyboardType.Email`
-
-#### Component: Password Field
-*   **Name:** `OutlinedTextField`
-*   **Position & Size:**
-    *   Alignment: Below Email field.
-    *   Size: `fillMaxWidth`, height `wrapContent`.
-    *   Margin: 16dp top margin.
-*   **Style:**
-    *   Colors: Standard `TextFieldDefaults.outlinedTextFieldColors`.
-    *   Typography: `md.sys.typography.bodyLarge`
-    *   Shape: `ShapeDefaults.Medium`.
-    *   `visualTransformation`: `PasswordVisualTransformation`.
-*   **Content:**
-    *   `label`: "Password"
-    *   `leadingIcon`: `Icons.Filled.Lock`
-    *   `trailingIcon`: `IconButton` to toggle password visibility (`Icons.Filled.Visibility` / `Icons.Filled.VisibilityOff`).
-    *   `keyboardOptions`: `KeyboardType.Password`.
-    *   `supportingText`: "Must be at least 8 characters."
-
-#### Component: Confirm Password Field
-*   **Name:** `OutlinedTextField`
-*   **Position & Size:**
-    *   Alignment: Below Password field.
-    *   Size: `fillMaxWidth`, height `wrapContent`.
-    *   Margin: 16dp top margin.
-*   **Style:**
-    *   Colors: Standard `TextFieldDefaults.outlinedTextFieldColors`.
-    *   Typography: `md.sys.typography.bodyLarge`
-    *   Shape: `ShapeDefaults.Medium`.
-    *   `visualTransformation`: `PasswordVisualTransformation`.
-*   **Content:**
-    *   `label`: "Confirm Password"
-    *   `leadingIcon`: `Icons.Filled.Lock`
-    *   `keyboardOptions`: `KeyboardType.Password`.
-
-#### Component: Sign Up Button
-*   **Name:** `FilledButton`
-*   **Position & Size:**
-    *   Alignment: Below Confirm Password field.
-    *   Size: `fillMaxWidth`, height 56dp.
-    *   Margin: 32dp top margin.
-*   **Style:**
-    *   Container Color: `md.sys.color.primary`
-    *   Content Color: `md.sys.color.onPrimary`
-    *   Typography: `md.sys.typography.labelLarge`
-    *   Shape: `ShapeDefaults.Full`.
-*   **Content:** "SIGN UP"
-
-### IV. Interaction & Behavior
-
-*   **States:**
-    *   `TextFields`: Default, Focused (label moves up, border and label color change to `md.sys.color.primary`), Error (border and label color change to `md.sys.color.error`, supporting error text appears).
-    *   `Sign Up Button`: Enabled (default), Disabled (container color `md.sys.color.onSurface` with `0.12` opacity, content color `md.sys.color.onSurface` with `0.38` opacity). Disabled until all fields are valid.
-*   **Interactions:**
-    *   `Navigation Icon` On tap -> Navigate back to `02_Onboarding_Welcome_Screen`.
-    *   `Sign Up Button` On tap:
-        1.  Validate fields (email format, password length, passwords match).
-        2.  If invalid, show error states on relevant fields.
-        3.  If valid, show a `CircularProgressIndicator` inside the button, disable it, and initiate sign-up API call.
-        4.  On success -> Navigate to `05_Home_Screen`.
-        5.  On failure -> Show an error `Snackbar`.
-*   **Animations:**
-    *   Screen Transition (In/Out): `MaterialSharedAxis` (X-axis).
-
----
-
-## II. Screen Specifications: 04_Login_Screen
-
-*   **Screen Name/ID:** `04_Login_Screen`
+### 01_04_Select_Your_Institution_Screen
+*   **Screen Name/ID:** `01_04_Select_Your_Institution_Screen`
 *   **Dimensions:** 393x852dp
 *   **Background:** `md.sys.color.surface`
-*   **Layout:** `Column` layout. Padding of 16dp on left and right.
+*   **Layout:** Plaid SDK UI. `Scaffold` with a search bar at the top and a `LazyColumn` of institutions.
+*   **Components:**
+    *   **Component 1: Top Bar**
+        *   **Name:** `View` (Plaid UI)
+        *   **Position & Size:** Top of the screen.
+        *   **Content:** Title "Select your institution" and a close button (`Icons.Filled.Close`).
+    *   **Component 2: Search Bar**
+        *   **Name:** `TextField` (Plaid UI)
+        *   **Position & Size:** Below the top bar.
+        *   **Style:** Outlined style with a leading search icon.
+        *   **Content:** Placeholder text "Search".
+    *   **Component 3: Institution Grid/List**
+        *   **Name:** `LazyColumn` or `LazyVerticalGrid` (Plaid UI)
+        *   **Position & Size:** Fills the remaining space.
+        *   **Content:** A list of popular financial institutions, each represented by a logo and name.
+*   **Interaction & Behavior:**
+    *   **Action:** User taps on a financial institution.
+    *   **Result:** Navigate to `01_05_Enter_Credentials_Screen`.
+    *   **Action:** User types in the search bar.
+    *   **Result:** The institution list is filtered in real-time. The screen remains `01_04_Select_Your_Institution_Screen`.
 
-### III. Component Specifications
+### 01_05_Enter_Credentials_Screen
+*   **Screen Name/ID:** `01_05_Enter_Credentials_Screen`
+*   **Dimensions:** 393x852dp
+*   **Background:** `md.sys.color.surface`
+*   **Layout:** Plaid SDK UI. `Scaffold` with a `TopAppBar` and a `Column` containing input fields.
+*   **Components:**
+    *   **Component 1: Top App Bar**
+        *   **Name:** `TopAppBar` (Plaid UI)
+        *   **Position & Size:** Top of the screen.
+        *   **Content:** Title is the name of the selected institution (e.g., "Chase"). Navigation icon `Icons.Filled.ArrowBack`.
+    *   **Component 2: Username Field**
+        *   **Name:** `OutlinedTextField` (Plaid UI)
+        *   **Position & Size:** In `Column`, `width: fillMaxWidth`, `marginTop: 32dp`.
+        *   **Content:** Label "Username".
+    *   **Component 3: Password Field**
+        *   **Name:** `OutlinedTextField` (Plaid UI)
+        *   **Position & Size:** Below username field, `width: fillMaxWidth`, `marginTop: 16dp`.
+        *   **Content:** Label "Password", with a trailing icon to toggle password visibility.
+    *   **Component 4: Submit Button**
+        *   **Name:** `FilledButton` (Plaid UI)
+        *   **Position & Size:** Below password field, `width: fillMaxWidth`, `marginTop: 24dp`.
+        *   **Content:** Text "Submit".
+*   **Interaction & Behavior:**
+    *   **Action:** User enters credentials and taps 'Submit'.
+    *   **Result:** Navigate to `01_06_Connecting_Screen`.
 
-#### Component: Top App Bar
-*   **Name:** `TopAppBar`
-*   **Position & Size:**
-    *   Alignment: Top of the screen.
-    *   Size: `fillMaxWidth`, height 64dp.
-*   **Style:**
-    *   Container Color: `md.sys.color.surface`
-    *   Elevation: 0dp.
-*   **Content:**
-    *   **Navigation Icon:** `IconButton` with `Icons.Filled.ArrowBack`.
-        *   Tint: `md.sys.color.onSurface`
-    *   **Title:** `Text` element.
-        *   Typography: `md.sys.typography.titleLarge`
-        *   Color: `md.sys.color.onSurface`
-        *   Content: "Welcome Back"
+### 01_06_Connecting_Screen
+*   **Screen Name/ID:** `01_06_Connecting_Screen`
+*   **Dimensions:** 393x852dp
+*   **Background:** `md.sys.color.surface` with a scrim overlay (`#000000` at 30% opacity).
+*   **Layout:** Full-screen modal dialog. A central `Column` with a progress indicator and text.
+*   **Components:**
+    *   **Component 1: Progress Indicator**
+        *   **Name:** `CircularProgressIndicator`
+        *   **Position & Size:** Centered on screen, `size: 64dp`.
+        *   **Style:** `color: md.sys.color.primary`.
+    *   **Component 2: Status Text**
+        *   **Name:** `Text`
+        *   **Position & Size:** Below progress indicator, `marginTop: 24dp`.
+        *   **Style:** `typography: md.sys.typescale.titleMedium`, `color: md.sys.color.onSurface`.
+        *   **Content:** "Connecting to [Institution Name]..."
+*   **Interaction & Behavior:**
+    *   **Action:** Automatic transition after the connection process completes successfully.
+    *   **Result:** Navigate to `01_07_Success_Screen`.
+    *   **Error State:** If connection fails, a `Snackbar` appears on the previous screen (`01_05_Enter_Credentials_Screen`) with the message "Connection failed. Please check your credentials and try again." The connecting screen is dismissed.
 
-#### Component: Email Address Field
-*   **Name:** `OutlinedTextField`
-*   **Position & Size:**
-    *   Alignment: Top of the column, below the app bar.
-    *   Size: `fillMaxWidth`, height `wrapContent`.
-    *   Margin: 24dp top margin.
-*   **Style:**
-    *   Colors: Standard `TextFieldDefaults.outlinedTextFieldColors`.
-    *   Typography: `md.sys.typography.bodyLarge`
-*   **Content:**
-    *   `label`: "Email Address"
-    *   `leadingIcon`: `Icons.Filled.Email`
-    *   `keyboardOptions`: `KeyboardType.Email`
+### 01_07_Success_Screen
+*   **Screen Name/ID:** `01_07_Success_Screen`
+*   **Dimensions:** 393x852dp
+*   **Background:** `md.sys.color.surface`
+*   **Layout:** Full-screen modal dialog. A central `Column` with an icon, text, and a button.
+*   **Components:**
+    *   **Component 1: Success Icon**
+        *   **Name:** `Icon`
+        *   **Position & Size:** Centered, top of the `Column`, `size: 80dp`.
+        *   **Style:** `tint: md.sys.color.primary`.
+        *   **Content:** `Icons.Filled.CheckCircle`.
+    *   **Component 2: Headline Text**
+        *   **Name:** `Text`
+        *   **Position & Size:** Below icon, `marginTop: 24dp`.
+        *   **Style:** `typography: md.sys.typescale.headlineMedium`, `color: md.sys.color.onSurface`.
+        *   **Content:** "Success!"
+    *   **Component 3: Body Text**
+        *   **Name:** `Text`
+        *   **Position & Size:** Below headline, `marginTop: 8dp`.
+        *   **Style:** `typography: md.sys.typescale.bodyLarge`, `color: md.sys.color.onSurfaceVariant`.
+        *   **Content:** "Your account has been connected."
+    *   **Component 4: Continue Button**
+        *   **Name:** `FilledButton`
+        *   **Position & Size:** Bottom of the `Column`, `marginTop: 32dp`, `width: fillMaxWidth`, `padding: 0dp 32dp`.
+        *   **Style:** `containerColor: md.sys.color.primary`, `contentColor: md.sys.color.onPrimary`.
+        *   **Content:** Text "Continue".
+*   **Interaction & Behavior:**
+    *   **Action:** User taps 'Continue' button.
+    *   **Result:** Dismisses the entire Plaid flow and navigates to `01_08_Accounts_Updated_Screen`.
+    *   **Animation:** Modal slide-down.
 
-#### Component: Password Field
-*   **Name:** `OutlinedTextField`
-*   **Position & Size:**
-    *   Alignment: Below Email field.
-    *   Size: `fillMaxWidth`, height `wrapContent`.
-    *   Margin: 16dp top margin.
-*   **Style:**
-    *   Colors: Standard `TextFieldDefaults.outlinedTextFieldColors`.
-    *   Typography: `md.sys.typography.bodyLarge`
-    *   `visualTransformation`: `PasswordVisualTransformation`.
-*   **Content:**
-    *   `label`: "Password"
-    *   `leadingIcon`: `Icons.Filled.Lock`
-    *   `trailingIcon`: `IconButton` to toggle password visibility.
-    *   `keyboardOptions`: `KeyboardType.Password`.
-
-#### Component: Login Button
-*   **Name:** `FilledButton`
-*   **Position & Size:**
-    *   Alignment: Below Password field.
-    *   Size: `fillMaxWidth`, height 56dp.
-    *   Margin: 32dp top margin.
-*   **Style:**
-    *   Container Color: `md.sys.color.primary`
-    *   Content Color: `md.sys.color.onPrimary`
-    *   Typography: `md.sys.typography.labelLarge`
-    *   Shape: `ShapeDefaults.Full`.
-*   **Content:** "LOG IN"
-
-### IV. Interaction & Behavior
-
-*   **States:**
-    *   `TextFields`: Default, Focused, Error.
-    *   `Login Button`: Enabled (default), Disabled (if fields are empty).
-*   **Interactions:**
-    *   `Navigation Icon` On tap -> Navigate back to `02_Onboarding_Welcome_Screen`.
-    *   `Login Button` On tap:
-        1.  Validate fields are not empty.
-        2.  If invalid, show error states.
-        3.  If valid, show loading state and initiate login API call.
-        4.  On success -> Navigate to `05_Home_Screen`.
-        5.  On failure -> Show error `Snackbar` with message "Invalid email or password."
-*   **Animations:**
-    *   Screen Transition (In/Out): `MaterialSharedAxis` (X-axis).
-
----
-
-## II. Screen Specifications: 05_Home_Screen
-
-*   **Screen Name/ID:** `05_Home_Screen`
+### 01_08_Accounts_Updated_Screen
+*   **Screen Name/ID:** `01_08_Accounts_Updated_Screen`
+*   **Description:** This is the same screen as `01_01_Accounts_Screen`, but the `LazyColumn` now includes the newly added account.
 *   **Dimensions:** 393x852dp
 *   **Background:** `md.sys.color.background`
-*   **Layout:** `Scaffold` with a `TopAppBar`, `LazyColumn` for content, and a `BottomAppBar`.
-
-### III. Component Specifications
-
-#### Component: Top App Bar
-*   **Name:** `TopAppBar`
-*   **Position & Size:**
-    *   Alignment: Top of the screen.
-    *   Size: `fillMaxWidth`, height 64dp.
-*   **Style:**
-    *   Container Color: `md.sys.color.surface`
-    *   `scrollBehavior`: `TopAppBarDefaults.enterAlwaysScrollBehavior()` (collapses on scroll down, reappears on scroll up).
-*   **Content:**
-    *   **Title:** `Text` element.
-        *   Typography: `md.sys.typography.titleLarge`
-        *   Color: `md.sys.color.onSurface`
-        *   Content: "Dashboard"
-    *   **Actions:** `IconButton` with `Icons.Filled.Notifications`.
-        *   Tint: `md.sys.color.onSurfaceVariant`
-
-#### Component: Main Content Area
-*   **Name:** `LazyColumn`
-*   **Position & Size:**
-    *   Fills the space between the `TopAppBar` and `BottomAppBar`.
-    *   Padding: 16dp horizontal, 8dp vertical.
-*   **Style:** N/A
-*   **Content:** A list of cards representing different sections.
-    *   **Item 1: "Today's Workout" Card:** `ElevatedCard` with a title, description, and a "Start Workout" button.
-    *   **Item 2: "Progress Summary" Card:** `FilledCard` with charts or stats (e.g., "Calories Burned", "Active Minutes").
-    *   **Item 3: "Challenges" Card:** `OutlinedCard` showing active community challenges.
-
-#### Component: Bottom Navigation Bar
-*   **Name:** `NavigationBar`
-*   **Position & Size:**
-    *   Alignment: Bottom of the screen.
-    *   Size: `fillMaxWidth`, height 80dp.
-*   **Style:**
-    *   Container Color: `md.sys.color.surfaceVariant`
-*   **Content:**
-    *   **Item 1:** `NavigationBarItem`
-        *   `icon`: `Icons.Filled.Home`
-        *   `label`: "Home"
-        *   `selected`: true
-    *   **Item 2:** `NavigationBarItem`
-        *   `icon`: `Icons.Outlined.List`
-        *   `label`: "Workouts"
-        *   `selected`: false
-    *   **Item 3:** `NavigationBarItem`
-        *   `icon`: `Icons.Outlined.BarChart`
-        *   `label`: "Progress"
-        *   `selected`: false
-    *   **Item 4:** `NavigationBarItem`
-        *   `icon`: `Icons.Outlined.AccountCircle`
-        *   `label`: "Profile"
-        *   `selected`: false
-
-### IV. Interaction & Behavior
-
-*   **States:**
-    *   `NavigationBarItem`: Selected (icon becomes filled, colors change to `md.sys.color.onSecondaryContainer` and `md.sys.color.secondaryContainer`), Unselected (default).
-*   **Interactions:**
-    *   `Notifications Icon` On tap -> Navigate to `06_Notifications_Screen`.
-    *   `"Start Workout" Button` On tap -> Navigate to `07_Workout_Detail_Screen`.
-    *   `"Workouts" Nav Item` On tap -> Navigate to `08_Workout_List_Screen`.
-    *   `"Profile" Nav Item` On tap -> Navigate to `09_Profile_Screen`.
-*   **Animations:**
-    *   Screen transitions via Bottom Nav: `Fade` through transition.
-*   **Scroll Behavior:** The `TopAppBar` collapses as the user scrolls the `LazyColumn` down.
+*   **Layout:** `Scaffold` with a `TopAppBar`, `LazyColumn`, and `ExtendedFloatingActionButton`.
+*   **Components:**
+    *   Identical to `01_01_Accounts_Screen`, but the `LazyColumn` now contains a new `ListItem` for the connected account under the appropriate `Card` (e.g., a new "Bank of America Checking" item under the "Cash" card).
+*   **Interaction & Behavior:**
+    *   **Action:** User views the newly added account.
+    *   **Result:** End of flow.
 
 ---
 
-## II. Screen Specifications: 06_Notifications_Screen
+## Flow 2: Main Navigation
 
-*   **Screen Name/ID:** `06_Notifications_Screen`
+### 02_01_Dashboard_Screen
+*   **Screen Name/ID:** `02_01_Dashboard_Screen`
 *   **Dimensions:** 393x852dp
 *   **Background:** `md.sys.color.background`
-*   **Layout:** `Scaffold` with a `TopAppBar` and a `LazyColumn`.
+*   **Layout:** `Scaffold` with `TopAppBar`, `LazyColumn`, `FloatingActionButton`, and `NavigationBar`.
+*   **Components:**
+    *   **Component 1: Top App Bar**
+        *   **Name:** `TopAppBar`
+        *   **Position & Size:** Top, `height: 64dp`, `width: fillMaxWidth`.
+        *   **Style:** `containerColor: md.sys.color.surface`.
+        *   **Content:** Title is the Monarch Money logo/wordmark. `actions` contains an `IconButton` with `Icons.Filled.Person` for profile/settings.
+    *   **Component 2: Dashboard Content**
+        *   **Name:** `LazyColumn`
+        *   **Position & Size:** Fills space between `TopAppBar` and `NavigationBar`. `contentPadding: 16dp`.
+        *   **Content:** A series of `Card` components for different dashboard widgets.
+        *   **Sub-Component: Net Worth Card**
+            *   **Name:** `Card`
+            *   **Style:** `containerColor: md.sys.color.surfaceVariant`.
+            *   **Content:** Title "Net Worth", a large value (e.g., "$150,000.00"), and a small line chart.
+        *   **Sub-Component: Cash Flow Card**
+            *   **Name:** `Card`
+            *   **Style:** `containerColor: md.sys.color.surfaceVariant`.
+            *   **Content:** Title "Cash Flow", income vs. expenses summary, and a bar chart.
+        *   **Sub-Component: Recent Transactions Card**
+            *   **Name:** `Card`
+            *   **Style:** `containerColor: md.sys.color.surfaceVariant`.
+            *   **Content:** Title "Recent Transactions", and 3-4 `ListItem`s showing recent transactions.
+    *   **Component 3: Add FAB**
+        *   **Name:** `FloatingActionButton`
+        *   **Position & Size:** Bottom right, anchored above the `NavigationBar`. `margin: 16dp`.
+        *   **Style:** `containerColor: md.sys.color.primary`, `contentColor: md.sys.color.onPrimary`.
+        *   **Content:** Icon `Icons.Filled.Add`.
+    *   **Component 4: Bottom Navigation Bar**
+        *   **Name:** `NavigationBar`
+        *   **Position & Size:** Bottom of the screen, `height: 80dp`, `width: fillMaxWidth`.
+        *   **Style:** `containerColor: md.sys.color.surfaceVariant`.
+        *   **Content:** Four `NavigationBarItem`s:
+            *   1: `selected: true`, `icon: Icons.Filled.Dashboard`, `label: "Dashboard"`
+            *   2: `selected: false`, `icon: Icons.Outlined.AccountBalanceWallet`, `label: "Accounts"`
+            *   3: `selected: false`, `icon: Icons.Outlined.ReceiptLong`, `label: "Transactions"`
+            *   4: `selected: false`, `icon: Icons.Outlined.PieChart`, `label: "Plan"`
+*   **Interaction & Behavior:**
+    *   **Action:** Tap 'Accounts' tab -> Navigate to `01_01_Accounts_Screen`.
+    *   **Action:** Tap 'Transactions' tab -> Navigate to `02_02_Transactions_Screen`.
+    *   **Action:** Tap 'Plan' tab -> Navigate to `02_03_Plan_Screen`.
+    *   **Action:** Tap 'Profile' icon -> Navigate to `05_01_Settings_Screen`.
+    *   **Action:** Tap 'Add' FAB -> Open `02_08_Add_Menu_Screen` as a `ModalBottomSheet`.
+    *   **Animation:** `MaterialFadeThrough` for tab navigation. `MaterialSharedAxis` (X-axis) for profile navigation.
 
-### III. Component Specifications
-
-#### Component: Top App Bar
-*   **Name:** `TopAppBar`
-*   **Position & Size:**
-    *   Alignment: Top of the screen.
-    *   Size: `fillMaxWidth`, height 64dp.
-*   **Style:**
-    *   Container Color: `md.sys.color.surface`
-*   **Content:**
-    *   **Navigation Icon:** `IconButton` with `Icons.Filled.ArrowBack`.
-    *   **Title:** `Text` with content "Notifications".
-
-#### Component: Notification List
-*   **Name:** `LazyColumn`
-*   **Position & Size:**
-    *   Fills the remaining screen space.
-*   **Style:** N/A
-*   **Content:** A list of `ListItem` components.
-    *   **Each `ListItem`:**
-        *   `leadingContent`: `Icon` (e.g., `Icons.Filled.CheckCircle` for completed goals, `Icons.Filled.Campaign` for announcements).
-        *   `headlineText`: `Text` with the notification title (e.g., "Goal Achieved!").
-        *   `supportingText`: `Text` with the notification body (e.g., "You completed your 10,000 steps goal.").
-        *   `trailingContent`: `Text` with the timestamp (e.g., "2h ago").
-        *   `modifier`: `clickable`.
-
-### IV. Interaction & Behavior
-
-*   **States:**
-    *   `ListItem`: Default, Pressed (ripple effect).
-*   **Interactions:**
-    *   `Navigation Icon` On tap -> Navigate back to `05_Home_Screen`.
-    *   `ListItem` On tap -> Navigate to a relevant screen (e.g., a challenge screen, a workout summary).
-*   **Animations:**
-    *   Screen Transition (In/Out): `MaterialSharedAxis` (X-axis).
-
-### V. Critical Scenarios & States
-
-*   **Empty State:** If there are no notifications, the `LazyColumn` is replaced with a `Column` containing:
-    *   An `Icon` (`Icons.Outlined.NotificationsOff`), size 96dp, color `md.sys.color.surfaceVariant`.
-    *   A `Text` element ("No notifications yet"), typography `md.sys.typography.titleMedium`, color `md.sys.color.onSurfaceVariant`.
-    *   A `Text` element ("We'll let you know when something important happens."), typography `md.sys.typography.bodyMedium`, color `md.sys.color.onSurfaceVariant`.
-
----
-
-## II. Screen Specifications: 07_Workout_Detail_Screen
-
-*   **Screen Name/ID:** `07_Workout_Detail_Screen`
+### 02_02_Transactions_Screen
+*   **Screen Name/ID:** `02_02_Transactions_Screen`
 *   **Dimensions:** 393x852dp
 *   **Background:** `md.sys.color.background`
-*   **Layout:** `Scaffold` with a collapsing `TopAppBar` and a `LazyColumn`.
+*   **Layout:** `Scaffold` with `TopAppBar`, `LazyColumn`, and `NavigationBar`.
+*   **Components:**
+    *   **Component 1: Top App Bar**
+        *   **Name:** `TopAppBar`
+        *   **Position & Size:** Top, `height: 64dp`, `width: fillMaxWidth`.
+        *   **Content:** Title "Transactions". `actions` contains `IconButton`s for Search (`Icons.Filled.Search`) and Filter (`Icons.Filled.FilterList`).
+    *   **Component 2: Transaction List**
+        *   **Name:** `LazyColumn`
+        *   **Position & Size:** Fills space between `TopAppBar` and `NavigationBar`.
+        *   **Content:** List items are grouped by date. Each group has a date header.
+        *   **Sub-Component: Date Header**
+            *   **Name:** `ListItem`
+            *   **Style:** `containerColor: md.sys.color.surface`.
+            *   **Content:** Headline text "October 31, 2025". `typography: md.sys.typescale.titleSmall`.
+        *   **Sub-Component: Transaction Item**
+            *   **Name:** `ListItem`
+            *   **Content:** `leadingContent`: Icon for category. `headlineContent`: Merchant name (e.g., "Starbucks"). `supportingContent`: Category name (e.g., "Coffee Shops"). `trailingContent`: Amount (e.g., "-$5.75").
+            *   **Style:** Amount is colored `md.sys.color.error` for debits and `md.sys.color.primary` for credits.
+    *   **Component 3: Bottom Navigation Bar**
+        *   **Name:** `NavigationBar`
+        *   **Content:** Same as `02_01_Dashboard_Screen`, but with "Transactions" selected.
+*   **Interaction & Behavior:**
+    *   **Action:** Tap on a transaction `ListItem`.
+    *   **Result:** Navigate to `03_01_Transaction_Detail_Screen`.
+    *   **Action:** Tap other navigation tabs -> Navigate to respective screens.
 
-### III. Component Specifications
-
-#### Component: Collapsing Top App Bar
-*   **Name:** `LargeTopAppBar`
-*   **Position & Size:**
-    *   Alignment: Top of the screen.
-    *   Size: `fillMaxWidth`, expanded height ~256dp, collapsed height 64dp.
-*   **Style:**
-    *   Container Color: `md.sys.color.surface`
-    *   `scrollBehavior`: `TopAppBarDefaults.exitUntilCollapsedScrollBehavior()`.
-    *   The background of the app bar is a high-quality image of the workout.
-*   **Content:**
-    *   **Navigation Icon:** `IconButton` with `Icons.Filled.ArrowBack`.
-    *   **Title (Collapsed):** `Text` with content "Full Body Burn".
-    *   **Title (Expanded):** `Text` with content "Full Body Burn", placed at the bottom of the expanded app bar. Typography `md.sys.typography.headlineMedium`.
-
-#### Component: Workout Details List
-*   **Name:** `LazyColumn`
-*   **Position & Size:**
-    *   Fills the remaining screen space.
-    *   Padding: 16dp horizontal.
-*   **Content:**
-    *   **Item 1: Stats Row:** A `Row` with `Icon` and `Text` for Duration (e.g., "35 min"), Difficulty ("Intermediate"), and Equipment ("Dumbbells").
-    *   **Item 2: Description:** A `Text` element with a detailed description of the workout.
-    *   **Item 3: Exercises Header:** A `Text` element with content "Exercises".
-    *   **Item 4...N: Exercise `ListItem`s:** A list of exercises, each with a thumbnail, name, and rep/time count (e.g., "Push-ups: 3 sets of 12").
-
-#### Component: Start Workout FAB
-*   **Name:** `ExtendedFloatingActionButton`
-*   **Position & Size:**
-    *   Alignment: `BottomEnd` of the `Scaffold`.
-    *   Margin: 16dp.
-*   **Style:**
-    *   Container Color: `md.sys.color.primary`
-    *   Content Color: `md.sys.color.onPrimary`
-*   **Content:**
-    *   `icon`: `Icons.Filled.PlayArrow`
-    *   `text`: "START"
-
-### IV. Interaction & Behavior
-
-*   **Interactions:**
-    *   `Navigation Icon` On tap -> Navigate back to `05_Home_Screen`.
-    *   `Start Workout FAB` On tap -> Navigate to the active workout player screen (not specified in flow).
-*   **Animations:**
-    *   Screen Transition (In/Out): `MaterialContainerTransform`.
-*   **Scroll Behavior:** The `LargeTopAppBar` collapses into a standard `TopAppBar` as the user scrolls down. The `ExtendedFloatingActionButton` shrinks to a regular `FloatingActionButton` on scroll.
-
----
-
-## II. Screen Specifications: 08_Workout_List_Screen
-
-*   **Screen Name/ID:** `08_Workout_List_Screen`
+### 02_03_Plan_Screen
+*   **Screen Name/ID:** `02_03_Plan_Screen`
 *   **Dimensions:** 393x852dp
 *   **Background:** `md.sys.color.background`
-*   **Layout:** `Scaffold` with a `TopAppBar`, `LazyColumn`, and `BottomAppBar`.
+*   **Layout:** `Scaffold` with `TopAppBar`, `TabRow`, a content area, and `NavigationBar`.
+*   **Components:**
+    *   **Component 1: Top App Bar**
+        *   **Name:** `TopAppBar`
+        *   **Position & Size:** Top, `height: 64dp`, `width: fillMaxWidth`.
+        *   **Content:** Title "Plan".
+    *   **Component 2: Sub-Navigation Tabs**
+        *   **Name:** `PrimaryTabRow`
+        *   **Position & Size:** Below `TopAppBar`, `height: 48dp`, `width: fillMaxWidth`.
+        *   **Content:** Three `Tab`s: "Budget", "Recurring", "Goals".
+    *   **Component 3: Tab Content Area**
+        *   **Name:** `HorizontalPager` or similar.
+        *   **Position & Size:** Fills space between `TabRow` and `NavigationBar`.
+        *   **Content:** Displays the content for the currently selected tab (`02_04_Budget_Screen`, `02_05_Recurring_Screen`, or `02_06_Goals_Screen`). Initially shows `02_04_Budget_Screen`.
+    *   **Component 4: Bottom Navigation Bar**
+        *   **Name:** `NavigationBar`
+        *   **Content:** Same as `02_01_Dashboard_Screen`, but with "Plan" selected.
+*   **Interaction & Behavior:**
+    *   **Action:** Tap 'Budget' sub-tab -> Display `02_04_Budget_Screen` content.
+    *   **Action:** Tap 'Recurring' sub-tab -> Display `02_05_Recurring_Screen` content.
+    *   **Action:** Tap 'Goals' sub-tab -> Display `02_06_Goals_Screen` content.
+    *   **Action:** Swipe left/right on content area -> Change tabs.
 
-### III. Component Specifications
+### 02_04_Budget_Screen
+*   **Screen Name/ID:** `02_04_Budget_Screen`
+*   **Description:** This is the content displayed within the "Plan" screen when the "Budget" tab is active. It is not a full, separate screen with its own `Scaffold`.
+*   **Layout:** `LazyColumn` with `contentPadding: 16dp`.
+*   **Components:**
+    *   **Component 1: Budget Summary Card**
+        *   **Name:** `Card`
+        *   **Content:** A summary of the monthly budget, showing "Spent vs. Budgeted" with a `LinearProgressIndicator`.
+    *   **Component 2: Budget Category List**
+        *   **Name:** `Column`
+        *   **Content:** A list of budget categories.
+        *   **Sub-Component: Category Item**
+            *   **Name:** `ListItem`
+            *   **Content:** `leadingContent`: Category icon. `headlineContent`: Category name (e.g., "Groceries"). `trailingContent`: Text showing amount spent vs. budgeted (e.g., "$350 / $500"). Below the `ListItem` is a `LinearProgressIndicator` showing the progress for that category.
+*   **Interaction & Behavior:**
+    *   **Action:** Tap back arrow or 'Plan' tab.
+    *   **Result:** No navigation, as this is part of the Plan screen. The user would tap another main navigation tab to leave.
 
-#### Component: Top App Bar
-*   **Name:** `TopAppBar`
-*   **Position & Size:**
-    *   Alignment: Top of the screen.
-    *   Size: `fillMaxWidth`, height 64dp.
-*   **Style:**
-    *   Container Color: `md.sys.color.surface`
-*   **Content:**
-    *   **Title:** `Text` with content "Workouts".
-    *   **Actions:** `IconButton` with `Icons.Filled.FilterList`.
+### 02_05_Recurring_Screen
+*   **Screen Name/ID:** `02_05_Recurring_Screen`
+*   **Description:** Content for the "Recurring" tab on the "Plan" screen.
+*   **Layout:** `LazyColumn` with `contentPadding: 16dp`.
+*   **Components:**
+    *   **Component 1: Upcoming Bills Card**
+        *   **Name:** `Card`
+        *   **Content:** Title "Upcoming Bills" and a list of `ListItem`s for upcoming recurring transactions (e.g., "Netflix", "Rent").
+    *   **Component 2: Subscriptions Card**
+        *   **Name:** `Card`
+        *   **Content:** Title "All Subscriptions" and a `LazyColumn` of all detected recurring payments.
+*   **Interaction & Behavior:**
+    *   **Action:** Tap back arrow or 'Plan' tab.
+    *   **Result:** No navigation.
 
-#### Component: Workout List
-*   **Name:** `LazyColumn`
-*   **Position & Size:**
-    *   Fills the space between app bars.
-    *   Padding: 16dp horizontal.
-*   **Content:** A list of `Card` components.
-    *   **Each `Card`:**
-        *   Contains an `Image` (workout thumbnail).
-        *   A `Column` with a `Text` title ("Morning Yoga"), and a `Text` subtitle ("15 min | Beginner").
-        *   `modifier`: `clickable`.
+### 02_06_Goals_Screen
+*   **Screen Name/ID:** `02_06_Goals_Screen`
+*   **Description:** Content for the "Goals" tab on the "Plan" screen.
+*   **Layout:** `LazyColumn` with `contentPadding: 16dp`.
+*   **Components:**
+    *   **Component 1: Add Goal Button**
+        *   **Name:** `FilledTonalButton`
+        *   **Position & Size:** Top of the list, `width: fillMaxWidth`.
+        *   **Content:** `leadingIcon: Icons.Filled.Add`, Text "Create a Goal".
+    *   **Component 2: Goal Card**
+        *   **Name:** `Card`
+        *   **Position & Size:** `marginBottom: 16dp`.
+        *   **Content:** A `Column` showing the goal name (e.g., "House Down Payment"), a progress bar, and text showing amount saved vs. goal (e.g., "$5,000 / $50,000").
+*   **Interaction & Behavior:**
+    *   **Action:** Tap back arrow or 'Plan' tab.
+    *   **Result:** No navigation.
 
-#### Component: Bottom Navigation Bar
-*   **Name:** `NavigationBar`
-*   **Position & Size:**
-    *   Alignment: Bottom of the screen.
-    *   Size: `fillMaxWidth`, height 80dp.
-*   **Style:**
-    *   Container Color: `md.sys.color.surfaceVariant`
-*   **Content:**
-    *   `NavigationBarItem` for "Home" (selected: false).
-    *   `NavigationBarItem` for "Workouts" (selected: true).
-    *   `NavigationBarItem` for "Progress" (selected: false).
-    *   `NavigationBarItem` for "Profile" (selected: false).
-
-### IV. Interaction & Behavior
-
-*   **Interactions:**
-    *   `FilterList Icon` On tap -> Opens a `ModalBottomSheet` with filter options (e.g., by duration, difficulty).
-    *   `Workout Card` On tap -> Navigate to `07_Workout_Detail_Screen` for the selected workout.
-    *   `Bottom Nav Items` -> Navigate to their respective screens.
-*   **Animations:**
-    *   Screen transitions via Bottom Nav: `Fade` through transition.
+### 02_08_Add_Menu_Screen
+*   **Screen Name/ID:** `02_08_Add_Menu_Screen`
+*   **Description:** A modal bottom sheet that appears on top of the current screen.
+*   **Layout:** `ModalBottomSheet`
+*   **Components:**
+    *   **Component 1: Drag Handle**
+        *   **Name:** `DragHandle`
+        *   **Position & Size:** Top center of the sheet.
+    *   **Component 2: Menu Items**
+        *   **Name:** `Column`
+        *   **Position & Size:** `padding: 16dp`.
+        *   **Content:** A list of `ListItem` components.
+        *   **Sub-Component: Menu Item 1**
+            *   **Name:** `ListItem`
+            *   **Content:** `leadingContent`: `Icon(Icons.Filled.PostAdd)`, `headlineContent`: "Add Transaction".
+        *   **Sub-Component: Menu Item 2**
+            *   **Name:** `ListItem`
+            *   **Content:** `leadingContent`: `Icon(Icons.Filled.AccountBalance)`, `headlineContent`: "Add Account".
+        *   **Sub-Component: Menu Item 3**
+            *   **Name:** `ListItem`
+            *   **Content:** `leadingContent`: `Icon(Icons.Filled.Flag)`, `headlineContent`: "Add Goal".
+*   **Interaction & Behavior:**
+    *   **Action:** Tap 'Add Transaction'.
+    *   **Result:** Dismiss sheet and navigate to `04_01_Add_Transaction_Screen`.
+    *   **Action:** Tap 'Add Account'.
+    *   **Result:** Dismiss sheet and navigate to `01_02_Add_Account_Screen`.
+    *   **Action:** Tap 'Add Goal'.
+    *   **Result:** Dismiss sheet, navigate to `02_03_Plan_Screen` and switch to the `02_06_Goals_Screen` tab.
+    *   **Action:** User taps outside the sheet or swipes it down.
+    *   **Result:** Dismisses the menu, returning to `02_01_Dashboard_Screen`.
 
 ---
 
-## II. Screen Specifications: 09_Profile_Screen
+## Flow 3: View and Edit Transaction
 
-*   **Screen Name/ID:** `09_Profile_Screen`
+### 03_01_Transaction_Detail_Screen
+*   **Screen Name/ID:** `03_01_Transaction_Detail_Screen`
+*   **Dimensions:** 393x852dp
+*   **Background:** `md.sys.color.surface`
+*   **Layout:** `Scaffold` with `TopAppBar` and `LazyColumn`.
+*   **Components:**
+    *   **Component 1: Top App Bar**
+        *   **Name:** `TopAppBar`
+        *   **Content:** `navigationIcon: Icons.Filled.ArrowBack`, Title "Transaction Detail", `actions`: `IconButton` with `Icons.Filled.Edit`.
+    *   **Component 2: Detail List**
+        *   **Name:** `LazyColumn`
+        *   **Position & Size:** Fills the screen, `padding: 16dp`.
+        *   **Content:** A series of `ListItem`s displaying transaction data.
+        *   **Sub-Component: Merchant & Amount**
+            *   **Name:** `ListItem`
+            *   **Content:** `headlineContent`: Merchant Name (e.g., "Amazon"), `trailingContent`: Amount (e.g., "-$49.99").
+            *   **Style:** `headlineTypography: md.sys.typescale.headlineSmall`, `trailingTypography: md.sys.typescale.headlineSmall`.
+        *   **Sub-Component: Date**
+            *   **Name:** `ListItem`
+            *   **Content:** `leadingContent`: `Icon(Icons.Filled.CalendarToday)`, `headlineContent`: "Date", `trailingContent`: "October 30, 2025".
+        *   **Sub-Component: Category**
+            *   **Name:** `ListItem`
+            *   **Content:** `leadingContent`: `Icon(Icons.Filled.Label)`, `headlineContent`: "Category", `trailingContent`: "Shopping".
+        *   **Sub-Component: Account**
+            *   **Name:** `ListItem`
+            *   **Content:** `leadingContent`: `Icon(Icons.Filled.AccountBalanceWallet)`, `headlineContent`: "Account", `trailingContent`: "Chase Sapphire".
+*   **Interaction & Behavior:**
+    *   **Action:** Tap 'Edit' button.
+    *   **Result:** Navigate to `03_02_Edit_Transaction_Screen`.
+    *   **Action:** Tap back arrow.
+    *   **Result:** Navigate back to `02_02_Transactions_Screen`.
+    *   **Animation:** `MaterialSharedAxis` (X-axis).
+
+### 03_02_Edit_Transaction_Screen
+*   **Screen Name/ID:** `03_02_Edit_Transaction_Screen`
+*   **Dimensions:** 393x852dp
+*   **Background:** `md.sys.color.surface`
+*   **Layout:** `Scaffold` with `TopAppBar` and `Column` in a `verticalScroll`.
+*   **Components:**
+    *   **Component 1: Top App Bar**
+        *   **Name:** `TopAppBar`
+        *   **Content:** `navigationIcon: Icons.Filled.Close` (for Cancel), Title "Edit Transaction", `actions`: a `TextButton` with text "Save".
+    *   **Component 2: Form Fields**
+        *   **Name:** `Column`
+        *   **Position & Size:** `padding: 16dp`.
+        *   **Content:**
+            *   `OutlinedTextField` for Merchant Name.
+            *   `OutlinedTextField` for Amount (with currency prefix).
+            *   `OutlinedTextField` for Date (tappable, opens a `DatePickerDialog`).
+            *   `ExposedDropdownMenuBox` for Category.
+            *   `ExposedDropdownMenuBox` for Account.
+*   **Interaction & Behavior:**
+    *   **Action:** User modifies details and taps 'Save'.
+    *   **Result:** Data is saved, navigate back to `03_01_Transaction_Detail_Screen` with updated information.
+    *   **Action:** User taps 'Cancel' (Close icon) or the system back button.
+    *   **Result:** A confirmation `AlertDialog` appears: "Discard changes?". If "Yes", navigate back to `03_01_Transaction_Detail_Screen`. If "No", dialog dismisses.
+
+---
+
+## Flow 4: Add Transaction
+
+### 04_01_Add_Transaction_Screen
+*   **Screen Name/ID:** `04_01_Add_Transaction_Screen`
+*   **Description:** This screen is functionally identical to `03_02_Edit_Transaction_Screen`, but for creating a new entry. It is presented as a full-screen dialog.
+*   **Dimensions:** 393x852dp
+*   **Background:** `md.sys.color.surface`
+*   **Layout:** `Scaffold` with `TopAppBar` and `Column` in a `verticalScroll`.
+*   **Components:**
+    *   **Component 1: Top App Bar**
+        *   **Name:** `TopAppBar`
+        *   **Content:** `navigationIcon: Icons.Filled.Close` (for Cancel), Title "Add Transaction", `actions`: a `TextButton` with text "Add". The "Add" button is disabled until all required fields are filled.
+    *   **Component 2: Form Fields**
+        *   **Name:** `Column`
+        *   **Position & Size:** `padding: 16dp`.
+        *   **Content:**
+            *   `OutlinedTextField` for Merchant Name.
+            *   `OutlinedTextField` for Amount.
+            *   `OutlinedTextField` for Date (opens `DatePickerDialog`).
+            *   `ExposedDropdownMenuBox` for Category.
+            *   `ExposedDropdownMenuBox` for Account.
+            *   `SegmentedButton` to select transaction type (Expense, Income, Transfer).
+*   **Interaction & Behavior:**
+    *   **Action:** User fills out details and taps 'Add'.
+    *   **Result:** Transaction is created, screen is dismissed, user returns to `02_02_Transactions_Screen` where the new transaction is visible at the top of the list. A `Snackbar` confirms "Transaction added".
+    *   **Action:** User taps 'Cancel' (Close icon) or system back button.
+    *   **Result:** Screen is dismissed, user returns to the previous screen (e.g., `02_02_Transactions_Screen`).
+
+---
+
+## Flow 5: Settings and Profile
+
+### 05_01_Settings_Screen
+*   **Screen Name/ID:** `05_01_Settings_Screen`
 *   **Dimensions:** 393x852dp
 *   **Background:** `md.sys.color.background`
-*   **Layout:** `Scaffold` with a `TopAppBar`, `LazyColumn`, and `BottomAppBar`.
+*   **Layout:** `Scaffold` with `TopAppBar` and `LazyColumn`.
+*   **Components:**
+    *   **Component 1: Top App Bar**
+        *   **Name:** `TopAppBar`
+        *   **Content:** `navigationIcon: Icons.Filled.ArrowBack`, Title "Settings".
+    *   **Component 2: Settings List**
+        *   **Name:** `LazyColumn`
+        *   **Content:** A list of `ListItem`s for navigation.
+        *   **Sub-Component: Profile Item**
+            *   **Name:** `ListItem`
+            *   **Content:** `leadingContent`: `Icon(Icons.Filled.Person)`, `headlineContent`: "Profile", `trailingContent`: `Icon(Icons.Filled.ChevronRight)`.
+        *   **Sub-Component: Notifications Item**
+            *   **Name:** `ListItem`
+            *   **Content:** `leadingContent`: `Icon(Icons.Filled.Notifications)`, `headlineContent`: "Notifications", `trailingContent`: `Icon(Icons.Filled.ChevronRight)`.
+        *   **Sub-Component: Data & Privacy Item**
+            *   **Name:** `ListItem`
+            *   **Content:** `leadingContent`: `Icon(Icons.Filled.Security)`, `headlineContent`: "Data & Privacy", `trailingContent`: `Icon(Icons.Filled.ChevronRight)`.
+        *   **Sub-Component: Appearance Item**
+            *   **Name:** `ListItem`
+            *   **Content:** `leadingContent`: `Icon(Icons.Filled.Palette)`, `headlineContent`: "Appearance", `trailingContent`: `Icon(Icons.Filled.ChevronRight)`.
+        *   **Sub-Component: Subscription Item**
+            *   **Name:** `ListItem`
+            *   **Content:** `leadingContent`: `Icon(Icons.Filled.CreditCard)`, `headlineContent`: "Subscription", `trailingContent`: `Icon(Icons.Filled.ChevronRight)`.
+    *   **Component 3: Log Out Button**
+        *   **Name:** `FilledTonalButton`
+        *   **Position & Size:** In the `LazyColumn` after the list items, `padding: 16dp`, `width: fillMaxWidth`.
+        *   **Style:** `containerColor: md.sys.color.secondaryContainer`, `contentColor: md.sys.color.onSecondaryContainer`.
+        *   **Content:** Text "Log Out".
+*   **Interaction & Behavior:**
+    *   **Action:** Tap 'Profile' -> Navigate to `05_02_Profile_Screen`.
+    *   **Action:** Tap 'Notifications' -> Navigate to `05_03_Notifications_Screen`.
+    *   **Action:** Tap 'Data & Privacy' -> Navigate to `05_04_Data_Privacy_Screen`.
+    *   **Action:** Tap 'Appearance' -> Navigate to `05_05_Appearance_Screen`.
+    *   **Action:** Tap 'Subscription' -> Navigate to `05_06_Subscription_Screen`.
+    *   **Action:** Tap 'Log Out' -> Show confirmation `AlertDialog`. On confirm, log out and navigate to `05_07_Welcome_Screen`.
+    *   **Action:** Tap back arrow -> Navigate to `02_01_Dashboard_Screen`.
 
-### III. Component Specifications
-
-#### Component: Top App Bar
-*   **Name:** `TopAppBar`
-*   **Position & Size:**
-    *   Alignment: Top of the screen.
-    *   Size: `fillMaxWidth`, height 64dp.
-*   **Style:**
-    *   Container Color: `md.sys.color.surface`
-*   **Content:**
-    *   **Title:** `Text` with content "Profile".
-    *   **Actions:** `IconButton` with `Icons.Filled.Settings`.
-
-#### Component: Profile Header
-*   **Name:** `Column`
-*   **Position & Size:**
-    *   Top of the `LazyColumn`.
-    *   Padding: 32dp vertical.
-*   **Content:**
-    *   `Image` (Profile Picture): 96dp x 96dp, `CircleShape`.
-    *   `Text` (User Name): "Alex Doe", typography `md.sys.typography.headlineSmall`.
-    *   `Text` (Join Date): "Joined Jan 2024", typography `md.sys.typography.bodyMedium`, color `md.sys.color.onSurfaceVariant`.
-
-#### Component: Settings List
-*   **Name:** `LazyColumn` (content starts after the header)
-*   **Position & Size:** Fills the screen.
-*   **Content:**
-    *   `ListItem` with `leadingContent`=`Icons.Filled.AccountCircle`, `headlineText`="Account Details".
-    *   `ListItem` with `leadingContent`=`Icons.Filled.Shield`, `headlineText`="Privacy & Security".
-    *   `ListItem` with `leadingContent`=`Icons.Filled.HelpOutline`, `headlineText`="Help & Support".
-    *   `Divider` component.
-    *   `ListItem` with `headlineText`="Log Out", `headlineColor`=`md.sys.color.error`.
-
-#### Component: Bottom Navigation Bar
-*   **Name:** `NavigationBar`
-*   **Position & Size:**
-    *   Alignment: Bottom of the screen.
-    *   Size: `fillMaxWidth`, height 80dp.
-*   **Content:**
-    *   `NavigationBarItem` for "Home" (selected: false).
-    *   `NavigationBarItem` for "Workouts" (selected: false).
-    *   `NavigationBarItem` for "Progress" (selected: false).
-    *   `NavigationBarItem` for "Profile" (selected: true).
-
-### IV. Interaction & Behavior
-
-*   **Interactions:**
-    *   `Settings Icon` On tap -> Navigate to `10_Settings_Screen`.
-    *   `"Account Details" ListItem` On tap -> Navigate to a dedicated account details screen.
-    *   `"Log Out" ListItem` On tap -> Show a confirmation `AlertDialog`. On confirm, log the user out and navigate to `02_Onboarding_Welcome_Screen`.
-    *   `Bottom Nav Items` -> Navigate to their respective screens.
-*   **Animations:**
-    *   Screen transitions via Bottom Nav: `Fade` through transition.
-
----
-
-## II. Screen Specifications: 10_Settings_Screen
-
-*   **Screen Name/ID:** `10_Settings_Screen`
+### 05_02_Profile_Screen
+*   **Screen Name/ID:** `05_02_Profile_Screen`
 *   **Dimensions:** 393x852dp
 *   **Background:** `md.sys.color.background`
-*   **Layout:** `Scaffold` with a `TopAppBar` and `LazyColumn`.
+*   **Layout:** `Scaffold` with `TopAppBar` and `Column`.
+*   **Components:**
+    *   **Component 1: Top App Bar**
+        *   **Name:** `TopAppBar`
+        *   **Content:** `navigationIcon: Icons.Filled.ArrowBack`, Title "Profile".
+    *   **Component 2: Profile Form**
+        *   **Name:** `Column`
+        *   **Position & Size:** `padding: 16dp`.
+        *   **Content:** `OutlinedTextField` for "Name", `OutlinedTextField` for "Email" (read-only), and a `Button` for "Change Password".
+*   **Interaction & Behavior:**
+    *   **Action:** Tap back arrow.
+    *   **Result:** Navigate back to `05_01_Settings_Screen`.
 
-### III. Component Specifications
+### 05_03_Notifications_Screen
+*   **Screen Name/ID:** `05_03_Notifications_Screen`
+*   **Dimensions:** 393x852dp
+*   **Background:** `md.sys.color.background`
+*   **Layout:** `Scaffold` with `TopAppBar` and `LazyColumn`.
+*   **Components:**
+    *   **Component 1: Top App Bar**
+        *   **Name:** `TopAppBar`
+        *   **Content:** `navigationIcon: Icons.Filled.ArrowBack`, Title "Notifications".
+    *   **Component 2: Notification Toggles**
+        *   **Name:** `LazyColumn`
+        *   **Content:** A list of `ListItem`s with `Switch` controls.
+        *   **Sub-Component: Push Notifications Toggle**
+            *   **Name:** `ListItem`
+            *   **Content:** `headlineContent`: "Push Notifications", `supportingContent`: "Allow all notifications", `trailingContent`: `Switch` (checked/unchecked).
+        *   **Sub-Component: Large Transaction Toggle**
+            *   **Name:** `ListItem`
+            *   **Content:** `headlineContent`: "Large Transactions", `supportingContent`: "Notify for transactions over $100", `trailingContent`: `Switch`.
+*   **Interaction & Behavior:**
+    *   **Action:** Tap back arrow.
+    *   **Result:** Navigate back to `05_01_Settings_Screen`.
 
-#### Component: Top App Bar
-*   **Name:** `TopAppBar`
-*   **Position & Size:**
-    *   Alignment: Top of the screen.
-    *   Size: `fillMaxWidth`, height 64dp.
-*   **Style:**
-    *   Container Color: `md.sys.color.surface`
-*   **Content:**
-    *   **Navigation Icon:** `IconButton` with `Icons.Filled.ArrowBack`.
-    *   **Title:** `Text` with content "Settings".
+### 05_04_Data_Privacy_Screen
+*   **Screen Name/ID:** `05_04_Data_Privacy_Screen`
+*   **Dimensions:** 393x852dp
+*   **Background:** `md.sys.color.background`
+*   **Layout:** `Scaffold` with `TopAppBar` and `LazyColumn`.
+*   **Components:**
+    *   **Component 1: Top App Bar**
+        *   **Name:** `TopAppBar`
+        *   **Content:** `navigationIcon: Icons.Filled.ArrowBack`, Title "Data & Privacy".
+    *   **Component 2: Privacy Options**
+        *   **Name:** `LazyColumn`
+        *   **Content:** `ListItem`s for "Privacy Policy", "Terms of Service", and a `Button` for "Delete Account".
+*   **Interaction & Behavior:**
+    *   **Action:** Tap back arrow.
+    *   **Result:** Navigate back to `05_01_Settings_Screen`.
 
-#### Component: Settings List
-*   **Name:** `LazyColumn`
-*   **Position & Size:** Fills the screen.
-*   **Content:**
-    *   **Category 1: "Theme"**
-        *   `ListItem` with `headlineText`="Dark Mode", `trailingContent`= a `Switch` component.
-    *   **Category 2: "Notifications"**
-        *   `ListItem` with `headlineText`="Push Notifications", `supportingText`="Workout reminders, goal updates", `trailingContent`= a `Switch`.
-        *   `ListItem` with `headlineText`="Email Notifications", `trailingContent`= a `Switch`.
-    *   **Category 3: "About"**
-        *   `ListItem` with `headlineText`="Version", `supportingText`="1.0.0".
-        *   `ListItem` with `headlineText`="Terms of Service".
-        *   `ListItem` with `headlineText`="Privacy Policy".
+### 05_05_Appearance_Screen
+*   **Screen Name/ID:** `05_05_Appearance_Screen`
+*   **Dimensions:** 393x852dp
+*   **Background:** `md.sys.color.background`
+*   **Layout:** `Scaffold` with `TopAppBar` and `Column`.
+*   **Components:**
+    *   **Component 1: Top App Bar**
+        *   **Name:** `TopAppBar`
+        *   **Content:** `navigationIcon: Icons.Filled.ArrowBack`, Title "Appearance".
+    *   **Component 2: Theme Options**
+        *   **Name:** `Column`
+        *   **Position & Size:** `padding: 16dp`.
+        *   **Content:** A `Text` label "Theme" followed by a `Row` of `FilterChip`s or a `SegmentedButton` for "System", "Light", and "Dark".
+*   **Interaction & Behavior:**
+    *   **Action:** Tap back arrow.
+    *   **Result:** Navigate back to `05_01_Settings_Screen`.
 
-### IV. Interaction & Behavior
+### 05_06_Subscription_Screen
+*   **Screen Name/ID:** `05_06_Subscription_Screen`
+*   **Dimensions:** 393x852dp
+*   **Background:** `md.sys.color.background`
+*   **Layout:** `Scaffold` with `TopAppBar` and `Column`.
+*   **Components:**
+    *   **Component 1: Top App Bar**
+        *   **Name:** `TopAppBar`
+        *   **Content:** `navigationIcon: Icons.Filled.ArrowBack`, Title "Subscription".
+    *   **Component 2: Subscription Details**
+        *   **Name:** `Column`
+        *   **Position & Size:** `padding: 16dp`, `horizontalAlignment: CenterHorizontally`.
+        *   **Content:** A `Card` displaying the current plan (e.g., "Monarch Premium"), renewal date, and a `Button` to "Manage Subscription" which opens the Google Play subscription management screen.
+*   **Interaction & Behavior:**
+    *   **Action:** Tap back arrow.
+    *   **Result:** Navigate back to `05_01_Settings_Screen`.
 
-*   **Interactions:**
-    *   `Navigation Icon` On tap -> Navigate back to `09_Profile_Screen`.
-    *   `Switch` components On toggle -> Update the corresponding app setting. The Dark Mode switch should immediately change the app's theme.
-    *   `"Terms of Service"` On tap -> Open a web view or browser with the ToS URL.
-*   **Animations:**
-    *   Screen Transition (In/Out): `MaterialSharedAxis` (X-axis).
+### 05_07_Welcome_Screen
+*   **Screen Name/ID:** `05_07_Welcome_Screen`
+*   **Description:** The initial screen for logged-out users.
+*   **Dimensions:** 393x852dp
+*   **Background:** `md.sys.color.surface`
+*   **Layout:** `Column` centered on the screen.
+*   **Components:**
+    *   **Component 1: App Logo**
+        *   **Name:** `Image`
+        *   **Position & Size:** Top of the `Column`, `size: 150dp`.
+        *   **Content:** Monarch Money logo.
+    *   **Component 2: Tagline**
+        *   **Name:** `Text`
+        *   **Position & Size:** `marginTop: 24dp`.
+        *   **Style:** `typography: md.sys.typescale.headlineSmall`, `textAlign: Center`.
+        *   **Content:** "Your modern financial manager."
+    *   **Component 3: Sign Up Button**
+        *   **Name:** `FilledButton`
+        *   **Position & Size:** `marginTop: 48dp`, `width: fillMaxWidth`, `padding: 0dp 32dp`.
+        *   **Content:** "Get Started".
+    *   **Component 4: Log In Button**
+        *   **Name:** `TextButton`
+        *   **Position & Size:** `marginTop: 16dp`.
+        *   **Content:** "Already have an account? Log In".
+*   **Interaction & Behavior:**
+    *   **Action:** User is logged out and arrives here.
+    *   **Result:** End of flow.
 
 ---
 
-## V. Critical Scenarios & States (Global)
+## V. Critical Scenarios & States
 
 ### Error States
-*   **No Internet Connection:**
-    *   **UI:** A `Snackbar` appears at the bottom of the screen.
-    *   **Style:** Container color `md.sys.color.errorContainer`, content color `md.sys.color.onErrorContainer`.
-    *   **Content:** "No internet connection. Please check your network."
-    *   **Action:** Optional "Retry" button.
-*   **API/Server Error:**
-    *   **UI:** A `Snackbar` appears.
-    *   **Content:** "Something went wrong. Please try again later."
+*   **No Internet Connection:** A `Snackbar` appears at the bottom of the screen.
+    *   **Message:** "No internet connection. Please check your network."
+    *   **Action:** "Retry" button on the Snackbar.
+*   **API/Server Error:** A `Snackbar` appears.
+    *   **Message:** "Something went wrong. Please try again later."
+*   **Form Validation Error:** `TextField` components enter an error state.
+    *   **Style:** The outline and label color change to `md.sys.color.error`.
+    *   **Content:** `supportingText` appears below the field with a descriptive error message (e.g., "Invalid email address").
 
 ### Empty States
-*   **Generic Empty State:** Used on list screens (e.g., Workouts, Notifications) when no data is available.
-    *   **Layout:** Centered `Column`.
-    *   **Components:**
-        *   `Icon`: A relevant outlined icon (e.g., `Icons.Outlined.ListAlt`), size 96dp, color `md.sys.color.surfaceVariant`.
-        *   `Text` (Title): e.g., "No Workouts Found", typography `md.sys.typography.titleMedium`, color `md.sys.color.onSurfaceVariant`.
-        *   `Text` (Body): e.g., "Try adjusting your filters or check back later.", typography `md.sys.typography.bodyMedium`, color `md.sys.color.onSurfaceVariant`.
-        *   `Button` (Optional CTA): e.g., "Clear Filters".
+*   **Accounts Screen (No Accounts):**
+    *   **Layout:** A centered `Column`.
+    *   **Content:** An `Icon` (`Icons.Outlined.AccountBalance`, `size: 96dp`, `tint: md.sys.color.surfaceVariant`), a `Text` headline "No accounts yet", a `Text` body "Add your first account to get started.", and a `FilledButton` with text "Add Account".
+*   **Transactions Screen (No Transactions):**
+    *   **Layout:** A centered `Column`.
+    *   **Content:** An `Icon` (`Icons.Outlined.ReceiptLong`, `size: 96dp`, `tint: md.sys.color.surfaceVariant`), a `Text` headline "No transactions found", and a `Text` body "Your transactions will appear here once you connect an account.".
 
 ### Loading States
-*   **Initial Screen Load:**
-    *   **UI:** A centered `CircularProgressIndicator` is displayed over the screen content area.
+*   **Initial App Load / Data Fetch:**
+    *   **Indicator:** A centered `CircularProgressIndicator` is displayed over the screen content area.
 *   **Pull-to-Refresh:**
-    *   **UI:** Standard `pullRefresh` indicator at the top of a scrollable list.
-*   **Button Loading:**
-    *   **UI:** The button becomes disabled, and its text label is replaced by a `CircularProgressIndicator` (size 24dp). The button's width is maintained.
-```
+    *   **Behavior:** Swiping down from the top of any `LazyColumn` will trigger a refresh.
+    *   **Indicator:** A standard `SwipeRefreshIndicator` appears at the top.
+*   **Shimmer/Placeholder UI:**
+    *   **Usage:** On screens like Dashboard and Accounts, while data is loading for the first time, placeholder `Card`s with a shimmering animation are shown to represent the layout before content is available. The shimmer effect uses animated gradients moving across light gray shapes.
 
 ---
