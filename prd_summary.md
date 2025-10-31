@@ -1,272 +1,153 @@
-Budgetly's "Flow Capture" aims to be the effortless entry point for all user spending data, ensuring accuracy and minimal user intervention. It combines diverse automatic capture methods with flexible manual inputs, centralizing and cleaning transaction data for downstream financial analysis tools (Flow Map, Flow Lens). The core value is to free users from manual data entry burden while providing a reliable and trusted financial ledger.
+This document translates the provided Product Requirements Document (PRD) into a structured brief, highlighting all critical information for UI/UX design and app flow generation.
 
 ---
 
 ### 1. Core Product Vision
 
-*   **Problem Solved:** Users struggle with the effort and time required to manually track and categorize their spending across various sources (bank, cash, receipts, online purchases). This leads to incomplete or inaccurate financial overviews.
-*   **Target Users:** Mobile application users who want to effortlessly log all their financial transactions and need clean, de-duplicated, and categorized data for personal finance management.
-*   **Unique Value Proposition:**
-    *   **Effortless Ingestion:** Automatically captures spending from diverse sources (SMS, email, bank, gallery, chat) and offers intuitive manual inputs (form, voice, file uploads, widget, QR).
-    *   **Data Integrity:** Guarantees clean, de-duplicated, and accurately categorized transactions.
-    *   **Trustworthy Data:** Provides a reliable foundation for deeper financial analysis and visualization tools (Flow Map, Flow Lens).
-    *   **Privacy-First:** Prioritizes on-device parsing and granular user consent for data sources.
+*   **Problem Solved:** Traditional music creation is complex, time-consuming, expensive, and inaccessible to most due to lack of technical skills, professional tools, or creative confidence. This app eliminates the barrier between creative inspiration and actual music production.
+*   **Target Users:** The app caters to a broad audience, from casual users wanting to turn simple ideas into songs to professional creators seeking innovative tools and efficiency.
+*   **Unique Value Proposition:** An AI-powered, all-in-one mobile music platform that makes music creation accessible, instant, and fun for everyone. It enables users to generate complete songs from text or photos, personalize music with specific details, refine tracks in a studio environment, and get creative inspiration, all within a single application.
 
 ---
 
 ### 2. Key Features & Functionality
 
-This section lists all in-scope features, highlighting those critical for the MVP and design.
+**Core Generation Features:**
 
-**A. Manual Capture (User-Initiated)**
-*   **A1. Classic Form Entry (Legacy):**
-    *   **Functionality:** Structured form to add expense (Description/Merchant, Amount, Category, Source, Date/Time, Notes, Attachments).
-    *   **Requirements:**
-        *   Defaults to current date/time, last used source, and last used category for the merchant.
-        *   "Save" button disabled until required fields are filled (e.g., Amount).
-        *   Optimistic UI updates immediately upon submission.
-        *   Confirms submission with a toast/snackbar showing "₹1,250 • Groceries logged" and an "Undo" action.
-    *   **Entry Points:** "+ Add" Floating Action Button (FAB), Home screen widget, "Add Manually" option within Review Inbox.
-*   **A2. Voice / Natural-Language (NL) Entry:**
-    *   **Functionality:** Allows speaking or typing free text (e.g., "Spent ₹500 on petrol yesterday 8pm") for parsing.
-    *   **Requirements:**
-        *   System reads back interpretation.
-        *   Provides "Edit" and "Confirm" options.
-        *   Low confidence parsing (<85) displays a "yellow state" and "Edit details" button.
-        *   "Edit" opens a mini-form pre-filled with parsed values.
-        *   "Confirm" creates transaction with "Undo" available.
-    *   **Entry Points:** Tap microphone icon or type in a "Quick Add" input.
-*   **A3. Attach & Parse (Manual Receipt Photo/PDF/CSV):**
-    *   **Functionality:** Manually selects a file/photo for local OCR/CSV parsing.
-    *   **Requirements:**
-        *   Displays a field-mapped preview (for images/PDFs) or a table preview with checkboxes (for CSV/PDF statements).
-        *   Allows confirmation or fixing of parsed data.
-        *   Dedup fingerprints generated per row; obvious duplicates are pre-unchecked.
-        *   "Possible duplicate" flag for matched rows.
-        *   Supports creating multiple transactions from one file (e.g., CSV rows).
-        *   **Privacy note:** Explicit file/photo selection, no broad gallery permission needed for this flow.
-    *   **Entry Points:** "Attach & Parse" button/option.
-*   **A4. Home-Screen Widget Quick Add:**
-    *   **Functionality:** Quick expense entry directly from the device home screen.
-    *   **Requirements:**
-        *   Minimal UI: Primarily Amount and Category input (≤3 taps to log).
-        *   Logs with current time and location (if enabled).
-        *   Suggests merchant from inferred location context.
-        *   Gracefully handles denied location permission (logs without inference).
-*   **A5. QR/Barcode Scan:**
-    *   **Functionality:** Scans merchant QR or receipt barcode to auto-fill transaction details.
-    *   **Requirements:**
-        *   Opens camera for scanning.
-        *   If supported, pre-fills merchant and amount; otherwise, falls back to OCR/manual entry.
-        *   Shows a preview before confirmation.
+*   **Text-to-Music:**
+    *   **Description:** Generates complete songs from simple text prompts (e.g., "a happy birthday song in pop style").
+    *   **User Controls:** User inputs text prompt, selects genre, mood, or vocals.
+    *   **Process:** AI first generates lyrics, then the full song (melody, instruments, vocals).
+    *   **UX Considerations:** Needs a prominent text input area, clear selection options for musical parameters, and a visible generation progress indicator.
+    *   **Constraint:** Must manage potential misuse from inappropriate/offensive text prompts.
+*   **Photo-to-Music:**
+    *   **Description:** Transforms photos into mood-based music tracks.
+    *   **User Controls:** User uploads or takes a photo, then crops it. User selects Mood and Genre.
+    *   **Process:** AI analyzes the image (colors, emotions, context), generates lyrics first, then an AI song matching the photo's style and genre.
+    *   **UX Considerations:** Requires an intuitive photo capture/upload interface, cropping functionality, and clear mood/genre selection.
+    *   **Constraint:** Requires careful handling of user photo privacy and robust error handling for uploads.
+*   **Studio Mode (Personalized Generation):**
+    *   **Description:** Allows creation of custom, personalized songs for specific people and occasions.
+    *   **User Controls:** User inputs Name, Relation, Occasion (optional), an additional text prompt, and selects preferred style/genre (pop, rock, lo-fi, EDM, etc.).
+    *   **Process:** AI analyzes all inputs, generates lyrics, then personalized music.
+    *   **UX Considerations:** Needs clear, guided input fields for personalized details, and a wide range of genre/style choices. Interface must balance advanced features with ease of use for beginners.
+    *   **Constraint:** Performance on mid/low-end devices must be considered due to potential complexity.
+*   **AI Generated Lyrics & Editing:**
+    *   **Description:** AI generates lyrics from prompts (text/photos), with options to edit, rewrite, or enhance. Supports syncing lyrics with generated music for display.
+    *   **User Controls:** User inputs prompt/theme; AI generates lyrics; user can then edit individual lines or regenerate.
+    *   **Constraint:** Lyrics are currently restricted to English only.
+    *   **Constraint:** Users are *unable to change timestamps* for synced lyrics.
+    *   **UX Considerations:** A robust text editing interface, regeneration options, and a clear display for synced lyrics (e.g., karaoke-style). Content moderation for biased/offensive lyrics is crucial.
+*   **Music Generation Screen with Queue Handling:**
+    *   **Description:** A centralized screen to manage multiple concurrent song generations and downloads.
+    *   **Functionality:** Displays all pending generations, their progress, and status. Allows users to cancel ongoing generations. Optionally, allows regeneration if an error occurs. Supports manual and auto-sync for cancelled/due songs.
+    *   **Constraint:** Song generation is dependent on user 'Credits'.
+    *   **UX Considerations:** Requires a clear, visual queue management UI with progress bars, status labels (pending, processing, completed, error), and actionable buttons (cancel, regenerate, download, share). Notifications are critical when songs are ready.
 
-**B. Automatic Capture (System-Initiated)**
-*   **B1. Bank Sync (Open Banking / Aggregator):**
-    *   **Functionality:** Connects to bank accounts for automatic, scheduled transaction import.
-    *   **Requirements:**
-        *   One-time OAuth connect flow.
-        *   New transactions appear within the next cycle (≤4 hours).
-        *   Handles pending → posted reconciliation.
-        *   Deduplication engine collapses transactions from multiple sources (e.g., SMS & bank sync).
-    *   **UX Consideration:** Clear "Connect Bank" UI and OAuth integration.
-*   **B2. SMS Parser:**
-    *   **Functionality:** On-device listener parses bank/card SMS for transaction details.
-    *   **Requirements:**
-        *   Requests SMS permission with clear scope explanation.
-        *   Logs high-confidence transactions immediately (<3s).
-        *   Low-confidence items go to Review Inbox.
-        *   Ignores non-transactional SMS (OTP, marketing).
-*   **B3. Email Ingest (Receipts & Statements):**
-    *   **Functionality:** Connects to Gmail/IMAP to parse e-receipts and monthly statements.
-    *   **Requirements:**
-        *   "Connect Email" UI.
-        *   First-time senders/statements require a "Preview import" screen for field mapping confirmation.
-        *   Subsequent runs can auto-apply learned mappings.
-        *   Deduplication flags/skips duplicate rows against existing ledger.
-*   **B4. Gallery OCR (Auto):**
-    *   **Functionality:** Scans device's /Screenshots and /Camera folders for new receipt images.
-    *   **Requirements:**
-        *   Requires explicit Gallery scan permission toggle.
-        *   Scans occur nightly (on charge + Wi-Fi).
-        *   Auto-posts transactions if confidence ≥85.
-        *   Low-confidence (<85) items go to Review Inbox.
-        *   New merchants require one-time confirmation.
-*   **B5. Chat Share Hook (WhatsApp/Telegram):**
-    *   **Functionality:** Integrates with OS share sheet to allow sharing messages/screenshots from chat apps to Budgetly for parsing.
-    *   **Requirements:**
-        *   Extracts amount/merchant.
-        *   Flags potential IOUs (e.g., based on keywords like "you owe").
-        *   Creates a candidate expense for user confirmation.
-*   **B6. Smart Templates (Auto-suggest):**
-    *   **Functionality:** Learns from repeated manual input phrases to offer one-tap suggestion chips.
-    *   **Requirements:**
-        *   Suggestion chips appear contextually (same time/location) after 3+ occurrences.
-        *   Chips decay and stop showing if ignored 3 times.
+**Support & Discovery Features:**
 
-**C. Quality, Safety, and Recovery (Cross-Cutting)**
-*   **C1. Deduplication Engine:**
-    *   **Functionality:** Ensures only one transaction is logged when the same spend is captured via multiple channels (e.g., SMS and Bank Sync).
-    *   **Requirements:** Merges sources and attachments, keeps earliest `occurred_at`.
-*   **C2. Review Inbox:**
-    *   **Functionality:** A dedicated queue for low-confidence (<85) or ambiguous items.
-    *   **Requirements:**
-        *   "Inbox badge" displays count of pending items.
-        *   Card-list UI: swipe Left to Fix (edit), swipe Right to Confirm, tap for details, long-press to Delete.
-        *   "Inbox Zero" state/reward upon completion.
-*   **C3. Undo & Edit Everywhere:**
-    *   **Functionality:** Provides immediate reversal and later modification of transactions.
-    *   **Requirements:**
-        *   "Undo" action available within a 5-second window after *any* transaction creation (manual or auto).
-        *   "Undo" triggers a soft-delete or "void" flag.
-        *   "Edit" option available from transaction detail screen, with changes propagating to Flow Map/Lens.
-*   **C4. Offline & Error Handling:**
-    *   **Functionality:** Allows manual entries/shares to work offline, queuing data for later sync.
-    *   **Requirements:**
-        *   Displays "Pending sync" status for queued items.
-        *   Informs user when connectivity returns and syncs.
-        *   Parse failures offer a "Fix manually" path, preventing data loss.
-        *   Never loses user-entered data.
-
-**Priority/Critical Features for MVP (implicitly high priority based on purpose & KPIs):**
-*   All manual capture methods (A1-A5)
-*   Bank Sync (B1) & SMS Parser (B2)
-*   Review Inbox (C2)
-*   Deduplication Engine (C1)
-*   Undo & Edit (C3)
-*   Offline & Error Handling (C4)
-*   Permissions UX (implied by granular controls and consent requirements)
+*   **Default AI Generated Songs with Categories:**
+    *   **Description:** Offers a library of pre-generated songs categorized for instant use.
+    *   **Categories:** Pop, Hip-Hop, EDM, Jazz, Lo-Fi, Regional/Traditional (TO DO: Expand to 10+ categories).
+    *   **UX Considerations:** Needs an "Explore" tab or similar browsing interface with clear category filters, song previews, and options to download/share.
+*   **Inspire Me Prompts (with Style, Genre & Tags):**
+    *   **Description:** AI suggests inspirational prompts (including style, genre, and tags) to help users overcome creative blocks.
+    *   **UX Considerations:** Easily accessible trigger (e.g., a button), clear presentation of diverse suggestions, and a seamless path to initiate generation using a selected prompt.
+*   **Device Audio Import (Optional):**
+    *   **Description:** Enables importing existing audio files from the user’s device for remixing, enhancing, or blending with AI-generated elements.
+    *   **UX Considerations:** Requires a clear import flow, appropriate permission requests, an interface for AI processing suggestions, and final export functionality.
+    *   **Constraint:** Requires secure handling of local files and addresses privacy concerns related to accessing personal audio.
 
 ---
 
 ### 3. User Flows & Journeys
 
 **Primary User Tasks & Goals:**
-*   Log expenses with minimal effort.
-*   Ensure all spending is captured accurately.
-*   Correct or confirm low-confidence transactions quickly.
-*   Maintain control over personal data and permissions.
-*   Have a clean, de-duplicated financial ledger.
+
+*   **Initiate Music Creation:** Generate music using text prompts, photo uploads, or personalized studio inputs.
+*   **Customize & Refine:** Edit generated lyrics, and potentially layer/edit music in Studio Mode.
+*   **Discover Music:** Browse pre-generated songs by category.
+*   **Get Creative Nudge:** Utilize "Inspire Me" for prompt ideas.
+*   **Manage Creations:** Monitor and control ongoing music generations.
+*   **Integrate Existing Audio:** Import personal audio for enhancement or remixing.
+*   **Consume & Share:** Preview, download, and share generated music.
 
 **Key User Scenarios:**
 
-*   **Manual Form Entry:**
-    1.  User taps FAB or widget "+ Add".
-    2.  User fills out form fields (Amount, Category, Merchant, etc.).
-    3.  User taps "Save" (disabled if required fields are missing).
-    4.  Transaction appears in ledger; "Undo" snackbar shows for 5s.
-    5.  (Offline scenario) User adds offline, sees "Will sync when online" message.
-*   **Voice/NL Entry:**
-    1.  User taps microphone/types into Quick Add.
-    2.  User speaks/types natural language (e.g., "Spent 2000 groceries at Naheed").
-    3.  System proposes parsed transaction details (amount, category, merchant) on a confirmation card.
-    4.  User can "Confirm" or "Edit details" (opens mini-form).
-    5.  On confirm, transaction is created; "Undo" is available.
-*   **Attach & Parse (Receipt Photo):**
-    1.  User taps "Add" → "Attach & Parse" and selects a receipt photo.
-    2.  App processes (OCR) and shows a candidate expense with merchant/date/amount.
-    3.  User confirms or edits the parsed details.
-*   **Bank Sync:**
-    1.  User initiates "Connect Bank" flow.
-    2.  User completes OAuth process.
-    3.  New bank transactions automatically appear in the ledger (and potentially Review Inbox if low confidence).
-*   **SMS Auto-Capture:**
-    1.  User grants SMS permission.
-    2.  Bank/card payment SMS arrives.
-    3.  Transaction is automatically logged (or sent to Review Inbox if ambiguous).
-*   **Review Inbox Resolution:**
-    1.  User notices Inbox badge with pending count.
-    2.  User taps Inbox.
-    3.  User sees a list of low-confidence items (cards).
-    4.  User swipes card Left to "Fix" (edit form) or Right to "Confirm."
-    5.  Upon resolving all, "Inbox Zero" state is displayed.
-*   **Undo Action:**
-    1.  After any transaction creation, an "Undo" snackbar/toast appears for 5 seconds.
-    2.  User taps "Undo" within the window.
-    3.  The transaction is soft-deleted/voided and disappears.
+*   **Scenario 1: Generating a Quick Party Anthem**
+    *   User opens app -> Selects "Text-to-Music" -> Enters "upbeat dance track for a party" -> Selects "EDM" -> AI generates lyrics and song -> User previews -> Downloads and shares to social media.
+*   **Scenario 2: Creating a Song from a Scenic Photo**
+    *   User opens app -> Selects "Photo-to-Music" -> Uploads a sunset beach photo -> Crops photo -> Selects "Chill" Mood & "Lo-Fi" Genre -> AI generates -> User listens, then saves.
+*   **Scenario 3: Designing a Personalized Anniversary Song**
+    *   User opens app -> Navigates to "Studio Mode" -> Enters partner's Name, "Partner" Relation, "Anniversary" Occasion -> Adds prompt "our journey together, lasting love" -> Chooses "Romantic Pop" style -> AI generates -> User previews, satisfied, downloads for the occasion.
+*   **Scenario 4: Overcoming Writer's Block for Lyrics**
+    *   User is in lyrics editor (perhaps after an initial generation) -> Feels stuck -> Clicks "Inspire Me" -> Receives suggestions -> Selects one ("melancholic jazz with city rain sounds") -> AI suggests new lyrical lines -> User edits and incorporates.
+*   **Scenario 5: Monitoring Multiple Projects**
+    *   User submits 3-4 text-to-music requests back-to-back -> Navigates to "Music Generation Screen" -> Sees all requests in a queue with "Generating" or "Pending" status -> Receives push notifications as each song completes -> Downloads finished songs.
+*   **Scenario 6: Remixing a Demo Vocal Track**
+    *   User opens app -> Selects "Device Audio Import" -> Grants permission -> Selects a vocal recording from their phone -> App processes -> User sees suggestions for AI beats -> Selects one -> Previews the combined track -> Exports the enhanced song.
 
 **Expected User Interactions:**
-*   Form input, dropdowns, date pickers.
-*   Voice input activation and visual feedback for speech-to-text.
-*   Confirmation cards with clear "Confirm" and "Edit" actions.
-*   File/photo picker interaction.
-*   Camera activation for QR/barcode scanning.
-*   System permissions prompts (SMS, Gallery, Location).
-*   OAuth flows for bank/email connection.
-*   Swipe gestures for Review Inbox.
-*   Snackbars/toasts for confirmations and "Undo."
-*   Badge notifications for pending items (e.g., Review Inbox).
-*   Suggestion chips for quick entry.
+
+*   Intuitive forms for text/detail input.
+*   Clear affordances for photo upload/capture/cropping.
+*   Interactive selectors (e.g., dropdowns, carousels, tags) for genre, mood, style, vocals.
+*   Standard audio playback controls (play, pause, seek).
+*   Visual progress indicators, loading animations, and status messages for generation.
+*   Editable text fields for lyrics with options for regeneration.
+*   Distinct buttons/icons for "Inspire Me," "Generate," "Cancel," "Retry," "Download," "Share."
+*   Tabbed or bottom navigation for primary app sections (e.g., Generate, Studio, Explore, Queue).
+*   System permission requests for media access (photos, audio).
 
 ---
 
-### 4. Technical Requirements (Relevant to UX)
+### 4. Technical Requirements
 
-*   **Platform Specifications:** Mobile application (iOS and Android implied by "home-screen widget," "OS share sheet," "gallery/camera folders"). No specific OS versions mentioned.
+*   **Platform Specifications:** Mobile application (primary focus, with specific consideration for "low-end Android devices" processing capabilities).
 *   **Integration Requirements:**
-    *   **Bank Sync:** OAuth integration (Open Banking / Aggregators).
-    *   **Email:** Gmail/IMAP connect.
-    *   **Chat Share:** OS-level share sheet integration.
-    *   **APIs:**
-        *   `/transactions.create`: For manual and parsed submissions.
-        *   `/transactions.quickCreate`: For widget submissions.
-        *   `/nlp/parse`: For Voice/NL processing.
-        *   `/attachments.parse`: For manual receipt/file parsing.
-        *   `/review/confirm`, `/review/fix`: For Review Inbox actions.
-        *   Webhooks/connectors for automatic bank/email/SMS inputs.
-*   **Performance Requirements (Latency):**
-    *   Manual form to ledger visibility: ≤ 1 second (optimistic UI).
-    *   SMS parse to ledger visibility: ≤ 3 seconds.
-    *   Voice/NL parse to proposal display: ≤ 2 seconds.
-    *   Single image OCR to candidate expense: ≤ 8 seconds.
-    *   Email e-receipt parse to transaction: ≤ 60 seconds.
-    *   General auto-capture ingest to ledger visibility: ≤ 3 seconds.
-    *   Manual entry with OCR ingest to ledger visibility: ≤ 10 seconds.
-*   **Security & Privacy:**
-    *   TLS 1.3 for data in transit; AES-256 at rest.
-    *   **User Control:** Granular and reversible toggles for all automatic capture sources (SMS, Email, Gallery, Bank, Location).
-    *   **Data Handling:** On-device parsing preferred. Only structured fields synced; raw artifacts pruned after 30 days unless "pinned" (implies a UI to pin attachments).
-    *   No capture without explicit consent.
+    *   **AI Engine:** Core backend for Text-to-Lyrics, Photo-to-Lyrics, Text-to-Music, Photo-to-Music, Lyrics generation, and "Inspire Me" prompt suggestions.
+    *   **Audio Processing:** APIs/SDKs for multi-track layering, real-time editing, audio enhancement, and lyric synchronization.
+    *   **Image Processing:** For mood/emotion detection from photos.
+    *   **Device Media Access:** APIs for fetching audio files from local storage.
+    *   **Cloud Infrastructure:** For server-side AI computations, queue management, and storage of generated/default content.
+*   **Performance Requirements:**
+    *   **Speed:** Fast and seamless song generation results.
+    *   **Responsiveness:** Real-time editing in Studio Mode without crashes or lags.
+    *   **Efficiency:** Smooth processing on low-end Android devices.
+    *   **Latency:** Instant delivery of "Inspire Me" suggestions.
+    *   **Scalability:** Optimized server load balancing to handle multiple concurrent generations.
+*   **Security & Privacy Requirements:**
+    *   **Data Handling:** Secure handling of user-uploaded photos and local audio files to prevent data exposure.
+    *   **Compliance:** Adherence to app store policies regarding image handling.
+    *   **Content Moderation:** Implement mechanisms to filter and prevent generation of inappropriate/offensive text prompts and biased/offensive/insensitive lyrical content.
+*   **Error Handling:**
+    *   Robust retry and error handling mechanisms for photo/audio uploads.
+    *   Reliable retry/cancel mechanisms for the music generation queue.
 
 ---
 
 ### 5. Design Requirements
 
-*   **Branding Guidelines/Constraints:**
-    *   No specific brand guidelines provided, but the product name "Budgetly" implies a focus on personal finance management.
-    *   Confirmation toast messages use "₹1,250 • Groceries logged" format.
-*   **Accessibility Requirements:** Not explicitly detailed beyond standard application practices, but clear navigation, visible states, and intuitive interactions are implied by the focus on "minimum effort."
-*   **Specific UI/UX Patterns Mentioned:**
-    *   **Form Design:** Structured forms with sensible default values, clear validation (e.g., "Save" disabled).
-    *   **Confirmation UI:** Toast/snackbar messages with an "Undo" action (5-second window).
-    *   **Voice/NL Input:** Dedicated microphone icon, visual display of parsed interpretation, "Confirm"/"Edit" action buttons. "Yellow state" for low confidence.
-    *   **Preview Screens:** Field-mapped preview for image/PDF parsing; table with checkboxes for CSV/PDF statements; candidate expense for chat share.
-    *   **Widget Design:** Minimalist home-screen widget for quick entry (Amount, Category).
-    *   **Camera UI:** Full-screen camera view for QR/barcode scanning with clear instructions/feedback.
-    *   **Permissions UX:** Progressive, granular, and reversible prompts with benefit explainers.
-    *   **Review Inbox:** Card-list UI with prominent "Fix"/"Confirm" actions (swipe gestures). Inbox badge with count. "Inbox Zero" state.
-    *   **Suggestion Chips:** Contextual, one-tap chips for Smart Templates.
-    *   **Error States:** Clear messaging for offline status ("Pending sync") and parse failures ("Fix manually").
-    *   **Transaction Display:** Needs to clearly show fields like `amount`, `currency`, `occurred_at`, `merchant_name`, `category`, `source_channel` (potentially via icon), `notes`, `attachments`, `confidence` (visual cue if low), and `status` (CONFIRMED|REVIEW|VOID).
+*   **Intuitive Interface:** The Studio Mode, in particular, requires an intuitive interface that caters to both beginners (to avoid overwhelm) and more advanced users. This implies progressive disclosure of complexity or different modes.
+*   **Clear Visual Feedback:**
+    *   **Queue Management:** Clear UI to show generation progress, current status (pending, processing, complete, error), and estimated wait times.
+    *   **AI Understanding:** Visual cues to convey how AI is interpreting user inputs (mood, genre, style) from text or photos.
+    *   **Lyric Sync:** Clear and readable display of synchronized lyrics (karaoke-style).
+*   **Seamless User Experience:** Smooth UX for importing, editing, and saving audio, minimizing friction.
+*   **Diversity & Exploration:** Design for "Inspire Me" should emphasize diversity of suggestions (genres, moods, styles) to encourage exploration and prevent repetition.
+*   **Trust & Transparency:** UI should help build user trust in the AI's capabilities, especially concerning lyrical fit to emotion and prompt understanding.
+*   **Branding & Aesthetics:** While not explicitly defined, the "fun" and "accessible" nature implies a need for an engaging, modern, and user-friendly visual design.
+*   **Accessibility:** Adherence to standard mobile accessibility guidelines for contrast, touch target sizes, and screen reader compatibility.
 
 ---
 
 ### 6. Business Rules & Logic
 
-*   **Transaction Confidence Thresholds:**
-    *   Confidence ≥ 85: Auto-posts to ledger.
-    *   Confidence 70-84: Requires Review (sent to Review Inbox).
-    *   Confidence < 70: Requires confirmation UI (explicit user action).
-    *   Ambiguity or missing fields also send to Review Inbox.
-*   **Deduplication Logic:**
-    *   Fingerprint: SHA-1 of (rounded_timestamp ± 2h, abs_amount, normalized_merchant) + channel hints.
-    *   If match found within ±48h and amount delta within tolerance, merge sources, keep earliest `occurred_at`.
-    *   Identifies "possible duplicate" for user review (e.g., during CSV import).
-*   **Undo Logic:**
-    *   Available for 5 seconds after any creation event.
-    *   Triggers soft-delete (or "void" flag if source immutable).
-*   **Offline Handling:** Manual entries are queued and synced once connectivity returns, preserving timestamps.
-*   **Permissions & Consent:**
-    *   Granular toggles for SMS, Email, Gallery, Bank, Location.
-    *   All permissions are reversible.
-    *   No automatic capture runs without explicit user consent.
-*
+*   **Credit System:** User song generation capabilities are limited by "Credits." The app must clearly communicate credit usage and availability.
+*   **Content Moderation:** Strict rules for filtering inappropriate, offensive, or culturally insensitive content in both text prompts and generated lyrics.
+*   **Copyright Protection:** Measures to prevent generation of lyrics too similar to existing copyrighted songs. Implicitly, users should be warned about legal risks when remixing copyrighted device audio.
+*   **Language Support:** Initial lyric generation and editing is restricted to English. This is a critical constraint for UX.
+*   **Content Library Management:** A strategy to keep the default song content library updated and diverse, ensuring accurate categorization.
+*   **Server Load Management:** The queue system and potentially credit limits serve as business mechanisms to manage server load and prevent system instability.
+*   **User Privacy:** Strict adherence to privacy policies, especially concerning user-uploaded photos and device audio files.
+*   **Optional Features:** "Fetch Device Audios" is explicitly marked as "Optional," indicating a potential staged rollout or lower initial priority.

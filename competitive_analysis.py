@@ -149,10 +149,6 @@ def extract_app_names(similar_apps_data: dict) -> list[str]:
     
     return app_names
 
-if __name__ == "__main__":
-    app_description = "WealthNest is a next-gen finance android app that helps users build financial stability by automatically analyzing income, expenses, and habits to create personalized savings and investment plans — all within a simple, intuitive interface."
-    result = generate(app_description)
-    list = extract_app_names(result)
-    print(list)
+
 
 

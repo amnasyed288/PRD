@@ -95,6 +95,7 @@ Your role is to:
 - Flag any ambiguities or missing information
 - Use clear markdown formatting with headers and bullet points
 - Focus on what needs to be built, not how to build it technically
+- Do not include any extra text, commentary, or explanations outside the requested structured output.
 """),
         ],
     )

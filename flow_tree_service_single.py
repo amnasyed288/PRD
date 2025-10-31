@@ -114,8 +114,3 @@ def generate_single_app_flow(app_name: str):
     except Exception as e:
         print(f"\n⚠️ Error during streaming: {e}")
         return output.getvalue() or "".join(full_response)
-
-#testing
-if __name__ == "__main__":
-    result = generate_single_app_flow("Duolingo")
-    print(result)

@@ -56,10 +56,3 @@ def generate(app_names: list[str], output_file: str = "all_app_flows.txt"):
     print(f"\n✅ All flows saved to: {os.path.abspath(output_file)}")
     return all_flows
 
-
-# ======================================================
-# 3. EXAMPLE USAGE
-# ======================================================
-if __name__ == "__main__":
-    apps_to_process = ["Spotify", "Airbnb", "Duolingo"]
-    generate(apps_to_process)

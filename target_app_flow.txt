@@ -1,297 +1,244 @@
 {
   "app_flow_tree": {
-    "app_name": "Budgetly",
+    "app_name": "AI Music Maker",
     "total_flows": 8,
-    "total_screens": 68,
+    "total_screens": 34,
     "app_screen_flows": [
       {
-        "flow_name": "Authentication & Onboarding",
+        "flow_name": "Onboarding and Authentication",
         "screens": [
           {
-            "screen_name": "App Launch Screen",
-            "actions": [
-              {
-                "user_action": "User opens app for the first time",
-                "next_screen": "Welcome & Value Prop Screen"
-              },
-              {
-                "user_action": "User is logged out and opens app",
-                "next_screen": "Sign In Screen"
-              },
-              {
-                "user_action": "User is logged in and opens app",
-                "next_screen": "Dashboard Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Welcome & Value Prop Screen",
+            "screen_name": "Welcome",
             "actions": [
               {
                 "user_action": "Taps 'Get Started'",
-                "next_screen": "Sign Up Screen"
+                "next_screen": "Sign Up Options"
               },
               {
-                "user_action": "Taps 'I already have an account'",
-                "next_screen": "Sign In Screen"
+                "user_action": "Taps 'Log In'",
+                "next_screen": "Log In"
               }
             ]
           },
           {
-            "screen_name": "Sign Up Screen",
+            "screen_name": "Sign Up Options",
             "actions": [
               {
-                "user_action": "Enters details and taps 'Sign Up'",
-                "next_screen": "Onboarding - Connect Bank Intro"
+                "user_action": "Taps 'Continue with Google'",
+                "next_screen": "Create Home"
               },
               {
-                "user_action": "Taps 'Sign In'",
-                "next_screen": "Sign In Screen"
+                "user_action": "Taps 'Continue with Apple'",
+                "next_screen": "Create Home"
+              },
+              {
+                "user_action": "Taps 'Sign up with email'",
+                "next_screen": "Email Sign Up"
+              },
+              {
+                "user_action": "Taps 'Log in' link",
+                "next_screen": "Log In"
               }
             ]
           },
           {
-            "screen_name": "Sign In Screen",
+            "screen_name": "Email Sign Up",
             "actions": [
               {
-                "user_action": "Enters credentials and taps 'Sign In'",
-                "next_screen": "Dashboard Screen"
+                "user_action": "Enters email and password, taps 'Sign up'",
+                "next_screen": "Create Home"
               },
               {
-                "user_action": "Taps 'Sign Up'",
-                "next_screen": "Sign Up Screen"
+                "user_action": "Taps 'Log in' link",
+                "next_screen": "Log In"
               }
             ]
           },
           {
-            "screen_name": "Onboarding - Connect Bank Intro",
+            "screen_name": "Log In",
             "actions": [
               {
-                "user_action": "Taps 'Connect Bank Account'",
-                "next_screen": "Bank Connection - Institution Selection Screen"
+                "user_action": "Enters email and password, taps 'Log in'",
+                "next_screen": "Create Home"
               },
               {
-                "user_action": "Taps 'Skip for Now'",
-                "next_screen": "Onboarding - SMS Parser Intro"
+                "user_action": "Taps 'Sign up' link",
+                "next_screen": "Email Sign Up"
+              },
+              {
+                "user_action": "Taps 'Forgot Password?'",
+                "next_screen": "Password Reset"
               }
             ]
           },
           {
-            "screen_name": "Onboarding - SMS Parser Intro",
+            "screen_name": "Password Reset",
             "actions": [
               {
-                "user_action": "Taps 'Enable SMS Parsing'",
-                "next_screen": "System SMS Permission Dialog"
-              },
-              {
-                "user_action": "Taps 'Maybe Later'",
-                "next_screen": "Onboarding - Complete"
-              }
-            ]
-          },
-          {
-            "screen_name": "System SMS Permission Dialog",
-            "actions": [
-              {
-                "user_action": "User taps 'Allow'",
-                "next_screen": "Onboarding - Complete"
-              },
-              {
-                "user_action": "User taps 'Deny'",
-                "next_screen": "Onboarding - Complete"
-              }
-            ]
-          },
-          {
-            "screen_name": "Onboarding - Complete",
-            "actions": [
-              {
-                "user_action": "Taps 'Let's Go!'",
-                "next_screen": "Dashboard Screen"
+                "user_action": "Enters email, taps 'Send Reset Link'",
+                "next_screen": "Log In"
               }
             ]
           }
         ]
       },
       {
-        "flow_name": "Main App & Navigation",
+        "flow_name": "Main App Navigation",
         "screens": [
           {
-            "screen_name": "Dashboard Screen",
+            "screen_name": "Create Home",
             "actions": [
               {
-                "user_action": "Taps '+ Add' Floating Action Button (FAB)",
-                "next_screen": "Add Transaction Speed Dial Menu"
+                "user_action": "Taps 'Create' tab (current)",
+                "next_screen": "Create Home"
               },
               {
-                "user_action": "Taps 'Review Inbox' icon in header (with badge)",
-                "next_screen": "Review Inbox Screen"
+                "user_action": "Taps 'Explore' tab",
+                "next_screen": "Explore"
               },
               {
-                "user_action": "Taps 'Settings' icon in header",
-                "next_screen": "Settings Screen"
+                "user_action": "Taps 'My Music' tab",
+                "next_screen": "My Music - Queue"
               },
               {
-                "user_action": "Taps on a transaction in the list",
-                "next_screen": "Transaction Detail Screen"
-              },
-              {
-                "user_action": "Taps a 'Smart Template' suggestion chip (e.g., 'Coffee')",
-                "next_screen": "Dashboard Screen with Undo Snackbar"
-              },
-              {
-                "user_action": "Views 'Pending sync' status on an offline-created transaction",
-                "next_screen": "Dashboard Screen"
+                "user_action": "Taps 'Profile' tab",
+                "next_screen": "Profile"
               }
             ]
           },
           {
-            "screen_name": "Add Transaction Speed Dial Menu",
+            "screen_name": "Explore",
             "actions": [
               {
-                "user_action": "Taps 'Add Manually' (form icon)",
-                "next_screen": "Add Transaction Form Screen"
+                "user_action": "Taps 'Create' tab",
+                "next_screen": "Create Home"
               },
               {
-                "user_action": "Taps 'Use Voice' (microphone icon)",
-                "next_screen": "Voice Input Bottom Sheet"
+                "user_action": "Taps 'Explore' tab (current)",
+                "next_screen": "Explore"
               },
               {
-                "user_action": "Taps 'Attach & Parse' (attachment icon)",
+                "user_action": "Taps 'My Music' tab",
+                "next_screen": "My Music - Queue"
+              },
+              {
+                "user_action": "Taps 'Profile' tab",
+                "next_screen": "Profile"
+              }
+            ]
+          },
+          {
+            "screen_name": "My Music - Queue",
+            "actions": [
+              {
+                "user_action": "Taps 'Create' tab",
+                "next_screen": "Create Home"
+              },
+              {
+                "user_action": "Taps 'Explore' tab",
+                "next_screen": "Explore"
+              },
+              {
+                "user_action": "Taps 'My Music' tab (current)",
+                "next_screen": "My Music - Queue"
+              },
+              {
+                "user_action": "Taps 'Profile' tab",
+                "next_screen": "Profile"
+              }
+            ]
+          },
+          {
+            "screen_name": "Profile",
+            "actions": [
+              {
+                "user_action": "Taps 'Create' tab",
+                "next_screen": "Create Home"
+              },
+              {
+                "user_action": "Taps 'Explore' tab",
+                "next_screen": "Explore"
+              },
+              {
+                "user_action": "Taps 'My Music' tab",
+                "next_screen": "My Music - Queue"
+              },
+              {
+                "user_action": "Taps 'Profile' tab (current)",
+                "next_screen": "Profile"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Core Music Creation",
+        "screens": [
+          {
+            "screen_name": "Create Home",
+            "actions": [
+              {
+                "user_action": "Taps 'Text-to-Music'",
+                "next_screen": "Text Generation"
+              },
+              {
+                "user_action": "Taps 'Photo-to-Music'",
+                "next_screen": "Photo Selection"
+              },
+              {
+                "user_action": "Taps 'Studio Mode'",
+                "next_screen": "Studio Mode Input"
+              },
+              {
+                "user_action": "Taps 'Import Device Audio'",
+                "next_screen": "Device File Picker"
+              }
+            ]
+          },
+          {
+            "screen_name": "Text Generation",
+            "actions": [
+              {
+                "user_action": "Enters text prompt, selects genre/mood/vocals, taps 'Generate'",
+                "next_screen": "My Music - Queue"
+              },
+              {
+                "user_action": "Taps 'Inspire Me'",
+                "next_screen": "Inspire Me Overlay"
+              },
+              {
+                "user_action": "Taps Back",
+                "next_screen": "Create Home"
+              }
+            ]
+          },
+          {
+            "screen_name": "Inspire Me Overlay",
+            "actions": [
+              {
+                "user_action": "Selects a suggested prompt",
+                "next_screen": "Text Generation"
+              },
+              {
+                "user_action": "Taps close button",
+                "next_screen": "Text Generation"
+              }
+            ]
+          },
+          {
+            "screen_name": "Photo Selection",
+            "actions": [
+              {
+                "user_action": "Taps 'Upload from Gallery'",
                 "next_screen": "System File Picker"
               },
               {
-                "user_action": "Taps 'Scan QR' (QR code icon)",
-                "next_screen": "QR Scan Screen"
+                "user_action": "Taps 'Take Photo'",
+                "next_screen": "Camera Interface"
               },
               {
-                "user_action": "Taps outside menu to close",
-                "next_screen": "Dashboard Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Dashboard Screen with Undo Snackbar",
-            "actions": [
-              {
-                "user_action": "Taps 'Undo' button on snackbar (within 5 seconds)",
-                "next_screen": "Dashboard Screen"
-              },
-              {
-                "user_action": "Snackbar times out after 5 seconds",
-                "next_screen": "Dashboard Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Transaction Detail Screen",
-            "actions": [
-              {
-                "user_action": "Taps 'Edit' button",
-                "next_screen": "Edit Transaction Form Screen"
-              },
-              {
-                "user_action": "Taps 'Delete' button",
-                "next_screen": "Delete Transaction Confirmation Dialog"
-              },
-              {
-                "user_action": "Taps back navigation",
-                "next_screen": "Dashboard Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Delete Transaction Confirmation Dialog",
-            "actions": [
-              {
-                "user_action": "Taps 'Delete'",
-                "next_screen": "Dashboard Screen"
-              },
-              {
-                "user_action": "Taps 'Cancel'",
-                "next_screen": "Transaction Detail Screen"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "Manual Capture Flows",
-        "screens": [
-          {
-            "screen_name": "Add Transaction Form Screen",
-            "actions": [
-              {
-                "user_action": "Fills required fields (e.g., Amount) and taps 'Save'",
-                "next_screen": "Dashboard Screen with Undo Snackbar"
-              },
-              {
-                "user_action": "Taps 'Save' while required fields are empty",
-                "next_screen": "Add Transaction Form Screen"
-              },
-              {
-                "user_action": "Taps back navigation",
-                "next_screen": "Dashboard Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Edit Transaction Form Screen",
-            "actions": [
-              {
-                "user_action": "Modifies details and taps 'Save Changes'",
-                "next_screen": "Transaction Detail Screen"
-              },
-              {
-                "user_action": "Taps back navigation",
-                "next_screen": "Transaction Detail Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Voice Input Bottom Sheet",
-            "actions": [
-              {
-                "user_action": "Speaks a phrase (e.g., 'Spent 500 on petrol')",
-                "next_screen": "NL Parse Confirmation Screen"
-              },
-              {
-                "user_action": "Types a phrase into the text input",
-                "next_screen": "NL Parse Confirmation Screen"
-              },
-              {
-                "user_action": "Taps outside to dismiss",
-                "next_screen": "Dashboard Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "NL Parse Confirmation Screen",
-            "actions": [
-              {
-                "user_action": "Taps 'Confirm'",
-                "next_screen": "Dashboard Screen with Undo Snackbar"
-              },
-              {
-                "user_action": "Taps 'Edit Details'",
-                "next_screen": "Edit Parsed Transaction Screen"
-              },
-              {
-                "user_action": "Views low confidence 'yellow state' warning",
-                "next_screen": "NL Parse Confirmation Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Edit Parsed Transaction Screen",
-            "actions": [
-              {
-                "user_action": "Fixes details in mini-form and taps 'Save'",
-                "next_screen": "Dashboard Screen with Undo Snackbar"
-              },
-              {
-                "user_action": "Taps 'Cancel'",
-                "next_screen": "NL Parse Confirmation Screen"
+                "user_action": "Taps Back",
+                "next_screen": "Create Home"
               }
             ]
           },
@@ -299,493 +246,402 @@
             "screen_name": "System File Picker",
             "actions": [
               {
-                "user_action": "Selects an image or PDF receipt",
-                "next_screen": "Parse Preview Screen (Image/PDF)"
+                "user_action": "Selects a photo",
+                "next_screen": "Photo Edit and Generation"
               },
               {
-                "user_action": "Selects a CSV or PDF bank statement",
-                "next_screen": "Parse Preview Screen (CSV/Statement)"
-              },
-              {
-                "user_action": "Cancels file selection",
-                "next_screen": "Dashboard Screen"
+                "user_action": "Cancels selection",
+                "next_screen": "Photo Selection"
               }
             ]
           },
           {
-            "screen_name": "Parse Preview Screen (Image/PDF)",
+            "screen_name": "Camera Interface",
             "actions": [
               {
-                "user_action": "Confirms parsed data is correct and taps 'Save'",
-                "next_screen": "Dashboard Screen with Undo Snackbar"
+                "user_action": "Captures a photo",
+                "next_screen": "Photo Edit and Generation"
               },
               {
-                "user_action": "Taps a field to manually correct parsed data",
-                "next_screen": "Parse Preview Screen (Image/PDF)"
-              },
-              {
-                "user_action": "Sees parse failure and taps 'Fix Manually'",
-                "next_screen": "Add Transaction Form Screen"
+                "user_action": "Cancels capture",
+                "next_screen": "Photo Selection"
               }
             ]
           },
           {
-            "screen_name": "Parse Preview Screen (CSV/Statement)",
+            "screen_name": "Photo Edit and Generation",
             "actions": [
               {
-                "user_action": "Confirms selected rows and taps 'Import X Transactions'",
-                "next_screen": "Dashboard Screen with Undo Snackbar"
+                "user_action": "Crops photo, selects mood/genre, taps 'Generate'",
+                "next_screen": "My Music - Queue"
               },
               {
-                "user_action": "Checks/unchecks rows to include/exclude",
-                "next_screen": "Parse Preview Screen (CSV/Statement)"
-              },
-              {
-                "user_action": "Views 'Possible duplicate' flag on a row",
-                "next_screen": "Parse Preview Screen (CSV/Statement)"
+                "user_action": "Taps Back",
+                "next_screen": "Photo Selection"
               }
             ]
           },
           {
-            "screen_name": "QR Scan Screen",
+            "screen_name": "Studio Mode Input",
             "actions": [
               {
-                "user_action": "Successfully scans a supported QR/barcode",
-                "next_screen": "QR Scan Confirmation Screen"
+                "user_action": "Enters Name, Relation, Occasion, Prompt, selects Style, taps 'Generate'",
+                "next_screen": "My Music - Queue"
               },
               {
-                "user_action": "Fails to scan, taps 'Enter Manually'",
-                "next_screen": "Add Transaction Form Screen"
-              },
-              {
-                "user_action": "Taps back navigation",
-                "next_screen": "Dashboard Screen"
+                "user_action": "Taps Back",
+                "next_screen": "Create Home"
               }
             ]
           },
           {
-            "screen_name": "QR Scan Confirmation Screen",
+            "screen_name": "Device File Picker",
             "actions": [
               {
-                "user_action": "Confirms pre-filled details and taps 'Save'",
-                "next_screen": "Dashboard Screen with Undo Snackbar"
+                "user_action": "Selects an audio file",
+                "next_screen": "Audio Processing"
               },
               {
-                "user_action": "Taps to edit details",
-                "next_screen": "Edit Parsed Transaction Screen"
+                "user_action": "Cancels selection",
+                "next_screen": "Create Home"
+              }
+            ]
+          },
+          {
+            "screen_name": "Audio Processing",
+            "actions": [
+              {
+                "user_action": "AI processing completes, shows remix suggestions",
+                "next_screen": "Remix Preview"
+              },
+              {
+                "user_action": "Processing fails, shows error message",
+                "next_screen": "Create Home"
+              }
+            ]
+          },
+          {
+            "screen_name": "Remix Preview",
+            "actions": [
+              {
+                "user_action": "Listens to preview, taps 'Export'",
+                "next_screen": "My Music - Library"
+              },
+              {
+                "user_action": "Taps 'Try another suggestion'",
+                "next_screen": "Audio Processing"
+              },
+              {
+                "user_action": "Taps Back/Cancel",
+                "next_screen": "Create Home"
               }
             ]
           }
         ]
       },
       {
-        "flow_name": "Home Screen Widget & Share Sheet Capture",
+        "flow_name": "Music Management (My Music)",
         "screens": [
           {
-            "screen_name": "Home Screen Widget",
+            "screen_name": "My Music - Queue",
             "actions": [
               {
-                "user_action": "Enters Amount and Category, taps 'Log'",
-                "next_screen": "App Quick Add Confirmation"
+                "user_action": "Taps 'Library' sub-tab",
+                "next_screen": "My Music - Library"
               },
               {
-                "user_action": "Taps widget to open full app",
-                "next_screen": "Dashboard Screen"
+                "user_action": "Taps 'Cancel' on a generating song",
+                "next_screen": "My Music - Queue"
+              },
+              {
+                "user_action": "Taps 'Regenerate' on an errored song",
+                "next_screen": "My Music - Queue"
+              },
+              {
+                "user_action": "Taps a completed song",
+                "next_screen": "Song Playback"
+              },
+              {
+                "user_action": "Receives push notification for completed song and taps it",
+                "next_screen": "Song Playback"
               }
             ]
           },
           {
-            "screen_name": "App Quick Add Confirmation",
+            "screen_name": "My Music - Library",
             "actions": [
               {
-                "user_action": "App shows toast 'Transaction logged' and returns to home screen",
-                "next_screen": "Home Screen Widget"
+                "user_action": "Taps 'Queue' sub-tab",
+                "next_screen": "My Music - Queue"
+              },
+              {
+                "user_action": "Taps a song to play it",
+                "next_screen": "Song Playback"
+              },
+              {
+                "user_action": "Taps three-dot menu on a song",
+                "next_screen": "Song Options Menu"
               }
             ]
           },
           {
-            "screen_name": "OS Share Sheet",
+            "screen_name": "Song Playback",
             "actions": [
               {
-                "user_action": "Shares text/image from a chat app (e.g., WhatsApp) to Budgetly",
-                "next_screen": "Chat Share Confirmation Screen"
+                "user_action": "Taps 'Download'",
+                "next_screen": "My Music - Library"
+              },
+              {
+                "user_action": "Taps 'Share'",
+                "next_screen": "System Share Sheet"
+              },
+              {
+                "user_action": "Taps 'Edit Lyrics'",
+                "next_screen": "Lyrics Editor"
+              },
+              {
+                "user_action": "Taps Back",
+                "next_screen": "My Music - Library"
               }
             ]
           },
           {
-            "screen_name": "Chat Share Confirmation Screen",
+            "screen_name": "Lyrics Editor",
             "actions": [
               {
-                "user_action": "Taps 'Confirm' to save the candidate expense",
-                "next_screen": "Dashboard Screen with Undo Snackbar"
+                "user_action": "Edits lyrics and taps 'Save'",
+                "next_screen": "Song Playback"
               },
               {
-                "user_action": "Taps 'Edit' to modify parsed details",
-                "next_screen": "Edit Parsed Transaction Screen"
+                "user_action": "Taps 'Regenerate Lyrics'",
+                "next_screen": "Lyrics Editor"
               },
               {
-                "user_action": "Views 'Potential IOU' flag",
-                "next_screen": "Chat Share Confirmation Screen"
+                "user_action": "Taps 'Inspire Me' for lyrics",
+                "next_screen": "Inspire Me Overlay"
               },
               {
-                "user_action": "Taps 'Cancel'",
-                "next_screen": "OS Share Sheet"
+                "user_action": "Taps Back/Cancel",
+                "next_screen": "Song Playback"
+              }
+            ]
+          },
+          {
+            "screen_name": "Song Options Menu",
+            "actions": [
+              {
+                "user_action": "Taps 'Download'",
+                "next_screen": "My Music - Library"
+              },
+              {
+                "user_action": "Taps 'Share'",
+                "next_screen": "System Share Sheet"
+              },
+              {
+                "user_action": "Taps 'Edit Lyrics'",
+                "next_screen": "Lyrics Editor"
+              },
+              {
+                "user_action": "Taps 'Delete'",
+                "next_screen": "My Music - Library"
+              },
+              {
+                "user_action": "Taps outside menu to dismiss",
+                "next_screen": "My Music - Library"
+              }
+            ]
+          },
+          {
+            "screen_name": "System Share Sheet",
+            "actions": [
+              {
+                "user_action": "Selects an app to share to or cancels",
+                "next_screen": "Song Playback"
               }
             ]
           }
         ]
       },
       {
-        "flow_name": "Review Inbox Management",
+        "flow_name": "Music Discovery (Explore)",
         "screens": [
           {
-            "screen_name": "Review Inbox Screen",
+            "screen_name": "Explore",
             "actions": [
               {
-                "user_action": "Swipes a card Right to 'Confirm'",
-                "next_screen": "Review Inbox Screen"
+                "user_action": "Selects a category filter (e.g., 'Pop', 'Lo-Fi')",
+                "next_screen": "Explore"
               },
               {
-                "user_action": "Swipes a card Left to 'Fix'",
-                "next_screen": "Review Item Edit Screen"
-              },
-              {
-                "user_action": "Taps on a card for details",
-                "next_screen": "Review Item Detail Screen"
-              },
-              {
-                "user_action": "Long-presses a card and taps 'Delete'",
-                "next_screen": "Review Inbox Screen"
-              },
-              {
-                "user_action": "Resolves the last item",
-                "next_screen": "Review Inbox Zero Screen"
-              },
-              {
-                "user_action": "Taps back navigation",
-                "next_screen": "Dashboard Screen"
-              },
-              {
-                "user_action": "Taps 'Add Manually'",
-                "next_screen": "Add Transaction Form Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Review Item Edit Screen",
-            "actions": [
-              {
-                "user_action": "Corrects details in the form and taps 'Save'",
-                "next_screen": "Review Inbox Screen"
-              },
-              {
-                "user_action": "Taps 'Cancel'",
-                "next_screen": "Review Inbox Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Review Item Detail Screen",
-            "actions": [
-              {
-                "user_action": "Taps 'Confirm'",
-                "next_screen": "Review Inbox Screen"
-              },
-              {
-                "user_action": "Taps 'Fix'",
-                "next_screen": "Review Item Edit Screen"
-              },
-              {
-                "user_action": "Taps back navigation",
-                "next_screen": "Review Inbox Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Review Inbox Zero Screen",
-            "actions": [
-              {
-                "user_action": "Taps 'Back to Dashboard'",
-                "next_screen": "Dashboard Screen"
+                "user_action": "Taps on a pre-generated song",
+                "next_screen": "Song Playback"
               }
             ]
           }
         ]
       },
       {
-        "flow_name": "Settings & Data Source Management",
+        "flow_name": "Profile and Settings",
         "screens": [
           {
-            "screen_name": "Settings Screen",
+            "screen_name": "Profile",
             "actions": [
               {
-                "user_action": "Taps 'Data Sources & Connections'",
-                "next_screen": "Data Sources & Connections Screen"
+                "user_action": "Taps 'Settings' (gear icon)",
+                "next_screen": "Settings"
               },
               {
-                "user_action": "Taps 'Profile'",
-                "next_screen": "Profile Screen"
+                "user_action": "Taps 'Get More Credits'",
+                "next_screen": "Purchase Credits"
+              }
+            ]
+          },
+          {
+            "screen_name": "Settings",
+            "actions": [
+              {
+                "user_action": "Taps 'Account'",
+                "next_screen": "Account Settings"
               },
               {
                 "user_action": "Taps 'Notifications'",
-                "next_screen": "Notification Settings Screen"
+                "next_screen": "Notification Settings"
               },
               {
-                "user_action": "Taps 'Sign Out'",
-                "next_screen": "Sign Out Confirmation Dialog"
+                "user_action": "Taps 'Privacy Policy'",
+                "next_screen": "Web View - Privacy Policy"
               },
               {
-                "user_action": "Taps back navigation",
-                "next_screen": "Dashboard Screen"
+                "user_action": "Taps 'Log Out'",
+                "next_screen": "Welcome"
+              },
+              {
+                "user_action": "Taps Back",
+                "next_screen": "Profile"
               }
             ]
           },
           {
-            "screen_name": "Data Sources & Connections Screen",
+            "screen_name": "Account Settings",
             "actions": [
               {
-                "user_action": "Taps 'Bank Accounts'",
-                "next_screen": "Connected Banks Screen"
-              },
-              {
-                "user_action": "Taps 'Email Accounts'",
-                "next_screen": "Connected Emails Screen"
-              },
-              {
-                "user_action": "Toggles 'SMS Parser' on/off",
-                "next_screen": "System SMS Permission Dialog"
-              },
-              {
-                "user_action": "Toggles 'Auto Gallery Scan' on/off",
-                "next_screen": "System Gallery Permission Dialog"
-              },
-              {
-                "user_action": "Toggles 'Location for Merchants' on/off",
-                "next_screen": "System Location Permission Dialog"
-              },
-              {
-                "user_action": "Taps back navigation",
-                "next_screen": "Settings Screen"
+                "user_action": "Taps Back",
+                "next_screen": "Settings"
               }
             ]
           },
           {
-            "screen_name": "Profile Screen",
+            "screen_name": "Notification Settings",
             "actions": [
               {
-                "user_action": "Taps back navigation",
-                "next_screen": "Settings Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Notification Settings Screen",
-            "actions": [
-              {
-                "user_action": "Taps back navigation",
-                "next_screen": "Settings Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Sign Out Confirmation Dialog",
-            "actions": [
-              {
-                "user_action": "Taps 'Sign Out'",
-                "next_screen": "App Launch Screen"
+                "user_action": "Toggles settings on/off",
+                "next_screen": "Notification Settings"
               },
               {
-                "user_action": "Taps 'Cancel'",
-                "next_screen": "Settings Screen"
+                "user_action": "Taps Back",
+                "next_screen": "Settings"
+              }
+            ]
+          },
+          {
+            "screen_name": "Web View - Privacy Policy",
+            "actions": [
+              {
+                "user_action": "Taps Back or Done",
+                "next_screen": "Settings"
               }
             ]
           }
         ]
       },
       {
-        "flow_name": "Automatic Capture Setup Flows",
+        "flow_name": "Monetization",
         "screens": [
           {
-            "screen_name": "Connected Banks Screen",
+            "screen_name": "Purchase Credits",
             "actions": [
               {
-                "user_action": "Taps 'Connect a New Bank'",
-                "next_screen": "Bank Connection - Institution Selection Screen"
+                "user_action": "Selects a credit pack and taps 'Purchase'",
+                "next_screen": "In-App Purchase Confirmation"
               },
               {
-                "user_action": "Taps on a connected bank to manage it",
-                "next_screen": "Bank Detail Screen"
-              },
-              {
-                "user_action": "Taps back navigation",
-                "next_screen": "Data Sources & Connections Screen"
+                "user_action": "Taps Back/Close",
+                "next_screen": "Profile"
               }
             ]
           },
           {
-            "screen_name": "Bank Connection - Institution Selection Screen",
+            "screen_name": "In-App Purchase Confirmation",
             "actions": [
               {
-                "user_action": "Selects a bank from the list or via search",
-                "next_screen": "Bank Connection - WebView Login"
-              }
-            ]
-          },
-          {
-            "screen_name": "Bank Connection - WebView Login",
-            "actions": [
-              {
-                "user_action": "Enters credentials and completes OAuth flow successfully",
-                "next_screen": "Bank Connection - Success Screen"
+                "user_action": "Completes purchase via Google Play Store",
+                "next_screen": "Purchase Successful"
               },
               {
-                "user_action": "OAuth flow fails or is cancelled",
-                "next_screen": "Bank Connection - Failure Screen"
+                "user_action": "Cancels purchase",
+                "next_screen": "Purchase Credits"
               }
             ]
           },
           {
-            "screen_name": "Bank Connection - Success Screen",
+            "screen_name": "Purchase Successful",
             "actions": [
               {
                 "user_action": "Taps 'Done'",
-                "next_screen": "Connected Banks Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Bank Connection - Failure Screen",
-            "actions": [
-              {
-                "user_action": "Taps 'Try Again'",
-                "next_screen": "Bank Connection - Institution Selection Screen"
-              },
-              {
-                "user_action": "Taps 'Cancel'",
-                "next_screen": "Connected Banks Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Bank Detail Screen",
-            "actions": [
-              {
-                "user_action": "Taps 'Disconnect Bank'",
-                "next_screen": "Disconnect Confirmation Dialog"
-              },
-              {
-                "user_action": "Taps back navigation",
-                "next_screen": "Connected Banks Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Disconnect Confirmation Dialog",
-            "actions": [
-              {
-                "user_action": "Taps 'Disconnect'",
-                "next_screen": "Connected Banks Screen"
-              },
-              {
-                "user_action": "Taps 'Cancel'",
-                "next_screen": "Bank Detail Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Connected Emails Screen",
-            "actions": [
-              {
-                "user_action": "Taps 'Connect a New Email Account'",
-                "next_screen": "Email Connection - Provider Selection"
-              },
-              {
-                "user_action": "Taps back navigation",
-                "next_screen": "Data Sources & Connections Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Email Connection - Provider Selection",
-            "actions": [
-              {
-                "user_action": "Taps 'Gmail'",
-                "next_screen": "Email Connection - OAuth Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Email Connection - OAuth Screen",
-            "actions": [
-              {
-                "user_action": "Successfully completes email authentication",
-                "next_screen": "Email Connection - Success Screen"
-              },
-              {
-                "user_action": "Cancels or fails authentication",
-                "next_screen": "Connected Emails Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Email Connection - Success Screen",
-            "actions": [
-              {
-                "user_action": "Taps 'Done'",
-                "next_screen": "Connected Emails Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "First Email Sender Import Screen",
-            "actions": [
-              {
-                "user_action": "Previews imported transactions and taps 'Confirm & Create Rule'",
-                "next_screen": "Dashboard Screen"
-              },
-              {
-                "user_action": "Taps 'Cancel'",
-                "next_screen": "Dashboard Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "System Gallery Permission Dialog",
-            "actions": [
-              {
-                "user_action": "User taps 'Allow'",
-                "next_screen": "Data Sources & Connections Screen"
-              },
-              {
-                "user_action": "User taps 'Deny'",
-                "next_screen": "Data Sources & Connections Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "System Location Permission Dialog",
-            "actions": [
-              {
-                "user_action": "User taps 'Allow'",
-                "next_screen": "Data Sources & Connections Screen"
-              },
-              {
-                "user_action": "User taps 'Deny'",
-                "next_screen": "Data Sources & Connections Screen"
+                "next_screen": "Profile"
               }
             ]
           }
         ]
       },
       {
-        "flow_name": "Placeholder Screens",
+        "flow_name": "Permissions",
         "screens": [
           {
-            "screen_name": "Home Screen",
+            "screen_name": "Photo Selection",
             "actions": [
               {
-                "user_action": "User interacts with device home screen",
-                "next_screen": "Home Screen Widget"
+                "user_action": "Grants photo/camera permissions",
+                "next_screen": "System File Picker"
+              },
+              {
+                "user_action": "Denies photo/camera permissions",
+                "next_screen": "Permission Denied Dialog"
+              }
+            ]
+          },
+          {
+            "screen_name": "Device File Picker",
+            "actions": [
+              {
+                "user_action": "Grants file access permissions",
+                "next_screen": "Device File Picker"
+              },
+              {
+                "user_action": "Denies file access permissions",
+                "next_screen": "Permission Denied Dialog"
+              }
+            ]
+          },
+          {
+            "screen_name": "Permission Denied Dialog",
+            "actions": [
+              {
+                "user_action": "Taps 'Go to Settings' to enable manually",
+                "next_screen": "System App Settings"
+              },
+              {
+                "user_action": "Taps 'Cancel'",
+                "next_screen": "Create Home"
+              }
+            ]
+          },
+          {
+            "screen_name": "System App Settings",
+            "actions": [
+              {
+                "user_action": "User manually changes permissions and returns to app",
+                "next_screen": "Create Home"
               }
             ]
           }

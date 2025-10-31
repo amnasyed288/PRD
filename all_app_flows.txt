@@ -3,568 +3,317 @@
 
 
 ============================================================
-### APP 1: Mint: Budget & Expense Tracker
+### APP 1: Boomy: Make music with AI
 ============================================================
 {
   "app_screen_flow": {
-    "app_name": "Mint: Budget & Expense Tracker",
-    "total_flows": 7,
-    "total_screens": 42,
+    "app_name": "Boomy: Make music with AI",
+    "total_flows": 4,
+    "total_screens": 16,
     "flows": [
       {
         "flow_name": "Authentication",
         "screens": [
           {
-            "screen_name": "App Launch Screen",
+            "screen_name": "Welcome",
             "actions": [
               {
-                "user_action": "App opens for the first time or after being signed out",
-                "next_screen": "Sign Up or Sign In Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Sign Up or Sign In Screen",
-            "actions": [
-              {
-                "user_action": "Taps 'Sign In' button",
-                "next_screen": "Sign In Screen"
+                "user_action": "Taps 'Create your song'",
+                "next_screen": "Sign Up"
               },
               {
-                "user_action": "Taps 'Create an account' button",
-                "next_screen": "Create Account - Email Screen"
+                "user_action": "Taps 'Sign In'",
+                "next_screen": "Sign In"
               }
             ]
           },
           {
-            "screen_name": "Sign In Screen",
+            "screen_name": "Sign Up",
             "actions": [
               {
-                "user_action": "Enters User ID and Password, taps 'Sign In'",
-                "next_screen": "Two-Factor Authentication Screen"
+                "user_action": "Enters email and password, taps 'Create Account'",
+                "next_screen": "Home"
               },
               {
-                "user_action": "Taps 'Forgot your user ID or password?'",
-                "next_screen": "Password Recovery Screen"
+                "user_action": "Taps 'Continue with Google'",
+                "next_screen": "Home"
               },
               {
-                "user_action": "Taps back navigation",
-                "next_screen": "Sign Up or Sign In Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Two-Factor Authentication Screen",
-            "actions": [
-              {
-                "user_action": "Enters verification code, taps 'Continue'",
-                "next_screen": "Overview Screen"
+                "user_action": "Taps 'Sign in with Apple'",
+                "next_screen": "Home"
               },
               {
-                "user_action": "Requests a new code",
-                "next_screen": "Two-Factor Authentication Screen"
+                "user_action": "Taps 'Login with Facebook'",
+                "next_screen": "Home"
+              },
+              {
+                "user_action": "Taps 'Sign in' link",
+                "next_screen": "Sign In"
               }
             ]
           },
           {
-            "screen_name": "Password Recovery Screen",
+            "screen_name": "Sign In",
             "actions": [
               {
-                "user_action": "Enters email or phone number, taps 'Continue'",
-                "next_screen": "Password Recovery Instructions Sent Screen"
+                "user_action": "Enters email and password, taps 'Sign in'",
+                "next_screen": "Home"
+              },
+              {
+                "user_action": "Taps 'Sign in with Apple'",
+                "next_screen": "Home"
+              },
+              {
+                "user_action": "Taps 'Sign in with Google'",
+                "next_screen": "Home"
+              },
+              {
+                "user_action": "Taps 'Login with Facebook'",
+                "next_screen": "Home"
+              },
+              {
+                "user_action": "Taps 'Forgot your password?'",
+                "next_screen": "Password Reset"
+              },
+              {
+                "user_action": "Taps 'Sign up' link",
+                "next_screen": "Sign Up"
               }
             ]
           },
           {
-            "screen_name": "Password Recovery Instructions Sent Screen",
+            "screen_name": "Password Reset",
             "actions": [
               {
-                "user_action": "Follows instructions sent via email/SMS (external flow)",
-                "next_screen": "Sign In Screen"
+                "user_action": "Enters email and taps reset button",
+                "next_screen": "Sign In"
               }
             ]
           }
         ]
       },
       {
-        "flow_name": "Account Creation and Onboarding",
+        "flow_name": "Song Creation",
         "screens": [
           {
-            "screen_name": "Create Account - Email Screen",
+            "screen_name": "Home",
             "actions": [
               {
-                "user_action": "Enters email, taps 'Continue'",
-                "next_screen": "Create Account - User ID Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Create Account - User ID Screen",
-            "actions": [
-              {
-                "user_action": "Enters User ID, taps 'Continue'",
-                "next_screen": "Create Account - Phone Number Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Create Account - Phone Number Screen",
-            "actions": [
-              {
-                "user_action": "Enters phone number, taps 'Continue'",
-                "next_screen": "Create Account - Password Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Create Account - Password Screen",
-            "actions": [
-              {
-                "user_action": "Enters and confirms password, taps 'Create account'",
-                "next_screen": "Phone Verification Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Phone Verification Screen",
-            "actions": [
-              {
-                "user_action": "Enters verification code sent via SMS, taps 'Continue'",
-                "next_screen": "Onboarding - Connect Account Intro Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Onboarding - Connect Account Intro Screen",
-            "actions": [
-              {
-                "user_action": "Taps 'Connect an account'",
-                "next_screen": "Search For Institution Screen"
+                "user_action": "Taps 'Create' button",
+                "next_screen": "Create Song - Select Style"
               },
               {
-                "user_action": "Taps 'Skip for now'",
-                "next_screen": "Overview Screen"
+                "user_action": "Taps 'Library' tab",
+                "next_screen": "Library"
               }
             ]
           },
           {
-            "screen_name": "Search For Institution Screen",
+            "screen_name": "Create Song - Select Style",
             "actions": [
               {
-                "user_action": "Selects a popular institution from the list",
-                "next_screen": "Institution Login Screen"
+                "user_action": "Selects a music style (e.g., 'Electronic Dance', 'Rap Beats', 'Lo-fi')",
+                "next_screen": "Create Song - Select Sub-style"
               },
               {
-                "user_action": "Uses search bar to find and select an institution",
-                "next_screen": "Institution Login Screen"
+                "user_action": "Selects 'Custom' style",
+                "next_screen": "Create Song - Custom Style"
               }
             ]
           },
           {
-            "screen_name": "Institution Login Screen",
+            "screen_name": "Create Song - Select Sub-style",
             "actions": [
               {
-                "user_action": "Enters banking credentials and submits (via Plaid/WebView)",
-                "next_screen": "Connecting Account Screen"
+                "user_action": "Selects a sub-style (e.g., 'Warehouse Groove', 'Hyperdrive')",
+                "next_screen": "Song Generating"
               }
             ]
           },
           {
-            "screen_name": "Connecting Account Screen",
+            "screen_name": "Create Song - Custom Style",
             "actions": [
               {
-                "user_action": "Waits for connection to complete successfully",
-                "next_screen": "Account Connected Success Screen"
+                "user_action": "Adjusts parameters and taps 'Create Song'",
+                "next_screen": "Song Generating"
               }
             ]
           },
           {
-            "screen_name": "Account Connected Success Screen",
+            "screen_name": "Song Generating",
             "actions": [
               {
-                "user_action": "Taps 'Done' or 'Continue'",
-                "next_screen": "Overview Screen"
+                "user_action": "Waits for AI to compose the song",
+                "next_screen": "Song Editor"
+              }
+            ]
+          },
+          {
+            "screen_name": "Song Editor",
+            "actions": [
+              {
+                "user_action": "Taps 'Save' button",
+                "next_screen": "Library"
+              },
+              {
+                "user_action": "Taps 'Rewrite' button",
+                "next_screen": "Rewrite Options"
+              },
+              {
+                "user_action": "Taps 'Rearrange' button",
+                "next_screen": "Rearrange Options"
+              },
+              {
+                "user_action": "Taps 'Instruments & Sounds' button",
+                "next_screen": "Instruments & Sounds Options"
+              },
+              {
+                "user_action": "Taps 'Add Vocals' button",
+                "next_screen": "Add Vocals"
+              },
+              {
+                "user_action": "Taps song title to edit",
+                "next_screen": "Song Editor"
+              },
+              {
+                "user_action": "Taps play/pause button",
+                "next_screen": "Song Editor"
+              },
+              {
+                "user_action": "Taps 'Library' tab",
+                "next_screen": "Library"
+              }
+            ]
+          },
+          {
+            "screen_name": "Rewrite Options",
+            "actions": [
+              {
+                "user_action": "Adjusts parameters (e.g., Tempo, Lead Density) and taps 'Rewrite Song'",
+                "next_screen": "Song Generating"
+              }
+            ]
+          },
+          {
+            "screen_name": "Rearrange Options",
+            "actions": [
+              {
+                "user_action": "Drags and drops song sections and taps 'Save'",
+                "next_screen": "Song Editor"
+              }
+            ]
+          },
+          {
+            "screen_name": "Instruments & Sounds Options",
+            "actions": [
+              {
+                "user_action": "Edits or deletes instruments and taps 'Save'",
+                "next_screen": "Song Editor"
+              }
+            ]
+          },
+          {
+            "screen_name": "Add Vocals",
+            "actions": [
+              {
+                "user_action": "Taps 'Auto Vocals' or 'Record Voice'",
+                "next_screen": "Song Editor"
               }
             ]
           }
         ]
       },
       {
-        "flow_name": "Main Navigation",
+        "flow_name": "Library and Release Management",
         "screens": [
           {
-            "screen_name": "Overview Screen",
+            "screen_name": "Library",
             "actions": [
               {
-                "user_action": "Taps 'Monthly' tab in bottom navigation",
-                "next_screen": "Monthly Budgets Screen"
+                "user_action": "Taps on a song's three-dot menu",
+                "next_screen": "Song Options Menu"
               },
               {
-                "user_action": "Taps 'Marketplace' tab in bottom navigation",
-                "next_screen": "Marketplace Screen"
-              },
-              {
-                "user_action": "Taps 'Updates' tab in bottom navigation",
-                "next_screen": "Updates Screen"
-              },
-              {
-                "user_action": "Taps 'Settings' icon in top navigation",
-                "next_screen": "Settings Screen"
-              },
-              {
-                "user_action": "Taps on a recent transaction",
-                "next_screen": "Transaction Detail Screen"
-              },
-              {
-                "user_action": "Taps 'See all transactions'",
-                "next_screen": "All Transactions Screen"
+                "user_action": "Taps 'Create' tab",
+                "next_screen": "Create Song - Select Style"
               }
             ]
           },
           {
-            "screen_name": "Monthly Budgets Screen",
+            "screen_name": "Song Options Menu",
             "actions": [
               {
-                "user_action": "Taps 'Overview' tab in bottom navigation",
-                "next_screen": "Overview Screen"
+                "user_action": "Taps 'Download'",
+                "next_screen": "Library"
               },
               {
-                "user_action": "Taps 'Create a budget'",
-                "next_screen": "Create Budget - Select Category Screen"
+                "user_action": "Taps 'Release Song'",
+                "next_screen": "Release Song Details"
               },
               {
-                "user_action": "Taps on an existing budget category",
-                "next_screen": "Budget Detail Screen"
+                "user_action": "Taps 'Duplicate Song'",
+                "next_screen": "Library"
+              },
+              {
+                "user_action": "Taps 'Edit Song'",
+                "next_screen": "Song Editor"
+              },
+              {
+                "user_action": "Taps 'Archive Song'",
+                "next_screen": "Library"
               }
             ]
           },
           {
-            "screen_name": "Marketplace Screen",
+            "screen_name": "Release Song Details",
             "actions": [
               {
-                "user_action": "Taps 'Overview' tab in bottom navigation",
-                "next_screen": "Overview Screen"
+                "user_action": "Uploads cover art, enters song title, artist name, tags",
+                "next_screen": "Release Song Details"
               },
               {
-                "user_action": "Taps on a financial product offer (e.g., credit card)",
-                "next_screen": "Offer Detail Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Updates Screen",
-            "actions": [
-              {
-                "user_action": "Taps 'Overview' tab in bottom navigation",
-                "next_screen": "Overview Screen"
-              },
-              {
-                "user_action": "Taps on a notification or update item",
-                "next_screen": "Update Detail Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Settings Screen",
-            "actions": [
-              {
-                "user_action": "Taps 'Overview' tab in bottom navigation",
-                "next_screen": "Overview Screen"
-              },
-              {
-                "user_action": "Taps 'Accounts'",
-                "next_screen": "Accounts List Screen"
-              },
-              {
-                "user_action": "Taps 'Notifications'",
-                "next_screen": "Notification Settings Screen"
-              },
-              {
-                "user_action": "Taps 'Profile'",
-                "next_screen": "Profile Screen"
-              },
-              {
-                "user_action": "Taps 'Sign Out'",
-                "next_screen": "Sign Out Confirmation Dialog"
+                "user_action": "Taps 'Submit and Review'",
+                "next_screen": "Library"
               }
             ]
           }
         ]
       },
       {
-        "flow_name": "Manage Transactions",
+        "flow_name": "Navigation",
         "screens": [
           {
-            "screen_name": "All Transactions Screen",
+            "screen_name": "Home",
             "actions": [
               {
-                "user_action": "Taps on a transaction in the list",
-                "next_screen": "Transaction Detail Screen"
+                "user_action": "Taps 'Create' tab",
+                "next_screen": "Create Song - Select Style"
               },
               {
-                "user_action": "Taps the filter icon",
-                "next_screen": "Filter Transactions Screen"
-              },
-              {
-                "user_action": "Taps back navigation",
-                "next_screen": "Overview Screen"
+                "user_action": "Taps 'Library' tab",
+                "next_screen": "Library"
               }
             ]
           },
           {
-            "screen_name": "Transaction Detail Screen",
+            "screen_name": "Library",
             "actions": [
               {
-                "user_action": "Taps the category field",
-                "next_screen": "Edit Transaction - Category Screen"
-              },
-              {
-                "user_action": "Taps the description field",
-                "next_screen": "Edit Transaction - Description Screen"
-              },
-              {
-                "user_action": "Taps back navigation",
-                "next_screen": "All Transactions Screen"
+                "user_action": "Taps 'Create' tab",
+                "next_screen": "Create Song - Select Style"
               }
             ]
           },
           {
-            "screen_name": "Edit Transaction - Category Screen",
+            "screen_name": "Song Editor",
             "actions": [
               {
-                "user_action": "Selects a new category and sub-category",
-                "next_screen": "Transaction Detail Screen"
+                "user_action": "Taps 'Library' tab",
+                "next_screen": "Library"
               },
               {
-                "user_action": "Taps 'Done' or 'Save'",
-                "next_screen": "Transaction Detail Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Edit Transaction - Description Screen",
-            "actions": [
-              {
-                "user_action": "Edits the transaction description text",
-                "next_screen": "Transaction Detail Screen"
-              },
-              {
-                "user_action": "Taps 'Done' or 'Save'",
-                "next_screen": "Transaction Detail Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Filter Transactions Screen",
-            "actions": [
-              {
-                "user_action": "Selects filter criteria (e.g., by account, category, date)",
-                "next_screen": "All Transactions Screen"
-              },
-              {
-                "user_action": "Taps 'Apply Filters'",
-                "next_screen": "All Transactions Screen"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "Manage Budgets",
-        "screens": [
-          {
-            "screen_name": "Create Budget - Select Category Screen",
-            "actions": [
-              {
-                "user_action": "Selects a spending category (e.g., 'Shopping')",
-                "next_screen": "Create Budget - Set Amount Screen"
-              },
-              {
-                "user_action": "Taps back navigation",
-                "next_screen": "Monthly Budgets Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Create Budget - Set Amount Screen",
-            "actions": [
-              {
-                "user_action": "Enters a budget amount",
-                "next_screen": "Monthly Budgets Screen"
-              },
-              {
-                "user_action": "Taps 'Save' or 'Done'",
-                "next_screen": "Monthly Budgets Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Budget Detail Screen",
-            "actions": [
-              {
-                "user_action": "Taps 'Edit Budget'",
-                "next_screen": "Edit Budget Screen"
-              },
-              {
-                "user_action": "Views list of transactions for this budget category",
-                "next_screen": "Budget Detail Screen"
-              },
-              {
-                "user_action": "Taps back navigation",
-                "next_screen": "Monthly Budgets Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Edit Budget Screen",
-            "actions": [
-              {
-                "user_action": "Changes the budget amount",
-                "next_screen": "Budget Detail Screen"
-              },
-              {
-                "user_action": "Taps 'Save'",
-                "next_screen": "Budget Detail Screen"
-              },
-              {
-                "user_action": "Taps 'Delete Budget'",
-                "next_screen": "Delete Budget Confirmation Dialog"
-              }
-            ]
-          },
-          {
-            "screen_name": "Delete Budget Confirmation Dialog",
-            "actions": [
-              {
-                "user_action": "Taps 'Delete'",
-                "next_screen": "Monthly Budgets Screen"
-              },
-              {
-                "user_action": "Taps 'Cancel'",
-                "next_screen": "Edit Budget Screen"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "Settings and Profile Management",
-        "screens": [
-          {
-            "screen_name": "Accounts List Screen",
-            "actions": [
-              {
-                "user_action": "Taps on a specific account",
-                "next_screen": "Account Detail Screen"
-              },
-              {
-                "user_action": "Taps '+' to add a new account",
-                "next_screen": "Search For Institution Screen"
-              },
-              {
-                "user_action": "Taps back navigation",
-                "next_screen": "Settings Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Account Detail Screen",
-            "actions": [
-              {
-                "user_action": "Taps 'Mark as inactive' or 'Delete'",
-                "next_screen": "Delete Account Confirmation Dialog"
-              },
-              {
-                "user_action": "Taps back navigation",
-                "next_screen": "Accounts List Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Delete Account Confirmation Dialog",
-            "actions": [
-              {
-                "user_action": "Taps 'Delete'",
-                "next_screen": "Accounts List Screen"
-              },
-              {
-                "user_action": "Taps 'Cancel'",
-                "next_screen": "Account Detail Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Notification Settings Screen",
-            "actions": [
-              {
-                "user_action": "Toggles on/off specific push or email notifications",
-                "next_screen": "Notification Settings Screen"
-              },
-              {
-                "user_action": "Taps back navigation",
-                "next_screen": "Settings Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Profile Screen",
-            "actions": [
-              {
-                "user_action": "Taps to edit personal information (e.g., name, email)",
-                "next_screen": "Edit Profile Screen"
-              },
-              {
-                "user_action": "Taps back navigation",
-                "next_screen": "Settings Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Edit Profile Screen",
-            "actions": [
-              {
-                "user_action": "Edits information and taps 'Save'",
-                "next_screen": "Profile Screen"
-              },
-              {
-                "user_action": "Taps 'Cancel'",
-                "next_screen": "Profile Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Sign Out Confirmation Dialog",
-            "actions": [
-              {
-                "user_action": "Taps 'Sign Out'",
-                "next_screen": "Sign Up or Sign In Screen"
-              },
-              {
-                "user_action": "Taps 'Cancel'",
-                "next_screen": "Settings Screen"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "Placeholder Screens for Navigation",
-        "screens": [
-          {
-            "screen_name": "Offer Detail Screen",
-            "actions": [
-              {
-                "user_action": "Taps back navigation",
-                "next_screen": "Marketplace Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Update Detail Screen",
-            "actions": [
-              {
-                "user_action": "Taps back navigation",
-                "next_screen": "Updates Screen"
+                "user_action": "Taps 'Create' tab",
+                "next_screen": "Create Song - Select Style"
               }
             ]
           }
@@ -576,498 +325,49 @@
 
 
 ============================================================
-### APP 2: Wallet: Budget & Expense Tracker
+### APP 2: Splash - Create Music & AI Lyrics
 ============================================================
 {
   "app_screen_flow": {
-    "app_name": "Wallet: Budget & Expense Tracker",
-    "total_flows": 5,
-    "total_screens": 31,
+    "app_name": "Splash - Create Music & AI Lyrics",
+    "total_flows": 4,
+    "total_screens": 20,
     "flows": [
       {
-        "flow_name": "Authentication and Onboarding",
-        "screens": [
-          {
-            "screen_name": "Welcome Screen",
-            "actions": [
-              {
-                "user_action": "Taps 'Continue with Google' button",
-                "next_screen": "Dashboard"
-              },
-              {
-                "user_action": "Taps 'Continue with Facebook' button",
-                "next_screen": "Dashboard"
-              },
-              {
-                "user_action": "Taps 'Continue with email' button",
-                "next_screen": "Sign Up with Email"
-              }
-            ]
-          },
-          {
-            "screen_name": "Sign Up with Email",
-            "actions": [
-              {
-                "user_action": "Enters email and password, taps 'Sign up'",
-                "next_screen": "Onboarding - Set Currency"
-              },
-              {
-                "user_action": "Taps 'Log in' link",
-                "next_screen": "Login Screen"
-              }
-            ]
-          },
-          {
-            "screen_name": "Login Screen",
-            "actions": [
-              {
-                "user_action": "Enters email and password, taps 'Log in'",
-                "next_screen": "Dashboard"
-              }
-            ]
-          },
-          {
-            "screen_name": "Onboarding - Set Currency",
-            "actions": [
-              {
-                "user_action": "Selects a currency and taps 'Next'",
-                "next_screen": "Onboarding - Create First Account"
-              }
-            ]
-          },
-          {
-            "screen_name": "Onboarding - Create First Account",
-            "actions": [
-              {
-                "user_action": "Enters account name and balance, taps 'Next'",
-                "next_screen": "Onboarding - Connect Bank Prompt"
-              }
-            ]
-          },
-          {
-            "screen_name": "Onboarding - Connect Bank Prompt",
-            "actions": [
-              {
-                "user_action": "Taps 'Connect bank'",
-                "next_screen": "Connect a Bank"
-              },
-              {
-                "user_action": "Taps 'Maybe later'",
-                "next_screen": "Onboarding - Complete"
-              }
-            ]
-          },
-          {
-            "screen_name": "Onboarding - Complete",
-            "actions": [
-              {
-                "user_action": "Taps 'Let's go!'",
-                "next_screen": "Dashboard"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "Add Record",
-        "screens": [
-          {
-            "screen_name": "Dashboard",
-            "actions": [
-              {
-                "user_action": "Taps '+' Floating Action Button",
-                "next_screen": "Add Record"
-              }
-            ]
-          },
-          {
-            "screen_name": "Add Record",
-            "actions": [
-              {
-                "user_action": "Taps 'Expense' tab",
-                "next_screen": "Add Record"
-              },
-              {
-                "user_action": "Taps 'Income' tab",
-                "next_screen": "Add Record (Income)"
-              },
-              {
-                "user_action": "Taps 'Transfer' tab",
-                "next_screen": "Add Record (Transfer)"
-              },
-              {
-                "user_action": "Taps category field",
-                "next_screen": "Select Category"
-              },
-              {
-                "user_action": "Taps account field",
-                "next_screen": "Select Account"
-              },
-              {
-                "user_action": "Taps date field",
-                "next_screen": "Date Picker"
-              },
-              {
-                "user_action": "Enters amount and details, taps 'Save'",
-                "next_screen": "Dashboard"
-              }
-            ]
-          },
-          {
-            "screen_name": "Add Record (Income)",
-            "actions": [
-              {
-                "user_action": "Taps 'Expense' tab",
-                "next_screen": "Add Record"
-              },
-              {
-                "user_action": "Taps 'Transfer' tab",
-                "next_screen": "Add Record (Transfer)"
-              },
-              {
-                "user_action": "Taps category field",
-                "next_screen": "Select Category"
-              },
-              {
-                "user_action": "Enters amount and details, taps 'Save'",
-                "next_screen": "Dashboard"
-              }
-            ]
-          },
-          {
-            "screen_name": "Add Record (Transfer)",
-            "actions": [
-              {
-                "user_action": "Taps 'Expense' tab",
-                "next_screen": "Add Record"
-              },
-              {
-                "user_action": "Taps 'Income' tab",
-                "next_screen": "Add Record (Income)"
-              },
-              {
-                "user_action": "Selects 'From' and 'To' accounts",
-                "next_screen": "Select Account"
-              },
-              {
-                "user_action": "Enters amount and details, taps 'Save'",
-                "next_screen": "Dashboard"
-              }
-            ]
-          },
-          {
-            "screen_name": "Select Category",
-            "actions": [
-              {
-                "user_action": "Taps a category",
-                "next_screen": "Add Record"
-              },
-              {
-                "user_action": "Taps '+' icon to add a new category",
-                "next_screen": "Create New Category"
-              },
-              {
-                "user_action": "Taps back arrow",
-                "next_screen": "Add Record"
-              }
-            ]
-          },
-          {
-            "screen_name": "Create New Category",
-            "actions": [
-              {
-                "user_action": "Enters category name, selects icon, taps 'Save'",
-                "next_screen": "Select Category"
-              }
-            ]
-          },
-          {
-            "screen_name": "Select Account",
-            "actions": [
-              {
-                "user_action": "Taps an account",
-                "next_screen": "Add Record"
-              },
-              {
-                "user_action": "Taps back arrow",
-                "next_screen": "Add Record"
-              }
-            ]
-          },
-          {
-            "screen_name": "Date Picker",
-            "actions": [
-              {
-                "user_action": "Selects a date and taps 'OK'",
-                "next_screen": "Add Record"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "Connect Bank",
-        "screens": [
-          {
-            "screen_name": "Accounts",
-            "actions": [
-              {
-                "user_action": "Taps '+' button",
-                "next_screen": "Add Account"
-              }
-            ]
-          },
-          {
-            "screen_name": "Add Account",
-            "actions": [
-              {
-                "user_action": "Taps 'Bank connection'",
-                "next_screen": "Connect a Bank"
-              },
-              {
-                "user_action": "Taps 'Cash' or other manual account type",
-                "next_screen": "Onboarding - Create First Account"
-              }
-            ]
-          },
-          {
-            "screen_name": "Connect a Bank",
-            "actions": [
-              {
-                "user_action": "Taps 'Continue'",
-                "next_screen": "Select Your Country"
-              }
-            ]
-          },
-          {
-            "screen_name": "Select Your Country",
-            "actions": [
-              {
-                "user_action": "Selects a country from the list",
-                "next_screen": "Select Your Bank"
-              }
-            ]
-          },
-          {
-            "screen_name": "Select Your Bank",
-            "actions": [
-              {
-                "user_action": "Selects a bank from the list",
-                "next_screen": "Bank Login"
-              }
-            ]
-          },
-          {
-            "screen_name": "Bank Login",
-            "actions": [
-              {
-                "user_action": "Enters bank credentials and authenticates",
-                "next_screen": "Connecting"
-              }
-            ]
-          },
-          {
-            "screen_name": "Connecting",
-            "actions": [
-              {
-                "user_action": "System process completes successfully",
-                "next_screen": "Connection Successful"
-              }
-            ]
-          },
-          {
-            "screen_name": "Connection Successful",
-            "actions": [
-              {
-                "user_action": "Taps 'Continue'",
-                "next_screen": "Accounts"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "Create Budget",
-        "screens": [
-          {
-            "screen_name": "Budgets",
-            "actions": [
-              {
-                "user_action": "Taps 'Create a budget' button",
-                "next_screen": "Create Budget - Step 1: Category"
-              }
-            ]
-          },
-          {
-            "screen_name": "Create Budget - Step 1: Category",
-            "actions": [
-              {
-                "user_action": "Selects one or more categories and taps 'Next'",
-                "next_screen": "Create Budget - Step 2: Amount"
-              }
-            ]
-          },
-          {
-            "screen_name": "Create Budget - Step 2: Amount",
-            "actions": [
-              {
-                "user_action": "Enters budget amount and taps 'Next'",
-                "next_screen": "Create Budget - Step 3: Period"
-              }
-            ]
-          },
-          {
-            "screen_name": "Create Budget - Step 3: Period",
-            "actions": [
-              {
-                "user_action": "Selects a period (e.g., Monthly) and taps 'Next'",
-                "next_screen": "Create Budget - Step 4: Accounts"
-              }
-            ]
-          },
-          {
-            "screen_name": "Create Budget - Step 4: Accounts",
-            "actions": [
-              {
-                "user_action": "Selects accounts to apply budget to and taps 'Create budget'",
-                "next_screen": "Budgets"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "flow_name": "Main Navigation",
-        "screens": [
-          {
-            "screen_name": "Main Navigation Base",
-            "actions": [
-              {
-                "user_action": "Taps 'Dashboard' tab in bottom navigation",
-                "next_screen": "Dashboard"
-              },
-              {
-                "user_action": "Taps 'Accounts' tab in bottom navigation",
-                "next_screen": "Accounts"
-              },
-              {
-                "user_action": "Taps 'Budgets' tab in bottom navigation",
-                "next_screen": "Budgets"
-              },
-              {
-                "user_action": "Taps 'Goals' tab in bottom navigation",
-                "next_screen": "Goals"
-              },
-              {
-                "user_action": "Taps 'More' tab in bottom navigation",
-                "next_screen": "More Menu"
-              }
-            ]
-          },
-          {
-            "screen_name": "Goals",
-            "actions": [
-              {
-                "user_action": "Taps 'Create a goal' button",
-                "next_screen": "Create Goal"
-              }
-            ]
-          },
-          {
-            "screen_name": "Create Goal",
-            "actions": [
-              {
-                "user_action": "Enters goal details and taps 'Save'",
-                "next_screen": "Goals"
-              }
-            ]
-          },
-          {
-            "screen_name": "More Menu",
-            "actions": [
-              {
-                "user_action": "Taps 'Settings'",
-                "next_screen": "Settings"
-              },
-              {
-                "user_action": "Taps 'My Profile'",
-                "next_screen": "Profile"
-              }
-            ]
-          },
-          {
-            "screen_name": "Settings",
-            "actions": [
-              {
-                "user_action": "Taps 'Security'",
-                "next_screen": "Security Settings"
-              },
-              {
-                "user_action": "Taps 'Notifications'",
-                "next_screen": "Notification Settings"
-              }
-            ]
-          },
-          {
-            "screen_name": "Profile",
-            "actions": [
-              {
-                "user_action": "Taps 'Edit Profile'",
-                "next_screen": "Edit Profile"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
-}
-
-
-============================================================
-### APP 3: Spendee - Budget and Expense Tracker
-============================================================
-{
-  "app_screen_flow": {
-    "app_name": "Spendee - Budget and Expense Tracker",
-    "total_flows": 6,
-    "total_screens": 35,
-    "flows": [
-      {
-        "flow_name": "Onboarding and Account Creation",
+        "flow_name": "Onboarding and Authentication",
         "screens": [
           {
             "screen_name": "Welcome",
             "actions": [
               {
-                "user_action": "Tap 'Continue' button",
-                "next_screen": "Onboarding Step 1"
+                "user_action": "Taps 'Get Started' button",
+                "next_screen": "Onboarding - Create Music"
               }
             ]
           },
           {
-            "screen_name": "Onboarding Step 1",
+            "screen_name": "Onboarding - Create Music",
             "actions": [
               {
-                "user_action": "Tap 'Continue' button",
-                "next_screen": "Onboarding Step 2"
+                "user_action": "Taps 'Next' button",
+                "next_screen": "Onboarding - Share Music"
               }
             ]
           },
           {
-            "screen_name": "Onboarding Step 2",
+            "screen_name": "Onboarding - Share Music",
             "actions": [
               {
-                "user_action": "Tap 'Continue' button",
-                "next_screen": "Onboarding Step 3"
+                "user_action": "Taps 'Next' button",
+                "next_screen": "Onboarding - Discover Music"
               }
             ]
           },
           {
-            "screen_name": "Onboarding Step 3",
+            "screen_name": "Onboarding - Discover Music",
             "actions": [
               {
-                "user_action": "Tap 'Get Started' button",
+                "user_action": "Taps 'Let's go' button",
                 "next_screen": "Sign Up Options"
               }
             ]
@@ -1076,38 +376,312 @@
             "screen_name": "Sign Up Options",
             "actions": [
               {
-                "user_action": "Tap 'Continue with Email'",
-                "next_screen": "Sign Up with Email"
+                "user_action": "Taps 'Continue with Google' button",
+                "next_screen": "Home Feed"
               },
               {
-                "user_action": "Tap 'Continue with Google'",
+                "user_action": "Taps 'Continue with Apple' button",
+                "next_screen": "Home Feed"
+              },
+              {
+                "user_action": "Taps 'Sign up with email' button",
+                "next_screen": "Email Sign Up"
+              },
+              {
+                "user_action": "Taps 'Log in' text link",
+                "next_screen": "Email Log In"
+              }
+            ]
+          },
+          {
+            "screen_name": "Email Sign Up",
+            "actions": [
+              {
+                "user_action": "Enters email and password, then taps 'Sign up' button",
+                "next_screen": "Home Feed"
+              },
+              {
+                "user_action": "Taps 'Log in' text link",
+                "next_screen": "Email Log In"
+              }
+            ]
+          },
+          {
+            "screen_name": "Email Log In",
+            "actions": [
+              {
+                "user_action": "Enters email and password, then taps 'Log in' button",
+                "next_screen": "Home Feed"
+              },
+              {
+                "user_action": "Taps 'Sign up' text link",
+                "next_screen": "Email Sign Up"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Create Music",
+        "screens": [
+          {
+            "screen_name": "Select Genre",
+            "actions": [
+              {
+                "user_action": "Taps a genre card (e.g., 'Hip Hop')",
+                "next_screen": "Select Vocal Style"
+              },
+              {
+                "user_action": "Taps 'Back' arrow",
+                "next_screen": "Home Feed"
+              }
+            ]
+          },
+          {
+            "screen_name": "Select Vocal Style",
+            "actions": [
+              {
+                "user_action": "Taps an AI Singer card (e.g., 'Nova')",
+                "next_screen": "AI Lyric Generation Prompt"
+              },
+              {
+                "user_action": "Taps 'Instrumental' button",
+                "next_screen": "Studio"
+              },
+              {
+                "user_action": "Taps 'Back' arrow",
+                "next_screen": "Select Genre"
+              }
+            ]
+          },
+          {
+            "screen_name": "AI Lyric Generation Prompt",
+            "actions": [
+              {
+                "user_action": "Enters a text prompt and taps the generate button",
+                "next_screen": "AI Lyric Generation - Loading"
+              },
+              {
+                "user_action": "Taps 'Back' arrow",
+                "next_screen": "Select Vocal Style"
+              }
+            ]
+          },
+          {
+            "screen_name": "AI Lyric Generation - Loading",
+            "actions": [
+              {
+                "user_action": "System finishes generating lyrics",
+                "next_screen": "AI Lyric Generation - Results"
+              }
+            ]
+          },
+          {
+            "screen_name": "AI Lyric Generation - Results",
+            "actions": [
+              {
+                "user_action": "Taps 'Make music' button",
+                "next_screen": "Studio"
+              },
+              {
+                "user_action": "Taps 'Try again' button",
+                "next_screen": "AI Lyric Generation Prompt"
+              }
+            ]
+          },
+          {
+            "screen_name": "Studio",
+            "actions": [
+              {
+                "user_action": "Taps 'Save' button",
+                "next_screen": "Save Project"
+              },
+              {
+                "user_action": "Taps a track layer (e.g., 'Drums')",
+                "next_screen": "Track Editor"
+              },
+              {
+                "user_action": "Taps 'Vocals' button",
+                "next_screen": "Vocal Editor"
+              },
+              {
+                "user_action": "Taps 'X' close button",
+                "next_screen": "Home Feed"
+              }
+            ]
+          },
+          {
+            "screen_name": "Track Editor",
+            "actions": [
+              {
+                "user_action": "Taps 'X' to close overlay",
+                "next_screen": "Studio"
+              }
+            ]
+          },
+          {
+            "screen_name": "Vocal Editor",
+            "actions": [
+              {
+                "user_action": "Taps 'X' to close overlay",
+                "next_screen": "Studio"
+              }
+            ]
+          },
+          {
+            "screen_name": "Save Project",
+            "actions": [
+              {
+                "user_action": "Enters a project name and taps 'Save' button",
+                "next_screen": "Project Saved Confirmation"
+              },
+              {
+                "user_action": "Taps 'Cancel'",
+                "next_screen": "Studio"
+              }
+            ]
+          },
+          {
+            "screen_name": "Project Saved Confirmation",
+            "actions": [
+              {
+                "user_action": "Taps 'Done' button",
+                "next_screen": "Home Feed"
+              },
+              {
+                "user_action": "Taps 'Share' button",
+                "next_screen": "Home Feed"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Main Navigation",
+        "screens": [
+          {
+            "screen_name": "Home Feed",
+            "actions": [
+              {
+                "user_action": "Taps 'Create' (+) tab in bottom navigation",
+                "next_screen": "Select Genre"
+              },
+              {
+                "user_action": "Taps 'Profile' tab in bottom navigation",
+                "next_screen": "Profile"
+              }
+            ]
+          },
+          {
+            "screen_name": "Profile",
+            "actions": [
+              {
+                "user_action": "Taps 'Home' tab in bottom navigation",
+                "next_screen": "Home Feed"
+              },
+              {
+                "user_action": "Taps 'Create' (+) tab in bottom navigation",
+                "next_screen": "Select Genre"
+              },
+              {
+                "user_action": "Taps a project in the 'My Projects' list",
+                "next_screen": "Studio"
+              },
+              {
+                "user_action": "Taps Settings (gear) icon",
+                "next_screen": "Settings"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Settings",
+        "screens": [
+          {
+            "screen_name": "Settings",
+            "actions": [
+              {
+                "user_action": "Taps 'Back' arrow",
+                "next_screen": "Profile"
+              },
+              {
+                "user_action": "Taps 'Log Out' button",
+                "next_screen": "Sign Up Options"
+              },
+              {
+                "user_action": "Taps 'Account'",
+                "next_screen": "Settings"
+              },
+              {
+                "user_action": "Taps 'Notifications'",
+                "next_screen": "Settings"
+              },
+              {
+                "user_action": "Taps 'Privacy Policy'",
+                "next_screen": "Settings"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+
+
+============================================================
+### APP 3: BandLab – Music Making Studio
+============================================================
+{
+  "app_screen_flow": {
+    "app_name": "BandLab – Music Making Studio",
+    "total_flows": 7,
+    "total_screens": 33,
+    "flows": [
+      {
+        "flow_name": "Onboarding and Sign Up",
+        "screens": [
+          {
+            "screen_name": "Welcome",
+            "actions": [
+              {
+                "user_action": "Taps 'Sign Up' button",
+                "next_screen": "Sign Up Options"
+              },
+              {
+                "user_action": "Taps 'Log In' link",
+                "next_screen": "Log In Options"
+              }
+            ]
+          },
+          {
+            "screen_name": "Sign Up Options",
+            "actions": [
+              {
+                "user_action": "Taps 'Sign up with Email'",
+                "next_screen": "Sign Up With Email"
+              },
+              {
+                "user_action": "Taps 'Continue with Google'",
                 "next_screen": "Google Authentication"
               },
               {
-                "user_action": "Tap 'Continue with Apple'",
-                "next_screen": "Apple Authentication"
+                "user_action": "Taps 'Continue with Facebook'",
+                "next_screen": "Facebook Authentication"
               },
               {
-                "user_action": "Tap 'Log in' link",
-                "next_screen": "Log In with Email"
+                "user_action": "Taps 'Log In' link",
+                "next_screen": "Log In Options"
               }
             ]
           },
           {
-            "screen_name": "Sign Up with Email",
+            "screen_name": "Sign Up With Email",
             "actions": [
               {
-                "user_action": "Enter email, password, and tap 'Sign Up'",
-                "next_screen": "Set Main Currency"
-              }
-            ]
-          },
-          {
-            "screen_name": "Log In with Email",
-            "actions": [
-              {
-                "user_action": "Enter email, password, and tap 'Log In'",
-                "next_screen": "Dashboard"
+                "user_action": "Fills out Name, Email, Password and taps 'Sign Up'",
+                "next_screen": "Create Your Profile"
               }
             ]
           },
@@ -1115,363 +689,377 @@
             "screen_name": "Google Authentication",
             "actions": [
               {
-                "user_action": "Select Google account and authenticate",
-                "next_screen": "Set Main Currency"
+                "user_action": "Completes Google sign-in flow",
+                "next_screen": "Create Your Profile"
               }
             ]
           },
           {
-            "screen_name": "Apple Authentication",
+            "screen_name": "Facebook Authentication",
             "actions": [
               {
-                "user_action": "Authenticate with Apple ID",
-                "next_screen": "Set Main Currency"
+                "user_action": "Completes Facebook sign-in flow",
+                "next_screen": "Create Your Profile"
               }
             ]
           },
           {
-            "screen_name": "Set Main Currency",
+            "screen_name": "Create Your Profile",
             "actions": [
               {
-                "user_action": "Select a currency and tap 'Continue'",
-                "next_screen": "Connect Bank Introduction"
+                "user_action": "Uploads profile picture, sets username, and taps 'Continue'",
+                "next_screen": "Pick Your Genres"
               }
             ]
           },
           {
-            "screen_name": "Connect Bank Introduction",
+            "screen_name": "Pick Your Genres",
             "actions": [
               {
-                "user_action": "Tap 'Connect Bank'",
-                "next_screen": "Select Country"
+                "user_action": "Selects at least 3 genres and taps 'Continue'",
+                "next_screen": "Follow Creators"
+              }
+            ]
+          },
+          {
+            "screen_name": "Follow Creators",
+            "actions": [
+              {
+                "user_action": "Follows suggested creators and taps 'Done'",
+                "next_screen": "Home Feed"
               },
               {
-                "user_action": "Tap 'I'll do it later'",
-                "next_screen": "Dashboard"
-              }
-            ]
-          },
-          {
-            "screen_name": "Select Country",
-            "actions": [
-              {
-                "user_action": "Select a country from the list",
-                "next_screen": "Select Bank"
-              }
-            ]
-          },
-          {
-            "screen_name": "Select Bank",
-            "actions": [
-              {
-                "user_action": "Select a bank from the list",
-                "next_screen": "Bank Login"
-              }
-            ]
-          },
-          {
-            "screen_name": "Bank Login",
-            "actions": [
-              {
-                "user_action": "Enter bank credentials and submit via WebView",
-                "next_screen": "Select Accounts"
-              }
-            ]
-          },
-          {
-            "screen_name": "Select Accounts",
-            "actions": [
-              {
-                "user_action": "Select bank accounts to connect and tap 'Continue'",
-                "next_screen": "Enable Notifications"
-              }
-            ]
-          },
-          {
-            "screen_name": "Enable Notifications",
-            "actions": [
-              {
-                "user_action": "Tap 'Enable Notifications'",
-                "next_screen": "Dashboard"
-              },
-              {
-                "user_action": "Tap 'Not now'",
-                "next_screen": "Dashboard"
+                "user_action": "Taps 'Skip'",
+                "next_screen": "Home Feed"
               }
             ]
           }
         ]
       },
       {
-        "flow_name": "Add Transaction",
+        "flow_name": "Log In",
         "screens": [
           {
-            "screen_name": "Dashboard",
+            "screen_name": "Log In Options",
             "actions": [
               {
-                "user_action": "Tap '+' floating action button",
-                "next_screen": "Add Transaction"
+                "user_action": "Taps 'Log in with Email'",
+                "next_screen": "Log In With Email"
+              },
+              {
+                "user_action": "Taps 'Continue with Google'",
+                "next_screen": "Google Authentication"
+              },
+              {
+                "user_action": "Taps 'Continue with Facebook'",
+                "next_screen": "Facebook Authentication"
+              },
+              {
+                "user_action": "Taps 'Sign Up' link",
+                "next_screen": "Sign Up Options"
               }
             ]
           },
           {
-            "screen_name": "Add Transaction",
+            "screen_name": "Log In With Email",
             "actions": [
               {
-                "user_action": "Enter amount in number pad",
-                "next_screen": "Add Transaction"
-              },
-              {
-                "user_action": "Tap 'Category' field",
-                "next_screen": "Select Category"
-              },
-              {
-                "user_action": "Tap 'Add note' field",
-                "next_screen": "Add Note"
-              },
-              {
-                "user_action": "Tap wallet selector",
-                "next_screen": "Select Wallet"
-              },
-              {
-                "user_action": "Tap 'Save' button",
-                "next_screen": "Dashboard"
-              }
-            ]
-          },
-          {
-            "screen_name": "Select Category",
-            "actions": [
-              {
-                "user_action": "Select a category from the list",
-                "next_screen": "Add Transaction"
-              }
-            ]
-          },
-          {
-            "screen_name": "Add Note",
-            "actions": [
-              {
-                "user_action": "Enter text and tap 'Save'",
-                "next_screen": "Add Transaction"
-              }
-            ]
-          },
-          {
-            "screen_name": "Select Wallet",
-            "actions": [
-              {
-                "user_action": "Select a wallet from the list",
-                "next_screen": "Add Transaction"
+                "user_action": "Enters email/username and password, taps 'Log In'",
+                "next_screen": "Home Feed"
               }
             ]
           }
         ]
       },
       {
-        "flow_name": "Create Budget",
+        "flow_name": "Core Navigation",
         "screens": [
           {
-            "screen_name": "Dashboard",
+            "screen_name": "Home Feed",
             "actions": [
               {
-                "user_action": "Tap 'Budgets' tab in bottom navigation",
-                "next_screen": "Budgets"
-              }
-            ]
-          },
-          {
-            "screen_name": "Budgets",
-            "actions": [
-              {
-                "user_action": "Tap 'Create your first budget' or '+' button",
-                "next_screen": "Create Budget"
-              }
-            ]
-          },
-          {
-            "screen_name": "Create Budget",
-            "actions": [
-              {
-                "user_action": "Enter budget amount",
-                "next_screen": "Create Budget"
+                "user_action": "Taps 'Create' tab in bottom navigation bar",
+                "next_screen": "Create"
               },
               {
-                "user_action": "Tap 'Categories' selector",
-                "next_screen": "Select Budget Category"
+                "user_action": "Taps 'Explore' tab in bottom navigation bar",
+                "next_screen": "Explore"
               },
               {
-                "user_action": "Tap 'Period' selector",
-                "next_screen": "Select Budget Period"
+                "user_action": "Taps 'Library' tab in bottom navigation bar",
+                "next_screen": "Library"
               },
               {
-                "user_action": "Tap 'Create Budget' button",
-                "next_screen": "Budgets"
-              }
-            ]
-          },
-          {
-            "screen_name": "Select Budget Category",
-            "actions": [
+                "user_action": "Taps 'Notifications' (bell) icon in top bar",
+                "next_screen": "Notifications"
+              },
               {
-                "user_action": "Select one or more categories and tap 'Done'",
-                "next_screen": "Create Budget"
-              }
-            ]
-          },
-          {
-            "screen_name": "Select Budget Period",
-            "actions": [
-              {
-                "user_action": "Select a period (e.g., Weekly, Monthly) and tap 'Done'",
-                "next_screen": "Create Budget"
+                "user_action": "Taps profile avatar in top bar",
+                "next_screen": "Profile"
               }
             ]
           }
         ]
       },
       {
-        "flow_name": "View Analysis",
+        "flow_name": "Music Creation",
         "screens": [
           {
-            "screen_name": "Dashboard",
+            "screen_name": "Create",
             "actions": [
               {
-                "user_action": "Tap 'Analysis' tab in bottom navigation",
-                "next_screen": "Analysis"
-              }
-            ]
-          },
-          {
-            "screen_name": "Analysis",
-            "actions": [
-              {
-                "user_action": "Tap time period filter at the top",
-                "next_screen": "Select Time Period"
+                "user_action": "Taps 'Import Track'",
+                "next_screen": "File Picker"
               },
               {
-                "user_action": "Tap category filter",
-                "next_screen": "Select Category Filter"
+                "user_action": "Taps 'Voice/Mic'",
+                "next_screen": "Studio"
               },
               {
-                "user_action": "View charts and data",
-                "end_state": true
+                "user_action": "Taps 'Sampler'",
+                "next_screen": "Sampler"
+              },
+              {
+                "user_action": "Taps 'Looper'",
+                "next_screen": "Looper"
+              },
+              {
+                "user_action": "Taps 'Virtual Instruments'",
+                "next_screen": "Studio"
               }
             ]
           },
           {
-            "screen_name": "Select Time Period",
+            "screen_name": "File Picker",
             "actions": [
               {
-                "user_action": "Select a time period (e.g., This Month, Last 3 Months)",
-                "next_screen": "Analysis"
+                "user_action": "Selects an audio file",
+                "next_screen": "Studio"
               }
             ]
           },
           {
-            "screen_name": "Select Category Filter",
+            "screen_name": "Sampler",
             "actions": [
               {
-                "user_action": "Select categories to filter by and apply",
-                "next_screen": "Analysis"
+                "user_action": "Records or selects a sample and taps 'Done'",
+                "next_screen": "Studio"
+              }
+            ]
+          },
+          {
+            "screen_name": "Looper",
+            "actions": [
+              {
+                "user_action": "Selects a Looper pack",
+                "next_screen": "Looper Interface"
+              }
+            ]
+          },
+          {
+            "screen_name": "Looper Interface",
+            "actions": [
+              {
+                "user_action": "Taps record and creates a loop arrangement",
+                "next_screen": "Studio"
+              }
+            ]
+          },
+          {
+            "screen_name": "Studio",
+            "actions": [
+              {
+                "user_action": "Taps '+' button to add a new track",
+                "next_screen": "Add Track"
+              },
+              {
+                "user_action": "Taps 'Save' (cloud) icon",
+                "next_screen": "Save Project"
+              },
+              {
+                "user_action": "Taps 'Back' arrow",
+                "next_screen": "Home Feed"
+              }
+            ]
+          },
+          {
+            "screen_name": "Add Track",
+            "actions": [
+              {
+                "user_action": "Selects a track type (e.g., Voice/Mic, Guitar, Bass)",
+                "next_screen": "Studio"
+              }
+            ]
+          },
+          {
+            "screen_name": "Save Project",
+            "actions": [
+              {
+                "user_action": "Enters project name and taps 'Save'",
+                "next_screen": "Library"
+              },
+              {
+                "user_action": "Taps 'Publish'",
+                "next_screen": "Publish Project"
+              }
+            ]
+          },
+          {
+            "screen_name": "Publish Project",
+            "actions": [
+              {
+                "user_action": "Adds description, genre, hashtags, and taps 'Publish'",
+                "next_screen": "Profile"
               }
             ]
           }
         ]
       },
       {
-        "flow_name": "Settings and Management",
+        "flow_name": "Explore and Search",
         "screens": [
           {
-            "screen_name": "Dashboard",
+            "screen_name": "Explore",
             "actions": [
               {
-                "user_action": "Tap 'More' tab in bottom navigation",
-                "next_screen": "More"
-              }
-            ]
-          },
-          {
-            "screen_name": "More",
-            "actions": [
-              {
-                "user_action": "Tap 'My Profile'",
-                "next_screen": "My Profile"
+                "user_action": "Taps search bar at the top",
+                "next_screen": "Search"
               },
               {
-                "user_action": "Tap 'Wallets'",
-                "next_screen": "Wallets"
+                "user_action": "Taps on a track",
+                "next_screen": "Track Details"
               },
               {
-                "user_action": "Tap 'Bank Accounts'",
-                "next_screen": "Bank Accounts"
+                "user_action": "Taps on a user profile",
+                "next_screen": "Profile"
+              }
+            ]
+          },
+          {
+            "screen_name": "Search",
+            "actions": [
+              {
+                "user_action": "Enters a query and taps the search button",
+                "next_screen": "Search Results"
+              }
+            ]
+          },
+          {
+            "screen_name": "Search Results",
+            "actions": [
+              {
+                "user_action": "Taps on a result in the 'Tracks' tab",
+                "next_screen": "Track Details"
               },
               {
-                "user_action": "Tap 'Categories'",
-                "next_screen": "Categories"
-              },
-              {
-                "user_action": "Tap 'Settings'",
-                "next_screen": "App Settings"
+                "user_action": "Taps on a result in the 'People' tab",
+                "next_screen": "Profile"
               }
             ]
           },
           {
-            "screen_name": "My Profile",
+            "screen_name": "Track Details",
             "actions": [
               {
-                "user_action": "View and edit profile details",
-                "end_state": true
-              }
-            ]
-          },
-          {
-            "screen_name": "Wallets",
-            "actions": [
-              {
-                "user_action": "View, add, or edit wallets",
-                "end_state": true
-              }
-            ]
-          },
-          {
-            "screen_name": "Categories",
-            "actions": [
-              {
-                "user_action": "View, add, or edit transaction categories",
-                "end_state": true
-              }
-            ]
-          },
-          {
-            "screen_name": "App Settings",
-            "actions": [
-              {
-                "user_action": "Adjust application settings like notifications, currency, etc.",
-                "end_state": true
+                "user_action": "Taps 'Back' arrow",
+                "next_screen": "Explore"
               }
             ]
           }
         ]
       },
       {
-        "flow_name": "Connect Bank Account from Settings",
+        "flow_name": "Library",
         "screens": [
           {
-            "screen_name": "More",
+            "screen_name": "Library",
             "actions": [
               {
-                "user_action": "Tap 'Bank Accounts'",
-                "next_screen": "Bank Accounts"
+                "user_action": "Taps on a project",
+                "next_screen": "Studio"
+              },
+              {
+                "user_action": "Taps 'Home' tab",
+                "next_screen": "Home Feed"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_name": "Profile and Settings",
+        "screens": [
+          {
+            "screen_name": "Profile",
+            "actions": [
+              {
+                "user_action": "Taps 'Settings' (gear) icon",
+                "next_screen": "Settings"
+              },
+              {
+                "user_action": "Taps 'Edit Profile' button",
+                "next_screen": "Edit Profile"
+              },
+              {
+                "user_action": "Taps 'Home' tab",
+                "next_screen": "Home Feed"
               }
             ]
           },
           {
-            "screen_name": "Bank Accounts",
+            "screen_name": "Edit Profile",
             "actions": [
               {
-                "user_action": "Tap 'Connect a bank'",
-                "next_screen": "Select Country"
+                "user_action": "Makes changes and taps 'Save'",
+                "next_screen": "Profile"
+              }
+            ]
+          },
+          {
+            "screen_name": "Settings",
+            "actions": [
+              {
+                "user_action": "Taps 'Account Settings'",
+                "next_screen": "Account Settings"
+              },
+              {
+                "user_action": "Taps 'Notifications'",
+                "next_screen": "Notification Settings"
+              },
+              {
+                "user_action": "Taps 'Log Out'",
+                "next_screen": "Welcome"
+              },
+              {
+                "user_action": "Taps 'Back' arrow",
+                "next_screen": "Profile"
+              }
+            ]
+          },
+          {
+            "screen_name": "Account Settings",
+            "actions": [
+              {
+                "user_action": "Taps 'Back' arrow",
+                "next_screen": "Settings"
+              }
+            ]
+          },
+          {
+            "screen_name": "Notification Settings",
+            "actions": [
+              {
+                "user_action": "Taps 'Back' arrow",
+                "next_screen": "Settings"
+              }
+            ]
+          },
+          {
+            "screen_name": "Notifications",
+            "actions": [
+              {
+                "user_action": "Taps 'Back' arrow",
+                "next_screen": "Home Feed"
               }
             ]
           }
